@@ -45,7 +45,7 @@ namespace Homework_6._1
          // Создаем массив структур
          State[] states =
          {
-            new State { name = "Россия", area =48, population = 144.915908 },
+            new State { name = "Россия", area = 48, population = 144.915908 },
             new State { name = "Белоруссия", area = 6, population = 9.155978 }
          };
 
