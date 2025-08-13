@@ -35,11 +35,6 @@ namespace Homework_6._1
       public int Price { get; set; }
       public int AgeMin { get; set; }
       public int AgeMax { get; set; }
-
-      public override string ToString()
-      {
-         return $"{Name};{Price};{AgeMin};{AgeMax}";
-      }
    }
 
    internal class Program
@@ -49,8 +44,9 @@ namespace Homework_6._1
          string[] lines = File.ReadAllLines(fileName);
          Toy[] toys = new Toy[lines.Length];
          int i = 0;
-         foreach (string s in lines)
+         for (int index = 0; index < lines.Length; index++)
          {
+            string s = lines[index];
             string[] toyFields = s.Split(new[] { ';' });
             toys[i].Name = toyFields[0];
             toys[i].Price = Convert.ToInt32(toyFields[1]);
@@ -58,22 +54,24 @@ namespace Homework_6._1
             toys[i].AgeMax = Convert.ToInt32(toyFields[3]);
             i++;
          }
+
          return toys;
       }
       public static void Display(Toy[] toys)
       {
-         foreach (Toy toy in toys)
+         for (int i = 0; i < toys.Length; i++)
          {
-            Console.WriteLine($"Наименование: {toy.Name}\tСтоимость: {toy.Price} руб.\tВозрастные ограницения: от {toy.AgeMin} до {toy.AgeMax} лет");
+            Toy toy = toys[i];
+            Console.WriteLine(
+               $"Наименование: {toy.Name}\tСтоимость: {toy.Price} руб.\tВозрастные ограницения: от {toy.AgeMin} до {toy.AgeMax} лет");
          }
       }
 
       static void Main(string[] args)
       {
          string inputFile = "input.txt";
-         string outputFile = "output.txt";
          Toy[] toys = ReadFile(inputFile);
-         //выводим исходный массив игрушек
+         // Выводим исходный массив игрушек
          Console.WriteLine("--------Исходный массив--------");
          Display(toys);
          Console.WriteLine("-------------------------------");
