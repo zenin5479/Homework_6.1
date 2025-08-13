@@ -45,7 +45,7 @@ namespace Homework_6._1
          // Создаем массив структур
          State[] states =
          {
-            new State { name = "Россия", population = 77, area = 180 },
+            new State { name = "Россия", population = 48, area = 180 },
             new State { name = "Белоруссия", population = 8, area = 20 }
          };
 
@@ -82,7 +82,7 @@ namespace Homework_6._1
          // Выводим содержимое списка на экран
          foreach (State s in newStates)
          {
-            Console.WriteLine("Название страны: {0}; Область: {1} население: {2}", s.name, s.area, s.population);
+            Console.WriteLine("Название страны: {0}; Областей: {1}; Население: {2}.", s.name, s.area, s.population);
          }
       }
    }
