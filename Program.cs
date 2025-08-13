@@ -82,7 +82,7 @@ namespace Homework_6._1
          // Выводим содержимое списка на экран
          foreach (State s in newStates)
          {
-            Console.WriteLine("Название страны: {0}, область {1} население: {2}", s.name, s.area, s.population);
+            Console.WriteLine("Название страны: {0}; Область: {1} население: {2}", s.name, s.area, s.population);
          }
       }
    }
