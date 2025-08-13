@@ -1,6 +1,5 @@
-﻿using Microsoft.VisualBasic;
-using System;
-using System.Collections.Generic;
+﻿using System;
+using System.IO;
 
 // Обработка студенческой ведомости
 // Составить программу для обработки информации о студентах какого-то факультета
@@ -30,60 +29,68 @@ namespace Homework_6._1
       float grant;
    };
 
-   public struct State
+   /// <summary>
+   /// Структура, содержащая полную информацию об игрушке
+   /// </summary>
+   public struct Toy
    {
-      public string name;
-      public double population;
-      public int area;
+      public string Name { get; set; }
+      public int Price { get; set; }
+      public int AgeMin { get; set; }
+      public int AgeMax { get; set; }
+
+      public override string ToString()
+      {
+         return $"{Name};{Price};{AgeMin};{AgeMax}";
+      }
    }
 
    internal class Program
    {
+      public static void WriteFile(string fileName, Toy[] toys)
+      {
+         using (StreamWriter sw = new StreamWriter(fileName))
+         {
+            foreach (Toy toy in toys)
+            {
+               sw.WriteLine(toy.ToString());
+            }
+         }
+      }
+
+      public static Toy[] ReadFile(string fileName)
+      {
+         string[] lines = File.ReadAllLines(fileName);
+         Toy[] toys = new Toy[lines.Length];
+         int i = 0;
+         foreach (string s in lines)
+         {
+            string[] toyFields = s.Split(new[] { ';' });
+            toys[i].Name = toyFields[0];
+            toys[i].Price = Convert.ToInt32(toyFields[1]);
+            toys[i].AgeMin = Convert.ToInt32(toyFields[2]);
+            toys[i].AgeMax = Convert.ToInt32(toyFields[3]);
+            i++;
+         }
+         return toys;
+      }
+      public static void Display(Toy[] toys)
+      {
+         foreach (Toy toy in toys)
+         {
+            Console.WriteLine($"Наименование: {toy.Name}\tСтоимость: {toy.Price} руб.\tВозрастные ограницения: от {toy.AgeMin} до {toy.AgeMax} лет");
+         }
+      }
+
       static void Main(string[] args)
       {
-         // Запись файла
-         // Создаем массив структур
-         State[] states =
-         {
-            new State { name = "Россия", area = 48, population = 144.915908 },
-            new State { name = "Белоруссия", area = 6, population = 9.155978 }
-         };
-
-         // Октрываем файл для записи - сопоставляем его с ключем 1
-         //FileSystem.FileOpen(1, "States.bin", OpenMode.Random);
-         FileSystem.FileOpen(1, "States.txt", OpenMode.Random);
-         for (int i = 0; i < states.Length; i++)
-         {
-            // Записываем в файл одну структуру
-            FileSystem.FilePut(1, states[i]);
-         }
-
-         // Перематываем файл на начало для последующего чтения, поскольку после записи указатель
-         // находится в конце файла. Но мы могли бы также просто закрыть файл и просто открыть.
-         FileSystem.Seek(1, 1);
-
-         // Чтение файла
-         // Список, в который заносим значения из файла
-         List<State> newStates = new List<State>();
-
-         // Пока не обнаружен конец файла,читаем его
-         while (!(FileSystem.EOF(1)))
-         {
-            // Создаем новую структуру
-            ValueType tempState = new State();
-            // Заносим в нее данные
-            FileSystem.FileGet(1, ref tempState);
-            //Добавляем ее в список
-            newStates.Add((State)tempState);
-         }
-
-         // Закрываем файл
-         FileSystem.FileClose(1);
-         // Выводим содержимое списка на экран
-         foreach (State s in newStates)
-         {
-            Console.WriteLine("Название страны: {0}; Областей: {1}; Население: {2}.", s.name, s.area, s.population);
-         }
+         string inputFile = "input.txt";
+         string outputFile = "output.txt";
+         Toy[] toys = ReadFile(inputFile);
+         //выводим исходный массив игрушек
+         Console.WriteLine("--------Исходный массив--------");
+         Display(toys);
+         Console.WriteLine("-------------------------------");
       }
    }
 }
