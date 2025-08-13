@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
-using Microsoft.VisualBasic;
 
 // Обработка студенческой ведомости
 // Составить программу для обработки информации о студентах какого-то факультета
@@ -41,12 +41,13 @@ namespace Homework_6._1
    {
       static void Main(string[] args)
       {
-         //---------------------------------------------------------
          // Запись файла
-
          // Создаем массив структур
-         State[] states = new State[] { new State() { name = "Russia", population = 10, area = 30 },
-            new State(){name = "Canada", population = 3, area = 10}};
+         State[] states = 
+         {
+            new State { name = "Russia", population = 10, area = 30 },
+            new State { name = "Canada", population = 3, area = 10 }
+         };
 
          // Октрываем файл для записи - сопоставляем его с ключем 1
          FileSystem.FileOpen(1, "States.bin", OpenMode.Random);
