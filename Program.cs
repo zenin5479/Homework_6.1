@@ -1,7 +1,4 @@
-﻿using Microsoft.VisualBasic;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.IO;
 using System.Text;
 
@@ -41,19 +38,11 @@ namespace Homework_6._1
       public int AgeMax;
    }
 
-   struct State
-   {
-      public string Name;
-      public double Population;
-      public int Area;
-   }
-
-
    internal class Program
    {
       public static Toy[] ReadFile(string fileName)
       {
-         
+
          string[] lines = File.ReadAllLines(fileName, Encoding.Default);
          Toy[] toys = new Toy[lines.Length];
          int i = 0;
@@ -92,49 +81,6 @@ namespace Homework_6._1
          Console.WriteLine("-------------------------------");
 
 
-         // Запись файла
-         // Создаем массив структур
-         State[] states =
-         {
-            new State { Name = "Россия", Area = 48, Population = 144.915908 },
-            new State { Name = "Белоруссия", Area = 6, Population = 9.155978 }
-         };
-
-         // Октрываем файл для записи - сопоставляем его с ключем 1
-         //FileSystem.FileOpen(1, "States.bin", OpenMode.Random);
-         FileSystem.FileOpen(1, "States.txt", OpenMode.Input);
-         for (int i = 0; i < states.Length; i++)
-         {
-            // Записываем в файл одну структуру
-            FileSystem.FilePut(1, states[i]);
-         }
-
-         // Перематываем файл на начало для последующего чтения, поскольку после записи указатель
-         // находится в конце файла. Но мы могли бы также просто закрыть файл и просто открыть.
-         FileSystem.Seek(1, 1);
-
-         // Чтение файла
-         // Список, в который заносим значения из файла
-         List<State> newStates = new List<State>();
-
-         // Пока не обнаружен конец файла,читаем его
-         while (!(FileSystem.EOF(1)))
-         {
-            // Создаем новую структуру
-            ValueType tempState = new State();
-            // Заносим в нее данные
-            FileSystem.FileGet(1, ref tempState);
-            //Добавляем ее в список
-            newStates.Add((State)tempState);
-         }
-
-         // Закрываем файл
-         FileSystem.FileClose(1);
-         // Выводим содержимое списка на экран
-         foreach (State s in newStates)
-         {
-            Console.WriteLine("Название страны: {0}; Областей: {1}; Население: {2}.", s.Name, s.Area, s.Population);
-         }
       }
    }
 }
