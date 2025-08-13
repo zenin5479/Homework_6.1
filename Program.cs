@@ -57,6 +57,7 @@ namespace Homework_6._1
 
          return toys;
       }
+
       public static void Display(Toy[] toys)
       {
          for (int i = 0; i < toys.Length; i++)
