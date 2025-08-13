@@ -43,10 +43,10 @@ namespace Homework_6._1
       {
          // Запись файла
          // Создаем массив структур
-         State[] states = 
+         State[] states =
          {
-            new State { name = "Россия", population = 10, area = 30 },
-            new State { name = "Белоруссия", population = 3, area = 10 }
+            new State { name = "Россия", population = 77, area = 180 },
+            new State { name = "Белоруссия", population = 8, area = 20 }
          };
 
          // Октрываем файл для записи - сопоставляем его с ключем 1
