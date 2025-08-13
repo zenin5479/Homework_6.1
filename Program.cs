@@ -64,7 +64,7 @@ namespace Homework_6._1
          {
             Toy toy = toys[i];
             Console.WriteLine(
-               $"Наименование: {toy.Name}\tСтоимость: {toy.Price} руб.\tВозрастные ограницения: от {toy.AgeMin} до {toy.AgeMax} лет");
+               $"Наименование: {toy.Name}\tСтоимость: {toy.Price} руб.\tВозрастные ограничения: от {toy.AgeMin} до {toy.AgeMax} лет");
          }
       }
 
