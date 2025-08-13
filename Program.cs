@@ -29,12 +29,12 @@ namespace Homework_6._1
       float grant;
    };
 
-   public struct Toy
+   struct Toy
    {
-      public string Name { get; set; }
-      public int Price { get; set; }
-      public int AgeMin { get; set; }
-      public int AgeMax { get; set; }
+      public string Name;
+      public int Price;
+      public int AgeMin;
+      public int AgeMax;
    }
 
    internal class Program
