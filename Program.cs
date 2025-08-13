@@ -50,8 +50,8 @@ namespace Homework_6._1
          };
 
          // Октрываем файл для записи - сопоставляем его с ключем 1
-         FileSystem.FileOpen(1, "States.bin", OpenMode.Random);
-         //FileSystem.FileOpen(1, "States.txt", OpenMode.Random);
+         //FileSystem.FileOpen(1, "States.bin", OpenMode.Random);
+         FileSystem.FileOpen(1, "States.txt", OpenMode.Random);
          for (int i = 0; i < states.Length; i++)
          {
             // Записываем в файл одну структуру
