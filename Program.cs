@@ -29,9 +29,6 @@ namespace Homework_6._1
       float grant;
    };
 
-   /// <summary>
-   /// Структура, содержащая полную информацию об игрушке
-   /// </summary>
    public struct Toy
    {
       public string Name { get; set; }
@@ -47,17 +44,6 @@ namespace Homework_6._1
 
    internal class Program
    {
-      public static void WriteFile(string fileName, Toy[] toys)
-      {
-         using (StreamWriter sw = new StreamWriter(fileName))
-         {
-            foreach (Toy toy in toys)
-            {
-               sw.WriteLine(toy.ToString());
-            }
-         }
-      }
-
       public static Toy[] ReadFile(string fileName)
       {
          string[] lines = File.ReadAllLines(fileName);
