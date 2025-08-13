@@ -45,8 +45,8 @@ namespace Homework_6._1
          // Создаем массив структур
          State[] states = 
          {
-            new State { name = "Russia", population = 10, area = 30 },
-            new State { name = "Canada", population = 3, area = 10 }
+            new State { name = "Россия", population = 10, area = 30 },
+            new State { name = "Белоруссия", population = 3, area = 10 }
          };
 
          // Октрываем файл для записи - сопоставляем его с ключем 1
@@ -61,10 +61,7 @@ namespace Homework_6._1
          // находится в конце файла. Но мы могли бы также просто закрыть файл и просто открыть.
          FileSystem.Seek(1, 1);
 
-
-         //---------------------------------------------------------
          // Чтение файла
-
          // Список, в который заносим значения из файла
          List<State> newStates = new List<State>();
 
@@ -81,11 +78,10 @@ namespace Homework_6._1
 
          // Закрываем файл
          FileSystem.FileClose(1);
-
          // Выводим содержимое списка на экран
          foreach (State s in newStates)
          {
-            Console.WriteLine("Name of the state: {0}, population : {1}", s.name, s.population);
+            Console.WriteLine("Название страны: {0}, область {1} население: {2}", s.name, s.area, s.population);
          }
       }
    }
