@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using Microsoft.VisualBasic;
 
 // Обработка студенческой ведомости
 // Составить программу для обработки информации о студентах какого-то факультета
@@ -39,7 +41,51 @@ namespace Homework_6._1
    {
       static void Main(string[] args)
       {
-         Console.WriteLine("Hello World!");
+         //---------------------------------------------------------
+         // Запись файла
+
+         // Создаем массив структур
+         State[] states = new State[] { new State() { name = "Russia", population = 10, area = 30 },
+            new State(){name = "Canada", population = 3, area = 10}};
+
+         // Октрываем файл для записи - сопоставляем его с ключем 1
+         FileSystem.FileOpen(1, "States.bin", OpenMode.Random);
+         for (int i = 0; i < states.Length; i++)
+         {
+            // Записываем в файл одну структуру
+            FileSystem.FilePut(1, states[i]);
+         }
+
+         // Перематываем файл на начало для последующего чтения, поскольку после записи указатель
+         // находится в конце файла. Но мы могли бы также просто закрыть файл и просто открыть.
+         FileSystem.Seek(1, 1);
+
+
+         //---------------------------------------------------------
+         // Чтение файла
+
+         // Список, в который заносим значения из файла
+         List<State> newStates = new List<State>();
+
+         // Пока не обнаружен конец файла,читаем его
+         while (!(FileSystem.EOF(1)))
+         {
+            // Создаем новую структуру
+            ValueType tempState = new State();
+            // Заносим в нее данные
+            FileSystem.FileGet(1, ref tempState);
+            //Добавляем ее в список
+            newStates.Add((State)tempState);
+         }
+
+         // Закрываем файл
+         FileSystem.FileClose(1);
+
+         // Выводим содержимое списка на экран
+         foreach (State s in newStates)
+         {
+            Console.WriteLine("Name of the state: {0}, population : {1}", s.name, s.population);
+         }
       }
    }
 }
