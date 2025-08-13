@@ -46,7 +46,7 @@ namespace Homework_6._1
          State[] states =
          {
             new State { name = "Россия", population = 48, area = 180 },
-            new State { name = "Белоруссия", population = 8, area = 20 }
+            new State { name = "Белоруссия", population = 6, area = 20 }
          };
 
          // Октрываем файл для записи - сопоставляем его с ключем 1
