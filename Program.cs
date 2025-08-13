@@ -33,8 +33,8 @@ namespace Homework_6._1
    public struct State
    {
       public string name;
-      public int population;
-      public double area;
+      public double population;
+      public int area;
    }
 
    internal class Program
@@ -45,8 +45,8 @@ namespace Homework_6._1
          // Создаем массив структур
          State[] states =
          {
-            new State { name = "Россия", population = 48, area = 144.915908 },
-            new State { name = "Белоруссия", population = 6, area = 9.155978 }
+            new State { name = "Россия", area =48, population = 144.915908 },
+            new State { name = "Белоруссия", area = 6, population = 9.155978 }
          };
 
          // Октрываем файл для записи - сопоставляем его с ключем 1
