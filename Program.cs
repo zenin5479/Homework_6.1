@@ -1,5 +1,7 @@
 ﻿using System;
+using System.ComponentModel;
 using System.IO;
+using System.Text;
 
 // Обработка студенческой ведомости
 // Составить программу для обработки информации о студентах какого-то факультета
@@ -41,7 +43,8 @@ namespace Homework_6._1
    {
       public static Toy[] ReadFile(string fileName)
       {
-         string[] lines = File.ReadAllLines(fileName);
+         
+         string[] lines = File.ReadAllLines(fileName, Encoding.Default);
          Toy[] toys = new Toy[lines.Length];
          int i = 0;
          for (int index = 0; index < lines.Length; index++)
@@ -70,6 +73,7 @@ namespace Homework_6._1
 
       static void Main(string[] args)
       {
+         //Console.OutputEncoding = Encoding.UTF8;
          string inputFile = "input.txt";
          Toy[] toys = ReadFile(inputFile);
          // Выводим исходный массив игрушек
