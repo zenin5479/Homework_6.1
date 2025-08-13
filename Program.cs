@@ -28,6 +28,13 @@ namespace Homework_6._1
       float grant;
    };
 
+   public struct State
+   {
+      public string name;
+      public int population;
+      public double area;
+   }
+
    internal class Program
    {
       static void Main(string[] args)
