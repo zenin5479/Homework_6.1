@@ -118,7 +118,7 @@ namespace Homework_6._1
          File.AppendAllTextAsync(path, "\nПривет мир", Encoding.Unicode);
 
          // чтение файла
-         string fileText = File.ReadAllText(path, Encoding.Unicode).ToString();
+         string fileText = File.ReadAllText(path, Encoding.Unicode);
          Console.WriteLine(fileText);
       }
    }
