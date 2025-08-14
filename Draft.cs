@@ -94,5 +94,4 @@ namespace Homework_6._1
       //   public int AgeMax;
       //}
    }
-
 }
