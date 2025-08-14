@@ -49,7 +49,7 @@ namespace Homework_6._1
          //   "IP-22; Сергеева Дарья Викторовна; 2007; Ж; 2; 2; 2; 5000"
          //};
 
-        
+
 
          //// Запись ведомости
          //File.WriteAllLines(path, originalText, Encoding.UTF8);
@@ -66,7 +66,7 @@ namespace Homework_6._1
          //Путь к файлу
          string path = "input.txt";
          // Строка для записи
-         string originalText = 
+         string originalText =
             "IP-21; Иванов Иван Иванович; 2000; М; 4; 5; 3; 5000\n" +
             "IP-21; Петрова Анна Сергеевна; 2001; Ж; 5; 4; 5; 6000\n" +
             "IP-22; Смирнов Алексей Викторович; 1999; М; 3; 4; 4; 4000\n" +
@@ -97,7 +97,7 @@ namespace Homework_6._1
             int read = fstream.Read(buffer, 0, buffer.Length);
             // Декодируем байты в строку
             string textFromFile = Encoding.Default.GetString(buffer);
-            Console.WriteLine($"Текст из файла:\n{textFromFile}");
+            Console.WriteLine("Текст из файла:\n{0}", textFromFile);
          }
 
          Console.ReadKey();
