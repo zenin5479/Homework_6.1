@@ -49,11 +49,9 @@ namespace Homework_6._1
          //   "IP-22; Сергеева Дарья Викторовна; 2007; Ж; 2; 2; 2; 5000"
          //};
 
-
-
-         //// Запись ведомости
+         // Запись ведомости
          //File.WriteAllLines(path, originalText, Encoding.UTF8);
-         //// Чтение файла
+         // Чтение файла
          //string[] fileText = File.ReadAllLines(path, Encoding.UTF8);
          //int i = 0;
          //while (i < fileText.Length)
