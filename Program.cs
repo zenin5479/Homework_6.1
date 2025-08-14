@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Text;
-using System.Threading.Channels;
 
 // Обработка студенческой ведомости
 // Составить программу для обработки информации о студентах какого-то факультета
