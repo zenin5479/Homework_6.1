@@ -52,10 +52,12 @@ namespace Homework_6._1
          File.WriteAllLines(path, originalText, Encoding.UTF8);
          // Чтение файла
          string[] fileText = File.ReadAllLines(path, Encoding.UTF8);
-         for (int i = 0; i < fileText.Length; i++)
+         int i = 0;
+         while (i < fileText.Length)
          {
             string s = fileText[i];
             Console.WriteLine(s);
+            i++; 
          }
 
          Console.ReadKey();
