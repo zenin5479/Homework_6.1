@@ -109,9 +109,30 @@ namespace Homework_6._1
          //   Console.WriteLine($"Текст из файла: {textFromFile}");
          //}
 
+
+         //string originalText = "IP-21 Ivanov Ivan Ivanovich 2000 M 4 5 3 5000 " +
+         //                      "IP-21 Petrova Anna Sergeevna 2001 W 5 4 5 6000 " +
+         //                      "IP-22 Smirnov Alexey Viktorovich 1999 M 3 4 4 4000 " +
+         //                      "Fiz-21 Kuznetsova Maria Pavlovna 2000 W 5 5 5 7000 " +
+         //                      "Phys-22 Sidorov Dmitry Andreevich 2001 M 4 3 4 4500 " +
+         //                      "IP-22 Vasilyeva Ekaterina Nikolaevna 1009 W 3 5 4 5500  " +
+         //                      "Fiz-21 Orlov Sergey Vladimirovich 2000 M 4 4 3 3000 IP-21 " +
+         //                      "Lebedeva Svetlana Alexandrovna 2001 W 5 5 5 8000 Fiz-22 " +
+         //                      "Nikolaev Andrey Sergeevich 2007 M 3 2 3 2500 IP-22 " +
+         //                      "Sergeeva Daria Viktorovna 2007 W 2 2 2 5000";
+
          string path = "content.txt";
 
-         string originalText = "Привет Metanit.com";
+         string originalText = "IP-21 Иванов Иван Иванович 2000 М 4 5 3 5000" +
+                               "IP-21 Петрова Анна Сергеевна 2001 Ж 5 4 5 6000" +
+                               "IP-22 Смирнов Алексей Викторович 1999 М 3 4 4 4000" +
+                               "Fiz-21 Кузнецова Мария Павловна 2000 Ж 5 5 5 7000" +
+                               "Phys-22 Сидоров Дмитрий Андреевич 2001 М 4 3 4 4500" +
+                               "IP-22 Васильева Екатерина Николаевна 2009 Ж 3 5 4 5500" +
+                               "Fiz-21 Орлов Сергей Владимирович 2000 М 4 4 3 3000" +
+                               "IP-21 Лебедева Светлана Александровна  2001 Ж 5 5 5 8000" +
+                               "Fiz-22 Николаев Андрей Сергеевич 2007 М 3 2 3 2500" +
+                               "IP-22 Сергеева Дарина Викторовна 2007 Ж 2 2 2 5000";
          // запись строки
          File.WriteAllTextAsync(path, originalText, Encoding.Unicode);
          // дозапись в конец файла
