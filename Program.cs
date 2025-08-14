@@ -97,7 +97,7 @@ namespace Homework_6._1
             fstream.ReadAsync(buffer, 0, buffer.Length);
             // декодируем байты в строку
             string textFromFile = Encoding.Default.GetString(buffer);
-            Console.WriteLine($"Текст из файла: {textFromFile}");
+            Console.WriteLine($"Текст из файла:\n{textFromFile}");
          }
 
          Console.ReadKey();
