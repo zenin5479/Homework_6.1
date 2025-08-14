@@ -78,24 +78,24 @@ namespace Homework_6._1
             "Fiz-22; Николаев Андрей Сергеевич; 2007; М; 3; 2; 3; 2500\n" +
             "IP-22; Сергеева Дарья Викторовна; 2007; Ж; 2; 2; 2; 5000";
 
-         // запись в файл
+         // Запись в файл
          using (FileStream fstream = new FileStream(path, FileMode.OpenOrCreate))
          {
-            // преобразуем строку в байты
+            // Преобразуем строку в байты
             byte[] buffer = Encoding.Default.GetBytes(originalText);
-            // запись массива байтов в файл
+            // Запись массива байтов в файл
             fstream.Write(buffer, 0, buffer.Length);
             Console.WriteLine("Текст записан в файл");
          }
 
-         // чтение из файла
+         // Чтение из файла
          using (FileStream fstream = File.OpenRead(path))
          {
-            // выделяем массив для считывания данных из файла
+            // Выделяем массив для считывания данных из файла
             byte[] buffer = new byte[fstream.Length];
-            // считываем данные
+            // Считываем данные
             int read = fstream.Read(buffer, 0, buffer.Length);
-            // декодируем байты в строку
+            // Декодируем байты в строку
             string textFromFile = Encoding.Default.GetString(buffer);
             Console.WriteLine($"Текст из файла:\n{textFromFile}");
          }
