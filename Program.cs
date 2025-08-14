@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using System.Threading.Channels;
 
 // Обработка студенческой ведомости
 // Составить программу для обработки информации о студентах какого-то факультета
@@ -44,12 +45,13 @@ namespace Homework_6._1
                                "Fiz-21; Орлов Сергей Владимирович; 2000; М; 4; 4; 3; 3000\n" +
                                "IP-21; Лебедева Светлана Александровна; Ж; 2001; 5; 5; 5; 8000\n" +
                                "Fiz-22; Николаев Андрей Сергеевич; 2007; М; 3; 2; 3; 2500\n" +
-                               "IP-22; Сергеева Дарина Викторовна; 2007; Ж; 2; 2; 2; 5000\n";
+                               "IP-22; Сергеева Дарья Викторовна; 2007; Ж; 2; 2; 2; 5000";
          // Запись ведомости
-         File.WriteAllTextAsync(path, originalText, Encoding.Unicode);
+         File.WriteAllText(path, originalText, Encoding.Unicode);
          // Чтение файла
          string fileText = File.ReadAllText(path, Encoding.Unicode);
          Console.WriteLine(fileText);
+         Console.ReadKey();
 
          //
          //Console.OutputEncoding = Encoding.UTF8;
