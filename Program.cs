@@ -103,11 +103,4 @@ namespace Homework_6._1
          //                      "Sergeeva Daria Viktorovna 2007 W 2 2 2 5000";
       }
    }
-   struct Toy
-   {
-      public string Name;
-      public int Price;
-      public int AgeMin;
-      public int AgeMax;
-   }
 }
