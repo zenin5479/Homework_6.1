@@ -52,8 +52,12 @@ namespace Homework_6._1
          File.WriteAllLines(path, originalText, Encoding.UTF8);
          // Чтение файла
          string[] fileText = File.ReadAllLines(path, Encoding.UTF8);
-         Console.WriteLine(fileText);
-         
+         for (int i = 0; i < fileText.Length; i++)
+         {
+            string s = fileText[i];
+            Console.WriteLine(s);
+         }
+
          Console.ReadKey();
       }
    }
