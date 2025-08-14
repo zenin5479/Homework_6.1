@@ -80,8 +80,12 @@ namespace Homework_6._1
          //Display(toys);
          //Console.WriteLine("-------------------------------");
 
-         string path = "note.txt"; ;   // путь к файлу
-         string text = "Самолет"; // строка для записи
+          // Путь к файлу
+         //string path = "note.txt";
+         // Путь к файлу
+         string path = "input.txt";
+         // Строка для записи
+         string text = "Самолет"; 
 
          // запись в файл
          using (FileStream fstream = new FileStream(path, FileMode.OpenOrCreate))
