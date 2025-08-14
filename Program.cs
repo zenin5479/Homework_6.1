@@ -94,7 +94,7 @@ namespace Homework_6._1
             // выделяем массив для считывания данных из файла
             byte[] buffer = new byte[fstream.Length];
             // считываем данные
-            fstream.ReadAsync(buffer, 0, buffer.Length);
+            int read = fstream.Read(buffer, 0, buffer.Length);
             // декодируем байты в строку
             string textFromFile = Encoding.Default.GetString(buffer);
             Console.WriteLine($"Текст из файла:\n{textFromFile}");
