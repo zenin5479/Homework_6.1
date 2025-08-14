@@ -30,45 +30,11 @@ namespace Homework_6._1
       float grant;
    };
 
-   struct Toy
-   {
-      public string Name;
-      public int Price;
-      public int AgeMin;
-      public int AgeMax;
-   }
+   
 
    internal class Program
    {
-      public static Toy[] ReadFile(string fileName)
-      {
 
-         string[] lines = File.ReadAllLines(fileName, Encoding.Default);
-         Toy[] toys = new Toy[lines.Length];
-         int i = 0;
-         for (int index = 0; index < lines.Length; index++)
-         {
-            string s = lines[index];
-            string[] toyFields = s.Split(new[] { ';' });
-            toys[i].Name = toyFields[0];
-            toys[i].Price = Convert.ToInt32(toyFields[1]);
-            toys[i].AgeMin = Convert.ToInt32(toyFields[2]);
-            toys[i].AgeMax = Convert.ToInt32(toyFields[3]);
-            i++;
-         }
-
-         return toys;
-      }
-
-      public static void Display(Toy[] toys)
-      {
-         for (int i = 0; i < toys.Length; i++)
-         {
-            Toy toy = toys[i];
-            Console.WriteLine(
-               $"Наименование: {toy.Name}\tСтоимость: {toy.Price} руб.\tВозрастные ограничения: от {toy.AgeMin} до {toy.AgeMax} лет");
-         }
-      }
 
       static void Main(string[] args)
       {
@@ -142,5 +108,42 @@ namespace Homework_6._1
          string fileText = File.ReadAllText(path, Encoding.Unicode);
          Console.WriteLine(fileText);
       }
+
+      public static Toy[] ReadFile(string fileName)
+      {
+
+         string[] lines = File.ReadAllLines(fileName, Encoding.Default);
+         Toy[] toys = new Toy[lines.Length];
+         int i = 0;
+         for (int index = 0; index < lines.Length; index++)
+         {
+            string s = lines[index];
+            string[] toyFields = s.Split(new[] { ';' });
+            toys[i].Name = toyFields[0];
+            toys[i].Price = Convert.ToInt32(toyFields[1]);
+            toys[i].AgeMin = Convert.ToInt32(toyFields[2]);
+            toys[i].AgeMax = Convert.ToInt32(toyFields[3]);
+            i++;
+         }
+
+         return toys;
+      }
+
+      public static void Display(Toy[] toys)
+      {
+         for (int i = 0; i < toys.Length; i++)
+         {
+            Toy toy = toys[i];
+            Console.WriteLine(
+               $"Наименование: {toy.Name}\tСтоимость: {toy.Price} руб.\tВозрастные ограничения: от {toy.AgeMin} до {toy.AgeMax} лет");
+         }
+      }
+   }
+   struct Toy
+   {
+      public string Name;
+      public int Price;
+      public int AgeMin;
+      public int AgeMax;
    }
 }
