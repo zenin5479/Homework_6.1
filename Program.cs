@@ -84,7 +84,7 @@ namespace Homework_6._1
             // преобразуем строку в байты
             byte[] buffer = Encoding.Default.GetBytes(originalText);
             // запись массива байтов в файл
-            fstream.WriteAsync(buffer, 0, buffer.Length);
+            fstream.Write(buffer, 0, buffer.Length);
             Console.WriteLine("Текст записан в файл");
          }
 
