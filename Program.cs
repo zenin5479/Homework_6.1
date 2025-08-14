@@ -73,18 +73,18 @@ namespace Homework_6._1
       static void Main(string[] args)
       {
          //Console.OutputEncoding = Encoding.UTF8;
-         string inputFile = "input.txt";
+         //string inputFile = "input.txt";
          //Toy[] toys = ReadFile(inputFile);
          //// Выводим исходный массив игрушек
          //Console.WriteLine("--------Исходный массив--------");
          //Display(toys);
          //Console.WriteLine("-------------------------------");
 
-         
+         string path = "note.txt"; ;   // путь к файлу
          string text = "Самолет"; // строка для записи
 
          // запись в файл
-         using (FileStream fstream = new FileStream(inputFile, FileMode.OpenOrCreate))
+         using (FileStream fstream = new FileStream(path, FileMode.OpenOrCreate))
          {
             // преобразуем строку в байты
             byte[] buffer = Encoding.Default.GetBytes(text);
@@ -94,7 +94,7 @@ namespace Homework_6._1
          }
 
          // чтение из файла
-         using (FileStream fstream = File.OpenRead(inputFile))
+         using (FileStream fstream = File.OpenRead(path))
          {
             // выделяем массив для считывания данных из файла
             byte[] buffer = new byte[fstream.Length];
