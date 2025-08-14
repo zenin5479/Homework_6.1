@@ -45,12 +45,9 @@ namespace Homework_6._1
                                "IP-21; Лебедева Светлана Александровна; Ж; 2001; 5; 5; 5; 8000\n" +
                                "Fiz-22; Николаев Андрей Сергеевич; 2007; М; 3; 2; 3; 2500\n" +
                                "IP-22; Сергеева Дарина Викторовна; 2007; Ж; 2; 2; 2; 5000\n";
-         // запись строки
+         // Запись ведомости
          File.WriteAllTextAsync(path, originalText, Encoding.Unicode);
-         // дозапись в конец файла
-         File.AppendAllTextAsync(path, "\nПривет мир", Encoding.Unicode);
-
-         // чтение файла
+         // Чтение файла
          string fileText = File.ReadAllText(path, Encoding.Unicode);
          Console.WriteLine(fileText);
 
