@@ -34,7 +34,7 @@ namespace Homework_6._1
    {
       static void Main(string[] args)
       {
-         string path = "content.txt";
+         string path = "spisok.txt";
          string originalText = "IP-21; Иванов Иван Иванович; 2000; М; 4; 5; 3; 5000\n" +
                                "IP-21; Петрова Анна Сергеевна; 2001; Ж; 5; 4; 5; 6000\n" +
                                "IP-22; Смирнов Алексей Викторович; 1999; М; 3; 4; 4; 4000\n" +
