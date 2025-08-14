@@ -74,11 +74,36 @@ namespace Homework_6._1
       {
          //Console.OutputEncoding = Encoding.UTF8;
          string inputFile = "input.txt";
-         Toy[] toys = ReadFile(inputFile);
-         // Выводим исходный массив игрушек
-         Console.WriteLine("--------Исходный массив--------");
-         Display(toys);
-         Console.WriteLine("-------------------------------");
+         //Toy[] toys = ReadFile(inputFile);
+         //// Выводим исходный массив игрушек
+         //Console.WriteLine("--------Исходный массив--------");
+         //Display(toys);
+         //Console.WriteLine("-------------------------------");
+
+         
+         string text = "Самолет"; // строка для записи
+
+         // запись в файл
+         using (FileStream fstream = new FileStream(inputFile, FileMode.OpenOrCreate))
+         {
+            // преобразуем строку в байты
+            byte[] buffer = Encoding.Default.GetBytes(text);
+            // запись массива байтов в файл
+            fstream.WriteAsync(buffer, 0, buffer.Length);
+            Console.WriteLine("Текст записан в файл");
+         }
+
+         // чтение из файла
+         using (FileStream fstream = File.OpenRead(inputFile))
+         {
+            // выделяем массив для считывания данных из файла
+            byte[] buffer = new byte[fstream.Length];
+            // считываем данные
+            fstream.ReadAsync(buffer, 0, buffer.Length);
+            // декодируем байты в строку
+            string textFromFile = Encoding.Default.GetString(buffer);
+            Console.WriteLine($"Текст из файла: {textFromFile}");
+         }
 
 
       }
