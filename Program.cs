@@ -85,7 +85,7 @@ namespace Homework_6._1
          // Путь к файлу
          string path = "input.txt";
          // Строка для записи
-         string text = "Самолет"; 
+         string text = "Самолет";
 
          // запись в файл
          using (FileStream fstream = new FileStream(path, FileMode.OpenOrCreate))
