@@ -100,9 +100,6 @@ namespace Homework_6._1
             Console.WriteLine($"Текст из файла: {textFromFile}");
          }
 
-
-
-
          Console.ReadKey();
       }
    }
