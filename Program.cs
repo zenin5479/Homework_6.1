@@ -78,9 +78,9 @@ namespace Homework_6._1
          
          //byte[] data = Encoding.UTF8.GetBytes(originalText);
          // Запись ведомости
-         File.WriteAllLines(path, originalText, Encoding.UTF8);
+         File.WriteAllLines(path, originalText, Encoding.GetEncoding(1251));
          // Чтение файла
-         string[] fileText = File.ReadAllLines(path, Encoding.UTF8);
+         string[] fileText = File.ReadAllLines(path, Encoding.GetEncoding(1251));
          int i = 0;
          while (i < fileText.Length)
          {
