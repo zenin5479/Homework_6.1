@@ -65,7 +65,7 @@ namespace Homework_6._1
          string path = "input.txt";
          // Строка для записи
          string originalText =
-            "IP-21; Иванов Иван Иванович; 2000; М; 4; 5; 3; 5000" +
+            "IP-21; Иванов Иван Иванович; 2000; М; 4; 5; 3; 5000\n" +
             "IP-21; Петрова Анна Сергеевна; 2001; Ж; 5; 4; 5; 6000\n" +
             "IP-22; Смирнов Алексей Викторович; 1999; М; 3; 4; 4; 4000\n" +
             "Fiz-21; Кузнецова Мария Павловна; 2000; Ж; 5; 5; 5; 7000\n" +
@@ -76,11 +76,11 @@ namespace Homework_6._1
             "Fiz-22; Николаев Андрей Сергеевич; 2007; М; 3; 2; 3; 2500\n" +
             "IP-22; Сергеева Дарья Викторовна; 2007; Ж; 2; 2; 2; 5000";
          
-         byte[] data = Encoding.GetEncoding(1251).GetBytes(originalText);
+         byte[] data = Encoding.UTF8.GetBytes(originalText);
          // Запись ведомости
          File.WriteAllBytes(path, data);
          // Чтение файла
-         string[] fileText = File.ReadAllLines(path, Encoding.GetEncoding(1251));
+         string[] fileText = File.ReadAllLines(path, Encoding.UTF8);
          int i = 0;
          while (i < fileText.Length)
          {
