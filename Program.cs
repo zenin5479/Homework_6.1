@@ -80,11 +80,11 @@ namespace Homework_6._1
          // Запись ведомости
          File.WriteAllBytes(path, data);
          // Чтение файла
-         byte[] fileText = File.ReadAllBytes(path);
+         string[] fileText = File.ReadAllLines(path, Encoding.UTF8);
          int i = 0;
          while (i < fileText.Length)
          {
-            byte s = fileText[i];
+            string s = fileText[i];
             Console.WriteLine(s);
             i++; 
          }
