@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
@@ -30,39 +31,98 @@ namespace Homework_6._1
       float grant;
    };
 
+   // Определяем структуру
+   public struct Person
+   {
+      public int Id;
+      public string Name;
+      public int Age;
+      public DateTime BirthDate;
+
+      // Метод для преобразования структуры в строку
+      public override string ToString()
+      {
+         return $"{Id}|{Name}|{Age}|{BirthDate:yyyy-MM-dd}";
+      }
+
+      // Метод для создания структуры из строки
+      public static Person Parse(string line)
+      {
+         string[] parts = line.Split('|');
+         if (parts.Length != 4)
+            throw new FormatException("Неверный формат строки");
+
+         return new Person
+         {
+            Id = int.Parse(parts[0]),
+            Name = parts[1],
+            Age = int.Parse(parts[2]),
+            BirthDate = DateTime.ParseExact(parts[3], "yyyy-MM-dd", null)
+         };
+      }
+   }
+
+
    internal class Program
    {
       static void Main(string[] args)
       {
-         // Путь к файлу
-         string path = "input.txt";
-         // Строка для записи
-         string originalText =
-            "IP-21; Иванов Иван Иванович; 2000; М; 4; 5; 3; 5000\n" +
-            "IP-21; Петрова Анна Сергеевна; 2001; Ж; 5; 4; 5; 6000\n" +
-            "IP-22; Смирнов Алексей Викторович; 1999; М; 3; 4; 4; 4000\n" +
-            "Fiz-21; Кузнецова Мария Павловна; 2000; Ж; 5; 5; 5; 7000\n" +
-            "Phys-22; Сидоров Дмитрий Андреевич; 2001; М; 4; 3; 4; 4500\n" +
-            "IP-22; Васильева Екатерина Николаевна; 2009; Ж; 3; 5; 4; 5500\n" +
-            "Fiz-21; Орлов Сергей Владимирович; 2000; М; 4; 4; 3; 3000\n" +
-            "IP-21; Лебедева Светлана Александровна; Ж; 2001; 5; 5; 5; 8000\n" +
-            "Fiz-22; Николаев Андрей Сергеевич; 2007; М; 3; 2; 3; 2500\n" +
-            "IP-22; Сергеева Дарья Викторовна; 2007; Ж; 2; 2; 2; 5000";
+         string filePath = "persons.txt";
 
-         byte[] data = Encoding.UTF8.GetBytes(originalText);
-         // Запись ведомости
-         File.WriteAllBytes(path, data);
-         // Чтение файла
-         string[] fileText = File.ReadAllLines(path, Encoding.UTF8);
-         int i = 0;
-         while (i < fileText.Length)
+         // Создаем массив структур для записи
+         Person[] people = new Person[]
          {
-            string s = fileText[i];
-            Console.WriteLine(s);
-            i++;
+            new Person { Id = 1, Name = "Иван Иванов", Age = 30, BirthDate = new DateTime(1993, 5, 15) },
+            new Person { Id = 2, Name = "Петр Петров", Age = 25, BirthDate = new DateTime(1998, 10, 22) },
+            new Person { Id = 3, Name = "Сидор Сидоров", Age = 40, BirthDate = new DateTime(1983, 3, 8) }
+         };
+
+         // Запись структур в файл
+         WritePeopleToFile(filePath, people);
+
+         // Чтение структур из файла
+         Person[] readPeople = ReadPeopleFromFile(filePath);
+
+         // Вывод прочитанных данных
+         Console.WriteLine("Прочитанные данные:");
+         foreach (var person in readPeople)
+         {
+            Console.WriteLine($"ID: {person.Id}, Имя: {person.Name}, Возраст: {person.Age}, Дата рождения: {person.BirthDate:dd.MM.yyyy}");
          }
 
          Console.ReadKey();
+      }
+
+      // Метод для записи массива структур в файл
+      static void WritePeopleToFile(string path, Person[] people)
+      {
+         using (StreamWriter writer = new StreamWriter(path, false, Encoding.UTF8))
+         {
+            foreach (var person in people)
+            {
+               writer.WriteLine(person.ToString());
+            }
+         }
+      }
+
+      // Метод для чтения массива структур из файла
+      static Person[] ReadPeopleFromFile(string path)
+      {
+         List<Person> people = new List<Person>();
+
+         using (StreamReader reader = new StreamReader(path, Encoding.UTF8))
+         {
+            string line;
+            while ((line = reader.ReadLine()) != null)
+            {
+               if (!string.IsNullOrWhiteSpace(line))
+               {
+                  people.Add(Person.Parse(line));
+               }
+            }
+         }
+
+         return people.ToArray();
       }
    }
 }
