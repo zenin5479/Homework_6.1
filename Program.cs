@@ -61,7 +61,7 @@ namespace Homework_6._1
          //   i++; 
          //}
          
-         //Путь к файлу
+         // Путь к файлу
          string path = "input.txt";
          // Строка для записи
          string originalText =
