@@ -60,38 +60,7 @@ namespace Homework_6._1
          //   Console.WriteLine(s);
          //   i++; 
          //}
-
-
-
-         // To find out source and target
-         const string source = "Ðàáîòà â ãåðìàíèè";
-         const string destination = "Работа в германии";
-
-         foreach (var sourceEncoding in Encoding.GetEncodings())
-         {
-
-            var bytes = sourceEncoding.GetEncoding().GetBytes(source);
-            foreach (var targetEncoding in Encoding.GetEncodings())
-            {
-               if (targetEncoding.GetEncoding().GetString(bytes) == destination)
-               {
-                  Console.WriteLine("Source Encoding: {0} TargetEncoding: {1}", sourceEncoding.CodePage, targetEncoding.CodePage);
-               }
-
-            }
-         }
-
-         // Result1: Source Encoding: 1252 TargetEncoding: 1251
-         // Result2: Source Encoding: 28591 TargetEncoding: 1251
-         // Result3: Source Encoding: 28605 TargetEncoding: 1251
-
-         // The code for you to use
-         //var decodedCyrillic = Encoding.GetEncoding(1251).GetString(Encoding.GetEncoding(1252).GetBytes(source));
-         // Result: Работа в германии
-
-
-
-
+         
          //Путь к файлу
          string path = "input.txt";
          // Строка для записи
