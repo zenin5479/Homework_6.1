@@ -98,8 +98,9 @@ namespace Homework_6._1
       {
          using (StreamWriter writer = new StreamWriter(path, false, Encoding.UTF8))
          {
-            foreach (var person in people)
+            for (int i = 0; i < people.Length; i++)
             {
+               Person person = people[i];
                writer.WriteLine(person.ToString());
             }
          }
@@ -109,7 +110,6 @@ namespace Homework_6._1
       static Person[] ReadPeopleFromFile(string path)
       {
          List<Person> people = new List<Person>();
-
          using (StreamReader reader = new StreamReader(path, Encoding.UTF8))
          {
             string line;
