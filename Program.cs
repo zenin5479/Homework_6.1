@@ -50,7 +50,9 @@ namespace Homework_6._1
       {
          string[] parts = line.Split('|');
          if (parts.Length != 4)
+         {
             throw new FormatException("Неверный формат строки");
+         }
 
          return new Person
          {
@@ -62,19 +64,17 @@ namespace Homework_6._1
       }
    }
 
-
    internal class Program
    {
       static void Main(string[] args)
       {
          string filePath = "persons.txt";
-
          // Создаем массив структур для записи
-         Person[] people = new Person[]
+         Person[] people =
          {
-            new Person { Id = 1, Name = "Иван Иванов", Age = 30, BirthDate = new DateTime(1993, 5, 15) },
-            new Person { Id = 2, Name = "Петр Петров", Age = 25, BirthDate = new DateTime(1998, 10, 22) },
-            new Person { Id = 3, Name = "Сидор Сидоров", Age = 40, BirthDate = new DateTime(1983, 3, 8) }
+            new Person { Id = 1, Name = "Иванов Иван Иванович", Age = 30, BirthDate = new DateTime(1993, 5, 15) },
+            new Person { Id = 2, Name = "Петрова Анна Сергеевна", Age = 25, BirthDate = new DateTime(1998, 10, 22) },
+            new Person { Id = 3, Name = "Смирнов Алексей Викторович", Age = 40, BirthDate = new DateTime(1983, 3, 8) }
          };
 
          // Запись структур в файл
@@ -87,7 +87,7 @@ namespace Homework_6._1
          Console.WriteLine("Прочитанные данные:");
          foreach (var person in readPeople)
          {
-            Console.WriteLine($"ID: {person.Id}, Имя: {person.Name}, Возраст: {person.Age}, Дата рождения: {person.BirthDate:dd.MM.yyyy}");
+            Console.WriteLine($"ID: {person.Id}, Ф.И.О.: {person.Name}, Возраст: {person.Age}, Дата рождения: {person.BirthDate:dd.MM.yyyy}");
          }
 
          Console.ReadKey();
