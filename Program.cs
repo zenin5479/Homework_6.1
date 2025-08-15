@@ -60,7 +60,7 @@ namespace Homework_6._1
          //   Console.WriteLine(s);
          //   i++; 
          //}
-         
+
          // Путь к файлу
          string path = "input.txt";
          // Строка для записи
@@ -75,7 +75,7 @@ namespace Homework_6._1
             "IP-21; Лебедева Светлана Александровна; Ж; 2001; 5; 5; 5; 8000\n" +
             "Fiz-22; Николаев Андрей Сергеевич; 2007; М; 3; 2; 3; 2500\n" +
             "IP-22; Сергеева Дарья Викторовна; 2007; Ж; 2; 2; 2; 5000";
-         
+
          byte[] data = Encoding.UTF8.GetBytes(originalText);
          // Запись ведомости
          File.WriteAllBytes(path, data);
@@ -86,7 +86,7 @@ namespace Homework_6._1
          {
             string s = fileText[i];
             Console.WriteLine(s);
-            i++; 
+            i++;
          }
 
          //// Запись в файл
