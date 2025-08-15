@@ -76,9 +76,9 @@ namespace Homework_6._1
             "Fiz-22; Николаев Андрей Сергеевич; 2007; М; 3; 2; 3; 2500\n" +
             "IP-22; Сергеева Дарья Викторовна; 2007; Ж; 2; 2; 2; 5000";
          
-         //byte[] data = Encoding.UTF8.GetBytes(originalText);
+         byte[] data = Encoding.GetEncoding(1251).GetBytes(originalText);
          // Запись ведомости
-         File.WriteAllLines(path, originalText, Encoding.GetEncoding(1251));
+         File.WriteAllLines(path, data);
          // Чтение файла
          string[] fileText = File.ReadAllLines(path, Encoding.GetEncoding(1251));
          int i = 0;
