@@ -76,27 +76,39 @@ namespace Homework_6._1
             "Fiz-22; Николаев Андрей Сергеевич; 2007; М; 3; 2; 3; 2500\n" +
             "IP-22; Сергеева Дарья Викторовна; 2007; Ж; 2; 2; 2; 5000";
 
-         // Запись в файл
-         using (FileStream fstream = new FileStream(path, FileMode.OpenOrCreate))
+         // Запись ведомости
+         File.WriteAllLines(path, originalText, Encoding.UTF8);
+         // Чтение файла
+         string[] fileText = File.ReadAllLines(path, Encoding.UTF8);
+         int i = 0;
+         while (i < fileText.Length)
          {
-            // Преобразуем строку в байты
-            byte[] buffer = Encoding.Default.GetBytes(originalText);
-            // Запись массива байтов в файл
-            fstream.Write(buffer, 0, buffer.Length);
-            Console.WriteLine("Текст записан в файл");
+            string s = fileText[i];
+            Console.WriteLine(s);
+            i++; 
          }
 
-         // Чтение из файла
-         using (FileStream fstream = File.OpenRead(path))
-         {
-            // Выделяем массив для считывания данных из файла
-            byte[] buffer = new byte[fstream.Length];
-            // Считываем данные
-            int read = fstream.Read(buffer, 0, buffer.Length);
-            // Декодируем байты в строку
-            string textFromFile = Encoding.Default.GetString(buffer);
-            Console.WriteLine("Текст из файла:\n{0}", textFromFile);
-         }
+         //// Запись в файл
+         //using (FileStream fstream = new FileStream(path, FileMode.OpenOrCreate))
+         //{
+         //   // Преобразуем строку в байты
+         //   byte[] buffer = Encoding.Default.GetBytes(originalText);
+         //   // Запись массива байтов в файл
+         //   fstream.Write(buffer, 0, buffer.Length);
+         //   Console.WriteLine("Текст записан в файл");
+         //}
+
+         //// Чтение из файла
+         //using (FileStream fstream = File.OpenRead(path))
+         //{
+         //   // Выделяем массив для считывания данных из файла
+         //   byte[] buffer = new byte[fstream.Length];
+         //   // Считываем данные
+         //   int read = fstream.Read(buffer, 0, buffer.Length);
+         //   // Декодируем байты в строку
+         //   string textFromFile = Encoding.Default.GetString(buffer);
+         //   Console.WriteLine("Текст из файла:\n{0}", textFromFile);
+         //}
 
          Console.ReadKey();
       }
