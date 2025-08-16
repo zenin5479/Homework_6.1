@@ -17,19 +17,19 @@ using System.Text;
 
 namespace Homework_6._1
 {
-   struct Student
-   {
-      char group;
-      char surname;
-      char name;
-      char dadsname;
-      int year;
-      char gender;
-      int physics;
-      int math;
-      int inf;
-      float grant;
-   };
+   //struct Student
+   //{
+   //   char group;
+   //   char surname;
+   //   char name;
+   //   char dadsname;
+   //   int year;
+   //   char gender;
+   //   int physics;
+   //   int math;
+   //   int inf;
+   //   float grant;
+   //};
 
    // Определяем структуру
    public struct Person
