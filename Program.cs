@@ -32,21 +32,27 @@ namespace Homework_6._1
    //};
 
    // Определяем структуру
-   public struct Person
+   public struct Student
    {
-      public int Id;
-      public string Name;
+      //public char Group;
+      //public char Surname;
+
+
+
+
+      public int Group;
+      public string Surname;
       public int Age;
       public DateTime BirthDate;
 
       // Метод для преобразования структуры в строку
       public override string ToString()
       {
-         return $"{Id}|{Name}|{Age}|{BirthDate:yyyy-MM-dd}";
+         return $"{Group}|{Surname}|{Age}|{BirthDate:yyyy-MM-dd}";
       }
 
       // Метод для создания структуры из строки
-      public static Person Parse(string line)
+      public static Student Parse(string line)
       {
          string[] parts = line.Split('|');
          if (parts.Length != 4)
@@ -54,10 +60,10 @@ namespace Homework_6._1
             throw new FormatException("Неверный формат строки");
          }
 
-         return new Person
+         return new Student
          {
-            Id = int.Parse(parts[0]),
-            Name = parts[1],
+            Group = int.Parse(parts[0]),
+            Surname = parts[1],
             Age = int.Parse(parts[2]),
             BirthDate = DateTime.ParseExact(parts[3], "yyyy-MM-dd", null)
          };
@@ -70,44 +76,44 @@ namespace Homework_6._1
       {
          string filePath = "persons.txt";
          // Создаем массив структур для записи
-         Person[] people =
+         Student[] people =
          {
-            new Person { Id = 1, Name = "Иванов Иван Иванович", Age = 30, BirthDate = new DateTime(1993, 5, 15) },
-            new Person { Id = 2, Name = "Петрова Анна Сергеевна", Age = 25, BirthDate = new DateTime(1998, 10, 22) },
-            new Person { Id = 3, Name = "Смирнов Алексей Викторович", Age = 40, BirthDate = new DateTime(1983, 3, 8) }
+            new Student { Group = 1, Surname = "Иванов Иван Иванович", Age = 30, BirthDate = new DateTime(1993, 5, 15) },
+            new Student { Group = 2, Surname = "Петрова Анна Сергеевна", Age = 25, BirthDate = new DateTime(1998, 10, 22) },
+            new Student { Group = 3, Surname = "Смирнов Алексей Викторович", Age = 40, BirthDate = new DateTime(1983, 3, 8) }
          };
 
          // Запись структур в файл
          WritePeopleToFile(filePath, people);
          // Чтение структур из файла
-         Person[] readPeople = ReadPeopleFromFile(filePath);
+         Student[] readPeople = ReadPeopleFromFile(filePath);
          // Вывод прочитанных данных
          Console.WriteLine("Прочитанные данные:");
          foreach (var person in readPeople)
          {
-            Console.WriteLine($"ID: {person.Id}, Ф.И.О.: {person.Name}, Возраст: {person.Age}, Дата рождения: {person.BirthDate:dd.MM.yyyy}");
+            Console.WriteLine($"ID: {person.Group}, Ф.И.О.: {person.Surname}, Возраст: {person.Age}, Дата рождения: {person.BirthDate:dd.MM.yyyy}");
          }
 
          Console.ReadKey();
       }
 
       // Метод для записи массива структур в файл
-      static void WritePeopleToFile(string path, Person[] people)
+      static void WritePeopleToFile(string path, Student[] people)
       {
          using (StreamWriter writer = new StreamWriter(path, false, Encoding.UTF8))
          {
             for (int i = 0; i < people.Length; i++)
             {
-               Person person = people[i];
+               Student person = people[i];
                writer.WriteLine(person.ToString());
             }
          }
       }
 
       // Метод для чтения массива структур из файла
-      static Person[] ReadPeopleFromFile(string path)
+      static Student[] ReadPeopleFromFile(string path)
       {
-         List<Person> people = new List<Person>();
+         List<Student> people = new List<Student>();
          using (StreamReader reader = new StreamReader(path, Encoding.UTF8))
          {
             string line;
@@ -115,7 +121,7 @@ namespace Homework_6._1
             {
                if (!string.IsNullOrWhiteSpace(line))
                {
-                  people.Add(Person.Parse(line));
+                  people.Add(Student.Parse(line));
                }
             }
          }
