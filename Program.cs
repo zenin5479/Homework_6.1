@@ -81,7 +81,6 @@ namespace Homework_6._1
          WritePeopleToFile(filePath, people);
          // Чтение структур из файла
          Person[] readPeople = ReadPeopleFromFile(filePath);
-
          // Вывод прочитанных данных
          Console.WriteLine("Прочитанные данные:");
          foreach (var person in readPeople)
