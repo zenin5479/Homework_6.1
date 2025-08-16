@@ -79,7 +79,6 @@ namespace Homework_6._1
 
          // Запись структур в файл
          WritePeopleToFile(filePath, people);
-
          // Чтение структур из файла
          Person[] readPeople = ReadPeopleFromFile(filePath);
 
