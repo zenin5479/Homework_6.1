@@ -74,7 +74,7 @@ namespace Homework_6._1
          // Создаем массив структур для записи
          Student[] people =
          {
-            new Student { Group = 'ip-22', Surname = "Иванов Иван Иванович", Age = 30, BirthDate = new DateTime(1993, 5, 15) },
+            new Student { Group = "ip-22", Surname = "Иванов Иван Иванович", Age = 30, BirthDate = new DateTime(1993, 5, 15) },
             new Student { Group = 2, Surname = "Петрова Анна Сергеевна", Age = 25, BirthDate = new DateTime(1998, 10, 22) },
             new Student { Group = 3, Surname = "Смирнов Алексей Викторович", Age = 40, BirthDate = new DateTime(1983, 3, 8) }
          };
