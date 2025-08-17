@@ -42,13 +42,13 @@ namespace Homework_6._1
       // Метод для преобразования структуры в строку
       public override string ToString()
       {
-         return $"{Group}|{Surname}|{Name}|{Dadsname}";
+         return string.Format("{0} {1} {2} {3}", Group, Surname, Name, Dadsname);
       }
 
       // Метод для создания структуры из строки
       public static Student Parse(string line)
       {
-         string[] parts = line.Split('|');
+         string[] parts = line.Split(' ');
          if (parts.Length != 4)
          {
             throw new FormatException("Неверный формат строки");
@@ -85,7 +85,7 @@ namespace Homework_6._1
          Console.WriteLine("Прочитанные данные:");
          foreach (var person in readPeople)
          {
-            Console.WriteLine("{0}, {1} {2} {3}", person.Group, person.Surname, person.Name, person.Dadsname);
+            Console.WriteLine("{0} {1} {2} {3}", person.Group, person.Surname, person.Name, person.Dadsname);
          }
 
          Console.ReadKey();
