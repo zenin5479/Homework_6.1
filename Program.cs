@@ -48,14 +48,14 @@ namespace Homework_6._1
       // Метод для преобразования структуры в строку
       public override string ToString()
       {
-         return string.Format("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9} {10}", Group, Surname, Name, Dadsname);
+         return string.Format("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}", Group, Surname, Name, Dadsname, Year, Gender, Physics, Math, Inf, Grant);
       }
 
       // Метод для создания структуры из строки
       public static Student Parse(string line)
       {
          string[] parts = line.Split(' ');
-         if (parts.Length != 4)
+         if (parts.Length != 10)
          {
             Console.WriteLine("Неверный формат строки");
          }
