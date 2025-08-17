@@ -43,7 +43,7 @@ namespace Homework_6._1
       public int Physics;
       public int Math;
       public int Inf;
-      public float Grant;
+      public double Grant;
 
       // Метод для преобразования структуры в строку
       public override string ToString()
@@ -65,7 +65,13 @@ namespace Homework_6._1
             Group = parts[0],
             Surname = parts[1],
             Name = parts[2],
-            Dadsname = parts[3]
+            Dadsname = parts[3],
+            Year = Convert.ToInt32(parts[4]),
+            Gender = Convert.ToChar(parts[5]),
+            Physics = Convert.ToInt32(parts[6]),
+            Math = Convert.ToInt32(parts[7]),
+            Inf = Convert.ToInt32(parts[8]),
+            Grant = Convert.ToDouble(parts[9])
          };
       }
    }
@@ -78,9 +84,21 @@ namespace Homework_6._1
          // Создаем массив структур для записи
          Student[] people =
          {
-            new Student { Group = "IP-21", Surname = "Иванов", Name = "Иван", Dadsname = "Иванович" },
-            new Student { Group = "IP-21", Surname = "Петрова", Name = "Анна", Dadsname = "Сергеевна" },
-            new Student { Group = "IP-22", Surname = "Смирнов", Name = "Алексей", Dadsname = "Викторович" }
+            new Student
+            {
+               Group = "IP-21", Surname = "Иванов", Name = "Иван", Dadsname = "Иванович",
+               Year = 2000, Gender = 'М', Physics = 4, Math = 5, Inf = 3, Grant = 5000
+            },
+            new Student
+            {
+               Group = "IP-21", Surname = "Петрова", Name = "Анна", Dadsname = "Сергеевна",
+               Year = 2001, Gender = 'Ж', Physics = 5, Math = 4, Inf = 5, Grant = 6000
+            },
+            new Student
+            {
+               Group = "IP-22", Surname = "Смирнов", Name = "Алексей", Dadsname = "Викторович",
+               Year = 1999, Gender = 'M', Physics = 3, Math = 4, Inf = 4, Grant = 4000
+            }
          };
 
          // Запись структур в файл
