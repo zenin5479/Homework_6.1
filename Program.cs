@@ -98,7 +98,17 @@ namespace Homework_6._1
             {
                Group = "IP-22", Surname = "Смирнов", Name = "Алексей", Dadsname = "Викторович",
                Year = 1999, Gender = 'M', Physics = 3, Math = 4, Inf = 4, Grant = 4000
-            }
+            },
+            new Student
+            {
+               Group = "Fiz-21", Surname = "Кузнецова", Name = "Мария", Dadsname = "Павловна",
+               Year = 2000, Gender = 'Ж', Physics = 5, Math = 5, Inf = 5, Grant = 7000
+            },
+            new Student
+            {
+               Group = "IP-22", Surname = "Смирнов", Name = "Алексей", Dadsname = "Викторович",
+               Year = 1999, Gender = 'M', Physics = 3, Math = 4, Inf = 4, Grant = 4000
+            },
          };
 
          // Запись структур в файл
