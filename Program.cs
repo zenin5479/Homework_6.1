@@ -51,7 +51,7 @@ namespace Homework_6._1
          string[] parts = line.Split(' ');
          if (parts.Length != 4)
          {
-            throw new FormatException("Неверный формат строки");
+            Console.WriteLine("Неверный формат строки");
          }
 
          return new Student
