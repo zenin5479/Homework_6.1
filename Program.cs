@@ -34,9 +34,7 @@ namespace Homework_6._1
    // Определяем структуру
    public struct Student
    {
-      //public char Group;
-      //public char Surname;
-      public char[] Group;
+      public string Group;
       public string Surname;
       public int Age;
       public DateTime BirthDate;
@@ -58,7 +56,7 @@ namespace Homework_6._1
 
          return new Student
          {
-            Group = new[] { char.Parse(parts[0]) },
+            Group = parts[0] ,
             Surname = parts[1],
             Age = int.Parse(parts[2]),
             BirthDate = DateTime.ParseExact(parts[3], "yyyy-MM-dd", null)
@@ -74,7 +72,7 @@ namespace Homework_6._1
          // Создаем массив структур для записи
          Student[] people =
          {
-            new Student { Group = new  char[] {'l', '5'"ip-22"}, Surname = "Иванов Иван Иванович", Age = 30, BirthDate = new DateTime(1993, 5, 15) },
+            new Student { Group = "IP-21", Surname = "Иванов Иван Иванович", Age = 30, BirthDate = new DateTime(1993, 5, 15) },
             new Student { Group = 2, Surname = "Петрова Анна Сергеевна", Age = 25, BirthDate = new DateTime(1998, 10, 22) },
             new Student { Group = 3, Surname = "Смирнов Алексей Викторович", Age = 40, BirthDate = new DateTime(1983, 3, 8) }
          };
