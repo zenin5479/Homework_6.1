@@ -38,11 +38,17 @@ namespace Homework_6._1
       public string Surname;
       public string Name;
       public string Dadsname;
+      public int Year;
+      public char Gender;
+      public int Physics;
+      public int Math;
+      public int Inf;
+      public float Grant;
 
       // Метод для преобразования структуры в строку
       public override string ToString()
       {
-         return string.Format("{0} {1} {2} {3}", Group, Surname, Name, Dadsname);
+         return string.Format("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9} {10}", Group, Surname, Name, Dadsname);
       }
 
       // Метод для создания структуры из строки
