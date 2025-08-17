@@ -36,13 +36,13 @@ namespace Homework_6._1
    {
       public string Group;
       public string Surname;
-      public int Age;
+      public string Name;
       public DateTime BirthDate;
 
       // Метод для преобразования структуры в строку
       public override string ToString()
       {
-         return $"{Group}|{Surname}|{Age}|{BirthDate:yyyy-MM-dd}";
+         return $"{Group}|{Surname}|{Name}|{BirthDate:yyyy-MM-dd}";
       }
 
       // Метод для создания структуры из строки
@@ -58,7 +58,7 @@ namespace Homework_6._1
          {
             Group = parts[0] ,
             Surname = parts[1],
-            Age = int.Parse(parts[2]),
+            Name = parts[2],
             BirthDate = DateTime.ParseExact(parts[3], "yyyy-MM-dd", null)
          };
       }
@@ -72,9 +72,9 @@ namespace Homework_6._1
          // Создаем массив структур для записи
          Student[] people =
          {
-            new Student { Group = "IP-21", Surname = "Иванов Иван Иванович", Age = 30, BirthDate = new DateTime(1993, 5, 15) },
-            new Student { Group = 2, Surname = "Петрова Анна Сергеевна", Age = 25, BirthDate = new DateTime(1998, 10, 22) },
-            new Student { Group = 3, Surname = "Смирнов Алексей Викторович", Age = 40, BirthDate = new DateTime(1983, 3, 8) }
+            new Student { Group = "IP-21", Surname = "Иванов Иван Иванович", Name = "Иван", BirthDate = new DateTime(1993, 5, 15) },
+            new Student { Group = "IP-21", Surname = "Петрова Анна Сергеевна", Name = "Анна", BirthDate = new DateTime(1998, 10, 22) },
+            new Student { Group = "IP-22", Surname = "Смирнов Алексей Викторович", Name = "Алексей", BirthDate = new DateTime(1983, 3, 8) }
          };
 
          // Запись структур в файл
@@ -85,7 +85,7 @@ namespace Homework_6._1
          Console.WriteLine("Прочитанные данные:");
          foreach (var person in readPeople)
          {
-            Console.WriteLine($"ID: {person.Group}, Ф.И.О.: {person.Surname}, Возраст: {person.Age}, Дата рождения: {person.BirthDate:dd.MM.yyyy}");
+            Console.WriteLine($"ID: {person.Group}, Ф.И.О.: {person.Surname}, Возраст: {person.Name}, Дата рождения: {person.BirthDate:dd.MM.yyyy}");
          }
 
          Console.ReadKey();
