@@ -73,7 +73,7 @@ namespace Homework_6._1
          Student[] people =
          {
             new Student { Group = "IP-21", Surname = "Иванов", Name = "Иван", Dadsname = "Иванович" },
-            new Student { Group = "IP-21", Surname = "Петрова Анна Сергеевна", Name = "Анна", Dadsname = "Сергеевна" },
+            new Student { Group = "IP-21", Surname = "Петрова", Name = "Анна", Dadsname = "Сергеевна" },
             new Student { Group = "IP-22", Surname = "Смирнов Алексей Викторович", Name = "Алексей", Dadsname = "Викторович" }
          };
 
