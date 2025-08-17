@@ -74,7 +74,7 @@ namespace Homework_6._1
          {
             new Student { Group = "IP-21", Surname = "Иванов", Name = "Иван", Dadsname = "Иванович" },
             new Student { Group = "IP-21", Surname = "Петрова", Name = "Анна", Dadsname = "Сергеевна" },
-            new Student { Group = "IP-22", Surname = "Смирнов Алексей ", Name = "Алексей", Dadsname = "Викторович" }
+            new Student { Group = "IP-22", Surname = "Смирнов Алексей", Name = "Алексей", Dadsname = "Викторович" }
          };
 
          // Запись структур в файл
