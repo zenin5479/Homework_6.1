@@ -66,12 +66,18 @@ namespace Homework_6._1
             Surname = parts[1],
             Name = parts[2],
             Dadsname = parts[3],
-            Year = Convert.ToInt32(parts[4]),
-            Gender = Convert.ToChar(parts[5]),
-            Physics = Convert.ToInt32(parts[6]),
-            Math = Convert.ToInt32(parts[7]),
-            Inf = Convert.ToInt32(parts[8]),
-            Grant = Convert.ToDouble(parts[9])
+            Year = int.Parse(parts[4]),
+            Gender = char.Parse(parts[5]),
+            Physics = int.Parse(parts[6]),
+            Math = int.Parse(parts[7]),
+            Inf = int.Parse(parts[8]),
+            Grant = double.Parse(parts[9])
+            //Year = Convert.ToInt32(parts[4]),
+            //Gender = Convert.ToChar(parts[5]),
+            //Physics = Convert.ToInt32(parts[6]),
+            //Math = Convert.ToInt32(parts[7]),
+            //Inf = Convert.ToInt32(parts[8]),
+            //Grant = Convert.ToDouble(parts[9])
          };
       }
    }
