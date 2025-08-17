@@ -85,7 +85,7 @@ namespace Homework_6._1
          Console.WriteLine("Прочитанные данные:");
          foreach (var person in readPeople)
          {
-            Console.WriteLine($"ID: {person.Group}, Ф.И.О.: {person.Surname}, Возраст: {person.Name}, Дата рождения: {person.Dadsname:dd.MM.yyyy}");
+            Console.WriteLine($"Группа: {person.Group}, Ф.И.О.: {person.Surname} {person.Name} {person.Dadsname}");
          }
 
          Console.ReadKey();
