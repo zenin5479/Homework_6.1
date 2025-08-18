@@ -130,7 +130,7 @@ namespace Homework_6._1
          };
 
          // Запись структур в файл
-         WriteStructToFile(filePath, people);
+         WriteStructFile(filePath, people);
          // Чтение структур из файла
          Student[] readPeople = ReadStructFile(filePath);
          // Вывод прочитанных данных
@@ -146,7 +146,7 @@ namespace Homework_6._1
       }
 
       // Метод для записи массива структур в файл
-      static void WriteStructToFile(string path, Student[] people)
+      static void WriteStructFile(string path, Student[] people)
       {
          using (StreamWriter writer = new StreamWriter(path, false, Encoding.UTF8))
          {
