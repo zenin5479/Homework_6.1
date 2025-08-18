@@ -132,7 +132,7 @@ namespace Homework_6._1
          // Запись структур в файл
          WritePeopleToFile(filePath, people);
          // Чтение структур из файла
-         Student[] readPeople = ReadPeopleFromFile(filePath);
+         Student[] readPeople = ReadStructFile(filePath);
          // Вывод прочитанных данных
          Console.WriteLine("Прочитанные данные:");
          foreach (var person in readPeople)
@@ -159,7 +159,7 @@ namespace Homework_6._1
       }
 
       // Метод для чтения массива структур из файла
-      static Student[] ReadPeopleFromFile(string path)
+      static Student[] ReadStructFile(string path)
       {
          List<Student> people = new List<Student>();
          using (StreamReader reader = new StreamReader(path, Encoding.UTF8))
