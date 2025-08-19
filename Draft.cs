@@ -121,15 +121,7 @@
       //   return toys;
       //}
 
-      //public static void Display(Toy[] toys)
-      //{
-      //   for (int i = 0; i < toys.Length; i++)
-      //   {
-      //      Toy toy = toys[i];
-      //      Console.WriteLine(
-      //         $"Наименование: {toy.Name}\tСтоимость: {toy.Price} руб.\tВозрастные ограничения: от {toy.AgeMin} до {toy.AgeMax} лет");
-      //   }
-      //}
+      
 
       //struct Toy
       //{
