@@ -122,7 +122,6 @@
       //}
 
       
-      //   public string Name;
       //   public int Price;
       //   public int AgeMin;
       //   public int AgeMax;
