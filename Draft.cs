@@ -122,7 +122,6 @@
       //}
 
       
-      //   public int AgeMin;
       //   public int AgeMax;
       //}
    }
