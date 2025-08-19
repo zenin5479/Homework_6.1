@@ -172,7 +172,5 @@ namespace Homework_6._1
             }
          }
       }
-
-
    }
 }
