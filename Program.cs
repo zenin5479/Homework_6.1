@@ -109,6 +109,8 @@ namespace Homework_6._1
          Console.ReadKey();
       }
 
+      
+      
       // Метод для создания структуры из строки
       public static Student Parse(string line)
       {
