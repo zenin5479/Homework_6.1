@@ -90,9 +90,7 @@
       //   Console.WriteLine($"Текст из файла: {textFromFile}");
       //}
 
-      //public static Toy[] ReadFile(string fileName)
-      //{
-
+      
       //   string[] lines = File.ReadAllLines(fileName, Encoding.Default);
       //   Toy[] toys = new Toy[lines.Length];
       //   int i = 0;
@@ -105,8 +103,5 @@
       //      toys[i].AgeMin = Convert.ToInt32(toyFields[2]);
       //      toys[i].AgeMax = Convert.ToInt32(toyFields[3]);
       //      i++;
-      //   }
-      //   return toys;
-      //}
    }
 }
