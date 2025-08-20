@@ -136,7 +136,9 @@ namespace Homework_6._1
                {
                   if (spaceCharacter == line[countCharacter])
                   {
-                     string subLine = stringModified.ToString();
+                     
+                     arrayStudent.Add(Parse(line));
+
                      arrayStudent[row] = Convert.ToDouble(subLine);
                      stringModified.Clear();
                   }
