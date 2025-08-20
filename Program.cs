@@ -115,7 +115,7 @@ namespace Homework_6._1
 
          // Чтение файла за одну операцию
          string[] allLines = File.ReadAllLines(path);
-         Student[] arrayDouble = {};
+         Student[] arrayStudent = {};
          if (allLines == null || allLines.Length == 0)
          {
             Console.WriteLine("Ошибка содержимого файла для чтения {0}", nameFile);
@@ -162,14 +162,14 @@ namespace Homework_6._1
 
             // Разделение строки на подстроки по пробелу и конвертация подстрок в double
 
-            arrayDouble = new Student[allLines.Length];
+            arrayStudent = new Student[allLines.Length];
             StringBuilder stringModified = new StringBuilder();
-            arrayDouble = new double[allLines.Length, sizeArray.Length];
+            arrayStudent = new double[allLines.Length, sizeArray.Length];
             char spaceCharacter = ' ';
             int row = 0;
             int column = 0;
             int countCharacter = 0;
-            while (row < arrayDouble.GetLength(0))
+            while (row < arrayStudent.GetLength(0))
             {
                string line = allLines[row];
                while (column < sizeArray[row])
@@ -179,7 +179,7 @@ namespace Homework_6._1
                      if (spaceCharacter == line[countCharacter])
                      {
                         string subLine = stringModified.ToString();
-                        arrayDouble[row, column] = Convert.ToDouble(subLine);
+                        arrayStudent[row, column] = Convert.ToDouble(subLine);
                         stringModified.Clear();
                         column++;
                      }
@@ -191,7 +191,7 @@ namespace Homework_6._1
                      if (countCharacter == line.Length - 1)
                      {
                         string subLine = stringModified.ToString();
-                        arrayDouble[row, column] = Convert.ToDouble(subLine);
+                        arrayStudent[row, column] = Convert.ToDouble(subLine);
                         stringModified.Clear();
                         column++;
                      }
@@ -207,7 +207,7 @@ namespace Homework_6._1
             }
          }
 
-         return arrayDouble;
+         return arrayStudent;
       }
 
       public static double[] Enter1DArrayDouble(string path, string nameArray)
