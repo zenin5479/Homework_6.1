@@ -91,10 +91,6 @@
       //}
 
      
-      //                      "IP-22 Smirnov Alexey Viktorovich 1999 M 3 4 4 4000 " +
-      //                      "Fiz-21 Kuznetsova Maria Pavlovna 2000 W 5 5 5 7000 " +
-      //                      "Phys-22 Sidorov Dmitry Andreevich 2001 M 4 3 4 4500 " +
-      //                      "IP-22 Vasilyeva Ekaterina Nikolaevna 1009 W 3 5 4 5500  " +
       //                      "Fiz-21 Orlov Sergey Vladimirovich 2000 M 4 4 3 3000 IP-21 " +
       //                      "Lebedeva Svetlana Alexandrovna 2001 W 5 5 5 8000 Fiz-22 " +
       //                      "Nikolaev Andrey Sergeevich 2007 M 3 2 3 2500 IP-22 " +
