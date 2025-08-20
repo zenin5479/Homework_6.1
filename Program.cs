@@ -128,7 +128,6 @@ namespace Homework_6._1
             arrayStudent = new Student[allLines.Length];
             char spaceCharacter = ' ';
             int row = 0;
-            int column = 0;
             int countCharacter = 0;
             while (row < arrayStudent.GetLength(0))
             {
@@ -140,7 +139,6 @@ namespace Homework_6._1
                      string subLine = stringModified.ToString();
                      arrayStudent[row] = Convert.ToDouble(subLine);
                      stringModified.Clear();
-                     column++;
                   }
                   else
                   {
@@ -152,16 +150,12 @@ namespace Homework_6._1
                      string subLine = stringModified.ToString();
                      arrayStudent[row] = Convert.ToDouble(subLine);
                      stringModified.Clear();
-                     column++;
                   }
 
                   countCharacter++;
                }
 
                countCharacter = 0;
-
-
-               column = 0;
                row++;
             }
          }
