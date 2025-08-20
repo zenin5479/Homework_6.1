@@ -90,7 +90,6 @@
       //   Console.WriteLine($"Текст из файла: {textFromFile}");
       //}
       
-      //      toys[i].AgeMin = Convert.ToInt32(toyFields[2]);
       //      toys[i].AgeMax = Convert.ToInt32(toyFields[3]);
       //      i++;
    }
