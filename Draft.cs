@@ -89,6 +89,5 @@
       //   string textFromFile = Encoding.Default.GetString(buffer);
       //   Console.WriteLine($"Текст из файла: {textFromFile}");
       //}
-      
    }
 }
