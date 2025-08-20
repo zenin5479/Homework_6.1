@@ -90,8 +90,7 @@
       //   Console.WriteLine($"Текст из файла: {textFromFile}");
       //}
 
-      //string originalText = "IP-21 Ivanov Ivan Ivanovich 2000 M 4 5 3 5000 " +
-      //                      "IP-21 Petrova Anna Sergeevna 2001 W 5 4 5 6000 " +
+     
       //                      "IP-22 Smirnov Alexey Viktorovich 1999 M 3 4 4 4000 " +
       //                      "Fiz-21 Kuznetsova Maria Pavlovna 2000 W 5 5 5 7000 " +
       //                      "Phys-22 Sidorov Dmitry Andreevich 2001 M 4 3 4 4500 " +
