@@ -90,9 +90,6 @@
       //   Console.WriteLine($"Текст из файла: {textFromFile}");
       //}
 
-      //                      "Nikolaev Andrey Sergeevich 2007 M 3 2 3 2500 IP-22 " +
-      //                      "Sergeeva Daria Viktorovna 2007 W 2 2 2 5000";
-
       //public static Toy[] ReadFile(string fileName)
       //{
 
