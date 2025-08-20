@@ -90,9 +90,6 @@
       //   Console.WriteLine($"Текст из файла: {textFromFile}");
       //}
 
-     
-      //                      "Fiz-21 Orlov Sergey Vladimirovich 2000 M 4 4 3 3000 IP-21 " +
-      //                      "Lebedeva Svetlana Alexandrovna 2001 W 5 5 5 8000 Fiz-22 " +
       //                      "Nikolaev Andrey Sergeevich 2007 M 3 2 3 2500 IP-22 " +
       //                      "Sergeeva Daria Viktorovna 2007 W 2 2 2 5000";
 
