@@ -90,9 +90,6 @@
       //   Console.WriteLine($"Текст из файла: {textFromFile}");
       //}
       
-      //      string s = lines[index];
-      //      string[] toyFields = s.Split(new[] { ';' });
-      //      toys[i].Name = toyFields[0];
       //      toys[i].Price = Convert.ToInt32(toyFields[1]);
       //      toys[i].AgeMin = Convert.ToInt32(toyFields[2]);
       //      toys[i].AgeMax = Convert.ToInt32(toyFields[3]);
