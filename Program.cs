@@ -109,12 +109,13 @@ namespace Homework_6._1
          Console.ReadKey();
       }
 
-      public static double[,] Enter2DArrayDouble(string path, string nameFile)
+      public static Student[] Enter2DArrayDouble(string path, string nameFile)
       {
          // Двумерный массив вещественных чисел
-         double[,] arrayDouble = { };
+
          // Чтение файла за одну операцию
          string[] allLines = File.ReadAllLines(path);
+         Student[] arrayDouble = { };
          if (allLines == null || allLines.Length == 0)
          {
             Console.WriteLine("Ошибка содержимого файла для чтения {0}", nameFile);
