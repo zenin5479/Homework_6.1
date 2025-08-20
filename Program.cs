@@ -133,35 +133,33 @@ namespace Homework_6._1
             while (row < arrayStudent.GetLength(0))
             {
                string line = allLines[row];
-               while (column < sizeArray[row])
+               while (countCharacter < line.Length)
                {
-                  while (countCharacter < line.Length)
+                  if (spaceCharacter == line[countCharacter])
                   {
-                     if (spaceCharacter == line[countCharacter])
-                     {
-                        string subLine = stringModified.ToString();
-                        arrayStudent[row, column] = Convert.ToDouble(subLine);
-                        stringModified.Clear();
-                        column++;
-                     }
-                     else
-                     {
-                        stringModified.Append(line[countCharacter]);
-                     }
-
-                     if (countCharacter == line.Length - 1)
-                     {
-                        string subLine = stringModified.ToString();
-                        arrayStudent[row, column] = Convert.ToDouble(subLine);
-                        stringModified.Clear();
-                        column++;
-                     }
-
-                     countCharacter++;
+                     string subLine = stringModified.ToString();
+                     arrayStudent[row] = Convert.ToDouble(subLine);
+                     stringModified.Clear();
+                     column++;
+                  }
+                  else
+                  {
+                     stringModified.Append(line[countCharacter]);
                   }
 
-                  countCharacter = 0;
+                  if (countCharacter == line.Length - 1)
+                  {
+                     string subLine = stringModified.ToString();
+                     arrayStudent[row] = Convert.ToDouble(subLine);
+                     stringModified.Clear();
+                     column++;
+                  }
+
+                  countCharacter++;
                }
+
+               countCharacter = 0;
+
 
                column = 0;
                row++;
