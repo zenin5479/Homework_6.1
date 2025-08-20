@@ -90,7 +90,5 @@
       //   Console.WriteLine($"Текст из файла: {textFromFile}");
       //}
       
-      
-      //      i++;
    }
 }
