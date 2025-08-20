@@ -115,7 +115,7 @@ namespace Homework_6._1
 
          // Чтение файла за одну операцию
          string[] allLines = File.ReadAllLines(path);
-         Student[] arrayDouble = new Student[allLines.Length];
+         Student[] arrayDouble = {};
          if (allLines == null || allLines.Length == 0)
          {
             Console.WriteLine("Ошибка содержимого файла для чтения {0}", nameFile);
@@ -161,6 +161,8 @@ namespace Homework_6._1
             }
 
             // Разделение строки на подстроки по пробелу и конвертация подстрок в double
+
+            arrayDouble = new Student[allLines.Length];
             StringBuilder stringModified = new StringBuilder();
             arrayDouble = new double[allLines.Length, sizeArray.Length];
             char spaceCharacter = ' ';
