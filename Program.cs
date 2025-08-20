@@ -123,13 +123,6 @@ namespace Homework_6._1
          }
          else
          {
-            int indexLines = 0;
-            while (indexLines < allLines.Length)
-            {
-               allLines[indexLines] = allLines[indexLines];
-               indexLines++;
-            }
-
             // Разделение строки на подстроки по пробелу для определения количества столбцов в строке
             int[] sizeArray = new int[allLines.Length];
             char symbolSpace = ' ';
@@ -161,10 +154,8 @@ namespace Homework_6._1
             }
 
             // Разделение строки на подстроки по пробелу и конвертация подстрок в double
-
-            arrayStudent = new Student[allLines.Length];
             StringBuilder stringModified = new StringBuilder();
-            arrayStudent = new double[allLines.Length, sizeArray.Length];
+            arrayStudent = new Student[allLines.Length];
             char spaceCharacter = ' ';
             int row = 0;
             int column = 0;
