@@ -115,7 +115,7 @@ namespace Homework_6._1
 
          // Чтение файла за одну операцию
          string[] allLines = File.ReadAllLines(path);
-         Student[] arrayStudent = {};
+         Student[] arrayStudent = { };
          if (allLines == null || allLines.Length == 0)
          {
             Console.WriteLine("Ошибка содержимого файла для чтения {0}", nameFile);
@@ -123,36 +123,6 @@ namespace Homework_6._1
          }
          else
          {
-            // Разделение строки на подстроки по пробелу для определения количества столбцов в строке
-            int[] sizeArray = new int[allLines.Length];
-            char symbolSpace = ' ';
-            int countRow = 0;
-            int countSymbol = 0;
-            int countСolumn = 0;
-            while (countRow < allLines.Length)
-            {
-               string line = allLines[countRow];
-               while (countSymbol < line.Length)
-               {
-                  if (symbolSpace == line[countSymbol])
-                  {
-                     countСolumn++;
-                  }
-
-                  if (countSymbol == line.Length - 1)
-                  {
-                     countСolumn++;
-                  }
-
-                  countSymbol++;
-               }
-
-               sizeArray[countRow] = countСolumn;
-               countСolumn = 0;
-               countRow++;
-               countSymbol = 0;
-            }
-
             // Разделение строки на подстроки по пробелу и конвертация подстрок в double
             StringBuilder stringModified = new StringBuilder();
             arrayStudent = new Student[allLines.Length];
