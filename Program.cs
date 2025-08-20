@@ -115,7 +115,7 @@ namespace Homework_6._1
 
          // Чтение файла за одну операцию
          string[] allLines = File.ReadAllLines(path);
-         Student[] arrayDouble = { };
+         Student[] arrayDouble = new Student[allLines.Length];
          if (allLines == null || allLines.Length == 0)
          {
             Console.WriteLine("Ошибка содержимого файла для чтения {0}", nameFile);
