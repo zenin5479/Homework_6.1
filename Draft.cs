@@ -89,13 +89,7 @@
       //   string textFromFile = Encoding.Default.GetString(buffer);
       //   Console.WriteLine($"Текст из файла: {textFromFile}");
       //}
-
       
-      //   string[] lines = File.ReadAllLines(fileName, Encoding.Default);
-      //   Toy[] toys = new Toy[lines.Length];
-      //   int i = 0;
-      //   for (int index = 0; index < lines.Length; index++)
-      //   {
       //      string s = lines[index];
       //      string[] toyFields = s.Split(new[] { ';' });
       //      toys[i].Name = toyFields[0];
