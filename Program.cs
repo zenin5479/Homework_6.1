@@ -154,7 +154,7 @@ namespace Homework_6._1
 
 
 
-            if (sizeArray.Length != 10)
+            if (countСolumn != 10)
             {
                Console.WriteLine("Неверный формат строки");
             }
