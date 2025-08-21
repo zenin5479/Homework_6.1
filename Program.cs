@@ -152,8 +152,6 @@ namespace Homework_6._1
                countSymbol = 0;
             }
 
-
-
             if (countСolumn != 10)
             {
                Console.WriteLine("Неверный формат строки");
