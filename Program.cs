@@ -147,6 +147,7 @@ namespace Homework_6._1
                }
 
                sizeArray[countRow] = countСolumn;
+               // 10 количество полей в структуре
                if (countСolumn != 10)
                {
                   Console.WriteLine("Неверный формат строки");
@@ -158,7 +159,6 @@ namespace Homework_6._1
             }
 
             // Разделение строки на подстроки по пробелу и конвертация подстрок в double
-            StringBuilder stringModified = new StringBuilder();
             int column = 0;
             while (row < arrayDouble.GetLength(0))
             {
