@@ -157,9 +157,35 @@ namespace Homework_6._1
                countSymbol = 0;
             }
 
-            // Разделение строки на подстроки по пробелу и конвертация подстрок в double
-            StringBuilder stringModified = new StringBuilder();
 
+            // Поиск максимального и минимального элемента массива
+            // Cчитаем, что максимум - это первый элемент массива
+            int max = sizeArray[0];
+            // Cчитаем, что минимум - это первый элемент массива
+            int min = sizeArray[0];
+            int columns = 0;
+            while (columns < sizeArray.Length)
+            {
+               if (max < sizeArray[columns])
+               {
+                  max = sizeArray[columns];
+               }
+
+               if (min > sizeArray[columns])
+               {
+                  min = sizeArray[columns];
+               }
+
+               columns++;
+            }
+
+            Console.WriteLine("Максимум равен: {0}", max);
+            Console.WriteLine("Минимум равен: {0}", min);
+
+
+
+            // Разделение строки на подстроки по пробелу и конвертация подстрок в структуру
+            string[] lineArray = new string[max];
             char spaceCharacter = ' ';
             int row = 0;
             int column = 0;
@@ -171,12 +197,11 @@ namespace Homework_6._1
                {
                   while (countCharacter < line.Length)
                   {
-
                      if (spaceCharacter == line[countCharacter])
                      {
                         string subLine = " ";
                         arrayStudent[column].Group = subLine[column].ToString();
-                        
+
                         //Group = parts[0],
                         //Surname = parts[1],
                         //Name = parts[2],
@@ -188,19 +213,19 @@ namespace Homework_6._1
                         //Inf = int.Parse(parts[8]),
                         //Grant = double.Parse(parts[9])
 
-                        stringModified.Clear();
+                        //stringModified.Clear();
                         column++;
                      }
                      else
                      {
-                        stringModified.Append(line[countCharacter]);
+                        //stringModified.Append(line[countCharacter]);
                      }
 
                      if (countCharacter == line.Length - 1)
                      {
-                        string subLine = stringModified.ToString();
+                        //string subLine = stringModified.ToString();
 
-                        stringModified.Clear();
+                        //stringModified.Clear();
                         column++;
                      }
 
