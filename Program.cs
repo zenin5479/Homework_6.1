@@ -122,45 +122,45 @@ namespace Homework_6._1
          else
          {
             // Разделение строки на подстроки по пробелу для определения количества столбцов в строке
-               arrayStudent = new Student[allLines.Length];
-               int[] sizeArray = new int[allLines.Length];
-               char symbolSpace = ' ';
-               int countRow = 0;
-               int countSymbol = 0;
-               int countСolumn = 0;
-               while (countRow < allLines.Length)
+            arrayStudent = new Student[allLines.Length];
+            int[] sizeArray = new int[allLines.Length];
+            char symbolSpace = ' ';
+            int countRow = 0;
+            int countSymbol = 0;
+            int countСolumn = 0;
+            while (countRow < allLines.Length)
+            {
+               string line = allLines[countRow];
+               while (countSymbol < line.Length)
                {
-                  string line = allLines[countRow];
-                  while (countSymbol < line.Length)
+                  if (symbolSpace == line[countSymbol])
                   {
-                     if (symbolSpace == line[countSymbol])
-                     {
-                        countСolumn++;
-                     }
-
-                     if (countSymbol == line.Length - 1)
-                     {
-                        countСolumn++;
-                     }
-
-                     countSymbol++;
+                     countСolumn++;
                   }
 
-                  sizeArray[countRow] = countСolumn;
-                  countСolumn = 0;
-                  countRow++;
-                  countSymbol = 0;
+                  if (countSymbol == line.Length - 1)
+                  {
+                     countСolumn++;
+                  }
+
+                  countSymbol++;
                }
-            
-            
-            
-            if (countСolumn != 10)
+
+               sizeArray[countRow] = countСolumn;
+               countСolumn = 0;
+               countRow++;
+               countSymbol = 0;
+            }
+
+
+
+            if (sizeArray.Length != 10)
             {
                Console.WriteLine("Неверный формат строки");
             }
             else
             {
-               
+
 
                // Разделение строки на подстроки по пробелу и конвертация подстрок в double
                StringBuilder stringModified = new StringBuilder();
