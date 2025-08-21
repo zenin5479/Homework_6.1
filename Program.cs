@@ -122,7 +122,6 @@ namespace Homework_6._1
          else
          {
             // Разделение строки на подстроки по пробелу и конвертация подстрок в double
-
             if (arrayStudent.Length != 10)
             {
                Console.WriteLine("Неверный формат строки");
