@@ -158,8 +158,6 @@ namespace Homework_6._1
             }
             else
             {
-
-
                // Разделение строки на подстроки по пробелу и конвертация подстрок в double
                StringBuilder stringModified = new StringBuilder();
                int column = 0;
