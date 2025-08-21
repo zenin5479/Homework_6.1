@@ -157,12 +157,15 @@ namespace Homework_6._1
             }
 
             // Разделение строки на подстроки по пробелу и конвертация подстрок в double
+            StringBuilder stringModified = new StringBuilder();
+            char spaceCharacter = ' ';
             int column = 0;
             int row= 0;
+            int countCharacter = 0;
             while (row < allLines.Length)
             {
                string line = allLines[row];
-               while (column < allLines.Length[row])
+               while (column < allLines[row])
                {
                   while (countCharacter < line.Length)
                   {
