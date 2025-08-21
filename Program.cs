@@ -157,7 +157,6 @@ namespace Homework_6._1
                countSymbol = 0;
             }
 
-
             // Поиск максимального и минимального элемента массива
             // Cчитаем, что максимум - это первый элемент массива
             int max = sizeArray[0];
@@ -225,16 +224,9 @@ namespace Homework_6._1
                   arrayStudent[column].Year = int.Parse(lineArray[4]);
                   arrayStudent[column].Gender = char.Parse(lineArray[5]);
                   arrayStudent[column].Physics = int.Parse(lineArray[6]);
-
                   arrayStudent[column].Math = int.Parse(lineArray[7]);
-
                   arrayStudent[column].Inf = int.Parse(lineArray[8]);
-
                   arrayStudent[column].Grant = double.Parse(lineArray[9]);
-
-
-
-
                   countCharacter = 0;
                }
 
@@ -242,6 +234,7 @@ namespace Homework_6._1
                row++;
             }
 
+            //
          }
 
          return arrayStudent;
