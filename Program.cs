@@ -160,7 +160,6 @@ namespace Homework_6._1
             // Разделение строки на подстроки по пробелу и конвертация подстрок в double
             // Разделение строки на подстроки по пробелу и конвертация подстрок в double
             StringBuilder stringModified = new StringBuilder();
-            arrayStudent;
 
             char spaceCharacter = ' ';
             int row = 0;
@@ -173,20 +172,22 @@ namespace Homework_6._1
                {
                   while (countCharacter < line.Length)
                   {
+
                      if (spaceCharacter == line[countCharacter])
                      {
-                         string subLine = stringModified.ToString();
-                         arrayStudent[column] = subLine;
-                         //Group = parts[0],
-                         //Surname = parts[1],
-                         //Name = parts[2],
-                         //Dadsname = parts[3],
-                         //Year = int.Parse(parts[4]),
-                         //Gender = char.Parse(parts[5]),
-                         //Physics = int.Parse(parts[6]),
-                         //Math = int.Parse(parts[7]),
-                         //Inf = int.Parse(parts[8]),
-                         //Grant = double.Parse(parts[9])
+                        string subLine = " ";
+                        arrayStudent[column].Group = subLine[column].ToString();
+                        Group = parts[0],
+                        //Group = parts[0],
+                        //Surname = parts[1],
+                        //Name = parts[2],
+                        //Dadsname = parts[3],
+                        //Year = int.Parse(parts[4]),
+                        //Gender = char.Parse(parts[5]),
+                        //Physics = int.Parse(parts[6]),
+                        //Math = int.Parse(parts[7]),
+                        //Inf = int.Parse(parts[8]),
+                        //Grant = double.Parse(parts[9])
 
 
 
@@ -203,7 +204,7 @@ namespace Homework_6._1
                      if (countCharacter == line.Length - 1)
                      {
                         string subLine = stringModified.ToString();
-                        
+
                         stringModified.Clear();
                         column++;
                      }
