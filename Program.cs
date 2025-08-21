@@ -177,7 +177,7 @@ namespace Homework_6._1
                      {
                         string subLine = " ";
                         arrayStudent[column].Group = subLine[column].ToString();
-                        Group = parts[0],
+                        
                         //Group = parts[0],
                         //Surname = parts[1],
                         //Name = parts[2],
@@ -188,10 +188,6 @@ namespace Homework_6._1
                         //Math = int.Parse(parts[7]),
                         //Inf = int.Parse(parts[8]),
                         //Grant = double.Parse(parts[9])
-
-
-
-
 
                         stringModified.Clear();
                         column++;
