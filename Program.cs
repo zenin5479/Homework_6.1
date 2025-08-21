@@ -124,7 +124,6 @@ namespace Homework_6._1
          else
          {
             // Разделение строки на подстроки по пробелу и конвертация подстрок в double
-            StringBuilder stringModified = new StringBuilder();
             arrayStudent = new Student[allLines.Length];
             char spaceCharacter = ' ';
             int row = 0;
@@ -159,10 +158,6 @@ namespace Homework_6._1
                         //Inf = Convert.ToInt32(parts[8]),
                         //Grant = Convert.ToDouble(parts[9])
 
-
-
-
-                     arrayStudent.Add(Parse(line));
 
                      arrayStudent[row] = Convert.ToDouble(subLine);
                      stringModified.Clear();
