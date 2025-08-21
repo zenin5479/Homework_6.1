@@ -123,7 +123,6 @@ namespace Homework_6._1
          {
             // Разделение строки на подстроки по пробелу для определения количества столбцов в строке
             arrayStudent = new Student[allLines.Length];
-            int[] sizeArray = new int[allLines.Length];
             char symbolSpace = ' ';
             int countRow = 0;
             int countSymbol = 0;
@@ -146,7 +145,6 @@ namespace Homework_6._1
                   countSymbol++;
                }
 
-               sizeArray[countRow] = countСolumn;
                // 10 количество полей в структуре
                if (countСolumn != 10)
                {
@@ -160,6 +158,7 @@ namespace Homework_6._1
 
             // Разделение строки на подстроки по пробелу и конвертация подстрок в double
             int column = 0;
+            int row= 0;
             while (row < arrayDouble.GetLength(0))
             {
                string line = allLines[row];
