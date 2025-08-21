@@ -128,20 +128,20 @@ namespace Homework_6._1
             char spaceCharacter = ' ';
             int row = 0;
             int countCharacter = 0;
-            while (row < arrayStudent.GetLength(0))
+            if (arrayStudent.Length != 10)
             {
-               string line = allLines[row];
-               while (countCharacter < line.Length)
+               Console.WriteLine("Неверный формат строки");
+            }
+            else
+            {
+               while (row < arrayStudent.GetLength(0))
                {
-                  if (spaceCharacter == line[countCharacter])
+                  string line = allLines[row];
+                  while (countCharacter < line.Length)
                   {
-
-                     if (parts.Length != 10)
+                     if (spaceCharacter == line[countCharacter])
                      {
-                        Console.WriteLine("Неверный формат строки");
-                     }
-
-                     arrayStudent. = parts[0],
+                        arrayStudent. = parts[0],
                         Surname = parts[1],
                         Name = parts[2],
                         Dadsname = parts[3],
@@ -151,7 +151,7 @@ namespace Homework_6._1
                         Math = int.Parse(parts[7]),
                         Inf = int.Parse(parts[8]),
                         Grant = double.Parse(parts[9])
-                        //Year = Convert.ToInt32(parts[4]),
+                           //Year = Convert.ToInt32(parts[4]),
                         //Gender = Convert.ToChar(parts[5]),
                         //Physics = Convert.ToInt32(parts[6]),
                         //Math = Convert.ToInt32(parts[7]),
@@ -160,26 +160,31 @@ namespace Homework_6._1
 
 
                      arrayStudent[row] = Convert.ToDouble(subLine);
-                     stringModified.Clear();
-                  }
-                  else
-                  {
-                     stringModified.Append(line[countCharacter]);
+                        stringModified.Clear();
+                     }
+                     else
+                     {
+                        stringModified.Append(line[countCharacter]);
+                     }
+
+                     if (countCharacter == line.Length - 1)
+                     {
+                        string subLine = stringModified.ToString();
+                        arrayStudent[row] = Convert.ToDouble(subLine);
+                        stringModified.Clear();
+                     }
+
+                     countCharacter++;
                   }
 
-                  if (countCharacter == line.Length - 1)
-                  {
-                     string subLine = stringModified.ToString();
-                     arrayStudent[row] = Convert.ToDouble(subLine);
-                     stringModified.Clear();
-                  }
-
-                  countCharacter++;
+                  countCharacter = 0;
+                  row++;
                }
 
-               countCharacter = 0;
-               row++;
             }
+
+
+
          }
 
          return arrayStudent;
