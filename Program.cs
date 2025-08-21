@@ -158,22 +158,38 @@ namespace Homework_6._1
             }
 
             // Разделение строки на подстроки по пробелу и конвертация подстрок в double
+            // Разделение строки на подстроки по пробелу и конвертация подстрок в double
             StringBuilder stringModified = new StringBuilder();
+            arrayStudent;
+
             char spaceCharacter = ' ';
-            int column = 0;
             int row = 0;
+            int column = 0;
             int countCharacter = 0;
             while (row < allLines.Length)
             {
                string line = allLines[row];
-               while (column < allLines[row])
+               while (column < sizeArray[row])
                {
                   while (countCharacter < line.Length)
                   {
                      if (spaceCharacter == line[countCharacter])
                      {
+                        arrayStudent = parts[0]
+                        Surname = parts[1],
+                        Name = parts[2],
+                        Dadsname = parts[3],
+                        Year = int.Parse(parts[4]),
+                        Gender = char.Parse(parts[5]),
+                        Physics = int.Parse(parts[6]),
+                        Math = int.Parse(parts[7]),
+                        Inf = int.Parse(parts[8]),
+                        Grant = double.Parse(parts[9])
+
+
+
                         string subLine = stringModified.ToString();
-                        arrayDouble[row, column] = Convert.ToDouble(subLine);
+                       
                         stringModified.Clear();
                         column++;
                      }
@@ -185,7 +201,7 @@ namespace Homework_6._1
                      if (countCharacter == line.Length - 1)
                      {
                         string subLine = stringModified.ToString();
-                        arrayDouble[row, column] = Convert.ToDouble(subLine);
+                        
                         stringModified.Clear();
                         column++;
                      }
