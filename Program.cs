@@ -121,13 +121,7 @@ namespace Homework_6._1
          }
          else
          {
-            if (arrayStudent.Length != 10)
-            {
-               Console.WriteLine("Неверный формат строки");
-            }
-            else
-            {
-               // Разделение строки на подстроки по пробелу для определения количества столбцов в строке
+            // Разделение строки на подстроки по пробелу для определения количества столбцов в строке
                arrayStudent = new Student[allLines.Length];
                int[] sizeArray = new int[allLines.Length];
                char symbolSpace = ' ';
@@ -157,6 +151,16 @@ namespace Homework_6._1
                   countRow++;
                   countSymbol = 0;
                }
+            
+            
+            
+            if (countСolumn != 10)
+            {
+               Console.WriteLine("Неверный формат строки");
+            }
+            else
+            {
+               
 
                // Разделение строки на подстроки по пробелу и конвертация подстрок в double
                StringBuilder stringModified = new StringBuilder();
