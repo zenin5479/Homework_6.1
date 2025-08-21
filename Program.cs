@@ -106,6 +106,8 @@ namespace Homework_6._1
                person.Gender, person.Physics, person.Math, person.Inf, person.Grant);
          }
 
+         Student[] read = Enter2DArrayDouble(filePath, "spisok.txt");
+
          Console.ReadKey();
       }
 
@@ -217,16 +219,16 @@ namespace Homework_6._1
                      countCharacter++;
                   }
 
-                  arrayStudent[column].Group = lineArray[0];
-                  arrayStudent[column].Surname = lineArray[1];
-                  arrayStudent[column].Name = lineArray[2];
-                  arrayStudent[column].Dadsname = lineArray[3];
-                  arrayStudent[column].Year = int.Parse(lineArray[4]);
-                  arrayStudent[column].Gender = char.Parse(lineArray[5]);
-                  arrayStudent[column].Physics = int.Parse(lineArray[6]);
-                  arrayStudent[column].Math = int.Parse(lineArray[7]);
-                  arrayStudent[column].Inf = int.Parse(lineArray[8]);
-                  arrayStudent[column].Grant = double.Parse(lineArray[9]);
+                  arrayStudent[row].Group = lineArray[0];
+                  arrayStudent[row].Surname = lineArray[1];
+                  arrayStudent[row].Name = lineArray[2];
+                  arrayStudent[row].Dadsname = lineArray[3];
+                  arrayStudent[row].Year = int.Parse(lineArray[4]);
+                  arrayStudent[row].Gender = char.Parse(lineArray[5]);
+                  arrayStudent[row].Physics = int.Parse(lineArray[6]);
+                  arrayStudent[row].Math = int.Parse(lineArray[7]);
+                  arrayStudent[row].Inf = int.Parse(lineArray[8]);
+                  arrayStudent[row].Grant = double.Parse(lineArray[9]);
                   countCharacter = 0;
                }
 
