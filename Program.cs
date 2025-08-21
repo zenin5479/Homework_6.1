@@ -111,8 +111,6 @@ namespace Homework_6._1
 
       public static Student[] Enter2DArrayDouble(string path, string nameFile)
       {
-         // Двумерный массив вещественных чисел
-
          // Чтение файла за одну операцию
          string[] allLines = File.ReadAllLines(path);
          Student[] arrayStudent = { };
@@ -124,24 +122,15 @@ namespace Homework_6._1
          else
          {
             // Разделение строки на подстроки по пробелу и конвертация подстрок в double
-            arrayStudent = new Student[allLines.Length];
-            char spaceCharacter = ' ';
-            int row = 0;
-            int countCharacter = 0;
+
             if (arrayStudent.Length != 10)
             {
                Console.WriteLine("Неверный формат строки");
             }
             else
             {
-               int indexLines = 0;
-               while (indexLines < allLines.Length)
-               {
-                  allLines[indexLines] = allLines[indexLines];
-                  indexLines++;
-               }
-
                // Разделение строки на подстроки по пробелу для определения количества столбцов в строке
+               arrayStudent = new Student[allLines.Length];
                int[] sizeArray = new int[allLines.Length];
                char symbolSpace = ' ';
                int countRow = 0;
