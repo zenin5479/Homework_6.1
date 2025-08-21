@@ -155,12 +155,7 @@ namespace Homework_6._1
                countСolumn = 0;
                countRow++;
                countSymbol = 0;
-
-
             }
-
-
-
 
             // Разделение строки на подстроки по пробелу и конвертация подстрок в double
             StringBuilder stringModified = new StringBuilder();
