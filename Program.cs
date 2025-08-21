@@ -159,10 +159,10 @@ namespace Homework_6._1
             // Разделение строки на подстроки по пробелу и конвертация подстрок в double
             int column = 0;
             int row= 0;
-            while (row < arrayDouble.GetLength(0))
+            while (row < allLines.Length)
             {
                string line = allLines[row];
-               while (column < sizeArray[row])
+               while (column < allLines.Length[row])
                {
                   while (countCharacter < line.Length)
                   {
