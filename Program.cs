@@ -182,8 +182,6 @@ namespace Homework_6._1
             Console.WriteLine("Максимум равен: {0}", max);
             Console.WriteLine("Минимум равен: {0}", min);
 
-
-
             // Разделение строки на подстроки по пробелу и конвертация подстрок в структуру
             string[] lineArray = new string[max];
             char spaceCharacter = ' ';
