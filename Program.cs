@@ -141,7 +141,7 @@ namespace Homework_6._1
                         Console.WriteLine("Неверный формат строки");
                      }
 
-                     Group = parts[0],
+                     arrayStudent. = parts[0],
                         Surname = parts[1],
                         Name = parts[2],
                         Dadsname = parts[3],
