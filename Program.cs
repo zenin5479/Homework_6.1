@@ -147,57 +147,61 @@ namespace Homework_6._1
                }
 
                sizeArray[countRow] = countСolumn;
+               if (countСolumn != 10)
+               {
+                  Console.WriteLine("Неверный формат строки");
+               }
+
                countСolumn = 0;
                countRow++;
                countSymbol = 0;
+
+
             }
 
-            if (countСolumn != 10)
+
+
+
+            // Разделение строки на подстроки по пробелу и конвертация подстрок в double
+            StringBuilder stringModified = new StringBuilder();
+            int column = 0;
+            while (row < arrayDouble.GetLength(0))
             {
-               Console.WriteLine("Неверный формат строки");
-            }
-            else
-            {
-               // Разделение строки на подстроки по пробелу и конвертация подстрок в double
-               StringBuilder stringModified = new StringBuilder();
-               int column = 0;
-               while (row < arrayDouble.GetLength(0))
+               string line = allLines[row];
+               while (column < sizeArray[row])
                {
-                  string line = allLines[row];
-                  while (column < sizeArray[row])
+                  while (countCharacter < line.Length)
                   {
-                     while (countCharacter < line.Length)
+                     if (spaceCharacter == line[countCharacter])
                      {
-                        if (spaceCharacter == line[countCharacter])
-                        {
-                           string subLine = stringModified.ToString();
-                           arrayDouble[row, column] = Convert.ToDouble(subLine);
-                           stringModified.Clear();
-                           column++;
-                        }
-                        else
-                        {
-                           stringModified.Append(line[countCharacter]);
-                        }
-
-                        if (countCharacter == line.Length - 1)
-                        {
-                           string subLine = stringModified.ToString();
-                           arrayDouble[row, column] = Convert.ToDouble(subLine);
-                           stringModified.Clear();
-                           column++;
-                        }
-
-                        countCharacter++;
+                        string subLine = stringModified.ToString();
+                        arrayDouble[row, column] = Convert.ToDouble(subLine);
+                        stringModified.Clear();
+                        column++;
+                     }
+                     else
+                     {
+                        stringModified.Append(line[countCharacter]);
                      }
 
-                     countCharacter = 0;
+                     if (countCharacter == line.Length - 1)
+                     {
+                        string subLine = stringModified.ToString();
+                        arrayDouble[row, column] = Convert.ToDouble(subLine);
+                        stringModified.Clear();
+                        column++;
+                     }
+
+                     countCharacter++;
                   }
 
-                  column = 0;
-                  row++;
+                  countCharacter = 0;
                }
+
+               column = 0;
+               row++;
             }
+
          }
 
          return arrayStudent;
