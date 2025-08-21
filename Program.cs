@@ -202,34 +202,22 @@ namespace Homework_6._1
                         lineArray[column] = subLine;
                         stringModified.Clear();
                         column++;
-
-                        //Group = parts[0],
-                        //Surname = parts[1],
-                        //Name = parts[2],
-                        //Dadsname = parts[3],
-                        //Year = int.Parse(parts[4]),
-                        //Gender = char.Parse(parts[5]),
-                        //Physics = int.Parse(parts[6]),
-                        //Math = int.Parse(parts[7]),
-                        //Inf = int.Parse(parts[8]),
-                        //Grant = double.Parse(parts[9])
-
+                     }
+                     else if (countCharacter == line.Length - 1)
+                     {
+                        string subLine = stringModified.ToString();
+                        lineArray[column] = subLine;
+                        stringModified.Clear();
+                        column++;
                      }
                      else
                      {
                         stringModified.Append(line[countCharacter]);
                      }
 
-                     if (countCharacter == line.Length - 1)
-                     {
-                        string subLine = stringModified.ToString();
-                        stringModified.Clear();
-                        column++;
-                     }
-
                      countCharacter++;
                   }
-                  
+
                   arrayStudent[column].Group = lineArray[0];
                   arrayStudent[column].Surname = lineArray[1];
                   arrayStudent[column].Name = lineArray[2];
@@ -244,7 +232,7 @@ namespace Homework_6._1
 
                   arrayStudent[column].Grant = double.Parse(lineArray[9]);
 
-                 
+
 
 
                   countCharacter = 0;
