@@ -158,7 +158,6 @@ namespace Homework_6._1
             }
 
             // Разделение строки на подстроки по пробелу и конвертация подстрок в double
-            // Разделение строки на подстроки по пробелу и конвертация подстрок в double
             StringBuilder stringModified = new StringBuilder();
 
             char spaceCharacter = ' ';
