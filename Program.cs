@@ -184,6 +184,7 @@ namespace Homework_6._1
 
             // Разделение строки на подстроки по пробелу и конвертация подстрок в структуру
             string[] lineArray = new string[max];
+            StringBuilder stringModified = new StringBuilder();
             char spaceCharacter = ' ';
             int row = 0;
             int column = 0;
@@ -197,7 +198,12 @@ namespace Homework_6._1
                   {
                      if (spaceCharacter == line[countCharacter])
                      {
-                        string subLine = " ";
+                        string subLine = stringModified.ToString();
+                        lineArray[column] = subLine;
+                        //Console.Write(lineArray[column] + " ");
+                        stringModified.Clear();
+                        column++;
+
                         arrayStudent[column].Group = subLine[column].ToString();
 
                         //Group = parts[0],
@@ -211,12 +217,10 @@ namespace Homework_6._1
                         //Inf = int.Parse(parts[8]),
                         //Grant = double.Parse(parts[9])
 
-                        //stringModified.Clear();
-                        column++;
                      }
                      else
                      {
-                        //stringModified.Append(line[countCharacter]);
+                        stringModified.Append(line[countCharacter]);
                      }
 
                      if (countCharacter == line.Length - 1)
