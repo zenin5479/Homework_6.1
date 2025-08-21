@@ -200,11 +200,8 @@ namespace Homework_6._1
                      {
                         string subLine = stringModified.ToString();
                         lineArray[column] = subLine;
-                        //Console.Write(lineArray[column] + " ");
                         stringModified.Clear();
                         column++;
-
-                        arrayStudent[column].Group = subLine[column].ToString();
 
                         //Group = parts[0],
                         //Surname = parts[1],
@@ -225,14 +222,30 @@ namespace Homework_6._1
 
                      if (countCharacter == line.Length - 1)
                      {
-                        //string subLine = stringModified.ToString();
-
-                        //stringModified.Clear();
+                        string subLine = stringModified.ToString();
+                        stringModified.Clear();
                         column++;
                      }
 
                      countCharacter++;
                   }
+                  
+                  arrayStudent[column].Group = lineArray[0];
+                  arrayStudent[column].Surname = lineArray[1];
+                  arrayStudent[column].Name = lineArray[2];
+                  arrayStudent[column].Dadsname = lineArray[3];
+                  arrayStudent[column].Year = int.Parse(lineArray[4]);
+                  arrayStudent[column].Gender = char.Parse(lineArray[5]);
+                  arrayStudent[column].Physics = int.Parse(lineArray[6]);
+
+                  arrayStudent[column].Math = int.Parse(lineArray[7]);
+
+                  arrayStudent[column].Inf = int.Parse(lineArray[8]);
+
+                  arrayStudent[column].Grant = double.Parse(lineArray[9]);
+
+                 
+
 
                   countCharacter = 0;
                }
