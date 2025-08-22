@@ -24,7 +24,7 @@
       //   Console.WriteLine("Текст из файла:\n{0}", textFromFile);
       //}
 
-      //string path = "spisok.txt";
+      //string path = "people.txt";
       //string[] originalText =
       //{
       //   "IP-21; Иванов Иван Иванович; 2000; М; 4; 5; 3; 5000\n" +
@@ -51,7 +51,6 @@
       //   i++; 
       //}
 
-      //
       // // Путь к файлу
       //string path = "note.txt";
       // Путь к файлу
