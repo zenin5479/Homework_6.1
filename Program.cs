@@ -189,8 +189,8 @@ namespace Homework_6._1
                columns++;
             }
 
-            Console.WriteLine("Максимум равен: {0}", max);
-            Console.WriteLine("Минимум равен: {0}", min);
+            //Console.WriteLine("Максимум равен: {0}", max);
+            //Console.WriteLine("Минимум равен: {0}", min);
 
             // Разделение строки на подстроки по пробелу и конвертация подстрок в структуру
             string[] lineArray = new string[max];
