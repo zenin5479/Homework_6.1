@@ -213,17 +213,19 @@ namespace Homework_6._1
                         stringModified.Clear();
                         column++;
                      }
-                     //else if (countCharacter == line.Length - 1)
-                     //{
-                     //   string subLine = stringModified.ToString();
-                     //   lineArray[column] = subLine;
-                     //   stringModified.Clear();
-                     //   column++;
-                     //}
                      else
                      {
                         stringModified.Append(line[countCharacter]);
                      }
+
+                     if (countCharacter == line.Length - 1)
+                     {
+                        string subLine = stringModified.ToString();
+                        lineArray[column] = subLine;
+                        stringModified.Clear();
+                        column++;
+                     }
+
 
                      countCharacter++;
                   }
@@ -238,6 +240,7 @@ namespace Homework_6._1
                   arrayStudent[row].Math = int.Parse(lineArray[7]);
                   arrayStudent[row].Inf = int.Parse(lineArray[8]);
                   arrayStudent[row].Grant = double.Parse(lineArray[9]);
+
                   countCharacter = 0;
                }
 
