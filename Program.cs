@@ -106,12 +106,12 @@ namespace Homework_6._1
                person.Gender, person.Physics, person.Math, person.Inf, person.Grant);
          }
 
-         Student[] read = Enter2DArrayDouble(filePath, "spisok.txt");
+         Student[] read = ReadStructFile(filePath, "spisok.txt");
 
          Console.ReadKey();
       }
 
-      public static Student[] Enter2DArrayDouble(string path, string nameFile)
+      public static Student[] ReadStructFile(string path, string nameFile)
       {
          // Чтение файла за одну операцию
          string[] allLines = File.ReadAllLines(path);
