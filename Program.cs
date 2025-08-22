@@ -134,7 +134,7 @@ namespace Homework_6._1
          {
             // Разделение строки на подстроки по пробелу для определения количества столбцов в строке
             arrayStudent = new Student[allLines.Length];
-            int[] sizeArray = new int[allLines.Length];
+            int[] сolumnArray = new int[allLines.Length];
             char symbolSpace = ' ';
             int countRow = 0;
             int countSymbol = 0;
@@ -157,7 +157,7 @@ namespace Homework_6._1
                   countSymbol++;
                }
 
-               sizeArray[countRow] = countСolumn;
+               сolumnArray[countRow] = countСolumn;
                // 10 количество полей в структуре
                if (countСolumn != 10)
                {
@@ -171,20 +171,20 @@ namespace Homework_6._1
 
             // Поиск максимального и минимального элемента массива
             // Cчитаем, что максимум - это первый элемент массива
-            int max = sizeArray[0];
+            int max = сolumnArray[0];
             // Cчитаем, что минимум - это первый элемент массива
-            int min = sizeArray[0];
+            int min = сolumnArray[0];
             int columns = 0;
-            while (columns < sizeArray.Length)
+            while (columns < сolumnArray.Length)
             {
-               if (max < sizeArray[columns])
+               if (max < сolumnArray[columns])
                {
-                  max = sizeArray[columns];
+                  max = сolumnArray[columns];
                }
 
-               if (min > sizeArray[columns])
+               if (min > сolumnArray[columns])
                {
-                  min = sizeArray[columns];
+                  min = сolumnArray[columns];
                }
 
                columns++;
@@ -203,7 +203,7 @@ namespace Homework_6._1
             while (row < allLines.Length)
             {
                string line = allLines[row];
-               while (column < sizeArray[row])
+               while (column < сolumnArray[row])
                {
                   while (countCharacter < line.Length)
                   {
@@ -243,9 +243,9 @@ namespace Homework_6._1
 
                   countCharacter = 0;
                }
+
                row++;
                column = 0;
-
             }
          }
 
