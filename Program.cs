@@ -133,6 +133,7 @@ namespace Homework_6._1
          else
          {
             // Разделение строки на подстроки по пробелу для определения количества столбцов в строке
+            arrayStudent = new Student[allLines.Length];
             int[] sizeArray = new int[allLines.Length];
             char symbolSpace = ' ';
             int countRow = 0;
