@@ -52,15 +52,6 @@
       //}
 
       //
-      //Console.OutputEncoding = Encoding.UTF8;
-      //string inputFile = "input.txt";
-      //Toy[] toys = ReadFile(inputFile);
-      //// Выводим исходный массив игрушек
-      //Console.WriteLine("--------Исходный массив--------");
-      //Display(toys);
-      //Console.WriteLine("-------------------------------");
-
-      //
       // // Путь к файлу
       //string path = "note.txt";
       // Путь к файлу
