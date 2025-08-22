@@ -243,9 +243,9 @@ namespace Homework_6._1
 
                   countCharacter = 0;
                }
-
-               column = 0;
                row++;
+               column = 0;
+
             }
          }
 
