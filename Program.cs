@@ -213,13 +213,13 @@ namespace Homework_6._1
                         stringModified.Clear();
                         column++;
                      }
-                     else if (countCharacter == line.Length - 1)
-                     {
-                        string subLine = stringModified.ToString();
-                        lineArray[column] = subLine;
-                        stringModified.Clear();
-                        column++;
-                     }
+                     //else if (countCharacter == line.Length - 1)
+                     //{
+                     //   string subLine = stringModified.ToString();
+                     //   lineArray[column] = subLine;
+                     //   stringModified.Clear();
+                     //   column++;
+                     //}
                      else
                      {
                         stringModified.Append(line[countCharacter]);
