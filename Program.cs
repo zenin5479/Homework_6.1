@@ -149,10 +149,10 @@ namespace Homework_6._1
                      countСolumn++;
                   }
 
-                  if (countSymbol == line.Length - 1)
-                  {
-                     countСolumn++;
-                  }
+                  //if (countSymbol == line.Length - 1)
+                  //{
+                  //   countСolumn++;
+                  //}
 
                   countSymbol++;
                }
