@@ -163,8 +163,9 @@ namespace Homework_6._1
                {
                   Console.WriteLine("Неверный формат строки {0}", countRow);
                }
-               countСolumn = 0;
+
                countRow++;
+               countСolumn = 0;
                countSymbol = 0;
             }
 
