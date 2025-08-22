@@ -40,7 +40,7 @@ namespace Homework_6._1
          string fileEnter = "spisok.txt";
          string pathStruct = Path.GetFullPath(fileEnter);
          string writeStruct = "writestruct.bin";
-         string readStruct = "writestruct.bin";
+         string readStruct = "readstruct.bin";
          string fileInput = "finish.txt";
 
          // Создаем массив структур для записи
