@@ -108,6 +108,15 @@ namespace Homework_6._1
 
          Student[] read = ReadStructFile(filePath, "spisok.txt");
 
+         Console.WriteLine("Прочитанные данные:");
+         for (int i = 0; i < read.Length; i++)
+         {
+            Student personTwo = read[i];
+            Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
+               personTwo.Group, personTwo.Surname, personTwo.Name, personTwo.Dadsname, personTwo.Year,
+               personTwo.Gender, personTwo.Physics, personTwo.Math, personTwo.Inf, personTwo.Grant);
+         }
+
          Console.ReadKey();
       }
 
