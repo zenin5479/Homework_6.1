@@ -246,8 +246,6 @@ namespace Homework_6._1
                column = 0;
                row++;
             }
-
-            //
          }
 
          return arrayStudent;
