@@ -100,8 +100,7 @@ namespace Homework_6._1
 
          // Запись структур в файл
          WriteStructFile(pathStruct, people);
-         // Чтение структур из файла
-         Student[] readPeople = ReadStructFile(pathStruct);
+        
          // Вывод прочитанных данных
          Console.WriteLine("Прочитанные данные:");
          for (int i = 0; i < readPeople.Length; i++)
