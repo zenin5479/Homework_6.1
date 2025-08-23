@@ -39,6 +39,8 @@ namespace Homework_6._1
          string fileEnter = "spisok.txt";
          string pathStruct = Path.GetFullPath(fileEnter);
          string writeStruct = "writestruct.bin";
+         string pathWrite = Path.GetFullPath(writeStruct);
+
          string readStruct = "readstruct.bin";
          string fileInput = "finish.txt";
 
@@ -111,6 +113,19 @@ namespace Homework_6._1
                personTwo.Group, personTwo.Surname, personTwo.Name, personTwo.Dadsname, personTwo.Year,
                personTwo.Gender, personTwo.Physics, personTwo.Math, personTwo.Inf, personTwo.Grant);
          }
+
+
+         for (int i = 0; i < people.Length; i++)
+         {
+            Student personThree = read[i];
+            byte[] bytes = Encoding.ASCII.GetBytes(personThree);
+            File.WriteAllBytes(pathWrite, bytes);
+
+            writer.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
+               personThree.Group, personThree.Surname, personThree.Name, personThree.Dadsname, personThree.Year,
+               personThree.Gender, personThree.Physics, personThree.Math, personThree.Inf, personThree.Grant);
+         }
+
 
          Console.ReadKey();
       }
