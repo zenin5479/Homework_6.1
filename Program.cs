@@ -98,9 +98,8 @@ namespace Homework_6._1
 
          // Запись структур в файл
          WriteStructFile(pathStruct, people);
-         
-         // Чтение структур из файла
 
+         // Чтение структур из файла
          Student[] read = MethodsForStruct.ReadStructFile(pathStruct, "spisok.txt");
          // Вывод прочитанных данных
          Console.WriteLine("Прочитанные данные:");
@@ -114,37 +113,6 @@ namespace Homework_6._1
 
          Console.ReadKey();
       }
-
-      // Метод для создания структуры из строки
-      public static Student Parse(string line)
-      {
-         string[] parts = line.Split(' ');
-         if (parts.Length != 10)
-         {
-            Console.WriteLine("Неверный формат строки");
-         }
-
-         return new Student
-         {
-            Group = parts[0],
-            Surname = parts[1],
-            Name = parts[2],
-            Dadsname = parts[3],
-            Year = int.Parse(parts[4]),
-            Gender = char.Parse(parts[5]),
-            Physics = int.Parse(parts[6]),
-            Math = int.Parse(parts[7]),
-            Inf = int.Parse(parts[8]),
-            Grant = double.Parse(parts[9])
-            //Year = Convert.ToInt32(parts[4]),
-            //Gender = Convert.ToChar(parts[5]),
-            //Physics = Convert.ToInt32(parts[6]),
-            //Math = Convert.ToInt32(parts[7]),
-            //Inf = Convert.ToInt32(parts[8]),
-            //Grant = Convert.ToDouble(parts[9])
-         };
-      }
-
 
       // Метод для записи массива структур в файл
       static void WriteStructFile(string path, Student[] people)
