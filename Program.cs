@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
@@ -99,11 +98,11 @@ namespace Homework_6._1
 
          // Запись структур в файл
          WriteStructFile(pathStruct, people);
+         
          // Чтение структур из файла
-        
-        
+
          Student[] read = MethodsForStruct.ReadStructFile(pathStruct, "spisok.txt");
- // Вывод прочитанных данных
+         // Вывод прочитанных данных
          Console.WriteLine("Прочитанные данные:");
          for (int i = 0; i < read.Length; i++)
          {
