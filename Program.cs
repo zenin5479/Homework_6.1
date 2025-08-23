@@ -156,23 +156,6 @@ namespace Homework_6._1
          };
       }
 
-      static Student[] ReadStructFile(string path)
-      {
-         List<Student> people = new List<Student>();
-         using (StreamReader reader = new StreamReader(path, Encoding.UTF8))
-         {
-            string line;
-            while ((line = reader.ReadLine()) != null)
-            {
-               if (!string.IsNullOrWhiteSpace(line))
-               {
-                  people.Add(Parse(line));
-               }
-            }
-         }
-
-         return people.ToArray();
-      }
 
       // Метод для записи массива структур в файл
       static void WriteStructFile(string path, Student[] people)
