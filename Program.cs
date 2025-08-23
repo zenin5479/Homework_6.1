@@ -156,7 +156,6 @@ namespace Homework_6._1
          };
       }
 
-      // Метод для чтения массива структур из файла
       static Student[] ReadStructFile(string path)
       {
          List<Student> people = new List<Student>();
