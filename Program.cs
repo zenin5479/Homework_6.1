@@ -114,15 +114,6 @@ namespace Homework_6._1
                personTwo.Gender, personTwo.Physics, personTwo.Math, personTwo.Inf, personTwo.Grant);
          }
 
-
-         for (int i = 0; i < people.Length; i++)
-         {
-            Student personThree = read[i];
-            byte[] bytes = Encoding.ASCII.GetBytes(personThree);
-            File.WriteAllBytes(pathWrite, bytes);
-         }
-
-
          Console.ReadKey();
       }
 
