@@ -120,10 +120,6 @@ namespace Homework_6._1
             Student personThree = read[i];
             byte[] bytes = Encoding.ASCII.GetBytes(personThree);
             File.WriteAllBytes(pathWrite, bytes);
-
-            writer.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
-               personThree.Group, personThree.Surname, personThree.Name, personThree.Dadsname, personThree.Year,
-               personThree.Gender, personThree.Physics, personThree.Math, personThree.Inf, personThree.Grant);
          }
 
 
