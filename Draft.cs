@@ -2,28 +2,6 @@
 {
    internal class Draft
    {
-      //// Запись в файл
-      //using (FileStream fstream = new FileStream(path, FileMode.OpenOrCreate))
-      //{
-      //   // Преобразуем строку в байты
-      //   byte[] buffer = Encoding.Default.GetBytes(originalText);
-      //   // Запись массива байтов в файл
-      //   fstream.Write(buffer, 0, buffer.Length);
-      //   Console.WriteLine("Текст записан в файл");
-      //}
-
-      //// Чтение из файла
-      //using (FileStream fstream = File.OpenRead(path))
-      //{
-      //   // Выделяем массив для считывания данных из файла
-      //   byte[] buffer = new byte[fstream.Length];
-      //   // Считываем данные
-      //   int read = fstream.Read(buffer, 0, buffer.Length);
-      //   // Декодируем байты в строку
-      //   string textFromFile = Encoding.Default.GetString(buffer);
-      //   Console.WriteLine("Текст из файла:\n{0}", textFromFile);
-      //}
-
       //string path = "people.txt";
       //string[] originalText =
       //{
