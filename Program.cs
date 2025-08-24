@@ -40,12 +40,54 @@ namespace Homework_6._1
       public double Grant;
    }
 
-   public struct Person
+   // Простая структура с разными типами данных
+   public struct Employee
    {
       public int Id;
       public string Name;
       public double Salary;
-      public DateTime BirthDate;
+      public DateTime HireDate;
+      public bool IsActive;
+      public byte DepartmentId;
+   }
+   public class BinaryStructConverter
+   {
+      // Преобразование структуры в массив байтов
+      public static byte[] StructToBytes(Employee employee)
+      {
+         using (MemoryStream memoryStream = new MemoryStream())
+         using (BinaryWriter writer = new BinaryWriter(memoryStream, Encoding.UTF8))
+         {
+            // Записываем все поля структуры по порядку
+            writer.Write(employee.Id);           // 4 байта
+            writer.Write(employee.Name ?? "");   // длина + байты строки
+            writer.Write(employee.Salary);       // 8 байт
+            writer.Write(employee.HireDate.ToBinary()); // 8 байт
+            writer.Write(employee.IsActive);     // 1 байт
+            writer.Write(employee.DepartmentId); // 1 байт
+
+            return memoryStream.ToArray();
+         }
+      }
+
+      // Преобразование массива байтов обратно в структуру
+      public static Employee BytesToStruct(byte[] bytes)
+      {
+         using (MemoryStream memoryStream = new MemoryStream(bytes))
+         using (BinaryReader reader = new BinaryReader(memoryStream, Encoding.UTF8))
+         {
+            Employee employee = new Employee();
+
+            employee.Id = reader.ReadInt32();
+            employee.Name = reader.ReadString();
+            employee.Salary = reader.ReadDouble();
+            employee.HireDate = DateTime.FromBinary(reader.ReadInt64());
+            employee.IsActive = reader.ReadBoolean();
+            employee.DepartmentId = reader.ReadByte();
+
+            return employee;
+         }
+      }
    }
 
    internal class Program
@@ -130,45 +172,64 @@ namespace Homework_6._1
                personTwo.Gender, personTwo.Physics, personTwo.Math, personTwo.Inf, personTwo.Grant);
          }
 
-         
-         // Пример 2: Структура со строкой
-         PersonWithString person = new PersonWithString { Id = 1, Name = "Тест", Age = 25 };
-         byte[] personBytes = StringStructConverter.StructToBytes(person);
-         PersonWithString restoredPerson = StringStructConverter.BytesToStruct(personBytes);
+         // Создаем экземпляр структуры
+         Employee employee = new Employee
+         {
+            Id = 12345,
+            Name = "Иван Петров",
+            Salary = 75000.50,
+            HireDate = new DateTime(2020, 3, 15),
+            IsActive = true,
+            DepartmentId = 5
+         };
 
-         // Запись в файл
-         File.WriteAllBytes("person.dat", personBytes);
+         Console.WriteLine("Исходная структура:");
+         PrintEmployee(employee);
 
+         // Преобразуем структуру в массив байтов
+         byte[] bytes = BinaryStructConverter.StructToBytes(employee);
 
+         Console.WriteLine($"\nМассив байтов ({bytes.Length} байт):");
+         Console.WriteLine(BitConverter.ToString(bytes));
+
+         // Восстанавливаем структуру из байтов
+         Employee restoredEmployee = BinaryStructConverter.BytesToStruct(bytes);
+
+         Console.WriteLine("\nВосстановленная структура:");
+         PrintEmployee(restoredEmployee);
+
+         // Сохраняем в файл
+         SaveToFile(employee, "employee.dat");
+
+         // Загружаем из файла
+         Employee fileEmployee = LoadFromFile("employee.dat");
+
+         Console.WriteLine("\nЗагружено из файла:");
+         PrintEmployee(fileEmployee);
          Console.ReadKey();
       }
 
-      static byte[] StructToBytes(Person person)
+      static void PrintEmployee(Employee emp)
       {
-         using (var memoryStream = new MemoryStream())
-         using (var writer = new BinaryWriter(memoryStream, Encoding.UTF8))
-         {
-            writer.Write(person.Id);
-            writer.Write(person.Name ?? "");
-            writer.Write(person.Salary);
-            writer.Write(person.BirthDate.ToBinary());
-            return memoryStream.ToArray();
-         }
+         Console.WriteLine($"ID: {emp.Id}");
+         Console.WriteLine($"Name: {emp.Name}");
+         Console.WriteLine($"Salary: {emp.Salary:C}");
+         Console.WriteLine($"HireDate: {emp.HireDate:yyyy-MM-dd}");
+         Console.WriteLine($"IsActive: {emp.IsActive}");
+         Console.WriteLine($"Department: {emp.DepartmentId}");
       }
 
-      static Person BytesToStruct(byte[] bytes)
+      static void SaveToFile(Employee employee, string filename)
       {
-         using (var memoryStream = new MemoryStream(bytes))
-         using (var reader = new BinaryReader(memoryStream, Encoding.UTF8))
-         {
-            return new Person
-            {
-               Id = reader.ReadInt32(),
-               Name = reader.ReadString(),
-               Salary = reader.ReadDouble(),
-               BirthDate = DateTime.FromBinary(reader.ReadInt64())
-            };
-         }
+         byte[] bytes = BinaryStructConverter.StructToBytes(employee);
+         File.WriteAllBytes(filename, bytes);
+         Console.WriteLine($"\nСохранено в файл: {filename}");
+      }
+
+      static Employee LoadFromFile(string filename)
+      {
+         byte[] bytes = File.ReadAllBytes(filename);
+         return BinaryStructConverter.BytesToStruct(bytes);
       }
 
 
