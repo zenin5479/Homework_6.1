@@ -156,7 +156,6 @@ namespace Homework_6._1
 
          // Восстанавливаем структуру из байтов
          Employee restoredEmployee = BytesToStruct(bytes);
-
          Console.WriteLine("\nВосстановленная структура:");
          PrintEmployee(restoredEmployee);
 
@@ -165,6 +164,7 @@ namespace Homework_6._1
 
          // Загружаем из файла
          Employee fileEmployee = LoadFromFile("employee.dat");
+
          Console.WriteLine("\nЗагружено из файла:");
          PrintEmployee(fileEmployee);
 
