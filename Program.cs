@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Text;
 
@@ -122,8 +123,47 @@ namespace Homework_6._1
                personTwo.Gender, personTwo.Physics, personTwo.Math, personTwo.Inf, personTwo.Grant);
          }
 
+         
+         // Пример 2: Структура со строкой
+         PersonWithString person = new PersonWithString { Id = 1, Name = "Тест", Age = 25 };
+         byte[] personBytes = StringStructConverter.StructToBytes(person);
+         PersonWithString restoredPerson = StringStructConverter.BytesToStruct(personBytes);
+
+         // Запись в файл
+         File.WriteAllBytes("person.dat", personBytes);
+
+
          Console.ReadKey();
       }
+
+      static byte[] StructToBytes(Person person)
+      {
+         using (var memoryStream = new MemoryStream())
+         using (var writer = new BinaryWriter(memoryStream, Encoding.UTF8))
+         {
+            writer.Write(person.Id);
+            writer.Write(person.Name ?? "");
+            writer.Write(person.Salary);
+            writer.Write(person.BirthDate.ToBinary());
+            return memoryStream.ToArray();
+         }
+      }
+
+      static Person BytesToStruct(byte[] bytes)
+      {
+         using (var memoryStream = new MemoryStream(bytes))
+         using (var reader = new BinaryReader(memoryStream, Encoding.UTF8))
+         {
+            return new Person
+            {
+               Id = reader.ReadInt32(),
+               Name = reader.ReadString(),
+               Salary = reader.ReadDouble(),
+               BirthDate = DateTime.FromBinary(reader.ReadInt64())
+            };
+         }
+      }
+
 
       // Метод для записи массива структур в файл
       static void WriteStructFile(string path, Student[] people)
