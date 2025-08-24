@@ -166,6 +166,7 @@ namespace Homework_6._1
 
          Console.WriteLine("\nЗагружено из файла:");
          PrintEmployee(fileEmployee);
+
          Console.ReadKey();
       }
 
