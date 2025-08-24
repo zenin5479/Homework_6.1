@@ -204,6 +204,39 @@ namespace Homework_6._1
          Console.ReadKey();
       }
 
+      // Преобразование структуры в массив байтов
+      public static byte[] StructToBytes(Employee employee)
+      {
+         using MemoryStream memoryStream = new MemoryStream();
+         using BinaryWriter writer = new BinaryWriter(memoryStream, Encoding.UTF8);
+         // Записываем все поля структуры по порядку
+         writer.Write(employee.Id);           // 4 байта
+         writer.Write(employee.Name);   // длина + байты строки
+         writer.Write(employee.Salary);       // 8 байт
+         writer.Write(employee.HireDate.ToBinary()); // 8 байт
+         writer.Write(employee.IsActive);     // 1 байт
+         writer.Write(employee.DepartmentId); // 1 байт
+
+         return memoryStream.ToArray();
+      }
+
+      // Преобразование массива байтов обратно в структуру
+      public static Employee BytesToStruct(byte[] bytes)
+      {
+         using MemoryStream memoryStream = new MemoryStream(bytes);
+         using BinaryReader reader = new BinaryReader(memoryStream, Encoding.UTF8);
+         Employee employee = new Employee();
+
+         employee.Id = reader.ReadInt32();
+         employee.Name = reader.ReadString();
+         employee.Salary = reader.ReadDouble();
+         employee.HireDate = DateTime.FromBinary(reader.ReadInt64());
+         employee.IsActive = reader.ReadBoolean();
+         employee.DepartmentId = reader.ReadByte();
+
+         return employee;
+      }
+
       static void PrintEmployee(Employee emp)
       {
          Console.WriteLine($"ID: {emp.Id}");
@@ -226,7 +259,6 @@ namespace Homework_6._1
          byte[] bytes = File.ReadAllBytes(filename);
          return BinaryStructConverter.BytesToStruct(bytes);
       }
-
 
       // Метод для записи массива структур в файл
       static void WriteStructFile(string path, Student[] people)
