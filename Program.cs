@@ -213,7 +213,7 @@ namespace Homework_6._1
       {
          Console.WriteLine($"ID: {emp.Id}");
          Console.WriteLine($"Name: {emp.Name}");
-         Console.WriteLine($"Salary: {emp.Salary:C}");
+         Console.WriteLine($"Salary: {emp.Salary}");
          Console.WriteLine($"HireDate: {emp.HireDate:yyyy-MM-dd}");
          Console.WriteLine($"IsActive: {emp.IsActive}");
          Console.WriteLine($"Department: {emp.DepartmentId}");
