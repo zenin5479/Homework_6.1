@@ -178,8 +178,8 @@ namespace Homework_6._1
          using MemoryStream memoryStream = new MemoryStream();
          using BinaryWriter writer = new BinaryWriter(memoryStream, Encoding.UTF8);
          // Записываем все поля структуры по порядку
-         writer.Write(employee.Id);           // 4 байта
-         writer.Write(employee.Name);   // длина + байты строки
+         writer.Write(employee.Id);          
+         writer.Write(employee.Name);   
          writer.Write(employee.Salary);       // 8 байт
          writer.Write(employee.HireDate.ToBinary()); // 8 байт
          writer.Write(employee.IsActive);     // 1 байт
