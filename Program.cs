@@ -32,6 +32,14 @@ namespace Homework_6._1
       public double Grant;
    }
 
+   public struct Person
+   {
+      public int Id;
+      public string Name;
+      public double Salary;
+      public DateTime BirthDate;
+   }
+
    internal class Program
    {
       static void Main(string[] args)
