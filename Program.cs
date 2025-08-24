@@ -165,7 +165,6 @@ namespace Homework_6._1
 
          // Загружаем из файла
          Employee fileEmployee = LoadFromFile("employee.dat");
-
          Console.WriteLine("\nЗагружено из файла:");
          PrintEmployee(fileEmployee);
 
@@ -194,7 +193,7 @@ namespace Homework_6._1
          using MemoryStream memoryStream = new MemoryStream(bytes);
          using BinaryReader reader = new BinaryReader(memoryStream, Encoding.UTF8);
          Employee employee = new Employee();
-
+         // Читаем все поля структуры по порядку
          employee.Id = reader.ReadInt32();
          employee.Name = reader.ReadString();
          employee.Salary = reader.ReadDouble();
