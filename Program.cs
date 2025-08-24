@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.IO;
 using System.Text;
 
@@ -55,38 +54,34 @@ namespace Homework_6._1
       // Преобразование структуры в массив байтов
       public static byte[] StructToBytes(Employee employee)
       {
-         using (MemoryStream memoryStream = new MemoryStream())
-         using (BinaryWriter writer = new BinaryWriter(memoryStream, Encoding.UTF8))
-         {
-            // Записываем все поля структуры по порядку
-            writer.Write(employee.Id);           // 4 байта
-            writer.Write(employee.Name);   // длина + байты строки
-            writer.Write(employee.Salary);       // 8 байт
-            writer.Write(employee.HireDate.ToBinary()); // 8 байт
-            writer.Write(employee.IsActive);     // 1 байт
-            writer.Write(employee.DepartmentId); // 1 байт
+         using MemoryStream memoryStream = new MemoryStream();
+         using BinaryWriter writer = new BinaryWriter(memoryStream, Encoding.UTF8);
+         // Записываем все поля структуры по порядку
+         writer.Write(employee.Id);           // 4 байта
+         writer.Write(employee.Name);   // длина + байты строки
+         writer.Write(employee.Salary);       // 8 байт
+         writer.Write(employee.HireDate.ToBinary()); // 8 байт
+         writer.Write(employee.IsActive);     // 1 байт
+         writer.Write(employee.DepartmentId); // 1 байт
 
-            return memoryStream.ToArray();
-         }
+         return memoryStream.ToArray();
       }
 
       // Преобразование массива байтов обратно в структуру
       public static Employee BytesToStruct(byte[] bytes)
       {
-         using (MemoryStream memoryStream = new MemoryStream(bytes))
-         using (BinaryReader reader = new BinaryReader(memoryStream, Encoding.UTF8))
-         {
-            Employee employee = new Employee();
+         using MemoryStream memoryStream = new MemoryStream(bytes);
+         using BinaryReader reader = new BinaryReader(memoryStream, Encoding.UTF8);
+         Employee employee = new Employee();
 
-            employee.Id = reader.ReadInt32();
-            employee.Name = reader.ReadString();
-            employee.Salary = reader.ReadDouble();
-            employee.HireDate = DateTime.FromBinary(reader.ReadInt64());
-            employee.IsActive = reader.ReadBoolean();
-            employee.DepartmentId = reader.ReadByte();
+         employee.Id = reader.ReadInt32();
+         employee.Name = reader.ReadString();
+         employee.Salary = reader.ReadDouble();
+         employee.HireDate = DateTime.FromBinary(reader.ReadInt64());
+         employee.IsActive = reader.ReadBoolean();
+         employee.DepartmentId = reader.ReadByte();
 
-            return employee;
-         }
+         return employee;
       }
    }
 
@@ -176,7 +171,7 @@ namespace Homework_6._1
          Employee employee = new Employee
          {
             Id = 12345,
-            Name = "Дакота Джонс",
+            Name = "Дакота Джонсон",
             Salary = 125000.5787,
             HireDate = new DateTime(1989, 10, 4),
             IsActive = false,
