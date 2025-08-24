@@ -60,7 +60,7 @@ namespace Homework_6._1
          {
             // Записываем все поля структуры по порядку
             writer.Write(employee.Id);           // 4 байта
-            writer.Write(employee.Name ?? "");   // длина + байты строки
+            writer.Write(employee.Name);   // длина + байты строки
             writer.Write(employee.Salary);       // 8 байт
             writer.Write(employee.HireDate.ToBinary()); // 8 байт
             writer.Write(employee.IsActive);     // 1 байт
@@ -176,10 +176,10 @@ namespace Homework_6._1
          Employee employee = new Employee
          {
             Id = 12345,
-            Name = "Иван Петров",
-            Salary = 75000.50,
-            HireDate = new DateTime(2020, 3, 15),
-            IsActive = true,
+            Name = "Дакота Джонс",
+            Salary = 125000.5787,
+            HireDate = new DateTime(1989, 10, 4),
+            IsActive = false,
             DepartmentId = 5
          };
 
