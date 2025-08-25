@@ -201,6 +201,7 @@ namespace Homework_6._1
 
             return memoryStream.ToArray();
          }
+      }
 
       // Преобразование массива байтов обратно в структуру
       public static Employee BytesToStruct(byte[] bytes)
