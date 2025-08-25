@@ -145,17 +145,15 @@ namespace Homework_6._1
             DepartmentId = 5
          };
 
-         Console.WriteLine("Исходная структура:");
-         PrintEmployee(employee);
-
-         FileStream fileStream = new FileStream(writeStruct, FileMode.Create, FileAccess.Write, FileShare.ReadWrite);
-         //creating binary file using BinaryWriter
-         BinaryWriter binaryWriter = new BinaryWriter(fileStream);
-         //writing data using different Write() methods
-         //of BinaryWriter
-         binaryWriter.Write(5253);
-         binaryWriter.Write("This is a string value.");
-         binaryWriter.Write('A');
+         // запись в файл
+         using (FileStream fstream = new FileStream(writeStruct, FileMode.OpenOrCreate))
+         {
+            // преобразуем строку в байты
+            byte[] buffer = Encoding.Default.GetBytes(read);
+            // запись массива байтов в файл
+            fstream.WriteAsync(buffer, 0, buffer.Length);
+            Console.WriteLine("Текст записан в файл");
+         }
 
 
          Console.ReadKey();
