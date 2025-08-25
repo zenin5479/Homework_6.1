@@ -148,48 +148,22 @@ namespace Homework_6._1
          Console.WriteLine("Исходная структура:");
          PrintEmployee(employee);
 
-         // Преобразуем структуру в массив байтов
-         StructToBytes(employee, pathWrite);
+         FileStream fileStream = new FileStream(writeStruct, FileMode.Create, FileAccess.Write, FileShare.ReadWrite);
+         //creating binary file using BinaryWriter
+         BinaryWriter binaryWriter = new BinaryWriter(fileStream);
+         //writing data using different Write() methods
+         //of BinaryWriter
+         binaryWriter.Write(5253);
+         binaryWriter.Write("This is a string value.");
+         binaryWriter.Write('A');
 
-         Console.WriteLine($"\nМассив байтов ({bytes.Length} байт):");
-         Console.WriteLine(BitConverter.ToString(bytes));
-
-         // Восстанавливаем структуру из байтов
-         //Employee restoredEmployee = BytesToStruct(bytes);
-         //Console.WriteLine("\nВосстановленная структура:");
-         //PrintEmployee(restoredEmployee);
-
-         // Сохраняем в файл
-         //SaveToFile(employee, "employee.dat");
-
-         // Загружаем из файла
-         //Employee fileEmployee = LoadFromFile("employee.dat");
-
-         //Console.WriteLine("\nЗагружено из файла:");
-         //PrintEmployee(fileEmployee);
 
          Console.ReadKey();
       }
 
       // Преобразование структуры в массив байтов
-      public static byte[] StructToBytes(Employee employee)
-      {
-         using (var memoryStream = new MemoryStream())
-         {
-            using (var writer = new BinaryWriter(memoryStream, Encoding.UTF8))
-            {
-               // Записываем все поля по порядку
-               writer.Write(employee.Id);
-               writer.Write(employee.Name);
-               writer.Write(employee.Salary);
-               writer.Write(employee.HireDate.ToBinary());
-               writer.Write(employee.IsActive);
-               writer.Write(employee.DepartmentId);
-            }
 
-            return memoryStream.ToArray();
-         }
-      }
+
 
       // Преобразование массива байтов обратно в структуру
       public static Employee BytesToStruct(byte[] bytes)
