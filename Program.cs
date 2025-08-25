@@ -154,15 +154,15 @@ namespace Homework_6._1
          Console.WriteLine($"\nМассив байтов ({bytes.Length} байт):");
          Console.WriteLine(BitConverter.ToString(bytes));
 
-         //// Восстанавливаем структуру из байтов
+         // Восстанавливаем структуру из байтов
          //Employee restoredEmployee = BytesToStruct(bytes);
          //Console.WriteLine("\nВосстановленная структура:");
          //PrintEmployee(restoredEmployee);
 
-         //// Сохраняем в файл
+         // Сохраняем в файл
          //SaveToFile(employee, "employee.dat");
 
-         //// Загружаем из файла
+         // Загружаем из файла
          //Employee fileEmployee = LoadFromFile("employee.dat");
 
          //Console.WriteLine("\nЗагружено из файла:");
