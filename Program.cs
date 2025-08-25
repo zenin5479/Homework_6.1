@@ -149,24 +149,24 @@ namespace Homework_6._1
          PrintEmployee(employee);
 
          // Преобразуем структуру в массив байтов
-         byte[] bytes = StructToBytes(employee, pathWrite);
+         StructToBytes(employee, pathWrite);
 
-         Console.WriteLine($"\nМассив байтов ({bytes.Length} байт):");
-         Console.WriteLine(BitConverter.ToString(bytes));
+         //Console.WriteLine($"\nМассив байтов ({bytes.Length} байт):");
+         //Console.WriteLine(BitConverter.ToString(bytes));
 
-         // Восстанавливаем структуру из байтов
-         Employee restoredEmployee = BytesToStruct(bytes);
-         Console.WriteLine("\nВосстановленная структура:");
-         PrintEmployee(restoredEmployee);
+         //// Восстанавливаем структуру из байтов
+         //Employee restoredEmployee = BytesToStruct(bytes);
+         //Console.WriteLine("\nВосстановленная структура:");
+         //PrintEmployee(restoredEmployee);
 
-         // Сохраняем в файл
-         SaveToFile(employee, "employee.dat");
+         //// Сохраняем в файл
+         //SaveToFile(employee, "employee.dat");
 
-         // Загружаем из файла
-         Employee fileEmployee = LoadFromFile("employee.dat");
+         //// Загружаем из файла
+         //Employee fileEmployee = LoadFromFile("employee.dat");
 
-         Console.WriteLine("\nЗагружено из файла:");
-         PrintEmployee(fileEmployee);
+         //Console.WriteLine("\nЗагружено из файла:");
+         //PrintEmployee(fileEmployee);
 
          Console.ReadKey();
       }
