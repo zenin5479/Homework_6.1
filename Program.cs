@@ -174,24 +174,18 @@ namespace Homework_6._1
       // Преобразование структуры в массив байтов
       public static byte[] StructToBytes(Employee employee, string filePath)
       {
-
          FileStream stream = new FileStream(filePath, FileMode.Create);
-         BinaryWriter writer = new BinaryWriter(stream);
+         BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
+         // Записываем все поля структуры по порядку
+         writer.Write(employee.Id);
+         writer.Write(employee.Name);
+         writer.Write(employee.Salary);
+         writer.Write(employee.HireDate.ToBinary());
+         writer.Write(employee.IsActive);
+         writer.Write(employee.DepartmentId);
 
+         return stream;
 
-
-               using (BinaryWriter writer = new BinaryWriter(memoryStream, Encoding.UTF8))
-         {
-            // Записываем все поля структуры по порядку
-            writer.Write(employee.Id);
-            writer.Write(employee.Name);
-            writer.Write(employee.Salary);
-            writer.Write(employee.HireDate.ToBinary());
-            writer.Write(employee.IsActive);
-            writer.Write(employee.DepartmentId);
-
-            return memoryStream.ToArray();
-         }
       }
 
       // Преобразование массива байтов обратно в структуру
