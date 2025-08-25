@@ -175,15 +175,17 @@ namespace Homework_6._1
       public static byte[] StructToBytes(Employee employee)
       {
          using (var memoryStream = new MemoryStream())
-         using (var writer = new BinaryWriter(memoryStream, Encoding.UTF8))
          {
-            // Записываем все поля по порядку
-            writer.Write(employee.Id);
-            writer.Write(employee.Name);
-            writer.Write(employee.Salary);
-            writer.Write(employee.HireDate.ToBinary());
-            writer.Write(employee.IsActive);
-            writer.Write(employee.DepartmentId);
+            using (var writer = new BinaryWriter(memoryStream, Encoding.UTF8))
+            {
+               // Записываем все поля по порядку
+               writer.Write(employee.Id);
+               writer.Write(employee.Name);
+               writer.Write(employee.Salary);
+               writer.Write(employee.HireDate.ToBinary());
+               writer.Write(employee.IsActive);
+               writer.Write(employee.DepartmentId);
+            }
 
             return memoryStream.ToArray();
          }
