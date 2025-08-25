@@ -151,8 +151,8 @@ namespace Homework_6._1
          // Преобразуем структуру в массив байтов
          StructToBytes(employee, pathWrite);
 
-         //Console.WriteLine($"\nМассив байтов ({bytes.Length} байт):");
-         //Console.WriteLine(BitConverter.ToString(bytes));
+         Console.WriteLine($"\nМассив байтов ({bytes.Length} байт):");
+         Console.WriteLine(BitConverter.ToString(bytes));
 
          //// Восстанавливаем структуру из байтов
          //Employee restoredEmployee = BytesToStruct(bytes);
@@ -188,18 +188,22 @@ namespace Homework_6._1
       // Преобразование массива байтов обратно в структуру
       public static Employee BytesToStruct(byte[] bytes)
       {
-         using MemoryStream memoryStream = new MemoryStream(bytes);
-         using BinaryReader reader = new BinaryReader(memoryStream, Encoding.UTF8);
-         Employee employee = new Employee();
-         // Читаем все поля структуры по порядку
-         employee.Id = reader.ReadInt32();
-         employee.Name = reader.ReadString();
-         employee.Salary = reader.ReadDouble();
-         employee.HireDate = DateTime.FromBinary(reader.ReadInt64());
-         employee.IsActive = reader.ReadBoolean();
-         employee.DepartmentId = reader.ReadByte();
+         using (MemoryStream memoryStream = new MemoryStream(bytes))
+         {
+            using (BinaryReader reader = new BinaryReader(memoryStream, Encoding.UTF8))
+            {
+               Employee employee = new Employee();
+               // Читаем все поля структуры по порядку
+               employee.Id = reader.ReadInt32();
+               employee.Name = reader.ReadString();
+               employee.Salary = reader.ReadDouble();
+               employee.HireDate = DateTime.FromBinary(reader.ReadInt64());
+               employee.IsActive = reader.ReadBoolean();
+               employee.DepartmentId = reader.ReadByte();
 
-         return employee;
+               return employee;
+            }
+         }
       }
 
       static void PrintEmployee(Employee emp)
