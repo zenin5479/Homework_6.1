@@ -176,6 +176,9 @@ namespace Homework_6._1
       {
          using (MemoryStream memoryStream = new MemoryStream())
          {
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            using (var writer = new BinaryWriter(stream))
+
             using (BinaryWriter writer = new BinaryWriter(memoryStream, Encoding.UTF8))
             {
                // Записываем все поля структуры по порядку
