@@ -149,7 +149,7 @@ namespace Homework_6._1
          PrintEmployee(employee);
 
          // Преобразуем структуру в массив байтов
-         byte[] bytes = StructToBytes(employee);
+         byte[] bytes = StructToBytes(employee, pathWrite);
 
          Console.WriteLine($"\nМассив байтов ({bytes.Length} байт):");
          Console.WriteLine(BitConverter.ToString(bytes));
@@ -172,25 +172,25 @@ namespace Homework_6._1
       }
 
       // Преобразование структуры в массив байтов
-      public static byte[] StructToBytes(Employee employee)
+      public static byte[] StructToBytes(Employee employee, string filePath)
       {
-         using (MemoryStream memoryStream = new MemoryStream())
+
+         FileStream stream = new FileStream(filePath, FileMode.Create);
+         BinaryWriter writer = new BinaryWriter(stream);
+
+
+
+               using (BinaryWriter writer = new BinaryWriter(memoryStream, Encoding.UTF8))
          {
-            using (var stream = new FileStream(filePath, FileMode.Create))
-            using (var writer = new BinaryWriter(stream))
+            // Записываем все поля структуры по порядку
+            writer.Write(employee.Id);
+            writer.Write(employee.Name);
+            writer.Write(employee.Salary);
+            writer.Write(employee.HireDate.ToBinary());
+            writer.Write(employee.IsActive);
+            writer.Write(employee.DepartmentId);
 
-            using (BinaryWriter writer = new BinaryWriter(memoryStream, Encoding.UTF8))
-            {
-               // Записываем все поля структуры по порядку
-               writer.Write(employee.Id);
-               writer.Write(employee.Name);
-               writer.Write(employee.Salary);
-               writer.Write(employee.HireDate.ToBinary());
-               writer.Write(employee.IsActive);
-               writer.Write(employee.DepartmentId);
-
-               return memoryStream.ToArray();
-            }
+            return memoryStream.ToArray();
          }
       }
 
