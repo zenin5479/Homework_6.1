@@ -172,9 +172,11 @@ namespace Homework_6._1
       }
 
       // Преобразование структуры в массив байтов
-      public static void StructToBytes(Employee employee, string filePath)
+      public static void StructToBytes(Employee employee, string path)
       {
-         FileStream stream = new FileStream(filePath, FileMode.Create);
+         File.Open(path, FileMode.OpenOrCreate);
+         FileStream stream = File.Open(path, FileMode.OpenOrCreate);
+
          BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
          // Записываем все поля структуры по порядку
          writer.Write(employee.Id);
