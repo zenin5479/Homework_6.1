@@ -172,7 +172,7 @@ namespace Homework_6._1
       }
 
       // Преобразование структуры в массив байтов
-      public static byte[] StructToBytes(Employee employee, string filePath)
+      public static void StructToBytes(Employee employee, string filePath)
       {
          FileStream stream = new FileStream(filePath, FileMode.Create);
          BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
@@ -183,9 +183,6 @@ namespace Homework_6._1
          writer.Write(employee.HireDate.ToBinary());
          writer.Write(employee.IsActive);
          writer.Write(employee.DepartmentId);
-
-         return stream;
-
       }
 
       // Преобразование массива байтов обратно в структуру
@@ -217,9 +214,9 @@ namespace Homework_6._1
 
       static void SaveToFile(Employee employee, string filename)
       {
-         byte[] bytes = StructToBytes(employee, filename);
-         File.WriteAllBytes(filename, bytes);
-         Console.WriteLine($"\nСохранено в файл: {filename}");
+         ////byte[] bytes = StructToBytes(employee, filename);
+         //File.WriteAllBytes(filename, bytes);
+         //Console.WriteLine($"\nСохранено в файл: {filename}");
       }
 
       static Employee LoadFromFile(string filename)
