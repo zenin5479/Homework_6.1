@@ -174,17 +174,21 @@ namespace Homework_6._1
       // Преобразование структуры в массив байтов
       public static byte[] StructToBytes(Employee employee)
       {
-         using MemoryStream memoryStream = new MemoryStream();
-         using BinaryWriter writer = new BinaryWriter(memoryStream, Encoding.UTF8);
-         // Записываем все поля структуры по порядку
-         writer.Write(employee.Id);
-         writer.Write(employee.Name);
-         writer.Write(employee.Salary);
-         writer.Write(employee.HireDate.ToBinary());
-         writer.Write(employee.IsActive);
-         writer.Write(employee.DepartmentId);
+         using (MemoryStream memoryStream = new MemoryStream())
+         {
+            using (BinaryWriter writer = new BinaryWriter(memoryStream, Encoding.UTF8))
+            {
+               // Записываем все поля структуры по порядку
+               writer.Write(employee.Id);
+               writer.Write(employee.Name);
+               writer.Write(employee.Salary);
+               writer.Write(employee.HireDate.ToBinary());
+               writer.Write(employee.IsActive);
+               writer.Write(employee.DepartmentId);
 
-         return memoryStream.ToArray();
+               return memoryStream.ToArray();
+            }
+         }
       }
 
       // Преобразование массива байтов обратно в структуру
