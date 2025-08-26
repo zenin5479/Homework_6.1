@@ -190,8 +190,8 @@ namespace Homework_6._1
 
       static Employee LoadFromFile(string filename)
       {
-         //byte[] bytes = File.ReadAllBytes(filename);
-         //return BytesToStruct(bytes);
+         byte[] bytes = File.ReadAllBytes(filename);
+         return BytesToStruct(bytes);
       }
 
       // Метод для записи массива структур в файл
