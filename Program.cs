@@ -137,17 +137,7 @@ namespace Homework_6._1
             i++;
          }
 
-         // Создаем экземпляр структуры
-         Employee employee = new Employee
-         {
-            Id = 1234567,
-            Name = "Дакота Джонсон",
-            Salary = 150000.5678,
-            HireDate = new DateTime(1989, 10, 4),
-            IsActive = false,
-            DepartmentId = 5
-         };
-         // Использование
+         // Запись структур в бинарный файл
          WriteStructArrayToFile(people, writeStruct);
          Console.ReadKey();
       }
