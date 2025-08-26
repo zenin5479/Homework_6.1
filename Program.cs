@@ -183,9 +183,9 @@ namespace Homework_6._1
 
       static void SaveToFile(Employee employee, string filename)
       {
-         byte[] bytes = StructToBytes(employee, filename);
-         File.WriteAllBytes(filename, bytes);
-         Console.WriteLine($"\nСохранено в файл: {filename}");
+         //byte[] bytes = StructToBytes(employee, filename);
+         //File.WriteAllBytes(filename, bytes);
+         //Console.WriteLine($"\nСохранено в файл: {filename}");
       }
 
       static Employee LoadFromFile(string filename)
