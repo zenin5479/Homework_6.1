@@ -137,9 +137,9 @@ namespace Homework_6._1
          // Создаем экземпляр структуры
          Employee employee = new Employee
          {
-            Id = 12345,
+            Id = 1234567,
             Name = "Дакота Джонсон",
-            Salary = 125000.5787,
+            Salary = 150000.5678,
             HireDate = new DateTime(1989, 10, 4),
             IsActive = false,
             DepartmentId = 5
