@@ -1,9 +1,6 @@
 ﻿using System;
 using System.IO;
-using System.Reflection;
 using System.Text;
-using System.Text.RegularExpressions;
-using System.Xml.Linq;
 
 // Обработка студенческой ведомости
 // Составить программу для обработки информации о студентах какого-то факультета
@@ -126,17 +123,18 @@ namespace Homework_6._1
             i++;
          }
 
-         // Запись структур в бинарный файл
+         // Преобразование массива структур в массив байт и запись в бинарный файл
          WriteStructArrayToFile(people, pathWrite);
          Console.ReadKey();
       }
 
-      // Преобразование структуры в массив байтов
+      // Преобразование массива структур в массив байт и запись в бинарный файл
       static void WriteStructArrayToFile(Student[] structArray, string path)
       {
          FileStream fileStream = new FileStream(path, FileMode.Create, FileAccess.Write);
          BinaryWriter binaryWriter = new BinaryWriter(fileStream);
-         for (int i = 0; i < structArray.Length; i++)
+         int i = 0;
+         while (i < structArray.Length)
          {
             Student item = structArray[i];
             binaryWriter.Write(item.Group);
@@ -149,14 +147,13 @@ namespace Homework_6._1
             binaryWriter.Write(item.Math);
             binaryWriter.Write(item.Inf);
             binaryWriter.Write(item.Grant);
+
+            i++;
          }
 
          binaryWriter.Close();
          fileStream.Close();
-
       }
-
-     
 
       // Метод для записи массива структур в файл
       static void WriteStructFile(string path, Student[] people)
