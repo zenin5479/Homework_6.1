@@ -131,7 +131,7 @@ namespace Homework_6._1
       // Преобразование массива структур в массив байт и запись в бинарный файл
       static void WriteStructArrayToFile(Student[] structArray, string path)
       {
-         FileStream fileStream = new FileStream(path, FileMode.Create, FileAccess.Write);
+         FileStream fileStream = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write);
          BinaryWriter binaryWriter = new BinaryWriter(fileStream);
          int i = 0;
          while (i < structArray.Length)
