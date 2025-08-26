@@ -51,7 +51,7 @@ namespace Homework_6._1
          string readStruct = "readstruct.bin";
          string fileInput = "finish.txt";
 
-         // Создаем массив структур для записи
+         // Создание массива структур
          Student[] people =
          {
             new Student
@@ -106,10 +106,10 @@ namespace Homework_6._1
             },
          };
 
-         // Запись структур в файл
+         // Запись массива структур в текстовый файл
          WriteStructFile(pathStruct, people);
 
-         // Чтение структур из файла
+         // Чтение массива структур из текстового файла
          Student[] read = MethodsForStruct.ReadStructFile(pathStruct, "spisok.txt");
          // Вывод прочитанных данных
          Console.WriteLine("Прочитанные данные:");
