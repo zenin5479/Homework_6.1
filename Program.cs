@@ -130,10 +130,10 @@ namespace Homework_6._1
          int i = 0;
          while (i < read.Length)
          {
-            Student personTwo = read[i];
+            Student readTwo = read[i];
             Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
-               personTwo.Group, personTwo.Surname, personTwo.Name, personTwo.Dadsname, personTwo.Year,
-               personTwo.Gender, personTwo.Physics, personTwo.Math, personTwo.Inf, personTwo.Grant);
+               readTwo.Group, readTwo.Surname, readTwo.Name, readTwo.Dadsname, readTwo.Year,
+               readTwo.Gender, readTwo.Physics, readTwo.Math, readTwo.Inf, readTwo.Grant);
             i++;
          }
 
