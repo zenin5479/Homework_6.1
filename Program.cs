@@ -149,7 +149,23 @@ namespace Homework_6._1
       }
 
       // Преобразование структуры в массив байтов
-      
+      static byte[] StructArrayToByteArray(Student[] people)
+      {
+         using (var memoryStream = new MemoryStream())
+         using (var binaryWriter = new BinaryWriter(memoryStream))
+         {
+            foreach (var item in people)
+            {
+               binaryWriter.Write(item.Id);
+               binaryWriter.Write(item.Value);
+               binaryWriter.Write(item.Flag);
+            }
+
+            return memoryStream.ToArray();
+         }
+      }
+
+
       // Преобразование массива байтов обратно в структуру
       public static Employee BytesToStruct(byte[] bytes)
       {
