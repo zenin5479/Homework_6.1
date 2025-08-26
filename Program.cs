@@ -42,17 +42,6 @@ namespace Homework_6._1
       public double Grant;
    }
 
-   // Простая структура с разными типами данных
-   public struct Employee
-   {
-      public int Id;
-      public string Name;
-      public double Salary;
-      public DateTime HireDate;
-      public bool IsActive;
-      public byte DepartmentId;
-   }
-
    internal class Program
    {
       static void Main(string[] args)
@@ -167,49 +156,7 @@ namespace Homework_6._1
 
       }
 
-      // Преобразование массива байтов обратно в структуру
-      public static Employee BytesToStruct(byte[] bytes)
-      {
-         using (MemoryStream memoryStream = new MemoryStream(bytes))
-         {
-            using (BinaryReader reader = new BinaryReader(memoryStream, Encoding.UTF8))
-            {
-               Employee employee = new Employee();
-               // Читаем все поля структуры по порядку
-               employee.Id = reader.ReadInt32();
-               employee.Name = reader.ReadString();
-               employee.Salary = reader.ReadDouble();
-               employee.HireDate = DateTime.FromBinary(reader.ReadInt64());
-               employee.IsActive = reader.ReadBoolean();
-               employee.DepartmentId = reader.ReadByte();
-
-               return employee;
-            }
-         }
-      }
-
-      static void PrintEmployee(Employee emp)
-      {
-         Console.WriteLine($"ID: {emp.Id}");
-         Console.WriteLine($"Name: {emp.Name}");
-         Console.WriteLine($"Salary: {emp.Salary}");
-         Console.WriteLine($"HireDate: {emp.HireDate:yyyy-MM-dd}");
-         Console.WriteLine($"IsActive: {emp.IsActive}");
-         Console.WriteLine($"Department: {emp.DepartmentId}");
-      }
-
-      static void SaveToFile(Employee employee, string filename)
-      {
-         //byte[] bytes = StructToBytes(employee, filename);
-         //File.WriteAllBytes(filename, bytes);
-         //Console.WriteLine($"\nСохранено в файл: {filename}");
-      }
-
-      static Employee LoadFromFile(string filename)
-      {
-         byte[] bytes = File.ReadAllBytes(filename);
-         return BytesToStruct(bytes);
-      }
+     
 
       // Метод для записи массива структур в файл
       static void WriteStructFile(string path, Student[] people)
