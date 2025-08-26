@@ -148,7 +148,6 @@ namespace Homework_6._1
             DepartmentId = 5
          };
          // Использование
-         File.Create(writeStruct).Close();// Нужно или нет?
          WriteStructArrayToFile(people, writeStruct);
          Console.ReadKey();
       }
