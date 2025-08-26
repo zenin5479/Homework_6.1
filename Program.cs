@@ -138,14 +138,14 @@ namespace Homework_6._1
          }
 
          // Запись структур в бинарный файл
-         WriteStructArrayToFile(people, writeStruct);
+         WriteStructArrayToFile(people, pathWrite);
          Console.ReadKey();
       }
 
       // Преобразование структуры в массив байтов
-      static void WriteStructArrayToFile(Student[] structArray, string write)
+      static void WriteStructArrayToFile(Student[] structArray, string path)
       {
-         FileStream fileStream = new FileStream(write, FileMode.Create, FileAccess.Write);
+         FileStream fileStream = new FileStream(path, FileMode.Create, FileAccess.Write);
          BinaryWriter binaryWriter = new BinaryWriter(fileStream);
          for (int i = 0; i < structArray.Length; i++)
          {
