@@ -1,6 +1,9 @@
 ﻿using System;
 using System.IO;
+using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Xml.Linq;
 
 // Обработка студенческой ведомости
 // Составить программу для обработки информации о студентах какого-то факультета
@@ -144,27 +147,33 @@ namespace Homework_6._1
             IsActive = false,
             DepartmentId = 5
          };
-
+         // Использование
+         WriteStructArrayToFile(people, writeStruct);
          Console.ReadKey();
       }
 
       // Преобразование структуры в массив байтов
-      static byte[] StructArrayToByteArray(Student[] people)
+      static void WriteStructArrayToFile(Student[] structArray, string write)
       {
-         using (var memoryStream = new MemoryStream())
-         using (var binaryWriter = new BinaryWriter(memoryStream))
+         using (FileStream fileStream = new FileStream(write, FileMode.Create))
+         using (BinaryWriter binaryWriter = new BinaryWriter(fileStream))
          {
-            foreach (var item in people)
+            for (int i = 0; i < structArray.Length; i++)
             {
-               binaryWriter.Write(item.Id);
-               binaryWriter.Write(item.Value);
-               binaryWriter.Write(item.Flag);
+               Student item = structArray[i];
+               binaryWriter.Write(item.Group);
+               binaryWriter.Write(item.Surname);
+               binaryWriter.Write(item.Name);
+               binaryWriter.Write(item.Dadsname);
+               binaryWriter.Write(item.Year);
+               binaryWriter.Write(item.Gender);
+               binaryWriter.Write(item.Physics);
+               binaryWriter.Write(item.Math);
+               binaryWriter.Write(item.Inf);
+               binaryWriter.Write(item.Grant);
             }
-
-            return memoryStream.ToArray();
          }
       }
-
 
       // Преобразование массива байтов обратно в структуру
       public static Employee BytesToStruct(byte[] bytes)
