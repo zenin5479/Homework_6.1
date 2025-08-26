@@ -148,6 +148,7 @@ namespace Homework_6._1
             DepartmentId = 5
          };
          // Использование
+         File.Create(writeStruct).Close();// Нужно или нет?
          WriteStructArrayToFile(people, writeStruct);
          Console.ReadKey();
       }
@@ -155,24 +156,26 @@ namespace Homework_6._1
       // Преобразование структуры в массив байтов
       static void WriteStructArrayToFile(Student[] structArray, string write)
       {
-         using (FileStream fileStream = new FileStream(write, FileMode.Create))
-         using (BinaryWriter binaryWriter = new BinaryWriter(fileStream))
+         FileStream fileStream = new FileStream(write, FileMode.Create, FileAccess.Write);
+         BinaryWriter binaryWriter = new BinaryWriter(fileStream);
+         for (int i = 0; i < structArray.Length; i++)
          {
-            for (int i = 0; i < structArray.Length; i++)
-            {
-               Student item = structArray[i];
-               binaryWriter.Write(item.Group);
-               binaryWriter.Write(item.Surname);
-               binaryWriter.Write(item.Name);
-               binaryWriter.Write(item.Dadsname);
-               binaryWriter.Write(item.Year);
-               binaryWriter.Write(item.Gender);
-               binaryWriter.Write(item.Physics);
-               binaryWriter.Write(item.Math);
-               binaryWriter.Write(item.Inf);
-               binaryWriter.Write(item.Grant);
-            }
+            Student item = structArray[i];
+            binaryWriter.Write(item.Group);
+            binaryWriter.Write(item.Surname);
+            binaryWriter.Write(item.Name);
+            binaryWriter.Write(item.Dadsname);
+            binaryWriter.Write(item.Year);
+            binaryWriter.Write(item.Gender);
+            binaryWriter.Write(item.Physics);
+            binaryWriter.Write(item.Math);
+            binaryWriter.Write(item.Inf);
+            binaryWriter.Write(item.Grant);
          }
+
+         binaryWriter.Close();
+         fileStream.Close();
+
       }
 
       // Преобразование массива байтов обратно в структуру
