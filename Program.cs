@@ -141,10 +141,16 @@ namespace Homework_6._1
          BinaryReader reader = new BinaryReader(stream, Encoding.UTF8);
          // Читаем количество элементов
          int count = reader.ReadInt32();
+
+         // Read the bytes that make up the string
+         byte[] stringBytes = reader.ReadBytes(count);
+         // Convert the bytes to a string using the appropriate encoding
+         string result = Encoding.UTF8.GetString(stringBytes);
+
          // Создаем массив
-         Student[] array = new Student[count];
+         Student[] array = new Student[stringBytes.Length];
          // Читаем каждый элемент
-         for (int i = 0; i < count; i++)
+         for (int i = 0; i < stringBytes.Length; i++)
          {
             array[i] = new Student
             {
