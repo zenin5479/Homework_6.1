@@ -27,7 +27,7 @@ namespace Homework_6._1
    // Определяем структуру
    public struct Student
    {
-      public string Group;
+      public BinaryReader Group;
       public string Surname;
       public string Name;
       public string Dadsname;
@@ -127,15 +127,29 @@ namespace Homework_6._1
          WriteStructArrayToFile(people, pathWrite);
 
          // Использование
-         Person[] people = new Person[]
-         {
-            new Person { Id = 1, Name = "Иван", Height = 1.75f, BirthDate = new DateTime(1990, 5, 15), IsActive = true },
-            new Person { Id = 2, Name = "Мария", Height = 1.65f, BirthDate = new DateTime(1985, 8, 22), IsActive = false }
-         };
 
-         Person[] readPeople = ReadArrayFromFile("people.bin", ReadPerson);
+
+         Student[] readStudent = ReadArrayFromFile("people.bin", ReadPerson);
 
          Console.ReadKey();
+      }
+
+      // Методы для чтения/записи Person
+      public static Student ReadPerson(BinaryReader reader)
+      {
+         return new Student
+         {
+            Group = reader;
+            arrayStudent[row].Surname = lineArray[1];
+            arrayStudent[row].Name = lineArray[2];
+            arrayStudent[row].Dadsname = lineArray[3];
+            arrayStudent[row].Year = int.Parse(lineArray[4]);
+            arrayStudent[row].Gender = char.Parse(lineArray[5]);
+            arrayStudent[row].Physics = int.Parse(lineArray[6]);
+            arrayStudent[row].Math = int.Parse(lineArray[7]);
+            arrayStudent[row].Inf = int.Parse(lineArray[8]);
+            arrayStudent[row].Grant = double.Parse(lineArray[9]);
+         };
       }
 
       // Метод для чтения массива структур из файла
