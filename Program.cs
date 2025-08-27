@@ -126,15 +126,11 @@ namespace Homework_6._1
          // Преобразование массива структур в массив байт и запись в бинарный файл
          WriteStructArrayToFile(people, pathWrite);
 
-
-
-         Student[] readPeople = ReadArrayFromFile("people.bin", read);
-
          Console.ReadKey();
       }
 
-      // Метод для чтения массива структур из файла
-     
+      // Метод чтения массива структур из бинарного файла
+
 
       // Преобразование массива структур в массив байт и запись в бинарный файл
       static void WriteStructArrayToFile(Student[] structArray, string path)
@@ -163,7 +159,7 @@ namespace Homework_6._1
          fileStream.Close();
       }
 
-      // Метод для записи массива структур в текстовый файл
+      // Метод записи массива структур в текстовый файл
       static void WriteStructFile(string path, Student[] people)
       {
          using (StreamWriter writer = new StreamWriter(path, false, Encoding.UTF8))
