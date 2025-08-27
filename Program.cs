@@ -39,6 +39,14 @@ namespace Homework_6._1
       public double Grant;
    }
 
+   public struct Point3D
+   {
+      public float X;
+      public float Y;
+      public float Z;
+      public int Color;
+   }
+
    internal class Program
    {
       static void Main(string[] args)
@@ -47,8 +55,8 @@ namespace Homework_6._1
          string pathStruct = Path.GetFullPath(fileEnter);
          string writeStruct = "writestruct.bin";
          string pathWrite = Path.GetFullPath(writeStruct);
-
          string readStruct = "readstruct.bin";
+         string pathRead = Path.GetFullPath(readStruct);
          string fileInput = "finish.txt";
 
          // Создание массива структур
@@ -126,11 +134,48 @@ namespace Homework_6._1
          // Преобразование массива структур в массив байт и запись в бинарный файл
          WriteStructArrayToFile(people, pathWrite);
 
+         // Способ 1: Ручное чтение
+         Student[] points1 = ReadArrayFromFile(pathWrite);
+         Console.WriteLine($"Прочитано {points1.Length} точек");
+
          Console.ReadKey();
       }
 
       // Метод чтения массива структур из бинарного файла
+      public static Student[] ReadArrayFromFile(string filePath)
+      {
+         using (var stream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
+         {
+            using (var reader = new BinaryReader(stream))
+            {
+               // Читаем количество элементов
+               int count = reader.ReadInt32();
 
+               // Создаем массив
+               Student[] array = new Student[count];
+
+               // Читаем каждый элемент
+               for (int i = 0; i < count; i++)
+               {
+                  array[i] = new Student
+                  {
+                     Group = reader.ReadString(),
+                     Surname = reader.ReadString(),
+                     Name = reader.ReadString(),
+                     Dadsname = reader.ReadString(),
+                     Year = reader.ReadInt32(),
+                     Gender = reader.ReadChar(),
+                     Physics = reader.ReadInt32(),
+                     Math = reader.ReadInt32(),
+                     Inf = reader.ReadInt32(),
+                     Grant = reader.ReadDouble()
+                  };
+               }
+
+               return array;
+            }
+         }
+      }
 
       // Преобразование массива структур в массив байт и запись в бинарный файл
       static void WriteStructArrayToFile(Student[] structArray, string path)
