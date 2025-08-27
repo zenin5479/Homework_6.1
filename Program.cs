@@ -144,9 +144,9 @@ namespace Homework_6._1
       // Метод чтения массива структур из бинарного файла
       public static Student[] ReadArrayFromFile(string filePath)
       {
-         using (var stream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
+         using (FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
          {
-            using (var reader = new BinaryReader(stream))
+            using (BinaryReader reader = new BinaryReader(stream))
             {
                // Читаем количество элементов
                int count = reader.ReadInt32();
