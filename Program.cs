@@ -125,7 +125,29 @@ namespace Homework_6._1
 
          // Преобразование массива структур в массив байт и запись в бинарный файл
          WriteStructArrayToFile(people, pathWrite);
+
+
          Console.ReadKey();
+      }
+
+      // Метод для чтения массива структур из файла
+      public static T[] ReadArrayFromFile<T>(string filePath, Func<BinaryReader, T> readItem)
+      {
+         using (FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
+         using (BinaryReader reader = new BinaryReader(fileStream, Encoding.UTF8))
+         {
+            // Читаем количество элементов в массиве
+            int count = reader.ReadInt32();
+
+            // Читаем каждый элемент
+            T[] array = new T[count];
+            for (int i = 0; i < count; i++)
+            {
+               array[i] = readItem(reader);
+            }
+
+            return array;
+         }
       }
 
       // Преобразование массива структур в массив байт и запись в бинарный файл
