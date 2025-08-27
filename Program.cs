@@ -133,9 +133,7 @@ namespace Homework_6._1
             new Person { Id = 2, Name = "Мария", Height = 1.65f, BirthDate = new DateTime(1985, 8, 22), IsActive = false }
          };
 
-         WriteArrayToFile("people.bin", people, WritePerson);
          Person[] readPeople = ReadArrayFromFile("people.bin", ReadPerson);
-
 
          Console.ReadKey();
       }
