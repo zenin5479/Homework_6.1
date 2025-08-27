@@ -126,6 +126,16 @@ namespace Homework_6._1
          // Преобразование массива структур в массив байт и запись в бинарный файл
          WriteStructArrayToFile(people, pathWrite);
 
+         // Использование
+         Person[] people = new Person[]
+         {
+            new Person { Id = 1, Name = "Иван", Height = 1.75f, BirthDate = new DateTime(1990, 5, 15), IsActive = true },
+            new Person { Id = 2, Name = "Мария", Height = 1.65f, BirthDate = new DateTime(1985, 8, 22), IsActive = false }
+         };
+
+         WriteArrayToFile("people.bin", people, WritePerson);
+         Person[] readPeople = ReadArrayFromFile("people.bin", ReadPerson);
+
 
          Console.ReadKey();
       }
