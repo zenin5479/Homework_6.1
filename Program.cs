@@ -134,24 +134,7 @@ namespace Homework_6._1
       }
 
       // Метод для чтения массива структур из файла
-      public static Student[] ReadArrayFromFile(string filePath, Student[] read)
-      {
-         using (FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
-         using (BinaryReader reader = new BinaryReader(fileStream, Encoding.UTF8))
-         {
-            // Читаем количество элементов в массиве
-            int count = reader.ReadInt32();
-
-            // Читаем каждый элемент
-            Student[] array = new Student[count];
-            for (int i = 0; i < count; i++)
-            {
-               array[i] = readItem(reader);
-            }
-
-            return array;
-         }
-      }
+     
 
       // Преобразование массива структур в массив байт и запись в бинарный файл
       static void WriteStructArrayToFile(Student[] structArray, string path)
