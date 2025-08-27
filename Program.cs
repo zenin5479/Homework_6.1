@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.IO.Pipes;
 using System.Text;
 
 // Обработка студенческой ведомости
@@ -144,37 +145,33 @@ namespace Homework_6._1
       // Метод чтения массива структур из бинарного файла
       public static Student[] ReadArrayFromFile(string filePath)
       {
-         using (FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
+         using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+         using BinaryReader reader = new BinaryReader(stream, Encoding.UTF8);
+         // Читаем количество элементов
+         int count = reader.ReadInt32();
+         // Создаем массив
+         Student[] array = new Student[count];
+         // Читаем каждый элемент
+         for (int i = 0; i < count; i++)
          {
-            using (BinaryReader reader = new BinaryReader(stream, Encoding.UTF8))
+            array[i] = new Student
             {
-               // Читаем количество элементов
-               int count = reader.ReadInt32();
-
-               // Создаем массив
-               Student[] array = new Student[count];
-
-               // Читаем каждый элемент
-               for (int i = 0; i < count; i++)
-               {
-                  array[i] = new Student
-                  {
-                     Group = reader.ReadString(),
-                     Surname = reader.ReadString(),
-                     Name = reader.ReadString(),
-                     Dadsname = reader.ReadString(),
-                     Year = reader.ReadInt32(),
-                     Gender = reader.ReadChar(),
-                     Physics = reader.ReadInt32(),
-                     Math = reader.ReadInt32(),
-                     Inf = reader.ReadInt32(),
-                     Grant = reader.ReadDouble()
-                  };
-               }
-
-               return array;
-            }
+               Group = reader.ReadString(),
+               Surname = reader.ReadString(),
+               Name = reader.ReadString(),
+               Dadsname = reader.ReadString(),
+               Year = reader.ReadInt32(),
+               Gender = reader.ReadChar(),
+               Physics = reader.ReadInt32(),
+               Math = reader.ReadInt32(),
+               Inf = reader.ReadInt32(),
+               Grant = reader.ReadDouble()
+            };
          }
+         reader.Close();
+         stream.Close();
+
+         return array;
       }
 
       // Преобразование массива структур в массив байт и запись в бинарный файл
