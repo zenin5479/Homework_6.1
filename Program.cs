@@ -40,14 +40,6 @@ namespace Homework_6._1
       public double Grant;
    }
 
-   public struct Point3D
-   {
-      public float X;
-      public float Y;
-      public float Z;
-      public int Color;
-   }
-
    internal class Program
    {
       static void Main(string[] args)
