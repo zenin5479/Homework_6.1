@@ -146,7 +146,7 @@ namespace Homework_6._1
       {
          using (FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
          {
-            using (BinaryReader reader = new BinaryReader(stream))
+            using (BinaryReader reader = new BinaryReader(stream, Encoding.UTF8))
             {
                // Читаем количество элементов
                int count = reader.ReadInt32();
@@ -181,7 +181,7 @@ namespace Homework_6._1
       static void WriteStructArrayToFile(Student[] structArray, string path)
       {
          FileStream fileStream = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write);
-         BinaryWriter binaryWriter = new BinaryWriter(fileStream);
+         BinaryWriter binaryWriter = new BinaryWriter(fileStream, Encoding.UTF8);
          int i = 0;
          while (i < structArray.Length)
          {
