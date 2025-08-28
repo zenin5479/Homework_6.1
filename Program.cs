@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.IO.Pipes;
 using System.Text;
 
 // Обработка студенческой ведомости
@@ -28,7 +27,7 @@ namespace Homework_6._1
    // Определяем структуру
    public struct Student
    {
-      public BinaryReader Group;
+      public string Group;
       public string Surname;
       public string Name;
       public string Dadsname;
@@ -127,26 +126,20 @@ namespace Homework_6._1
          // Преобразование массива структур в массив байт и запись в бинарный файл
          WriteStructArrayToFile(people, pathWrite);
 
-         // Использование
-         Person[] people = new Person[]
-         {
-            new Person { Id = 1, Name = "Иван", Height = 1.75f, BirthDate = new DateTime(1990, 5, 15), IsActive = true },
-            new Person { Id = 2, Name = "Мария", Height = 1.65f, BirthDate = new DateTime(1985, 8, 22), IsActive = false }
-         };
-
-         Person[] readPeople = ReadArrayFromFile("people.bin", ReadPerson);
+         // Способ 1: Ручное чтение
+         Student[] points1 = ReadArrayFromFile(pathWrite);
+         Console.WriteLine($"Прочитано {points1.Length} точек");
 
          Console.ReadKey();
       }
 
-      // Метод для чтения массива структур из файла
-      public static T[] ReadArrayFromFile<T>(string filePath, Func<BinaryReader, T> readItem)
+      // Метод чтения массива структур из бинарного файла
+      public static Student[] ReadArrayFromFile(string filePath)
       {
-         using (FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
-         using (BinaryReader reader = new BinaryReader(fileStream, Encoding.UTF8))
-         {
-            // Читаем количество элементов в массиве
-            int count = reader.ReadInt32();
+         FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+         BinaryReader reader = new BinaryReader(stream, Encoding.UTF8);
+         // Читаем количество элементов
+         int count = reader.ReadInt32();
 
          // Read the bytes that make up the string
          byte[] stringBytes = reader.ReadBytes(count);
