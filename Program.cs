@@ -127,8 +127,8 @@ namespace Homework_6._1
          WriteStructArrayToFile(people, pathWrite);
 
          // Способ 1: Ручное чтение
-         Student[] points1 = ReadArrayFromFile(pathWrite);
-         Console.WriteLine($"Прочитано {points1.Length} точек");
+         Student[] points = ReadArrayFromFile(pathWrite);
+         Console.WriteLine($"Прочитано {points.Length} точек");
 
          Console.ReadKey();
       }
