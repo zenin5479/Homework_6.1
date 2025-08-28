@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.IO.Pipes;
 using System.Text;
 
 // Обработка студенческой ведомости
@@ -47,8 +48,8 @@ namespace Homework_6._1
          string pathStruct = Path.GetFullPath(fileEnter);
          string writeStruct = "writestruct.bin";
          string pathWrite = Path.GetFullPath(writeStruct);
-
          string readStruct = "readstruct.bin";
+         string pathRead = Path.GetFullPath(readStruct);
          string fileInput = "finish.txt";
 
          // Создание массива структур
@@ -127,29 +128,15 @@ namespace Homework_6._1
          WriteStructArrayToFile(people, pathWrite);
 
          // Использование
+         Person[] people = new Person[]
+         {
+            new Person { Id = 1, Name = "Иван", Height = 1.75f, BirthDate = new DateTime(1990, 5, 15), IsActive = true },
+            new Person { Id = 2, Name = "Мария", Height = 1.65f, BirthDate = new DateTime(1985, 8, 22), IsActive = false }
+         };
 
-
-         Student[] readStudent = ReadArrayFromFile("people.bin", ReadPerson);
+         Person[] readPeople = ReadArrayFromFile("people.bin", ReadPerson);
 
          Console.ReadKey();
-      }
-
-      // Методы для чтения/записи Person
-      public static Student ReadPerson(BinaryReader reader)
-      {
-         return new Student
-         {
-            Group = reader;
-            arrayStudent[row].Surname = lineArray[1];
-            arrayStudent[row].Name = lineArray[2];
-            arrayStudent[row].Dadsname = lineArray[3];
-            arrayStudent[row].Year = int.Parse(lineArray[4]);
-            arrayStudent[row].Gender = char.Parse(lineArray[5]);
-            arrayStudent[row].Physics = int.Parse(lineArray[6]);
-            arrayStudent[row].Math = int.Parse(lineArray[7]);
-            arrayStudent[row].Inf = int.Parse(lineArray[8]);
-            arrayStudent[row].Grant = double.Parse(lineArray[9]);
-         };
       }
 
       // Метод для чтения массива структур из файла
@@ -161,22 +148,41 @@ namespace Homework_6._1
             // Читаем количество элементов в массиве
             int count = reader.ReadInt32();
 
-            // Читаем каждый элемент
-            T[] array = new T[count];
-            for (int i = 0; i < count; i++)
-            {
-               array[i] = readItem(reader);
-            }
+         // Read the bytes that make up the string
+         byte[] stringBytes = reader.ReadBytes(count);
+         // Convert the bytes to a string using the appropriate encoding
+         string result = Encoding.UTF8.GetString(stringBytes);
 
-            return array;
+         // Создаем массив
+         Student[] array = new Student[stringBytes.Length];
+         // Читаем каждый элемент
+         for (int i = 0; i < stringBytes.Length; i++)
+         {
+            array[i] = new Student
+            {
+               Group = reader.ReadString(),
+               Surname = reader.ReadString(),
+               Name = reader.ReadString(),
+               Dadsname = reader.ReadString(),
+               Year = reader.ReadInt32(),
+               Gender = reader.ReadChar(),
+               Physics = reader.ReadInt32(),
+               Math = reader.ReadInt32(),
+               Inf = reader.ReadInt32(),
+               Grant = reader.ReadDouble()
+            };
          }
+         reader.Close();
+         stream.Close();
+
+         return array;
       }
 
       // Преобразование массива структур в массив байт и запись в бинарный файл
       static void WriteStructArrayToFile(Student[] structArray, string path)
       {
          FileStream fileStream = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write);
-         BinaryWriter binaryWriter = new BinaryWriter(fileStream);
+         BinaryWriter binaryWriter = new BinaryWriter(fileStream, Encoding.UTF8);
          int i = 0;
          while (i < structArray.Length)
          {
@@ -199,7 +205,7 @@ namespace Homework_6._1
          fileStream.Close();
       }
 
-      // Метод для записи массива структур в текстовый файл
+      // Метод записи массива структур в текстовый файл
       static void WriteStructFile(string path, Student[] people)
       {
          using (StreamWriter writer = new StreamWriter(path, false, Encoding.UTF8))
