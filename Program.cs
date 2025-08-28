@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using static System.Net.Mime.MediaTypeNames;
 
 // Обработка студенческой ведомости
 // Составить программу для обработки информации о студентах какого-то факультета
@@ -127,8 +128,30 @@ namespace Homework_6._1
          WriteStructArrayToFile(people, pathWrite);
 
          // Способ 1: Ручное чтение
-         Student[] points = ReadArrayFromFile(pathWrite);
-         Console.WriteLine($"Прочитано {points.Length} точек");
+         //Student[] points = ReadArrayFromFile(pathWrite);
+         // запись в файл
+         string text = "Hello METANIT.COM";
+
+         using (FileStream fstream = new FileStream(pathWrite, FileMode.OpenOrCreate))
+         {
+            // преобразуем строку в байты
+            byte[] buffer = Encoding.UTF8.GetBytes(text);
+            // запись массива байтов в файл
+            fstream.WriteAsync(buffer, 0, buffer.Length);
+            Console.WriteLine("Текст записан в файл");
+         }
+
+         // чтение из файла
+         using (FileStream fstream = File.OpenRead(pathWrite))
+         {
+            // выделяем массив для считывания данных из файла
+            byte[] buffer = new byte[fstream.Length];
+            // считываем данные
+            fstream.ReadAsync(buffer, 0, buffer.Length);
+            // декодируем байты в строку
+            string textFromFile = Encoding.UTF8.GetString(buffer);
+            Console.WriteLine($"Текст из файла: {textFromFile}");
+         }
 
          Console.ReadKey();
       }
@@ -138,18 +161,11 @@ namespace Homework_6._1
       {
          FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
          BinaryReader reader = new BinaryReader(stream, Encoding.UTF8);
-         // Читаем количество элементов
-         int count = reader.ReadInt32();
-
-         // Считывает байты, из которых состоит строка
-         byte[] stringBytes = reader.ReadBytes(count);
-         // Преобразуйте байты в строку, используя соответствующую кодировку
-         string result = Encoding.UTF8.GetString(stringBytes);
-
+        
          // Создаем массив
-         Student[] array = new Student[stringBytes.Length];
+         Student[] array = new Student[stream.Length];
          // Читаем каждый элемент
-         for (int i = 0; i < stringBytes.Length; i++)
+         for (int i = 0; i < stream.Length; i++)
          {
             array[i] = new Student
             {
