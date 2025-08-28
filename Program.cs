@@ -141,9 +141,9 @@ namespace Homework_6._1
          // Читаем количество элементов
          int count = reader.ReadInt32();
 
-         // Read the bytes that make up the string
+         // Считывает байты, из которых состоит строка
          byte[] stringBytes = reader.ReadBytes(count);
-         // Convert the bytes to a string using the appropriate encoding
+         // Преобразуйте байты в строку, используя соответствующую кодировку
          string result = Encoding.UTF8.GetString(stringBytes);
 
          // Создаем массив
