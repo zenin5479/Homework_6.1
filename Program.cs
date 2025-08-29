@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Homework_6._1;
+using System;
 using System.IO;
 using System.Text;
 
@@ -126,9 +127,6 @@ namespace Homework_6._1
          // Преобразование массива структур в массив байт и запись в бинарный файл
          //WriteStructArrayToFile(people, pathWrite);
 
-         // Способ 1: Ручное чтение
-         //Student[] points = ReadArrayFromFile(pathWrite);
-         // запись в файл
         
          Console.ReadKey();
       }
@@ -138,7 +136,6 @@ namespace Homework_6._1
       {
          FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
          BinaryReader reader = new BinaryReader(stream, Encoding.UTF8);
-
          // Создаем массив
          Student[] array = new Student[stream.Length];
          // Читаем каждый элемент
@@ -207,6 +204,36 @@ namespace Homework_6._1
       }
    }
 }
+
+// Метод чтения массива структур из бинарного файла
+//public static Student[] ReadArrayFromFile(string filePath)
+//{
+//   FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+//   BinaryReader reader = new BinaryReader(stream, Encoding.UTF8);
+//   // Создаем массив
+//   Student[] array = new Student[stream.Length];
+//   // Читаем каждый элемент
+//   for (int i = 0; i < stream.Length; i++)
+//   {
+//      array[i] = new Student
+//      {
+//         Group = reader.ReadString(),
+//         Surname = reader.ReadString(),
+//         Name = reader.ReadString(),
+//         Dadsname = reader.ReadString(),
+//         Year = reader.ReadInt32(),
+//         Gender = reader.ReadChar(),
+//         Physics = reader.ReadInt32(),
+//         Math = reader.ReadInt32(),
+//         Inf = reader.ReadInt32(),
+//         Grant = reader.ReadDouble()
+//      };
+//   }
+//   reader.Close();
+//   stream.Close();
+
+//   return array;
+//}
 
 //   string text = "Hello METANIT.COM";
 
