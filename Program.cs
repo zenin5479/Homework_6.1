@@ -150,10 +150,10 @@ namespace Homework_6._1
          };
 
          // Запись в файл
-         WritePointsToFile("spisok.bin", points);
+         WritePointsToFile(pathWrite, points);
 
          // Чтение из файла
-         Point[] readPoints = ReadPointsFromFile("spisok.bin");
+         Point[] readPoints = ReadPointsFromFile(pathWrite);
 
          Console.WriteLine("Прочитанные данные:");
          foreach (var point in readPoints)
@@ -164,43 +164,41 @@ namespace Homework_6._1
          Console.ReadKey();
       }
 
-      static void WritePointsToFile(string filename, Point[] points)
+      static void WritePointsToFile(string path, Point[] points)
       {
-         using (BinaryWriter writer = new BinaryWriter(File.Open(filename, FileMode.Create)))
-         {
-            // Записываем количество элементов
-            writer.Write(points.Length);
+         FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
+         BinaryWriter writer = new BinaryWriter(stream);
+         // Записываем количество элементов
+         writer.Write(points.Length);
 
-            // Записываем каждую структуру
-            foreach (Point point in points)
-            {
-               writer.Write(point.X);
-               writer.Write(point.Y);
-               writer.Write(point.Z);
-            }
+         // Записываем каждую структуру
+         foreach (Point point in points)
+         {
+            writer.Write(point.X);
+            writer.Write(point.Y);
+            writer.Write(point.Z);
          }
       }
 
-      static Point[] ReadPointsFromFile(string filename)
+      static Point[] ReadPointsFromFile(string path)
       {
-         using (var reader = new BinaryReader(File.Open(filename, FileMode.Open)))
+         using var reader = new BinaryReader(File.Open(path, FileMode.Open));
+         // Читаем количество элементов
+         int count = reader.ReadInt32();
+         Point[] points = new Point[count];
+
+         // Читаем каждую структуру
+         for (int i = 0; i < count; i++)
          {
-            // Читаем количество элементов
-            int count = reader.ReadInt32();
-            Point[] points = new Point[count];
-
-            // Читаем каждую структуру
-            for (int i = 0; i < count; i++)
-            {
-               points[i] = new Point(
-                  reader.ReadInt32(),
-                  reader.ReadInt32(),
-                  reader.ReadSingle()
-               );
-            }
-
-            return points;
+            points[i] = new Point
+            (
+               reader.ReadInt32(),
+               reader.ReadInt32(),
+               reader.ReadSingle()
+            );
          }
+
+         return points;
       }
 
       // Метод чтения массива структур из бинарного файла
