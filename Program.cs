@@ -185,6 +185,10 @@ namespace Homework_6._1
 
       static Point[] ReadPointsFromFile(string path)
       {
+         FileStream stream = new FileStream(path, FileMode.Create, FileAccess.r);
+         BinaryWriter writer = new BinaryWriter(stream);
+
+
          using var reader = new BinaryReader(File.Open(path, FileMode.Open));
          // Читаем количество элементов
          int count = reader.ReadInt32();
