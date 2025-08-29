@@ -171,8 +171,9 @@ namespace Homework_6._1
          writer.Write(points.Length);
 
          // Записываем каждую структуру
-         foreach (Point point in points)
+         for (var i = 0; i < points.Length; i++)
          {
+            Point point = points[i];
             writer.Write(point.X);
             writer.Write(point.Y);
             writer.Write(point.Z);
