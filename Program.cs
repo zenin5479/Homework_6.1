@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Text;
-using static System.Net.Mime.MediaTypeNames;
 
 // Обработка студенческой ведомости
 // Составить программу для обработки информации о студентах какого-то факультета
@@ -161,7 +160,7 @@ namespace Homework_6._1
       {
          FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
          BinaryReader reader = new BinaryReader(stream, Encoding.UTF8);
-        
+
          // Создаем массив
          Student[] array = new Student[stream.Length];
          // Читаем каждый элемент
