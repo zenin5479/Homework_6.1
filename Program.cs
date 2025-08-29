@@ -40,6 +40,20 @@ namespace Homework_6._1
       public double Grant;
    }
 
+   public struct Point
+   {
+      public int X;
+      public int Y;
+      public float Z;
+
+      public Point(int x, int y, float z)
+      {
+         X = x;
+         Y = y;
+         Z = z;
+      }
+   }
+
    internal class Program
    {
       static void Main(string[] args)
