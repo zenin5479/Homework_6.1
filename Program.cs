@@ -144,6 +144,45 @@ namespace Homework_6._1
          Console.ReadKey();
       }
 
+      static void WritePointsToFile(string filename, Point[] points)
+      {
+         using (var writer = new BinaryWriter(File.Open(filename, FileMode.Create)))
+         {
+            // Записываем количество элементов
+            writer.Write(points.Length);
+
+            // Записываем каждую структуру
+            foreach (var point in points)
+            {
+               writer.Write(point.X);
+               writer.Write(point.Y);
+               writer.Write(point.Z);
+            }
+         }
+      }
+
+      static Point[] ReadPointsFromFile(string filename)
+      {
+         using (var reader = new BinaryReader(File.Open(filename, FileMode.Open)))
+         {
+            // Читаем количество элементов
+            int count = reader.ReadInt32();
+            Point[] points = new Point[count];
+
+            // Читаем каждую структуру
+            for (int i = 0; i < count; i++)
+            {
+               points[i] = new Point(
+                  reader.ReadInt32(),
+                  reader.ReadInt32(),
+                  reader.ReadSingle()
+               );
+            }
+
+            return points;
+         }
+      }
+
       // Метод чтения массива структур из бинарного файла
       public static Student[] ReadArrayFromFile(string filePath)
       {
