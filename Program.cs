@@ -150,10 +150,10 @@ namespace Homework_6._1
          };
 
          // Запись в файл
-         WritePointsToFile("points.bin", points);
+         WritePointsToFile("spisok.bin", points);
 
          // Чтение из файла
-         Point[] readPoints = ReadPointsFromFile("points.bin");
+         Point[] readPoints = ReadPointsFromFile("spisok.bin");
 
          Console.WriteLine("Прочитанные данные:");
          foreach (var point in readPoints)
@@ -166,13 +166,13 @@ namespace Homework_6._1
 
       static void WritePointsToFile(string filename, Point[] points)
       {
-         using (var writer = new BinaryWriter(File.Open(filename, FileMode.Create)))
+         using (BinaryWriter writer = new BinaryWriter(File.Open(filename, FileMode.Create)))
          {
             // Записываем количество элементов
             writer.Write(points.Length);
 
             // Записываем каждую структуру
-            foreach (var point in points)
+            foreach (Point point in points)
             {
                writer.Write(point.X);
                writer.Write(point.Y);
