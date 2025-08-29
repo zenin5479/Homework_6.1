@@ -168,11 +168,10 @@ namespace Homework_6._1
 
       static void WritePointsToFile(string path, Point[] points)
       {
-         FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
-         BinaryWriter writer = new BinaryWriter(stream);
+         FileStream stream = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write);
+         BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
          // Записываем количество элементов
          writer.Write(points.Length);
-
          // Записываем каждую структуру
          for (var i = 0; i < points.Length; i++)
          {
@@ -189,7 +188,7 @@ namespace Homework_6._1
       static Point[] ReadPointsFromFile(string path)
       {
          FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read);
-         BinaryReader reader = new BinaryReader(stream);
+         BinaryReader reader = new BinaryReader(stream, Encoding.UTF8);
          // Читаем количество элементов
          int count = reader.ReadInt32();
          Point[] points = new Point[count];
@@ -202,13 +201,6 @@ namespace Homework_6._1
                Y = reader.ReadInt32(),
                Z = reader.ReadDouble()
             };
-
-            //points[i] = new Point
-            //(
-            //   reader.ReadInt32(),
-            //   reader.ReadInt32(),
-            //   reader.ReadDouble()
-            //);
          }
 
          stream.Close();
