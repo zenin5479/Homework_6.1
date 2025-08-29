@@ -204,7 +204,6 @@ namespace Homework_6._1
    }
 }
 
-
 // Метод чтения массива структур из бинарного файла
 //public static Student[] ReadArrayFromFile(string filePath)
 //{
