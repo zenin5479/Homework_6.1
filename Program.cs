@@ -150,13 +150,12 @@ namespace Homework_6._1
 
          // Запись в файл
          WritePointsToFile(pathWrite, points);
-
          // Чтение из файла
          Point[] readPoints = ReadPointsFromFile(pathWrite);
-
          Console.WriteLine("Прочитанные данные:");
-         foreach (var point in readPoints)
+         for (var index = 0; index < readPoints.Length; index++)
          {
+            Point point = readPoints[index];
             Console.WriteLine($"X: {point.X}, Y: {point.Y}, Z: {point.Z}");
          }
 
