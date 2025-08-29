@@ -141,7 +141,7 @@ namespace Homework_6._1
          //WriteStructArrayToFile(people, pathWrite);
 
          // Создаем массив структур
-         Point[] points = 
+         Point[] points =
          {
             new Point(1, 2, 3.57f),
             new Point(4, 5, 6.78f),
