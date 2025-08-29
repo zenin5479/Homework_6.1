@@ -178,6 +178,9 @@ namespace Homework_6._1
             writer.Write(point.Y);
             writer.Write(point.Z);
          }
+
+         stream.Close();
+         writer.Close();
       }
 
       static Point[] ReadPointsFromFile(string path)
