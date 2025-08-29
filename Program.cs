@@ -140,7 +140,27 @@ namespace Homework_6._1
 
          // Преобразование массива структур в массив байт и запись в бинарный файл
          //WriteStructArrayToFile(people, pathWrite);
-        
+
+         // Создаем массив структур
+         Point[] points = new Point[]
+         {
+            new Point(1, 2, 3.5f),
+            new Point(4, 5, 6.7f),
+            new Point(8, 9, 10.1f)
+         };
+
+         // Запись в файл
+         WritePointsToFile("points.bin", points);
+
+         // Чтение из файла
+         Point[] readPoints = ReadPointsFromFile("points.bin");
+
+         Console.WriteLine("Прочитанные данные:");
+         foreach (var point in readPoints)
+         {
+            Console.WriteLine($"X: {point.X}, Y: {point.Y}, Z: {point.Z}");
+         }
+
          Console.ReadKey();
       }
 
