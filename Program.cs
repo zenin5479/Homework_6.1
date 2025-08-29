@@ -214,10 +214,13 @@ namespace Homework_6._1
       {
          FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
          BinaryReader reader = new BinaryReader(stream, Encoding.UTF8);
+         // Читаем количество элементов
+         int count = reader.ReadInt32();
+
          // Создаем массив
-         Student[] array = new Student[stream.Length];
+         Student[] array = new Student[count];
          // Читаем каждый элемент
-         for (int i = 0; i < stream.Length; i++)
+         for (int i = 0; i < count; i++)
          {
             array[i] = new Student
             {
