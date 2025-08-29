@@ -185,15 +185,14 @@ namespace Homework_6._1
 
       static Point[] ReadPointsFromFile(string path)
       {
-         FileStream stream = new FileStream(path, FileMode.Create, FileAccess.r);
-         BinaryWriter writer = new BinaryWriter(stream);
+         FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read);
+         //BinaryWriter reader = new BinaryWriter(stream);
 
 
-         using var reader = new BinaryReader(File.Open(path, FileMode.Open));
+         BinaryReader reader = new BinaryReader(stream);
          // Читаем количество элементов
          int count = reader.ReadInt32();
          Point[] points = new Point[count];
-
          // Читаем каждую структуру
          for (int i = 0; i < count; i++)
          {
