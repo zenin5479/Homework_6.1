@@ -43,9 +43,9 @@ namespace Homework_6._1
    {
       public int X;
       public int Y;
-      public float Z;
+      public double Z;
 
-      public Point(int x, int y, float z)
+      public Point(int x, int y, double z)
       {
          X = x;
          Y = y;
@@ -143,9 +143,9 @@ namespace Homework_6._1
          // Создаем массив структур
          Point[] points = 
          {
-            new Point(1, 2, 3.5f),
-            new Point(4, 5, 6.7f),
-            new Point(8, 9, 10.1f)
+            new Point(1, 2, 3.57f),
+            new Point(4, 5, 6.78f),
+            new Point(8, 9, 10.12f)
          };
 
          // Запись в файл
@@ -196,7 +196,7 @@ namespace Homework_6._1
             (
                reader.ReadInt32(),
                reader.ReadInt32(),
-               reader.ReadSingle()
+               reader.ReadDouble()
             );
          }
 
