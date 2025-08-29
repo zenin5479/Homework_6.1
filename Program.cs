@@ -45,12 +45,12 @@ namespace Homework_6._1
       public int Y;
       public double Z;
 
-      public Point(int x, int y, double z)
-      {
-         X = x;
-         Y = y;
-         Z = z;
-      }
+      //public Point(int x, int y, double z)
+      //{
+      //   X = x;
+      //   Y = y;
+      //   Z = z;
+      //}
    }
 
    internal class Program
@@ -143,9 +143,13 @@ namespace Homework_6._1
          // Создаем массив структур
          Point[] points =
          {
-            new Point(1, 2, 3.57f),
-            new Point(4, 5, 6.78f),
-            new Point(8, 9, 10.12f)
+            new Point{X = 5, Y = 8, Z = 7.57f},
+            new Point{X = 7, Y = 3, Z = 4.582f},
+            new Point{X = 2, Y = 9, Z = 3.21f}
+
+            //new Point(1, 2, 3.57f),
+            //new Point(4, 5, 6.78f),
+            //new Point(8, 9, 10.12f)
          };
 
          // Запись в файл
