@@ -44,13 +44,6 @@ namespace Homework_6._1
       public int X;
       public int Y;
       public double Z;
-
-      //public Point(int x, int y, double z)
-      //{
-      //   X = x;
-      //   Y = y;
-      //   Z = z;
-      //}
    }
 
    internal class Program
@@ -138,26 +131,34 @@ namespace Homework_6._1
          }
 
          // Преобразование массива структур в массив байт и запись в бинарный файл
-         //WriteStructArrayToFile(people, pathWrite);
-
-         // Создаем массив структур
-         Point[] points =
-         {
-            new Point{X = 5, Y = 8, Z = 7.57},
-            new Point{X = 7, Y = 3, Z = 4.58},
-            new Point{X = 2, Y = 9, Z = 3.21}
-         };
-
-         // Запись в файл
-         WritePointsToFile(pathWrite, points);
-         // Чтение из файла
-         Point[] readPoints = ReadPointsFromFile(pathWrite);
+         WriteStructArrayToFile(people, pathWrite);
+         Student[] reads = ReadArrayFromFile(pathWrite);
          Console.WriteLine("Прочитанные данные:");
-         for (var index = 0; index < readPoints.Length; index++)
+         for (int index = 0; index < reads.Length; index++)
          {
-            Point point = readPoints[index];
-            Console.WriteLine($"X: {point.X}, Y: {point.Y}, Z: {point.Z}");
+            Student readThree = reads[index];
+            Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
+               readThree.Group, readThree.Surname, readThree.Name, readThree.Dadsname, readThree.Year,
+               readThree.Gender, readThree.Physics, readThree.Math, readThree.Inf, readThree.Grant);
          }
+
+         //// Создаем массив структур
+         //Point[] points =
+         //{
+         //   new Point{X = 5, Y = 8, Z = 7.57},
+         //   new Point{X = 7, Y = 3, Z = 4.58},
+         //   new Point{X = 2, Y = 9, Z = 3.21}
+         //};
+         //// Запись в файл
+         //WritePointsToFile(pathWrite, points);
+         //// Чтение из файла
+         //Point[] readPoints = ReadPointsFromFile(pathWrite);
+         //Console.WriteLine("Прочитанные данные:");
+         //for (var index = 0; index < readPoints.Length; index++)
+         //{
+         //   Point point = readPoints[index];
+         //   Console.WriteLine($"X: {point.X}, Y: {point.Y}, Z: {point.Z}");
+         //}
 
          Console.ReadKey();
       }
@@ -212,7 +213,6 @@ namespace Homework_6._1
          BinaryReader reader = new BinaryReader(stream, Encoding.UTF8);
          // Читаем количество элементов
          int count = reader.ReadInt32();
-
          // Создаем массив
          Student[] array = new Student[count];
          // Читаем каждый элемент
