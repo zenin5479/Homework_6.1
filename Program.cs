@@ -124,7 +124,7 @@ namespace Homework_6._1
          }
 
          // Преобразование массива структур в массив байт и запись в бинарный файл
-         WriteStructArrayToFile(people, pathWrite);
+         //WriteStructArrayToFile(people, pathWrite);
 
          // Способ 1: Ручное чтение
          //Student[] points = ReadArrayFromFile(pathWrite);
