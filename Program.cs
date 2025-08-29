@@ -143,9 +143,9 @@ namespace Homework_6._1
          // Создаем массив структур
          Point[] points =
          {
-            new Point{X = 5, Y = 8, Z = 7.57f},
-            new Point{X = 7, Y = 3, Z = 4.582f},
-            new Point{X = 2, Y = 9, Z = 3.21f}
+            new Point{X = 5, Y = 8, Z = 7.57},
+            new Point{X = 7, Y = 3, Z = 4.58},
+            new Point{X = 2, Y = 9, Z = 3.21}
 
             //new Point(1, 2, 3.57f),
             //new Point(4, 5, 6.78f),
@@ -197,11 +197,18 @@ namespace Homework_6._1
          for (int i = 0; i < count; i++)
          {
             points[i] = new Point
-            (
-               reader.ReadInt32(),
-               reader.ReadInt32(),
-               reader.ReadDouble()
-            );
+            {
+               X = reader.ReadInt32(),
+               Y = reader.ReadInt32(),
+               Z = reader.ReadDouble()
+            };
+
+            //points[i] = new Point
+            //(
+            //   reader.ReadInt32(),
+            //   reader.ReadInt32(),
+            //   reader.ReadDouble()
+            //);
          }
 
          stream.Close();
