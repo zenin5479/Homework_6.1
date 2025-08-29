@@ -146,10 +146,6 @@ namespace Homework_6._1
             new Point{X = 5, Y = 8, Z = 7.57},
             new Point{X = 7, Y = 3, Z = 4.58},
             new Point{X = 2, Y = 9, Z = 3.21}
-
-            //new Point(1, 2, 3.57f),
-            //new Point(4, 5, 6.78f),
-            //new Point(8, 9, 10.12f)
          };
 
          // Запись в файл
