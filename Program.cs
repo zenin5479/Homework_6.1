@@ -229,3 +229,26 @@ namespace Homework_6._1
       }
    }
 }
+
+//   string text = "Hello METANIT.COM";
+
+//   using (FileStream fstream = new FileStream(pathWrite, FileMode.OpenOrCreate))
+//   {
+//      // преобразуем строку в байты
+//      byte[] buffer = Encoding.UTF8.GetBytes(text);
+//   // запись массива байтов в файл
+//   fstream.WriteAsync(buffer, 0, buffer.Length);
+//      Console.WriteLine("Текст записан в файл");
+//   }
+
+//// чтение из файла
+//using (FileStream fstream = File.OpenRead(pathWrite))
+//{
+//   // выделяем массив для считывания данных из файла
+//   byte[] buffer = new byte[fstream.Length];
+//   // считываем данные
+//   fstream.ReadAsync(buffer, 0, buffer.Length);
+//   // декодируем байты в строку
+//   string textFromFile = Encoding.UTF8.GetString(buffer);
+//   Console.WriteLine($"Текст из файла: {textFromFile}");
+//}
