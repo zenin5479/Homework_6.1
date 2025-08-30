@@ -109,33 +109,33 @@ namespace Homework_6._1
          // Запись массива структур в текстовый файл
          WriteStructFile(pathStruct, people);
          // Чтение массива структур из текстового файла
-         Student[] read = MethodsForStruct.ReadStructFile(pathStruct, "spisok.txt");
+         Student[] readTxt = MethodsForStruct.ReadStructFile(pathStruct, "spisok.txt");
          // Вывод прочитанных данных
          Console.WriteLine("Прочитанные данные:");
          int i = 0;
-         while (i < read.Length)
+         while (i < readTxt.Length)
          {
-            Student readTwo = read[i];
+            Student read = readTxt[i];
             Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
-               readTwo.Group, readTwo.Surname, readTwo.Name, readTwo.Dadsname, readTwo.Year,
-               readTwo.Gender, readTwo.Physics, readTwo.Math, readTwo.Inf, readTwo.Grant);
+               read.Group, read.Surname, read.Name, read.Dadsname, read.Year,
+               read.Gender, read.Physics, read.Math, read.Inf, read.Grant);
             i++;
          }
 
          // Запись массива структур в бинарный файл
          WriteStructFile(writeStruct, people);
          // Чтение массива структур из бинарного файла
-         Student[] read2 = MethodsForStruct.ReadStructFile(pathWrite, "writestruct.bin");
+         Student[] readBin = MethodsForStruct.ReadStructFile(pathWrite, "writestruct.bin");
          // Вывод прочитанных данных
          Console.WriteLine("Прочитанные данные:");
-         int i2 = 0;
-         while (i2 < read2.Length)
+         int j = 0;
+         while (j < readBin.Length)
          {
-            Student readTwo = read2[i2];
+            Student read = readBin[j];
             Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
-               readTwo.Group, readTwo.Surname, readTwo.Name, readTwo.Dadsname, readTwo.Year,
-               readTwo.Gender, readTwo.Physics, readTwo.Math, readTwo.Inf, readTwo.Grant);
-            i2++;
+               read.Group, read.Surname, read.Name, read.Dadsname, read.Year,
+               read.Gender, read.Physics, read.Math, read.Inf, read.Grant);
+            j++;
          }
 
          Console.ReadKey();
