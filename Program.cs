@@ -39,13 +39,6 @@ namespace Homework_6._1
       public double Grant;
    }
 
-   public struct Point
-   {
-      public int X;
-      public int Y;
-      public double Z;
-   }
-
    internal class Program
    {
       static void Main(string[] args)
