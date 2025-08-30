@@ -145,7 +145,6 @@ namespace Homework_6._1
             i2++;
          }
 
-
          // Создаем массив структур
          Point[] points =
          {
