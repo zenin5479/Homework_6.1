@@ -191,15 +191,3 @@ namespace Homework_6._1
       }
    }
 }
-
-//// чтение из файла
-//using (FileStream fstream = File.OpenRead(pathWrite))
-//{
-//   // выделяем массив для считывания данных из файла
-//   byte[] buffer = new byte[fstream.Length];
-//   // считываем данные
-//   fstream.ReadAsync(buffer, 0, buffer.Length);
-//   // декодируем байты в строку
-//   string textFromFile = Encoding.UTF8.GetString(buffer);
-//   Console.WriteLine($"Текст из файла: {textFromFile}");
-//}
