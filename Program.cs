@@ -115,9 +115,9 @@ namespace Homework_6._1
 
          // Запись массива структур в текстовый файл
          WriteStructFile(pathStruct, people);
-
-
-         WriteStructFile(writeStruct, people);
+         
+         
+         
 
          // Чтение массива структур из текстового файла
          Student[] read = MethodsForStruct.ReadStructFile(pathStruct, "spisok.txt");
@@ -133,6 +133,9 @@ namespace Homework_6._1
             i++;
          }
 
+// Запись массива структур в текстовый файл
+
+         WriteStructFile(writeStruct, people);
          // Чтение массива структур из текстового файла
          Student[] read2 = MethodsForStruct.ReadStructFile(pathWrite, "writestruct.bin");
          // Вывод прочитанных данных
@@ -147,18 +150,7 @@ namespace Homework_6._1
             i2++;
          }
 
-         // Преобразование массива структур в массив байт и запись в бинарный файл
-         //WriteStructArrayToFile(people, pathWrite);
-         //Student[] reads = ReadArrayFromFile(pathWrite);
-         //Console.WriteLine("Прочитанные данные:");
-         //for (int index = 0; index < reads.Length; index++)
-         //{
-         //   Student readThree = reads[index];
-         //   Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
-         //      readThree.Group, readThree.Surname, readThree.Name, readThree.Dadsname, readThree.Year,
-         //      readThree.Gender, readThree.Physics, readThree.Math, readThree.Inf, readThree.Grant);
-         //}
-
+         
          // Создаем массив структур
          Point[] points =
          {
