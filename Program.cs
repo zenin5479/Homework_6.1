@@ -115,6 +115,8 @@ namespace Homework_6._1
 
          // Запись массива структур в текстовый файл
          WriteStructFile(pathStruct, people);
+
+
          WriteStructFile(writeStruct, people);
 
          // Чтение массива структур из текстового файла
@@ -129,6 +131,20 @@ namespace Homework_6._1
                readTwo.Group, readTwo.Surname, readTwo.Name, readTwo.Dadsname, readTwo.Year,
                readTwo.Gender, readTwo.Physics, readTwo.Math, readTwo.Inf, readTwo.Grant);
             i++;
+         }
+
+         // Чтение массива структур из текстового файла
+         Student[] read2 = MethodsForStruct.ReadStructFile(pathWrite, "writestruct.bin");
+         // Вывод прочитанных данных
+         Console.WriteLine("Прочитанные данные:");
+         int i2 = 0;
+         while (i2 < read2.Length)
+         {
+            Student readTwo = read2[i2];
+            Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
+               readTwo.Group, readTwo.Surname, readTwo.Name, readTwo.Dadsname, readTwo.Year,
+               readTwo.Gender, readTwo.Physics, readTwo.Math, readTwo.Inf, readTwo.Grant);
+            i2++;
          }
 
          // Преобразование массива структур в массив байт и запись в бинарный файл
