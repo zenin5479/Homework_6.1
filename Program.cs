@@ -192,27 +192,6 @@ namespace Homework_6._1
    }
 }
 
-//   {
-//      array[i] = new Student
-//      {
-//         Group = reader.ReadString(),
-//         Surname = reader.ReadString(),
-//         Name = reader.ReadString(),
-//         Dadsname = reader.ReadString(),
-//         Year = reader.ReadInt32(),
-//         Gender = reader.ReadChar(),
-//         Physics = reader.ReadInt32(),
-//         Math = reader.ReadInt32(),
-//         Inf = reader.ReadInt32(),
-//         Grant = reader.ReadDouble()
-//      };
-//   }
-//   reader.Close();
-//   stream.Close();
-
-//   return array;
-//}
-
 //   string text = "Hello METANIT.COM";
 
 //   using (FileStream fstream = new FileStream(pathWrite, FileMode.OpenOrCreate))
