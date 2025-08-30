@@ -145,101 +145,11 @@ namespace Homework_6._1
             i2++;
          }
 
-         // Создаем массив структур
-         Point[] points =
-         {
-            new Point{X = 5, Y = 8, Z = 7.57},
-            new Point{X = 7, Y = 3, Z = 4.58},
-            new Point{X = 2, Y = 9, Z = 3.21}
-         };
-         // Запись в файл
-         WritePointsToFile(pathWrite, points);
-         // Чтение из файла
-         Point[] readPoints = ReadPointsFromFile(pathWrite);
-         Console.WriteLine("Прочитанные данные:");
-         for (var index = 0; index < readPoints.Length; index++)
-         {
-            Point point = readPoints[index];
-            Console.WriteLine($"X: {point.X}, Y: {point.Y}, Z: {point.Z}");
-         }
 
          Console.ReadKey();
       }
 
-      static void WritePointsToFile(string path, Point[] points)
-      {
-         FileStream stream = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write);
-         BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
-         // Записываем количество элементов
-         writer.Write(points.Length);
-         // Записываем каждую структуру
-         for (var i = 0; i < points.Length; i++)
-         {
-            Point point = points[i];
-            writer.Write(point.X);
-            writer.Write(point.Y);
-            writer.Write(point.Z);
-         }
-
-         stream.Close();
-         writer.Close();
-      }
-
-      static Point[] ReadPointsFromFile(string path)
-      {
-         FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read);
-         BinaryReader reader = new BinaryReader(stream, Encoding.UTF8);
-         // Читаем количество элементов
-         int count = reader.ReadInt32();
-         Point[] points = new Point[count];
-         // Читаем каждую структуру
-         for (int i = 0; i < count; i++)
-         {
-            points[i] = new Point
-            {
-               X = reader.ReadInt32(),
-               Y = reader.ReadInt32(),
-               Z = reader.ReadDouble()
-            };
-         }
-
-         stream.Close();
-         reader.Close();
-
-         return points;
-      }
-
-      // Метод чтения массива структур из бинарного файла
-      public static Student[] ReadArrayFromFile(string filePath)
-      {
-         FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
-         BinaryReader reader = new BinaryReader(stream, Encoding.UTF8);
-         // Читаем количество элементов
-         int count = reader.ReadInt32();
-         // Создаем массив
-         Student[] array = new Student[count];
-         // Читаем каждый элемент
-         for (int i = 0; i < count; i++)
-         {
-            array[i] = new Student
-            {
-               Group = reader.ReadString(),
-               Surname = reader.ReadString(),
-               Name = reader.ReadString(),
-               Dadsname = reader.ReadString(),
-               Year = reader.ReadInt32(),
-               Gender = reader.ReadChar(),
-               Physics = reader.ReadInt32(),
-               Math = reader.ReadInt32(),
-               Inf = reader.ReadInt32(),
-               Grant = reader.ReadDouble()
-            };
-         }
-         reader.Close();
-         stream.Close();
-
-         return array;
-      }
+     
 
       // Преобразование массива структур в массив байт и запись в бинарный файл
       static void WriteStructArrayToFile(Student[] structArray, string path)
