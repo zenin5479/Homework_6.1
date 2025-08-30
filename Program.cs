@@ -153,7 +153,6 @@ namespace Homework_6._1
       {
          FileStream fileStream = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write);
          BinaryWriter binaryWriter = new BinaryWriter(fileStream, Encoding.UTF8);
-         int i = 0;
       }
 
       // Метод записи массива структур в текстовый файл
