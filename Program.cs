@@ -192,15 +192,6 @@ namespace Homework_6._1
    }
 }
 
-// Метод чтения массива структур из бинарного файла
-//public static Student[] ReadArrayFromFile(string filePath)
-//{
-//   FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
-//   BinaryReader reader = new BinaryReader(stream, Encoding.UTF8);
-//   // Создаем массив
-//   Student[] array = new Student[stream.Length];
-//   // Читаем каждый элемент
-//   for (int i = 0; i < stream.Length; i++)
 //   {
 //      array[i] = new Student
 //      {
