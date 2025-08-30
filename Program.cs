@@ -154,25 +154,6 @@ namespace Homework_6._1
          FileStream fileStream = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write);
          BinaryWriter binaryWriter = new BinaryWriter(fileStream, Encoding.UTF8);
          int i = 0;
-         while (i < structArray.Length)
-         {
-            Student item = structArray[i];
-            binaryWriter.Write(item.Group);
-            binaryWriter.Write(item.Surname);
-            binaryWriter.Write(item.Name);
-            binaryWriter.Write(item.Dadsname);
-            binaryWriter.Write(item.Year);
-            binaryWriter.Write(item.Gender);
-            binaryWriter.Write(item.Physics);
-            binaryWriter.Write(item.Math);
-            binaryWriter.Write(item.Inf);
-            binaryWriter.Write(item.Grant);
-
-            i++;
-         }
-
-         binaryWriter.Close();
-         fileStream.Close();
       }
 
       // Метод записи массива структур в текстовый файл
