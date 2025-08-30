@@ -142,23 +142,23 @@ namespace Homework_6._1
                readThree.Gender, readThree.Physics, readThree.Math, readThree.Inf, readThree.Grant);
          }
 
-         //// Создаем массив структур
-         //Point[] points =
-         //{
-         //   new Point{X = 5, Y = 8, Z = 7.57},
-         //   new Point{X = 7, Y = 3, Z = 4.58},
-         //   new Point{X = 2, Y = 9, Z = 3.21}
-         //};
-         //// Запись в файл
-         //WritePointsToFile(pathWrite, points);
-         //// Чтение из файла
-         //Point[] readPoints = ReadPointsFromFile(pathWrite);
-         //Console.WriteLine("Прочитанные данные:");
-         //for (var index = 0; index < readPoints.Length; index++)
-         //{
-         //   Point point = readPoints[index];
-         //   Console.WriteLine($"X: {point.X}, Y: {point.Y}, Z: {point.Z}");
-         //}
+         // Создаем массив структур
+         Point[] points =
+         {
+            new Point{X = 5, Y = 8, Z = 7.57},
+            new Point{X = 7, Y = 3, Z = 4.58},
+            new Point{X = 2, Y = 9, Z = 3.21}
+         };
+         // Запись в файл
+         WritePointsToFile(pathWrite, points);
+         // Чтение из файла
+         Point[] readPoints = ReadPointsFromFile(pathWrite);
+         Console.WriteLine("Прочитанные данные:");
+         for (var index = 0; index < readPoints.Length; index++)
+         {
+            Point point = readPoints[index];
+            Console.WriteLine($"X: {point.X}, Y: {point.Y}, Z: {point.Z}");
+         }
 
          Console.ReadKey();
       }
