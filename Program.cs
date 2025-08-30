@@ -144,7 +144,7 @@ namespace Homework_6._1
       // Метод записи массива структур в текстовый файл
       static void WriteStructFile(string path, Student[] people)
       {
-         using (StreamWriter writer = new StreamWriter(path, false, Encoding.UTF8))
+         using (StreamWriter writer = new StreamWriter(path, false, Encoding.UTF32))
          {
             for (int i = 0; i < people.Length; i++)
             {
