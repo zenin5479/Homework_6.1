@@ -10,7 +10,7 @@ namespace Homework_6._1
       {
          Student[] arrayStudent = { };
          // Чтение файла за одну операцию
-         string[] allLines = File.ReadAllLines(path);
+         string[] allLines = File.ReadAllLines(path, Encoding.UTF8);
          if (allLines == null || allLines.Length == 0)
          {
             Console.WriteLine("Ошибка содержимого файла для чтения {0}", nameFile);
