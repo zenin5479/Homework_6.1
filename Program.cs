@@ -148,11 +148,6 @@ namespace Homework_6._1
          Console.ReadKey();
       }
 
-      // Преобразование массива структур в массив байт и запись в бинарный файл
-      static void WriteStructArrayToFile(Student[] structArray, string path)
-      {
-      }
-
       // Метод записи массива структур в текстовый файл
       static void WriteStructFile(string path, Student[] people)
       {
