@@ -46,15 +46,6 @@ namespace Homework_6._1
       public float Height;
    }
 
-   public struct Point
-   {
-      public Point(byte tag, double x, double y) => (Tag, X, Y) = (tag, x, y);
-
-      public byte Tag { get; }
-      public double X { get; }
-      public double Y { get; }
-   }
-
    internal class Program
    {
       static void Main(string[] args)
