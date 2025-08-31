@@ -42,11 +42,9 @@ namespace Homework_6._1
 
    public struct Point
    {
-      public int x;
-      public int y;
+      public int X;
+      public int Y;
    }
-
-
 
    internal class Program
    {
@@ -150,10 +148,10 @@ namespace Homework_6._1
 
          // Create a point struct.
          Point p;
-         p.x = 1;
-         p.y = 1;
+         p.X = 1;
+         p.Y = 1;
 
-         Console.WriteLine("The value of first point is " + p.x + " and " + p.y + ".");
+         Console.WriteLine("The value of first point is " + p.X + " and " + p.Y + ".");
 
          // Initialize unmanged memory to hold the struct.
          IntPtr pnt = Marshal.AllocHGlobal(Marshal.SizeOf(p));
@@ -171,7 +169,7 @@ namespace Homework_6._1
             // Point in unmanaged memory.
             anotherP = (Point)Marshal.PtrToStructure(pnt, typeof(Point));
 
-            Console.WriteLine("The value of new point is " + anotherP.x + " and " + anotherP.y + ".");
+            Console.WriteLine("The value of new point is " + anotherP.X + " and " + anotherP.Y + ".");
          }
          finally
          {
