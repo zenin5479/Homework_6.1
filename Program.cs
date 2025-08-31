@@ -166,10 +166,22 @@ namespace Homework_6._1
 
          Console.WriteLine($"Restored: {restored.Id}, {restored.Name}, {restored.Height}");
 
+         Console.WriteLine(sizeof(byte));  // output: 1
+         Console.WriteLine(sizeof(double));  // output: 8
 
+         DisplaySizeOf<Point>();  // output: Size of Point is 24
+         DisplaySizeOf<decimal>();  // output: Size of System.Decimal is 16
+
+         
 
          Console.ReadKey();
       }
+
+      static void DisplaySizeOf<T>() where T : unmanaged
+      {
+         Console.WriteLine($"Size of {typeof(T)} is {sizeof(T)}");
+      }
+
 
       static void WritePerson(string path, Person person)
       {
