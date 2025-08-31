@@ -39,12 +39,6 @@ namespace Homework_6._1
       public double Grant;
    }
 
-   public struct Person
-   {
-      public int Id;
-      public string Name;
-      public float Height;
-   }
 
    internal class Program
    {
@@ -145,42 +139,11 @@ namespace Homework_6._1
             j++;
          }
 
-         Person original = new Person
-         {
-            Id = 1,
-            Name = "John",
-            Height = 175.5f
-         };
-
-         WritePerson("person.bin", original);
-         Person restored = ReadPerson("person.bin");
-
-         Console.WriteLine($"Restored: {restored.Id}, {restored.Name}, {restored.Height}");
 
          Console.ReadKey();
       }
 
-      static void WritePerson(string path, Person person)
-      {
-         using (var writer = new BinaryWriter(File.OpenWrite(path)))
-         {
-            writer.Write(person.Id);
-            writer.Write(person.Name);
-            writer.Write(person.Height);
-         }
-      }
-
-      static Person ReadPerson(string path)
-      {
-         var person = new Person();
-         using (var reader = new BinaryReader(File.OpenRead(path)))
-         {
-            person.Id = reader.ReadInt32();
-            person.Name = reader.ReadString();
-            person.Height = reader.ReadSingle();
-         }
-         return person;
-      }
+      
 
 
 
