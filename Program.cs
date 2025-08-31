@@ -186,8 +186,6 @@ namespace Homework_6._1
          Console.ReadKey();
       }
 
-
-
       // Метод записи массива структур в текстовый файл
       static void WriteStructFile(string path, Student[] people)
       {
