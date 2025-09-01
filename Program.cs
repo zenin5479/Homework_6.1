@@ -124,7 +124,7 @@ namespace Homework_6._1
          }
 
          // Запись массива структур в бинарный файл
-         WriteStructFile2(writeStruct, people);
+         WriteStructFile2(pathWrite, people);
          // Чтение массива структур из бинарного файла
          Student[] readBin = MethodsForStruct.ReadStructFile2(pathWrite, "writestruct.bin");
          // Вывод прочитанных данных
