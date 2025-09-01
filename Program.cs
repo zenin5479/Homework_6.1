@@ -176,8 +176,8 @@ namespace Homework_6._1
          }
 
          // Продемонстрируем использование метода SizeOf класса Marshal
-         Console.WriteLine("Number of bytes needed by a Point object: {0}", Marshal.SizeOf(typeof(Point)));
-         Console.WriteLine("Number of bytes needed by a Point object: {0}", Marshal.SizeOf(p));
+         Console.WriteLine("Количество байт, необходимых точечному объекту: {0}", Marshal.SizeOf(typeof(Point)));
+         Console.WriteLine("Количество байт, необходимых точечному объекту: {0}", Marshal.SizeOf(p));
 
          Console.ReadKey();
       }
