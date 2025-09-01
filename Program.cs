@@ -145,7 +145,7 @@ namespace Homework_6._1
             j++;
          }
 
-
+         //
          // Создаем структуру
          Point p;
          p.X = 4;
@@ -155,10 +155,8 @@ namespace Homework_6._1
 
          // Инициализируем неизменяемую память для хранения структуры
          IntPtr pnt = Marshal.AllocHGlobal(Marshal.SizeOf(p));
-
          try
          {
-
             // Скопирем структуру в неуправляемую память
             Marshal.StructureToPtr(p, pnt, false);
 
