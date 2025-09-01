@@ -200,10 +200,10 @@ namespace Homework_6._1
          int elementSize = Marshal.SizeOf(typeof(T));
 
          // Накладные расходы массива (заголовок)
-         int arrayHeaderSize = IntPtr.Size * 2; // sync block + type pointer
+         int arrayHeaderSize = IntPtr.Size * 2;
 
          // Общий размер
-         return (elementSize * (long)array.Length) + arrayHeaderSize;
+         return elementSize * (long)array.Length + arrayHeaderSize;
       }
 
       public static void PrintMemoryInfo<T>(T[] array, string arrayName = "Массив") where T : struct
