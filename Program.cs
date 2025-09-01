@@ -215,8 +215,6 @@ namespace Homework_6._1
          Console.WriteLine($"  Размер элемента: {elementSize} байт");
          Console.WriteLine($"  Количество: {array.Length}");
          Console.WriteLine($"  Общий размер: {size} байт");
-         Console.WriteLine($"  В килобайтах: {size / 1024.0:F4} KB");
-         Console.WriteLine($"  В мегабайтах: {size / (1024.0 * 1024.0):F4} MB");
       }
 
       // Метод записи массива структур в текстовый файл
