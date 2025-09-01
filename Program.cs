@@ -212,9 +212,9 @@ namespace Homework_6._1
          int elementSize = Marshal.SizeOf(typeof(T));
 
          Console.WriteLine($"{arrayName}:");
-         Console.WriteLine($"  Размер элемента: {elementSize} байт");
-         Console.WriteLine($"  Количество: {array.Length}");
-         Console.WriteLine($"  Общий размер: {size} байт");
+         Console.WriteLine($"Размер элемента: {elementSize} байт");
+         Console.WriteLine($"Количество: {array.Length}");
+         Console.WriteLine($"Общий размер: {size} байт");
       }
 
       // Метод записи массива структур в текстовый файл
