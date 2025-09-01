@@ -149,8 +149,10 @@ namespace Homework_6._1
          while (k < people.Length)
          {
             bitWidth[k] = Marshal.AllocHGlobal(Marshal.SizeOf(people[k]));
-            Console.WriteLine("Количество байт, необходимо выделить в неуправляемую память под структуру: {0}", Marshal.SizeOf(bitWidth[k]));
-            countBytes += Marshal.SizeOf(bitWidth[k]);
+            // Способ 2: Marshal.SizeOf()
+            int size = Marshal.SizeOf(bitWidth[k]);
+            Console.WriteLine("Количество байт, необходимо выделить в неуправляемую память под структуру: {0}", size);
+            countBytes += size;
             k++;
          }
 
@@ -180,8 +182,8 @@ namespace Homework_6._1
          Console.WriteLine("Количество байт, необходимых под массив структур: {0}", countBytes);
 
          // Способ 2: Marshal.SizeOf()
-         int size = Marshal.SizeOf(typeof(Student));
-         Console.WriteLine(size);
+         //int size = Marshal.SizeOf(typeof(Student));
+         //Console.WriteLine(size);
 
 
          // Использование
@@ -210,7 +212,6 @@ namespace Homework_6._1
       {
          long size = GetArraySize(array);
          int elementSize = Marshal.SizeOf(typeof(T));
-
          Console.WriteLine($"{arrayName}:");
          Console.WriteLine($"Размер элемента: {elementSize} байт");
          Console.WriteLine($"Количество: {array.Length}");
