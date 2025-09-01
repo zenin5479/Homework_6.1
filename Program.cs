@@ -147,14 +147,14 @@ namespace Homework_6._1
          while (k < people.Length)
          {
             bitWidth[k] = Marshal.AllocHGlobal(Marshal.SizeOf(people[k]));
-            //Console.WriteLine("Количество байт, необходимо выделить в неуправляемую память под структуру: {0}", Marshal.SizeOf(bitWidth[k]));
+            Console.WriteLine("Количество байт, необходимо выделить в неуправляемую память под структуру: {0}", Marshal.SizeOf(bitWidth[k]));
             countBytes += Marshal.SizeOf(bitWidth[k]);
             k++;
          }
 
          try
          {
-            // Копирем структуру в неуправляемую память
+            // Скопирем структуру в неуправляемую память
             int l = 0;
             while (l < people.Length)
             {
@@ -166,12 +166,9 @@ namespace Homework_6._1
          finally
          {
             // Освобобождаем неуправляемую память
-            
-            int m = 0;
-            while (m < people.Length)
+            for (int m = 0; m < people.Length; m++)
             {
                Marshal.FreeHGlobal(bitWidth[m]);
-               m++ ;
             }
          }
 
@@ -181,15 +178,11 @@ namespace Homework_6._1
          Console.ReadKey();
       }
 
-
       // Метод записи массива структур в текстовый файл
       static void WriteStructFile(string path, Student[] people)
       {
          using (StreamWriter writer = new StreamWriter(path, false, Encoding.UTF8))
          {
-
-            writer.WriteLine("Encoding: {0}", writer.Encoding);
-
             for (int i = 0; i < people.Length; i++)
             {
                Student person = people[i];
