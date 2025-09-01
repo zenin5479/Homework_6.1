@@ -171,11 +171,11 @@ namespace Homework_6._1
          }
          finally
          {
-            // Освободите неуправляемую память.
+            // Освобобождаем неуправляемую память
             Marshal.FreeHGlobal(pnt);
          }
 
-         // Demonstrate the use of the SizeOf method of the Marshal class.
+         // Продемонстрируем использование метода SizeOf класса Marshal
          Console.WriteLine("Number of bytes needed by a Point object: {0}", Marshal.SizeOf(typeof(Point)));
          Console.WriteLine("Number of bytes needed by a Point object: {0}", Marshal.SizeOf(p));
 
