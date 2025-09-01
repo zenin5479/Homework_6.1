@@ -166,11 +166,16 @@ namespace Homework_6._1
          finally
          {
             // Освобобождаем неуправляемую память
-            
-            
-            for (int m = 0; m < people.Length; m++)
+            int m = 0;
+            while (m < people.Length)
             {
                Marshal.FreeHGlobal(bitWidth[m]);
+               m++;
+            }
+            
+            for (  )
+            {
+               
             }
          }
 
