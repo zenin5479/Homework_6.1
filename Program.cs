@@ -142,7 +142,7 @@ namespace Homework_6._1
          // Инициализируем неизменяемую память для хранения структуры
          IntPtr[] bitWidth = new IntPtr[people.Length];
          int countBytes = 0;
-         
+
          int k = 0;
          while (k < people.Length)
          {
@@ -154,19 +154,24 @@ namespace Homework_6._1
 
          try
          {
-            // Скопирем структуру в неуправляемую память
-            for (int l = 0; l < people.Length; l++)
+            // Копирем структуру в неуправляемую память
+            int l = 0;
+            while (l < people.Length)
             {
                Marshal.StructureToPtr(people[l], bitWidth[l], false);
                Console.WriteLine("Количество байт, выделено в неуправляемой памяти под структуру: {0}", Marshal.SizeOf(bitWidth[l]));
+               l++;
             }
          }
          finally
          {
             // Освобобождаем неуправляемую память
-            for (int m = 0; m < people.Length; m++)
+            
+            int m = 0;
+            while (m < people.Length)
             {
                Marshal.FreeHGlobal(bitWidth[m]);
+               m++ ;
             }
          }
 
