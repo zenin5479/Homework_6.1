@@ -181,11 +181,15 @@ namespace Homework_6._1
          Console.ReadKey();
       }
 
+
       // Метод записи массива структур в текстовый файл
       static void WriteStructFile(string path, Student[] people)
       {
          using (StreamWriter writer = new StreamWriter(path, false, Encoding.UTF8))
          {
+
+            writer.WriteLine("Encoding: {0}", writer.Encoding);
+
             for (int i = 0; i < people.Length; i++)
             {
                Student person = people[i];
