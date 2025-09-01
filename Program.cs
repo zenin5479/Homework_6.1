@@ -172,11 +172,6 @@ namespace Homework_6._1
                Marshal.FreeHGlobal(bitWidth[m]);
                m++;
             }
-            
-            for (  )
-            {
-               
-            }
          }
 
          // Продемонстрируем использование метода SizeOf класса Marshal
