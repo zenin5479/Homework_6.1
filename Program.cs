@@ -142,30 +142,33 @@ namespace Homework_6._1
          // Инициализируем неизменяемую память для хранения структуры
          IntPtr[] bitWidth = new IntPtr[people.Length];
          int countBytes = 0;
-         for (int index = 0; index < people.Length; index++)
+         
+         int k = 0;
+         while (k < people.Length)
          {
-            bitWidth[index] = Marshal.AllocHGlobal(Marshal.SizeOf(people[index]));
-            Console.WriteLine("Количество байт, необходимо выделить в неуправляемую память под структуру: {0}", Marshal.SizeOf(bitWidth[index]));
-            countBytes += Marshal.SizeOf(bitWidth[index]);
+            bitWidth[k] = Marshal.AllocHGlobal(Marshal.SizeOf(people[k]));
+            Console.WriteLine("Количество байт, необходимо выделить в неуправляемую память под структуру: {0}", Marshal.SizeOf(bitWidth[k]));
+            countBytes += Marshal.SizeOf(bitWidth[k]);
+            k++;
          }
 
-         try
-         {
-            // Скопирем структуру в неуправляемую память
-            for (int index = 0; index < people.Length; index++)
-            {
-               Marshal.StructureToPtr(people[index], bitWidth[index], false);
-               Console.WriteLine("Количество байт, выделено в неуправляемой памяти под структуру: {0}", Marshal.SizeOf(bitWidth[index]));
-            }
-         }
-         finally
-         {
-            // Освобобождаем неуправляемую память
-            for (int index = 0; index < people.Length; index++)
-            {
-               Marshal.FreeHGlobal(bitWidth[index]);
-            }
-         }
+         //try
+         //{
+         //   // Скопирем структуру в неуправляемую память
+         //   for (int index = 0; index < people.Length; index++)
+         //   {
+         //      Marshal.StructureToPtr(people[index], bitWidth[index], false);
+         //      Console.WriteLine("Количество байт, выделено в неуправляемой памяти под структуру: {0}", Marshal.SizeOf(bitWidth[index]));
+         //   }
+         //}
+         //finally
+         //{
+         //   // Освобобождаем неуправляемую память
+         //   for (int index = 0; index < people.Length; index++)
+         //   {
+         //      Marshal.FreeHGlobal(bitWidth[index]);
+         //   }
+         //}
 
          // Продемонстрируем использование метода SizeOf класса Marshal
          Console.WriteLine("Количество байт, необходимых под массив структур: {0}", countBytes);
