@@ -139,6 +139,7 @@ namespace Homework_6._1
             j++;
          }
 
+         // Расчет количество байт, необходимых под массив структур
          // Инициализируем неизменяемую память для хранения структуры
          IntPtr[] bitWidth = new IntPtr[people.Length];
          int countBytes = 0;
