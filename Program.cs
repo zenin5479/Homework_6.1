@@ -166,13 +166,10 @@ namespace Homework_6._1
       public static long GetArraySize<T>(T[] array) where T : struct
       {
          if (array == null) return 0;
-
          // Размер элемента
          int elementSize = Marshal.SizeOf(typeof(T));
-
          // Накладные расходы массива (заголовок)
          int arrayHeaderSize = IntPtr.Size * 2;
-
          // Общий размер
          return elementSize * (long)array.Length + arrayHeaderSize;
       }
@@ -203,7 +200,7 @@ namespace Homework_6._1
          writer.Close();
       }
 
-      // Метод записи массива структур в текстовый файл
+      // Метод записи массива структур в бинарный файл
       static void WriteStructFile2(string path, Student[] people)
       {
          StreamWriter writer = new StreamWriter(path, false, Encoding.Unicode);
