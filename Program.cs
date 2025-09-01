@@ -160,7 +160,7 @@ namespace Homework_6._1
             // Скопирем структуру в неуправляемую память
             Marshal.StructureToPtr(p, pnt, false);
 
-            // Create another point.
+            // Создаем еще одну точку
             Point anotherP;
 
             // Set this Point to the value of the
