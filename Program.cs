@@ -171,7 +171,7 @@ namespace Homework_6._1
          }
          finally
          {
-            // Free the unmanaged memory.
+            // Освободите неуправляемую память.
             Marshal.FreeHGlobal(pnt);
          }
 
