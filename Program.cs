@@ -163,11 +163,11 @@ namespace Homework_6._1
             // Создаем еще одну точку
             Point anotherP;
 
-            // Set this Point to the value of the
-            // Point in unmanaged memory.
+            // Установливаем для этой точки значение
+            // Точки в неуправляемой памяти
             anotherP = (Point)Marshal.PtrToStructure(pnt, typeof(Point));
 
-            Console.WriteLine("The value of new point is " + anotherP.X + " and " + anotherP.Y + ".");
+            Console.WriteLine("Значение новой точки равно " + anotherP.X + " и " + anotherP.Y + ".");
          }
          finally
          {
