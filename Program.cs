@@ -40,12 +40,6 @@ namespace Homework_6._1
       public double Grant;
    }
 
-   public struct Point
-   {
-      public int X;
-      public int Y;
-   }
-
    internal class Program
    {
       static void Main(string[] args)
@@ -154,20 +148,20 @@ namespace Homework_6._1
          Console.WriteLine("Значение первой точки равно " + p.X + " и " + p.Y + ".");
 
          // Инициализируем неизменяемую память для хранения структуры
-         IntPtr pnt = Marshal.AllocHGlobal(Marshal.SizeOf(p));
+         IntPtr pnt = Marshal.AllocHGlobal(Marshal.SizeOf(people));
          try
          {
             // Скопирем структуру в неуправляемую память
-            Marshal.StructureToPtr(p, pnt, false);
+            Marshal.StructureToPtr(people, pnt, false);
 
             // Создаем еще одну точку
-            Point anotherP;
+            Point peopleP;
 
             // Установливаем для этой точки значение
             // Точки в неуправляемой памяти
-            anotherP = (Point)Marshal.PtrToStructure(pnt, typeof(Point));
+            peopleP = (Point)Marshal.PtrToStructure(pnt, typeof(Student[]));
 
-            Console.WriteLine("Значение новой точки равно " + anotherP.X + " и " + anotherP.Y + ".");
+            Console.WriteLine("Значение новой точки равно " + peopleP. + " и " + peopleP.Y + ".");
          }
          finally
          {
