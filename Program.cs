@@ -152,23 +152,23 @@ namespace Homework_6._1
             k++;
          }
 
-         //try
-         //{
-         //   // Скопирем структуру в неуправляемую память
-         //   for (int index = 0; index < people.Length; index++)
-         //   {
-         //      Marshal.StructureToPtr(people[index], bitWidth[index], false);
-         //      Console.WriteLine("Количество байт, выделено в неуправляемой памяти под структуру: {0}", Marshal.SizeOf(bitWidth[index]));
-         //   }
-         //}
-         //finally
-         //{
-         //   // Освобобождаем неуправляемую память
-         //   for (int index = 0; index < people.Length; index++)
-         //   {
-         //      Marshal.FreeHGlobal(bitWidth[index]);
-         //   }
-         //}
+         try
+         {
+            // Скопирем структуру в неуправляемую память
+            for (int l = 0; l < people.Length; l++)
+            {
+               Marshal.StructureToPtr(people[l], bitWidth[l], false);
+               Console.WriteLine("Количество байт, выделено в неуправляемой памяти под структуру: {0}", Marshal.SizeOf(bitWidth[l]));
+            }
+         }
+         finally
+         {
+            // Освобобождаем неуправляемую память
+            for (int m = 0; m < people.Length; m++)
+            {
+               Marshal.FreeHGlobal(bitWidth[m]);
+            }
+         }
 
          // Продемонстрируем использование метода SizeOf класса Marshal
          Console.WriteLine("Количество байт, необходимых под массив структур: {0}", countBytes);
