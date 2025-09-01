@@ -141,10 +141,13 @@ namespace Homework_6._1
 
          //
          // Инициализируем неизменяемую память для хранения структуры
+         IntPtr[] pnt = new IntPtr[people.Length];
+
          for (int index = 0; index < people.Length; index++)
          {
-            Student student = people[index];
-            IntPtr pnt = Marshal.AllocHGlobal(Marshal.SizeOf(people[1]));
+            pnt. = { Marshal.AllocHGlobal(Marshal.SizeOf(people[i])) };
+
+
          }
 
          //IntPtr pnt = Marshal.AllocHGlobal(Marshal.SizeOf(people[1]));
