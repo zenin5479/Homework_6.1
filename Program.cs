@@ -140,13 +140,13 @@ namespace Homework_6._1
          }
 
          // Инициализируем неизменяемую память для хранения структуры
-         IntPtr[] pnt = new IntPtr[people.Length];
-         int coInts = 0;
+         IntPtr[] bitWidth = new IntPtr[people.Length];
+         int countBytes = 0;
          for (int index = 0; index < people.Length; index++)
          {
-            pnt[index] = Marshal.AllocHGlobal(Marshal.SizeOf(people[index]));
-            Console.WriteLine("Количество байт, необходимых под одну структуру: {0}", Marshal.SizeOf(pnt[index]));
-            coInts += Marshal.SizeOf(pnt[index]);
+            bitWidth[index] = Marshal.AllocHGlobal(Marshal.SizeOf(people[index]));
+            Console.WriteLine("Количество байт, необходимых под одну структуру: {0}", Marshal.SizeOf(bitWidth[index]));
+            countBytes += Marshal.SizeOf(bitWidth[index]);
          }
 
          try
@@ -154,8 +154,8 @@ namespace Homework_6._1
             // Скопирем структуру в неуправляемую память
             for (int index = 0; index < people.Length; index++)
             {
-               Marshal.StructureToPtr(people[index], pnt[index], false);
-               Console.WriteLine("Количество байт, необходимых под одну структуру: {0}", Marshal.SizeOf(pnt[index]));
+               Marshal.StructureToPtr(people[index], bitWidth[index], false);
+               Console.WriteLine("Количество байт, необходимых под одну структуру: {0}", Marshal.SizeOf(bitWidth[index]));
             }
          }
          finally
@@ -163,12 +163,12 @@ namespace Homework_6._1
             // Освобобождаем неуправляемую память
             for (int index = 0; index < people.Length; index++)
             {
-               Marshal.FreeHGlobal(pnt[index]);
+               Marshal.FreeHGlobal(bitWidth[index]);
             }
          }
 
          // Продемонстрируем использование метода SizeOf класса Marshal
-         Console.WriteLine("Количество байт, необходимых под массив структур: {0}", coInts);
+         Console.WriteLine("Количество байт, необходимых под массив структур: {0}", countBytes);
 
          Console.ReadKey();
       }
