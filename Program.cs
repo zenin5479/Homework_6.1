@@ -141,10 +141,12 @@ namespace Homework_6._1
 
          // Инициализируем неизменяемую память для хранения структуры
          IntPtr[] pnt = new IntPtr[people.Length];
+         int coInts = 0;
          for (int index = 0; index < people.Length; index++)
          {
             pnt[index] = Marshal.AllocHGlobal(Marshal.SizeOf(people[index]));
             Console.WriteLine("Количество байт, необходимых под одну структуру: {0}", Marshal.SizeOf(pnt[index]));
+            coInts += Marshal.SizeOf(pnt[index]);
          }
 
          try
@@ -166,7 +168,7 @@ namespace Homework_6._1
          }
 
          // Продемонстрируем использование метода SizeOf класса Marshal
-         //Console.WriteLine("Количество байт, необходимых под одну структуру: {0}", Marshal.SizeOf(people[1]));
+         Console.WriteLine("Количество байт, необходимых под массив структур: {0}", coInts);
 
          Console.ReadKey();
       }
