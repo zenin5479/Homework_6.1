@@ -140,28 +140,21 @@ namespace Homework_6._1
          }
 
          //
-         // Создаем структуру
-         Point p;
-         p.X = 4;
-         p.Y = 7;
-
-         Console.WriteLine("Значение первой точки равно " + p.X + " и " + p.Y + ".");
-
          // Инициализируем неизменяемую память для хранения структуры
-         IntPtr pnt = Marshal.AllocHGlobal(Marshal.SizeOf(people));
+         IntPtr pnt = Marshal.AllocHGlobal(Marshal.SizeOf(people[1]));
          try
          {
             // Скопирем структуру в неуправляемую память
-            Marshal.StructureToPtr(people, pnt, false);
+            Marshal.StructureToPtr(people[1], pnt, false);
 
             // Создаем еще одну точку
-            Point peopleP;
+            Student[] peopleP;
 
             // Установливаем для этой точки значение
             // Точки в неуправляемой памяти
-            peopleP = (Point)Marshal.PtrToStructure(pnt, typeof(Student[]));
+            peopleP = (Student[])Marshal.PtrToStructure(pnt, typeof(Student[]));
 
-            Console.WriteLine("Значение новой точки равно " + peopleP. + " и " + peopleP.Y + ".");
+            Console.WriteLine("Значение новой точки равно " + peopleP + " и " + peopleP + ".");
          }
          finally
          {
@@ -170,8 +163,8 @@ namespace Homework_6._1
          }
 
          // Продемонстрируем использование метода SizeOf класса Marshal
-         Console.WriteLine("Количество байт, необходимых точечному объекту: {0}", Marshal.SizeOf(typeof(Point)));
-         Console.WriteLine("Количество байт, необходимых точечному объекту: {0}", Marshal.SizeOf(p));
+         Console.WriteLine("Количество байт, необходимых точечному объекту: {0}", Marshal.SizeOf(typeof(Student[])));
+         Console.WriteLine("Количество байт, необходимых точечному объекту: {0}", Marshal.SizeOf(people));
 
          Console.ReadKey();
       }
