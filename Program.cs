@@ -145,7 +145,7 @@ namespace Homework_6._1
          for (int index = 0; index < people.Length; index++)
          {
             bitWidth[index] = Marshal.AllocHGlobal(Marshal.SizeOf(people[index]));
-            Console.WriteLine("Количество байт, необходимых под одну структуру: {0}", Marshal.SizeOf(bitWidth[index]));
+            Console.WriteLine("Количество байт, необходимых под структуру: {0}", Marshal.SizeOf(bitWidth[index]));
             countBytes += Marshal.SizeOf(bitWidth[index]);
          }
 
@@ -155,7 +155,7 @@ namespace Homework_6._1
             for (int index = 0; index < people.Length; index++)
             {
                Marshal.StructureToPtr(people[index], bitWidth[index], false);
-               Console.WriteLine("Количество байт, необходимых под одну структуру: {0}", Marshal.SizeOf(bitWidth[index]));
+               Console.WriteLine("Количество байт, необходимых под структуру: {0}", Marshal.SizeOf(bitWidth[index]));
             }
          }
          finally
