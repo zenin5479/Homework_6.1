@@ -156,40 +156,11 @@ namespace Homework_6._1
             k++;
          }
 
-         try
-         {
-            // Скопирем структуру в неуправляемую память
-            int l = 0;
-            while (l < people.Length)
-            {
-               Marshal.StructureToPtr(people[l], bitWidth[l], false);
-               Console.WriteLine("Количество байт, выделено в неуправляемой памяти под структуру: {0}", Marshal.SizeOf(bitWidth[l]));
-               l++;
-            }
-         }
-         finally
-         {
-            // Освобобождаем неуправляемую память
-            int m = 0;
-            while (m < people.Length)
-            {
-               Marshal.FreeHGlobal(bitWidth[m]);
-               m++;
-            }
-         }
-
          // Продемонстрируем использование метода SizeOf класса Marshal
          Console.WriteLine("Количество байт, необходимых под массив структур: {0}", countBytes);
 
-         // Способ 2: Marshal.SizeOf()
-         //int size = Marshal.SizeOf(typeof(Student));
-         //Console.WriteLine(size);
-
-
-         // Использование
-        
+        // Использование
          PrintMemoryInfo(people, "Массив структур");
-
 
          Console.ReadKey();
       }
