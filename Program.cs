@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -125,7 +124,7 @@ namespace Homework_6._1
          }
 
          // Запись массива структур в бинарный файл
-         WriteStructFile(writeStruct, people); 
+         WriteStructFile(writeStruct, people);
          // Чтение массива структур из бинарного файла
          Student[] readBin = MethodsForStruct.ReadStructFile(pathWrite, "writestruct.bin");
          // Вывод прочитанных данных
@@ -158,7 +157,7 @@ namespace Homework_6._1
          // Продемонстрируем использование метода SizeOf класса Marshal
          Console.WriteLine("Количество байт, необходимых под массив структур: {0}", countBytes);
 
-        // Использование
+         // Использование
          PrintMemoryInfo(people, "Массив структур");
 
          Console.ReadKey();
@@ -191,16 +190,17 @@ namespace Homework_6._1
       // Метод записи массива структур в текстовый файл
       static void WriteStructFile(string path, Student[] people)
       {
-         using (StreamWriter writer = new StreamWriter(path, false, Encoding.UTF8))
+         StreamWriter writer = new StreamWriter(path, false, Encoding.UTF8);
+         for (int i = 0; i < people.Length; i++)
          {
-            for (int i = 0; i < people.Length; i++)
-            {
-               Student person = people[i];
-               writer.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
-                  person.Group, person.Surname, person.Name, person.Dadsname, person.Year,
-                  person.Gender, person.Physics, person.Math, person.Inf, person.Grant);
-            }
+            Student person = people[i];
+            writer.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
+               person.Group, person.Surname, person.Name, person.Dadsname, person.Year,
+               person.Gender, person.Physics, person.Math, person.Inf, person.Grant);
          }
+
+         writer.Flush();
+         writer.Close();
       }
    }
 }
