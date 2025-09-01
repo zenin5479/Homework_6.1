@@ -151,7 +151,7 @@ namespace Homework_6._1
          p.X = 1;
          p.Y = 1;
 
-         Console.WriteLine("The value of first point is " + p.X + " and " + p.Y + ".");
+         Console.WriteLine("Значение первой точки равно " + p.X + " and " + p.Y + ".");
 
          // Initialize unmanged memory to hold the struct.
          IntPtr pnt = Marshal.AllocHGlobal(Marshal.SizeOf(p));
