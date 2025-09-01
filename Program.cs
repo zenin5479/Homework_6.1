@@ -159,7 +159,7 @@ namespace Homework_6._1
          try
          {
 
-            // Copy the struct to unmanaged memory.
+            // Скопирем структуру в неуправляемую память
             Marshal.StructureToPtr(p, pnt, false);
 
             // Create another point.
