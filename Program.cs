@@ -182,6 +182,13 @@ namespace Homework_6._1
          // Способ 2: Marshal.SizeOf()
          int size = Marshal.SizeOf(typeof(Student));
          Console.WriteLine(size);
+
+
+         // Использование
+        
+         PrintMemoryInfo(people, "Массив структур");
+
+
          Console.ReadKey();
       }
 
@@ -208,8 +215,8 @@ namespace Homework_6._1
          Console.WriteLine($"  Размер элемента: {elementSize} байт");
          Console.WriteLine($"  Количество: {array.Length}");
          Console.WriteLine($"  Общий размер: {size} байт");
-         Console.WriteLine($"  В килобайтах: {size / 1024.0:F2} KB");
-         Console.WriteLine($"  В мегабайтах: {size / (1024.0 * 1024.0):F2} MB");
+         Console.WriteLine($"  В килобайтах: {size / 1024.0:F4} KB");
+         Console.WriteLine($"  В мегабайтах: {size / (1024.0 * 1024.0):F4} MB");
       }
 
       // Метод записи массива структур в текстовый файл
