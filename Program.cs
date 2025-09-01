@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -124,7 +125,8 @@ namespace Homework_6._1
          }
 
          // Запись массива структур в бинарный файл
-         WriteStructFile(writeStruct, people);
+         WriteStructFile(writeStruct, people); 
+        
          // Чтение массива структур из бинарного файла
          Student[] readBin = MethodsForStruct.ReadStructFile(pathWrite, "writestruct.bin");
          // Вывод прочитанных данных
@@ -177,7 +179,37 @@ namespace Homework_6._1
          // Продемонстрируем использование метода SizeOf класса Marshal
          Console.WriteLine("Количество байт, необходимых под массив структур: {0}", countBytes);
 
+         // Способ 2: Marshal.SizeOf()
+         int size = Marshal.SizeOf(typeof(Student));
+         Console.WriteLine(size);
          Console.ReadKey();
+      }
+
+      public static long GetArraySize<T>(T[] array) where T : struct
+      {
+         if (array == null) return 0;
+
+         // Размер элемента
+         int elementSize = Marshal.SizeOf(typeof(T));
+
+         // Накладные расходы массива (заголовок)
+         int arrayHeaderSize = IntPtr.Size * 2; // sync block + type pointer
+
+         // Общий размер
+         return (elementSize * (long)array.Length) + arrayHeaderSize;
+      }
+
+      public static void PrintMemoryInfo<T>(T[] array, string arrayName = "Массив") where T : struct
+      {
+         long size = GetArraySize(array);
+         int elementSize = Marshal.SizeOf(typeof(T));
+
+         Console.WriteLine($"{arrayName}:");
+         Console.WriteLine($"  Размер элемента: {elementSize} байт");
+         Console.WriteLine($"  Количество: {array.Length}");
+         Console.WriteLine($"  Общий размер: {size} байт");
+         Console.WriteLine($"  В килобайтах: {size / 1024.0:F2} KB");
+         Console.WriteLine($"  В мегабайтах: {size / (1024.0 * 1024.0):F2} MB");
       }
 
       // Метод записи массива структур в текстовый файл
