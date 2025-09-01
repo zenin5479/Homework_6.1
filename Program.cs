@@ -141,12 +141,17 @@ namespace Homework_6._1
 
          //
          // Инициализируем неизменяемую память для хранения структуры
-         IntPtr pnt = Marshal.AllocHGlobal(Marshal.SizeOf(people[1]));
+         for (int index = 0; index < people.Length; index++)
+         {
+            Student student = people[index];
+            IntPtr pnt = Marshal.AllocHGlobal(Marshal.SizeOf(people[1]));
+         }
+
+         //IntPtr pnt = Marshal.AllocHGlobal(Marshal.SizeOf(people[1]));
          try
          {
             // Скопирем структуру в неуправляемую память
             Marshal.StructureToPtr(people[1], pnt, false);
-           
          }
          finally
          {
