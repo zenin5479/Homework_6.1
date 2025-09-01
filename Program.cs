@@ -146,14 +146,14 @@ namespace Homework_6._1
          }
 
 
-         // Create a point struct.
+         // Создаем структуру
          Point p;
          p.X = 4;
          p.Y = 7;
 
          Console.WriteLine("Значение первой точки равно " + p.X + " и " + p.Y + ".");
 
-         // Initialize unmanged memory to hold the struct.
+         // Инициализируем неизменяемую память для хранения структуры
          IntPtr pnt = Marshal.AllocHGlobal(Marshal.SizeOf(p));
 
          try
