@@ -161,15 +161,6 @@ namespace Homework_6._1
          // Использование
          PrintMemoryInfo(people, "Массив структур");
 
-
-         long memoryBefore = GC.GetTotalMemory(true);
-         Student[] array = people;
-         long memoryAfter = GC.GetTotalMemory(true);
-         long totalSize = memoryAfter - memoryBefore;
-         Console.WriteLine($"Размер массива: {totalSize} байтов");
-
-
-
          Console.ReadKey();
       }
 
