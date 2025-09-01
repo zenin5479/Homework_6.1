@@ -142,24 +142,20 @@ namespace Homework_6._1
          //
          // Инициализируем неизменяемую память для хранения структуры
          IntPtr[] pnt = new IntPtr[people.Length];
-
-         for (int index = 0; index < people.Length; index++)
+         for (int index = 0; index < people.Length - 1; index++)
          {
-            pnt. = { Marshal.AllocHGlobal(Marshal.SizeOf(people[i])) };
-
-
+            pnt[i] = Marshal.AllocHGlobal(Marshal.SizeOf(people[i]));
          }
 
-         //IntPtr pnt = Marshal.AllocHGlobal(Marshal.SizeOf(people[1]));
          try
          {
             // Скопирем структуру в неуправляемую память
-            Marshal.StructureToPtr(people[1], pnt, false);
+            //Marshal.StructureToPtr(people[1], pnt, false);
          }
          finally
          {
             // Освобобождаем неуправляемую память
-            Marshal.FreeHGlobal(pnt);
+            //Marshal.FreeHGlobal(pnt);
          }
 
          // Продемонстрируем использование метода SizeOf класса Marshal
