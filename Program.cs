@@ -139,46 +139,8 @@ namespace Homework_6._1
             j++;
          }
 
-         // Расчет количество байт, необходимых под массив структур
-         // Инициализируем неизменяемую память для хранения структуры
-         IntPtr[] bitWidth = new IntPtr[people.Length];
-         int countBytes = 0;
-         int k = 0;
-         while (k < people.Length)
-         {
-            bitWidth[k] = Marshal.AllocHGlobal(Marshal.SizeOf(people[k]));
-            // Использование метода SizeOf класса Marshal
-            int size = Marshal.SizeOf(bitWidth[k]);
-            Console.WriteLine("Количество байт, необходимо выделить в неуправляемую память под структуру: {0}", size);
-            countBytes += size;
-            k++;
-         }
-
-         Console.WriteLine("Количество байт, необходимых под массив структур: {0}", countBytes);
-         // Использование
-         PrintMemoryInfo(people, "Массив структур");
+         
          Console.ReadKey();
-      }
-
-      public static long GetArraySize<T>(T[] array) where T : struct
-      {
-         if (array == null) return 0;
-         // Размер элемента
-         int elementSize = Marshal.SizeOf(typeof(T));
-         // Накладные расходы массива (заголовок)
-         int arrayHeaderSize = IntPtr.Size * 2;
-         // Общий размер
-         return elementSize * (long)array.Length + arrayHeaderSize;
-      }
-
-      public static void PrintMemoryInfo<T>(T[] array, string arrayName = "Массив") where T : struct
-      {
-         long size = GetArraySize(array);
-         int elementSize = Marshal.SizeOf(typeof(T));
-         Console.WriteLine($"{arrayName}:");
-         Console.WriteLine($"Размер элемента: {elementSize} байт");
-         Console.WriteLine($"Количество: {array.Length}");
-         Console.WriteLine($"Общий размер: {size} байт");
       }
 
       // Метод записи массива структур в бинарный файл
