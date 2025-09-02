@@ -148,13 +148,14 @@ namespace Homework_6._1
          while (k < people.Length)
          {
             bitWidth[k] = Marshal.AllocHGlobal(Marshal.SizeOf(people[k]));
+            // Использование метода SizeOf класса Marshal
             int size = Marshal.SizeOf(bitWidth[k]);
             Console.WriteLine("Количество байт, необходимо выделить в неуправляемую память под структуру: {0}", size);
             countBytes += size;
             k++;
          }
 
-         // Использование метода SizeOf класса Marshal
+
          Console.WriteLine("Количество байт, необходимых под массив структур: {0}", countBytes);
 
          // Использование
