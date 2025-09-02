@@ -6,11 +6,11 @@ namespace Homework_6._1
 {
    public class MethodsForStruct
    {
-      public static Student[] ReadStructFile(string path, string nameFile)
+      public static Student[] ReadStructFile2(string path, string nameFile)
       {
          Student[] arrayStudent = { };
          // Чтение файла за одну операцию
-         string[] allLines = File.ReadAllLines(path, Encoding.UTF8);
+         string[] allLines = File.ReadAllLines(path, Encoding.Unicode);
          if (allLines == null || allLines.Length == 0)
          {
             Console.WriteLine("Ошибка содержимого файла для чтения {0}", nameFile);
@@ -137,12 +137,12 @@ namespace Homework_6._1
 
          return arrayStudent;
       }
-
-      public static Student[] ReadStructFile2(string path, string nameFile)
+      
+      public static Student[] ReadStructFile(string path, string nameFile)
       {
          Student[] arrayStudent = { };
          // Чтение файла за одну операцию
-         string[] allLines = File.ReadAllLines(path, Encoding.Unicode);
+         string[] allLines = File.ReadAllLines(path, Encoding.UTF8);
          if (allLines == null || allLines.Length == 0)
          {
             Console.WriteLine("Ошибка содержимого файла для чтения {0}", nameFile);
