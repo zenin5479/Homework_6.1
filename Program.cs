@@ -158,7 +158,6 @@ namespace Homework_6._1
          Console.WriteLine("Количество байт, необходимых под массив структур: {0}", countBytes);
          // Использование
          PrintMemoryInfo(people, "Массив структур");
-
          Console.ReadKey();
       }
 
