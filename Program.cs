@@ -214,7 +214,5 @@ namespace Homework_6._1
          writer.Flush();
          writer.Close();
       }
-
-
    }
 }
