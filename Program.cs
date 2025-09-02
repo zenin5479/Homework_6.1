@@ -143,7 +143,6 @@ namespace Homework_6._1
          // Инициализируем неизменяемую память для хранения структуры
          IntPtr[] bitWidth = new IntPtr[people.Length];
          int countBytes = 0;
-
          int k = 0;
          while (k < people.Length)
          {
