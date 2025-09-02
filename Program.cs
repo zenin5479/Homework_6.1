@@ -138,7 +138,6 @@ namespace Homework_6._1
                read.Gender, read.Physics, read.Math, read.Inf, read.Grant);
             j++;
          }
-
          
          Console.ReadKey();
       }
