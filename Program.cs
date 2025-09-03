@@ -131,11 +131,13 @@ namespace Homework_6._1
             i++;
          }
 
-         // Запись массива структур в бинарный файл
-         WriteStructFile2(pathWrite, cadet);
-         // Чтение массива структур из бинарного файла
+
+
+
+
+
          Student[] readBin = MethodsForStruct.ReadStructFile2(pathWrite, "writestruct.bin");
-         // Вывод прочитанных данных
+
          Console.WriteLine("Прочитанные данные:");
          int j = 0;
          while (j < readBin.Length)
@@ -176,12 +178,11 @@ namespace Homework_6._1
                Year = 2001
             }
          };
-
-         // Запись в файл
+         // Запись массива структур в бинарный файл
          WritePersons("person.bin", people);
-         // Чтение из файла
+         // Чтение массива структур из бинарного файла
          Person[] loadedPeople = ReadPersons("person.bin");
-         // Проверка данных
+         // Вывод прочитанных данных
          for (int index = 0; index < loadedPeople.Length; index++)
          {
             Person person = loadedPeople[index];
