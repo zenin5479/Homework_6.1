@@ -274,6 +274,4 @@ namespace Homework_6._1
    }
 }
 
-251");
-//string inputString = "Hello, World!";
 //byte[] asciiBytes = asciiEncoding.GetBytes(inputString);
