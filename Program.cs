@@ -41,9 +41,6 @@ namespace Homework_6._1
 
    internal class Program
    {
-
-
-
       static void Main(string[] args)
       {
          string fileEnter = "spisok.txt";
@@ -141,18 +138,14 @@ namespace Homework_6._1
             j++;
          }
 
-
-
-
-         // Register the CodePages encoding provider at application startup to enable using single and double byte encodings.
+         // Зарегистрируйте поставщика кодирования CodePages при запуске приложения, чтобы разрешить использование одно- и двухбайтовых кодировок.
          Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-         // Now can create single and double byte encodings for code pages that are not available in .NET Core.
-         Encoding windows1252Encoding = Encoding.GetEncoding(1252); // Western European (Windows)
+         // Теперь можно создавать одно- и двухбайтовые кодировки для кодовых страниц, которые недоступны в .NET Core.
+         Encoding windows1252Encoding = Encoding.GetEncoding(1252); // Западноевропейский (Windows)
          byte[] encodedBytes = windows1252Encoding.GetBytes("String to encode");
          Encoding asciiEncoding = Encoding.GetEncoding("Windows-1251");
          string inputString = "Hello, World!";
          byte[] asciiBytes = asciiEncoding.GetBytes(inputString);
-
 
          Console.ReadKey();
       }
