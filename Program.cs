@@ -39,6 +39,19 @@ namespace Homework_6._1
       public double Grant;
    }
 
+   public struct Person
+   {
+      public string Name;
+      public int Age;
+
+      // Конструктор для удобства
+      public Person(string name, int age)
+      {
+         Name = name;
+         Age = age;
+      }
+   }
+
    internal class Program
    {
       static void Main(string[] args)
@@ -52,7 +65,7 @@ namespace Homework_6._1
          string fileInput = "finish.txt";
 
          // Создание массива структур
-         Student[] people =
+         Student[] cadet =
          {
             new Student
             {
@@ -107,7 +120,7 @@ namespace Homework_6._1
          };
 
          // Запись массива структур в текстовый файл
-         WriteStructFile(pathStruct, people);
+         WriteStructFile(pathStruct, cadet);
          // Чтение массива структур из текстового файла
          Student[] readTxt = MethodsForStruct.ReadStructFile(pathStruct, "spisok.txt");
          // Вывод прочитанных данных
@@ -123,7 +136,7 @@ namespace Homework_6._1
          }
 
          // Запись массива структур в бинарный файл
-         WriteStructFile2(pathWrite, people);
+         WriteStructFile2(pathWrite, cadet);
          // Чтение массива структур из бинарного файла
          Student[] readBin = MethodsForStruct.ReadStructFile2(pathWrite, "writestruct.bin");
          // Вывод прочитанных данных
@@ -138,17 +151,62 @@ namespace Homework_6._1
             j++;
          }
 
-         // Зарегистрируем поставщика кодирования CodePages при запуске приложения, чтобы разрешить использование одно- и двухбайтовые кодировки
-         Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-         // Теперь можно создавать одно- и двухбайтовые кодировки для кодовых страниц, которые недоступны в .NET Core
-         // Западноевропейский (Windows)
-         Encoding windows1252Encoding = Encoding.GetEncoding(1252);
-         byte[] encodedBytes = windows1252Encoding.GetBytes("String to encode");
-         Encoding asciiEncoding = Encoding.GetEncoding("Windows-1251");
-         string inputString = "Hello, World!";
-         byte[] asciiBytes = asciiEncoding.GetBytes(inputString);
+
+         // Создание тестовых данных
+         Person[] peopleы = new Person[]
+         {
+            new Person("Анна", 25),
+            new Person("Иван", 30),
+            new Person("Мария", 28)
+         };
+
+         // Запись в файл
+         WritePersons("persons.bin", peopleы);
+
+         // Чтение из файла
+         Person[] loadedPeople = ReadPersons("persons.bin");
+
+         // Проверка данных
+         foreach (var person in loadedPeople)
+         {
+            Console.WriteLine($"Имя: {person.Name}, Возраст: {person.Age}");
+         }
+
 
          Console.ReadKey();
+      }
+
+      public static Person[] ReadPersons(string filePath)
+      {
+         using (var stream = new FileStream(filePath, FileMode.Open))
+         using (var reader = new BinaryReader(stream, Encoding.UTF8))
+         {
+            int length = reader.ReadInt32();
+            Person[] persons = new Person[length];
+
+            for (int i = 0; i < length; i++)
+            {
+               string name = reader.ReadString();
+               int age = reader.ReadInt32();
+               persons[i] = new Person(name, age);
+            }
+            return persons;
+         }
+      }
+
+      public static void WritePersons(string filePath, Person[] persons)
+      {
+         using (var stream = new FileStream(filePath, FileMode.Create))
+         using (var writer = new BinaryWriter(stream, Encoding.UTF8))
+         {
+            writer.Write(persons.Length);
+            foreach (var person in persons)
+            {
+               // Запись строки в UTF-8 с предварительной длиной
+               writer.Write(person.Name);
+               writer.Write(person.Age);
+            }
+         }
       }
 
       // Метод записи массива структур в бинарный файл
@@ -184,3 +242,13 @@ namespace Homework_6._1
       }
    }
 }
+
+//// Зарегистрируем поставщика кодирования CodePages при запуске приложения, чтобы разрешить использование одно- и двухбайтовые кодировки
+//Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+//// Теперь можно создавать одно- и двухбайтовые кодировки для кодовых страниц, которые недоступны в .NET Core
+//// Западноевропейский (Windows)
+//Encoding windows1252Encoding = Encoding.GetEncoding(1252);
+//byte[] encodedBytes = windows1252Encoding.GetBytes("String to encode");
+//Encoding asciiEncoding = Encoding.GetEncoding("Windows-1251");
+//string inputString = "Hello, World!";
+//byte[] asciiBytes = asciiEncoding.GetBytes(inputString);
