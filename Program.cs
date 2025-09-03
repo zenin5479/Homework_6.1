@@ -176,8 +176,8 @@ namespace Homework_6._1
 
       public static Person[] ReadPersons(string filePath)
       {
-         using (var stream = new FileStream(filePath, FileMode.Open))
-         using (var reader = new BinaryReader(stream, Encoding.UTF8))
+         using (FileStream stream = new FileStream(filePath, FileMode.Open))
+         using (BinaryReader reader = new BinaryReader(stream, Encoding.UTF8))
          {
             int length = reader.ReadInt32();
             Person[] persons = new Person[length];
@@ -194,13 +194,13 @@ namespace Homework_6._1
 
       public static void WritePersons(string filePath, Person[] persons)
       {
-         using (var stream = new FileStream(filePath, FileMode.Create))
-         using (var writer = new BinaryWriter(stream, Encoding.UTF8))
+         using (FileStream stream = new FileStream(filePath, FileMode.Create))
+         using (BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8))
          {
             writer.Write(persons.Length);
-            for (var i = 0; i < persons.Length; i++)
+            for (int i = 0; i < persons.Length; i++)
             {
-               var person = persons[i];
+               Person person = persons[i];
                // Запись строки в UTF-8 с предварительной длиной
                writer.Write(person.Name);
                writer.Write(person.Age);
