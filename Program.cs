@@ -200,8 +200,9 @@ namespace Homework_6._1
          using (var writer = new BinaryWriter(stream, Encoding.UTF8))
          {
             writer.Write(persons.Length);
-            foreach (var person in persons)
+            for (var i = 0; i < persons.Length; i++)
             {
+               var person = persons[i];
                // Запись строки в UTF-8 с предварительной длиной
                writer.Write(person.Name);
                writer.Write(person.Age);
