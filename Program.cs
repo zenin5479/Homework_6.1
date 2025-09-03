@@ -138,10 +138,6 @@ namespace Homework_6._1
             j++;
          }
 
-         string text = "Привет, мир!"; // строка с кириллицей
-         Encoding win1251 = Encoding.GetEncoding(1251);
-         byte[] bytes = win1251.GetBytes("Привет");
-
          Console.ReadKey();
       }
 
