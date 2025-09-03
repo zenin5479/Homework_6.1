@@ -137,7 +137,7 @@ namespace Homework_6._1
 
          return arrayStudent;
       }
-      
+
       public static Student[] ReadStructFile(string path, string nameFile)
       {
          Student[] arrayStudent = { };
