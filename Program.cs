@@ -43,13 +43,6 @@ namespace Homework_6._1
    {
       public string Name;
       public int Age;
-
-      // Конструктор для удобства
-      public Person(string name, int age)
-      {
-         Name = name;
-         Age = age;
-      }
    }
 
    internal class Program
@@ -151,13 +144,12 @@ namespace Homework_6._1
             j++;
          }
 
-
          // Создание тестовых данных
-         Person[] people = 
+         Person[] people =
          {
-            new Person("Анна", 25),
-            new Person("Иван", 30),
-            new Person("Мария", 28)
+            new Person { Name="Анна", Age= 25 },
+            new Person { Name = "Иван", Age = 30 },
+            new Person{ Name = "Мария", Age = 28 }
          };
 
          // Запись в файл
