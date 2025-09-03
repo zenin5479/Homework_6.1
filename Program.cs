@@ -185,7 +185,7 @@ namespace Homework_6._1
          for (int index = 0; index < loadedPeople.Length; index++)
          {
             Person person = loadedPeople[index];
-            Console.WriteLine("{0} {1} {2} {3} {4}", 
+            Console.WriteLine("{0} {1} {2} {3} {4}",
                person.Group, person.Surname, person.Name, person.Dadsname, person.Year);
          }
 
@@ -201,16 +201,21 @@ namespace Homework_6._1
             Person[] persons = new Person[length];
             for (int i = 0; i < length; i++)
             {
+               string group = reader.ReadString();
+               string surname = reader.ReadString();
                string name = reader.ReadString();
-               int age = reader.ReadInt32();
-               persons[i] = new Person 
-                  { Name = name, 
-                     
-                     
-                     Age = age
-
-                  };
+               string dadsname = reader.ReadString();
+               int year = reader.ReadInt32();
+               persons[i] = new Person
+               {
+                  Group = group,
+                  Surname = surname,
+                  Name = name,
+                  Dadsname = dadsname,
+                  Year = year
+               };
             }
+
             return persons;
          }
       }
