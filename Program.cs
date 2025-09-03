@@ -138,6 +138,10 @@ namespace Homework_6._1
             j++;
          }
 
+         Encoding asciiEncoding = Encoding.GetEncoding("Windows-1251");
+         string inputString = "Hello, World!";
+         byte[] asciiBytes = asciiEncoding.GetBytes(inputString);
+
          Console.ReadKey();
       }
 
