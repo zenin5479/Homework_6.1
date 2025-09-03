@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Text;
-using static System.Net.Mime.MediaTypeNames;
 
 // Обработка студенческой ведомости
 // Составить программу для обработки информации о студентах какого-то факультета
@@ -145,7 +144,7 @@ namespace Homework_6._1
       // Метод записи массива структур в бинарный файл
       static void WriteStructFile2(string path, Student[] people)
       {
-         StreamWriter writer = new StreamWriter(path, false, Encoding.UTF32);
+         StreamWriter writer = new StreamWriter(path, false, Encoding.Unicode);
          int i = 0;
          while (i < people.Length)
          {
