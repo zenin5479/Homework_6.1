@@ -194,30 +194,30 @@ namespace Homework_6._1
 
       public static Person[] ReadPersons(string filePath)
       {
-         using (FileStream stream = new FileStream(filePath, FileMode.Open))
-         using (BinaryReader reader = new BinaryReader(stream, Encoding.UTF8))
+         FileStream stream = new FileStream(filePath, FileMode.Open);
+         BinaryReader reader = new BinaryReader(stream, Encoding.UTF8);
+         int length = reader.ReadInt32();
+         Person[] persons = new Person[length];
+         for (int i = 0; i < length; i++)
          {
-            int length = reader.ReadInt32();
-            Person[] persons = new Person[length];
-            for (int i = 0; i < length; i++)
+            string group = reader.ReadString();
+            string surname = reader.ReadString();
+            string name = reader.ReadString();
+            string dadsname = reader.ReadString();
+            int year = reader.ReadInt32();
+            persons[i] = new Person
             {
-               string group = reader.ReadString();
-               string surname = reader.ReadString();
-               string name = reader.ReadString();
-               string dadsname = reader.ReadString();
-               int year = reader.ReadInt32();
-               persons[i] = new Person
-               {
-                  Group = group,
-                  Surname = surname,
-                  Name = name,
-                  Dadsname = dadsname,
-                  Year = year
-               };
-            }
-
-            return persons;
+               Group = group,
+               Surname = surname,
+               Name = name,
+               Dadsname = dadsname,
+               Year = year
+            };
          }
+         
+         stream.Close();
+         reader.Close();
+         return persons;
       }
 
       public static void WritePersons(string filePath, Person[] persons)
