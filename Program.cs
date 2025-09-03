@@ -139,27 +139,6 @@ namespace Homework_6._1
             j++;
          }
 
-         Console.OutputEncoding = Encoding.GetEncoding(866); // Для русской кодировки CP866
-        
-         string text = "Привет, мир!"; // строка с кириллицей
-         // Кодирование в байты с использованием разных кодировок
-         byte[] utf8Bytes = Encoding.UTF8.GetBytes(text);
-         byte[] windows1251Bytes = Encoding.GetEncoding(1251).GetBytes(text);
-         byte[] koi8rBytes = Encoding.GetEncoding(20866).GetBytes(text); // KOI8-R кодовая страница 20866
-         byte[] iso88595Bytes = Encoding.GetEncoding(28595).GetBytes(text); // ISO-8859-5
-
-         // Декодирование обратно в строку
-         string utf8Text = Encoding.UTF8.GetString(utf8Bytes);
-         string windows1251Text = Encoding.GetEncoding(1251).GetString(windows1251Bytes);
-         string koi8rText = Encoding.GetEncoding(20866).GetString(koi8rBytes);
-         string iso88595Text = Encoding.GetEncoding(28595).GetString(iso88595Bytes);
-
-         Console.WriteLine("Original: " + text);
-         Console.WriteLine("UTF-8: " + utf8Text);
-         Console.WriteLine("Windows-1251: " + windows1251Text);
-         Console.WriteLine("KOI8-R: " + koi8rText);
-         Console.WriteLine("ISO-8859-5: " + iso88595Text);
-
          Console.ReadKey();
       }
 
