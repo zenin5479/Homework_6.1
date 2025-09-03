@@ -153,7 +153,7 @@ namespace Homework_6._1
 
 
          // Создание тестовых данных
-         Person[] peopleы = new Person[]
+         Person[] people = 
          {
             new Person("Анна", 25),
             new Person("Иван", 30),
@@ -161,17 +161,15 @@ namespace Homework_6._1
          };
 
          // Запись в файл
-         WritePersons("persons.bin", peopleы);
-
+         WritePersons("person.bin", people);
          // Чтение из файла
-         Person[] loadedPeople = ReadPersons("persons.bin");
-
+         Person[] loadedPeople = ReadPersons("person.bin");
          // Проверка данных
-         foreach (var person in loadedPeople)
+         for (int index = 0; index < loadedPeople.Length; index++)
          {
+            Person person = loadedPeople[index];
             Console.WriteLine($"Имя: {person.Name}, Возраст: {person.Age}");
          }
-
 
          Console.ReadKey();
       }
