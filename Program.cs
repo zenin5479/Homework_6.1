@@ -166,7 +166,7 @@ namespace Homework_6._1
       // Метод записи массива структур в бинарный файл
       static void WriteStructFile2(string path, Student[] people)
       {
-         StreamWriter writer = new StreamWriter(path, false, Encoding.ASCII);
+         StreamWriter writer = new StreamWriter(path, false, Encoding.UTF32);
          int i = 0;
          while (i < people.Length)
          {
