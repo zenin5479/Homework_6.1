@@ -192,7 +192,7 @@ namespace Homework_6._1
          Console.ReadKey();
       }
 
-      public static Person[] ReadPersons(string filePath)
+      static Person[] ReadPersons(string filePath)
       {
          FileStream stream = new FileStream(filePath, FileMode.Open);
          BinaryReader reader = new BinaryReader(stream, Encoding.UTF8);
@@ -220,7 +220,7 @@ namespace Homework_6._1
          return persons;
       }
 
-      public static void WritePersons(string filePath, Person[] persons)
+      static void WritePersons(string filePath, Person[] persons)
       {
          using (FileStream stream = new FileStream(filePath, FileMode.Create))
          using (BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8))
