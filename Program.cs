@@ -274,12 +274,6 @@ namespace Homework_6._1
    }
 }
 
-//// Зарегистрируем поставщика кодирования CodePages при запуске приложения, чтобы разрешить использование одно- и двухбайтовые кодировки
-//Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-//// Теперь можно создавать одно- и двухбайтовые кодировки для кодовых страниц, которые недоступны в .NET Core
-//// Западноевропейский (Windows)
-//Encoding windows1252Encoding = Encoding.GetEncoding(1252);
-//byte[] encodedBytes = windows1252Encoding.GetBytes("String to encode");
-//Encoding asciiEncoding = Encoding.GetEncoding("Windows-1251");
+251");
 //string inputString = "Hello, World!";
 //byte[] asciiBytes = asciiEncoding.GetBytes(inputString);
