@@ -167,6 +167,7 @@ namespace Homework_6._1
          // Чтение массива структур из бинарного файла
          Person[] loadedPeople = ReadPersons("person.bin");
          // Вывод прочитанных данных
+         Console.WriteLine("Прочитанные данные:");
          for (int index = 0; index < loadedPeople.Length; index++)
          {
             Person person = loadedPeople[index];
