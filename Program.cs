@@ -214,7 +214,7 @@ namespace Homework_6._1
                Year = year
             };
          }
-         
+
          stream.Close();
          reader.Close();
          return persons;
@@ -273,5 +273,3 @@ namespace Homework_6._1
       }
    }
 }
-
-//byte[] asciiBytes = asciiEncoding.GetBytes(inputString);
