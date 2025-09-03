@@ -141,9 +141,7 @@ namespace Homework_6._1
             j++;
          }
 
-         //Encoding asciiEncoding = Encoding.GetEncoding("Windows-1251");
-         //string inputString = "Hello, World!";
-         //byte[] asciiBytes = asciiEncoding.GetBytes(inputString);
+
 
 
          // Register the CodePages encoding provider at application startup to enable using single and double byte encodings.
@@ -151,7 +149,9 @@ namespace Homework_6._1
          // Now can create single and double byte encodings for code pages that are not available in .NET Core.
          Encoding windows1252Encoding = Encoding.GetEncoding(1252); // Western European (Windows)
          byte[] encodedBytes = windows1252Encoding.GetBytes("String to encode");
-
+         Encoding asciiEncoding = Encoding.GetEncoding("Windows-1251");
+         string inputString = "Hello, World!";
+         byte[] asciiBytes = asciiEncoding.GetBytes(inputString);
 
 
          Console.ReadKey();
