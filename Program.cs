@@ -41,8 +41,11 @@ namespace Homework_6._1
 
    public struct Person
    {
+      public string Group;
+      public string Surname;
       public string Name;
-      public int Age;
+      public string Dadsname;
+      public int Year;
    }
 
    internal class Program
@@ -147,9 +150,31 @@ namespace Homework_6._1
          // Создание тестовых данных
          Person[] people =
          {
-            new Person { Name = "Анна", Age = 25 },
-            new Person { Name = "Иван", Age = 30 },
-            new Person{ Name = "Мария", Age = 28 }
+            new Person
+            {
+               Group = "IP-21", Surname = "Иванов", Name = "Иван", Dadsname = "Иванович",
+               Year = 2000
+            },
+            new Person
+            {
+               Group = "IP-21", Surname = "Петрова", Name = "Анна", Dadsname = "Сергеевна",
+               Year = 2001
+            },
+            new Person
+            {
+               Group = "IP-22", Surname = "Смирнов", Name = "Алексей", Dadsname = "Викторович",
+               Year = 1999
+            },
+            new Person
+            {
+               Group = "Fiz-21", Surname = "Кузнецова", Name = "Мария", Dadsname = "Павловна",
+               Year = 2000
+            },
+            new Person
+            {
+               Group = "Phys-22", Surname = "Сидоров", Name = "Дмитрий", Dadsname = "Андреевич",
+               Year = 2001
+            }
          };
 
          // Запись в файл
@@ -160,7 +185,8 @@ namespace Homework_6._1
          for (int index = 0; index < loadedPeople.Length; index++)
          {
             Person person = loadedPeople[index];
-            Console.WriteLine($"Имя: {person.Name}, Возраст: {person.Age}");
+            Console.WriteLine("{0} {1} {2} {3} {4}", 
+               person.Group, person.Surname, person.Name, person.Dadsname, person.Year);
          }
 
          Console.ReadKey();
@@ -177,7 +203,13 @@ namespace Homework_6._1
             {
                string name = reader.ReadString();
                int age = reader.ReadInt32();
-               persons[i] = new Person { Name = name, Age = age };
+               persons[i] = new Person 
+                  { Name = name, 
+                     
+                     
+                     Age = age
+
+                  };
             }
             return persons;
          }
@@ -193,8 +225,11 @@ namespace Homework_6._1
             {
                Person person = persons[i];
                // Запись строки в UTF-8 с предварительной длиной
+               writer.Write(person.Group);
+               writer.Write(person.Surname);
                writer.Write(person.Name);
-               writer.Write(person.Age);
+               writer.Write(person.Dadsname);
+               writer.Write(person.Year);
             }
          }
       }
