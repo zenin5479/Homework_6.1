@@ -144,13 +144,11 @@ namespace Homework_6._1
          byte[] windows1251Bytes = Encoding.GetEncoding(1251).GetBytes(text);
          byte[] koi8rBytes = Encoding.GetEncoding(20866).GetBytes(text); // KOI8-R кодовая страница 20866
          byte[] iso88595Bytes = Encoding.GetEncoding(28595).GetBytes(text); // ISO-8859-5
-
          // Декодирование обратно в строку
          string utf8Text = Encoding.UTF8.GetString(utf8Bytes);
          string windows1251Text = Encoding.GetEncoding(1251).GetString(windows1251Bytes);
          string koi8rText = Encoding.GetEncoding(20866).GetString(koi8rBytes);
          string iso88595Text = Encoding.GetEncoding(28595).GetString(iso88595Bytes);
-
          Console.WriteLine("Original: " + text);
          Console.WriteLine("UTF-8: " + utf8Text);
          Console.WriteLine("Windows-1251: " + windows1251Text);
