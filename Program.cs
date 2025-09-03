@@ -147,7 +147,7 @@ namespace Homework_6._1
          // Создание тестовых данных
          Person[] people =
          {
-            new Person { Name="Анна", Age= 25 },
+            new Person { Name = "Анна", Age = 25 },
             new Person { Name = "Иван", Age = 30 },
             new Person{ Name = "Мария", Age = 28 }
          };
@@ -173,12 +173,11 @@ namespace Homework_6._1
          {
             int length = reader.ReadInt32();
             Person[] persons = new Person[length];
-
             for (int i = 0; i < length; i++)
             {
                string name = reader.ReadString();
                int age = reader.ReadInt32();
-               persons[i] = new Person(name, age);
+               persons[i] = new Person { Name = name, Age = age };
             }
             return persons;
          }
