@@ -140,7 +140,6 @@ namespace Homework_6._1
          }
 
          Console.OutputEncoding = Encoding.GetEncoding(866); // Для русской кодировки CP866
-         Console.OutputEncoding = Encoding.UTF8; // Или для UTF-8
         
          string text = "Привет, мир!"; // строка с кириллицей
          // Кодирование в байты с использованием разных кодировок
