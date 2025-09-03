@@ -131,23 +131,7 @@ namespace Homework_6._1
             i++;
          }
 
-
-
-
-
-
-         Student[] readBin = MethodsForStruct.ReadStructFile2(pathWrite, "writestruct.bin");
-
-         Console.WriteLine("Прочитанные данные:");
-         int j = 0;
-         while (j < readBin.Length)
-         {
-            Student read = readBin[j];
-            Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
-               read.Group, read.Surname, read.Name, read.Dadsname, read.Year,
-               read.Gender, read.Physics, read.Math, read.Inf, read.Grant);
-            j++;
-         }
+         Console.WriteLine();
 
          // Создание тестовых данных
          Person[] people =
