@@ -222,21 +222,22 @@ namespace Homework_6._1
 
       static void WritePersons(string filePath, Person[] persons)
       {
-         using (FileStream stream = new FileStream(filePath, FileMode.Create))
-         using (BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8))
+         FileStream stream = new FileStream(filePath, FileMode.Create);
+         BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
+         writer.Write(persons.Length);
+         for (int i = 0; i < persons.Length; i++)
          {
-            writer.Write(persons.Length);
-            for (int i = 0; i < persons.Length; i++)
-            {
-               Person person = persons[i];
-               // Запись строки в UTF-8 с предварительной длиной
-               writer.Write(person.Group);
-               writer.Write(person.Surname);
-               writer.Write(person.Name);
-               writer.Write(person.Dadsname);
-               writer.Write(person.Year);
-            }
+            Person person = persons[i];
+            // Запись строки в UTF-8 с предварительной длиной
+            writer.Write(person.Group);
+            writer.Write(person.Surname);
+            writer.Write(person.Name);
+            writer.Write(person.Dadsname);
+            writer.Write(person.Year);
          }
+
+         stream.Close();
+         writer.Close();
       }
 
       // Метод записи массива структур в бинарный файл
