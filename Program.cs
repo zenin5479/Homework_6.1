@@ -178,9 +178,9 @@ namespace Homework_6._1
             }
          };
          // Запись массива структур в бинарный файл
-         WriteStructToFile("person.bin", cadets);
+         WriteStructToFile(pathWrite, cadets);
          // Чтение массива структур из бинарного файла
-         Student[] readCadets = ReadStructToFile("person.bin");
+         Student[] readCadets = ReadStructToFile(pathWrite);
          // Вывод прочитанных данных
          Console.WriteLine("Прочитанные данные:");
          int j = 0;
@@ -196,9 +196,9 @@ namespace Homework_6._1
          Console.ReadKey();
       }
 
-      static Student[] ReadStructToFile(string filePath)
+      static Student[] ReadStructToFile(string path)
       {
-         FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+         FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read);
          BinaryReader reader = new BinaryReader(stream, Encoding.UTF8);
          int length = reader.ReadInt32();
          Student[] persons = new Student[length];
@@ -237,16 +237,15 @@ namespace Homework_6._1
          return persons;
       }
 
-      static void WriteStructToFile(string filePath, Student[] persons)
+      static void WriteStructToFile(string path, Student[] students)
       {
-         FileStream stream = new FileStream(filePath, FileMode.Create, FileAccess.Write);
+         FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
          BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
-         writer.Write(persons.Length);
-
+         writer.Write(students.Length);
          int i = 0;
-         while (i < persons.Length)
+         while (i < students.Length)
          {
-            Student person = persons[i];
+            Student person = students[i];
             // Запись строки в UTF-8 с предварительной длиной
             writer.Write(person.Group);
             writer.Write(person.Surname);
@@ -265,14 +264,14 @@ namespace Homework_6._1
          writer.Close();
       }
 
-      // Метод записи массива структур в текстовый файл
-      static void WriteStructFile(string path, Student[] people)
+      // Метод записи массива структур в текстовый файл ?
+      static void WriteStructFile(string path, Student[] students)
       {
          StreamWriter writer = new StreamWriter(path, false, Encoding.UTF8);
          int i = 0;
-         while (i < people.Length)
+         while (i < students.Length)
          {
-            Student person = people[i];
+            Student person = students[i];
             writer.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
                person.Group, person.Surname, person.Name, person.Dadsname, person.Year,
                person.Gender, person.Physics, person.Math, person.Inf, person.Grant);
