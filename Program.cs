@@ -222,13 +222,23 @@ namespace Homework_6._1
             string name = reader.ReadString();
             string dadsname = reader.ReadString();
             int year = reader.ReadInt32();
+            char gender = reader.ReadChar();
+            int physics = reader.ReadInt32();
+            int Math = reader.ReadInt32();
+            int inf = reader.ReadInt32();
+            double grant = reader.ReadDouble();
             persons[i] = new Person
             {
                Group = group,
                Surname = surname,
                Name = name,
                Dadsname = dadsname,
-               Year = year
+               Year = year,
+               Gender = gender,
+               Physics = physics,
+               Math = Math,
+               Inf = inf,
+               Grant = grant
             };
          }
 
