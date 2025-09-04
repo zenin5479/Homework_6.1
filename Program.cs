@@ -156,37 +156,37 @@ namespace Homework_6._1
                Group = "IP-22", Surname = "Смирнов", Name = "Алексей", Dadsname = "Викторович",
                Year = 1999, Gender = 'M', Physics = 3, Math = 4, Inf = 4, Grant = 4000
             },
-            new Student
+            new Person
             {
                Group = "Fiz-21", Surname = "Кузнецова", Name = "Мария", Dadsname = "Павловна",
                Year = 2000, Gender = 'Ж', Physics = 5, Math = 5, Inf = 5, Grant = 7000
             },
-            new Student
+            new Person
             {
                Group = "Phys-22", Surname = "Сидоров", Name = "Дмитрий", Dadsname = "Андреевич",
                Year = 2001, Gender = 'M', Physics = 4, Math = 3, Inf = 4, Grant = 4500
             },
-            new Student
+            new Person
             {
                Group = "IP-22", Surname = "Васильева", Name = "Екатерина", Dadsname = "Николаевна",
                Year = 2009, Gender = 'Ж', Physics = 3, Math = 5, Inf = 4, Grant = 5500
             },
-            new Student
+            new Person
             {
                Group = "Fiz-21", Surname = "Орлов", Name = "Сергей", Dadsname = "Владимирович",
                Year = 2000, Gender = 'M', Physics = 4, Math = 4, Inf = 3, Grant = 3000
             },
-            new Student
+            new Person
             {
                Group = "IP-21", Surname = "Лебедева", Name = "Светлана", Dadsname = "Александровна",
                Year = 2001, Gender = 'Ж', Physics = 5, Math = 5, Inf = 5, Grant = 8000
             },
-            new Student
+            new Person
             {
                Group = "Fiz-22", Surname = "Николаев", Name = "Андрей", Dadsname = "Сергеевич",
                Year = 2007, Gender = 'M', Physics = 3, Math = 2, Inf = 3, Grant = 2500
             },
-            new Student
+            new Person
             {
                Group = "IP-22", Surname = "Сергеева", Name = "Дарья", Dadsname = "Викторовна",
                Year = 2007, Gender = 'Ж', Physics = 2, Math = 2, Inf = 2, Grant = 5000
@@ -201,8 +201,9 @@ namespace Homework_6._1
          for (int index = 0; index < loadedPeople.Length; index++)
          {
             Person person = loadedPeople[index];
-            Console.WriteLine("{0} {1} {2} {3} {4}",
-               person.Group, person.Surname, person.Name, person.Dadsname, person.Year);
+            Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
+               person.Group, person.Surname, person.Name, person.Dadsname, person.Year,
+            person.Gender, person.Physics, person.Math, person.Inf, person.Grant);
          }
 
          Console.ReadKey();
@@ -250,10 +251,17 @@ namespace Homework_6._1
             writer.Write(person.Name);
             writer.Write(person.Dadsname);
             writer.Write(person.Year);
+            writer.Write(person.Gender);
+            writer.Write(person.Physics);
+            writer.Write(person.Math);
+            writer.Write(person.Inf);
+            writer.Write(person.Grant);
          }
 
          stream.Close();
+         //stream.Flush();
          writer.Close();
+         //writer.Flush();
       }
 
       // Метод записи массива структур в бинарный файл
@@ -284,7 +292,7 @@ namespace Homework_6._1
                person.Gender, person.Physics, person.Math, person.Inf, person.Grant);
          }
 
-         writer.Flush();
+         //writer.Flush();
          writer.Close();
       }
    }
