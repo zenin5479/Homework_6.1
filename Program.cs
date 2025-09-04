@@ -52,7 +52,7 @@ namespace Homework_6._1
          string fileInput = "finish.txt";
 
          // Создание массива структур
-         Student[] cadet =
+         Student[] students =
          {
             new Student
             {
@@ -107,7 +107,7 @@ namespace Homework_6._1
          };
 
          // Запись массива структур в текстовый файл
-         WriteStructFile(pathStruct, cadet);
+         WriteStructFile(pathStruct, students);
          // Чтение массива структур из текстового файла
          Student[] readCadet = MethodsForStruct.ReadStructFile(pathStruct, "spisok.txt");
          // Вывод прочитанных данных
@@ -124,6 +124,7 @@ namespace Homework_6._1
 
          Console.WriteLine();
 
+         students
          // Создание тестовых данных
          Student[] people =
          {
