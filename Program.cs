@@ -114,10 +114,10 @@ namespace Homework_6._1
          int i = 0;
          while (i < readStudents.Length)
          {
-            Student read = readStudents[i];
+            Student student = readStudents[i];
             Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
-               read.Group, read.Surname, read.Name, read.Dadsname, read.Year,
-               read.Gender, read.Physics, read.Math, read.Inf, read.Grant);
+               student.Group, student.Surname, student.Name, student.Dadsname, student.Year,
+               student.Gender, student.Physics, student.Math, student.Inf, student.Grant);
             i++;
          }
 
@@ -189,7 +189,7 @@ namespace Homework_6._1
             Student cadet = readCadets[j];
             Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
                cadet.Group, cadet.Surname, cadet.Name, cadet.Dadsname, cadet.Year,
-            cadet.Gender, cadet.Physics, cadet.Math, cadet.Inf, cadet.Grant);
+               cadet.Gender, cadet.Physics, cadet.Math, cadet.Inf, cadet.Grant);
             j++;
          }
 
