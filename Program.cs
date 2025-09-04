@@ -123,8 +123,7 @@ namespace Homework_6._1
 
          Console.WriteLine();
 
-         //Cadet
-         // Создание тестовых данных
+         // Создание массива структур
          Student[] cadets =
          {
             new Student
