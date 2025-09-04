@@ -183,12 +183,14 @@ namespace Homework_6._1
          Student[] readCadets = ReadStruct("person.bin");
          // Вывод прочитанных данных
          Console.WriteLine("Прочитанные данные:");
-         for (int index = 0; index < readCadets.Length; index++)
+         int j = 0;
+         while (j < readCadets.Length)
          {
-            Student cadet = readCadets[index];
+            Student cadet = readCadets[j];
             Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
                cadet.Group, cadet.Surname, cadet.Name, cadet.Dadsname, cadet.Year,
             cadet.Gender, cadet.Physics, cadet.Math, cadet.Inf, cadet.Grant);
+            j++;
          }
 
          Console.ReadKey();
