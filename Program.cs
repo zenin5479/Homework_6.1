@@ -301,7 +301,7 @@ namespace Homework_6._1
                person.Gender, person.Physics, person.Math, person.Inf, person.Grant);
          }
 
-         writer.Flush();
+         //writer.Flush();
          writer.Close();
       }
    }
