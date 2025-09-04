@@ -46,6 +46,11 @@ namespace Homework_6._1
       public string Name;
       public string Dadsname;
       public int Year;
+      public char Gender;
+      public int Physics;
+      public int Math;
+      public int Inf;
+      public double Grant;
    }
 
    internal class Program
@@ -112,7 +117,7 @@ namespace Homework_6._1
             {
                Group = "IP-22", Surname = "Сергеева", Name = "Дарья", Dadsname = "Викторовна",
                Year = 2007, Gender = 'Ж', Physics = 2, Math = 2, Inf = 2, Grant = 5000
-            },
+            }
          };
 
          // Запись массива структур в текстовый файл
