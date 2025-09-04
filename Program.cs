@@ -178,9 +178,9 @@ namespace Homework_6._1
             }
          };
          // Запись массива структур в бинарный файл
-         WriteStruct("person.bin", cadets);
+         WriteStructToFile("person.bin", cadets);
          // Чтение массива структур из бинарного файла
-         Student[] readCadets = ReadStruct("person.bin");
+         Student[] readCadets = ReadStructToFile("person.bin");
          // Вывод прочитанных данных
          Console.WriteLine("Прочитанные данные:");
          int j = 0;
@@ -196,7 +196,7 @@ namespace Homework_6._1
          Console.ReadKey();
       }
 
-      static Student[] ReadStruct(string filePath)
+      static Student[] ReadStructToFile(string filePath)
       {
          FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
          BinaryReader reader = new BinaryReader(stream, Encoding.UTF8);
@@ -237,7 +237,7 @@ namespace Homework_6._1
          return persons;
       }
 
-      static void WriteStruct(string filePath, Student[] persons)
+      static void WriteStructToFile(string filePath, Student[] persons)
       {
          FileStream stream = new FileStream(filePath, FileMode.Create, FileAccess.Write);
          BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
