@@ -109,13 +109,13 @@ namespace Homework_6._1
          // Запись массива структур в текстовый файл
          WriteStructFile(pathStruct, cadet);
          // Чтение массива структур из текстового файла
-         Student[] readcadet = MethodsForStruct.ReadStructFile(pathStruct, "spisok.txt");
+         Student[] readCadet = MethodsForStruct.ReadStructFile(pathStruct, "spisok.txt");
          // Вывод прочитанных данных
          Console.WriteLine("Прочитанные данные:");
          int i = 0;
-         while (i < readcadet.Length)
+         while (i < readCadet.Length)
          {
-            Student read = readcadet[i];
+            Student read = readCadet[i];
             Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
                read.Group, read.Surname, read.Name, read.Dadsname, read.Year,
                read.Gender, read.Physics, read.Math, read.Inf, read.Grant);
