@@ -269,9 +269,7 @@ namespace Homework_6._1
          }
 
          stream.Close();
-         //stream.Flush();
          writer.Close();
-         //writer.Flush();
       }
 
       // Метод записи массива структур в бинарный файл
