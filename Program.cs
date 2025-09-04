@@ -211,7 +211,7 @@ namespace Homework_6._1
 
       static Person[] ReadPersons(string filePath)
       {
-         FileStream stream = new FileStream(filePath, FileMode.Open);
+         FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
          BinaryReader reader = new BinaryReader(stream, Encoding.UTF8);
          int length = reader.ReadInt32();
          Person[] persons = new Person[length];
@@ -239,7 +239,7 @@ namespace Homework_6._1
 
       static void WritePersons(string filePath, Person[] persons)
       {
-         FileStream stream = new FileStream(filePath, FileMode.Create);
+         FileStream stream = new FileStream(filePath, FileMode.Create, FileAccess.Write);
          BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
          writer.Write(persons.Length);
          for (int i = 0; i < persons.Length; i++)
@@ -277,7 +277,8 @@ namespace Homework_6._1
                person.Gender, person.Physics, person.Math, person.Inf, person.Grant);
             i++;
          }
-         writer.Flush(); writer.Close();
+         writer.Flush();
+         writer.Close();
       }
 
       // Метод записи массива структур в текстовый файл
@@ -292,7 +293,7 @@ namespace Homework_6._1
                person.Gender, person.Physics, person.Math, person.Inf, person.Grant);
          }
 
-         //writer.Flush();
+         writer.Flush();
          writer.Close();
       }
    }
