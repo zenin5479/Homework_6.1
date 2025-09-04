@@ -125,7 +125,7 @@ namespace Homework_6._1
 
          //Cadet
          // Создание тестовых данных
-         Student[] cadet =
+         Student[] cadets =
          {
             new Student
             {
@@ -179,17 +179,17 @@ namespace Homework_6._1
             }
          };
          // Запись массива структур в бинарный файл
-         WriteStruct("person.bin", cadet);
+         WriteStruct("person.bin", cadets);
          // Чтение массива структур из бинарного файла
-         Student[] readPeople = ReadStruct("person.bin");
+         Student[] readCadets = ReadStruct("person.bin");
          // Вывод прочитанных данных
          Console.WriteLine("Прочитанные данные:");
-         for (int index = 0; index < readPeople.Length; index++)
+         for (int index = 0; index < readCadets.Length; index++)
          {
-            Student person = readPeople[index];
+            Student cadet = readCadets[index];
             Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
-               person.Group, person.Surname, person.Name, person.Dadsname, person.Year,
-            person.Gender, person.Physics, person.Math, person.Inf, person.Grant);
+               cadet.Group, cadet.Surname, cadet.Name, cadet.Dadsname, cadet.Year,
+            cadet.Gender, cadet.Physics, cadet.Math, cadet.Inf, cadet.Grant);
          }
 
          Console.ReadKey();
