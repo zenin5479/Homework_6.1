@@ -105,17 +105,16 @@ namespace Homework_6._1
                Year = 2007, Gender = 'Ж', Physics = 2, Math = 2, Inf = 2, Grant = 5000
             }
          };
-
          // Запись массива структур в текстовый файл
          WriteStructFile(pathStruct, students);
          // Чтение массива структур из текстового файла
-         Student[] readCadet = MethodsForStruct.ReadStructFile(pathStruct, "spisok.txt");
+         Student[] readStudents = MethodsForStruct.ReadStructFile(pathStruct, "spisok.txt");
          // Вывод прочитанных данных
          Console.WriteLine("Прочитанные данные:");
          int i = 0;
-         while (i < readCadet.Length)
+         while (i < readStudents.Length)
          {
-            Student read = readCadet[i];
+            Student read = readStudents[i];
             Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
                read.Group, read.Surname, read.Name, read.Dadsname, read.Year,
                read.Gender, read.Physics, read.Math, read.Inf, read.Grant);
@@ -124,9 +123,9 @@ namespace Homework_6._1
 
          Console.WriteLine();
 
-         students
+         //Cadet
          // Создание тестовых данных
-         Student[] people =
+         Student[] cadet =
          {
             new Student
             {
@@ -180,14 +179,14 @@ namespace Homework_6._1
             }
          };
          // Запись массива структур в бинарный файл
-         WriteStruct("person.bin", people);
+         WriteStruct("person.bin", cadet);
          // Чтение массива структур из бинарного файла
-         Student[] loadedPeople = ReadStruct("person.bin");
+         Student[] readPeople = ReadStruct("person.bin");
          // Вывод прочитанных данных
          Console.WriteLine("Прочитанные данные:");
-         for (int index = 0; index < loadedPeople.Length; index++)
+         for (int index = 0; index < readPeople.Length; index++)
          {
-            Student person = loadedPeople[index];
+            Student person = readPeople[index];
             Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
                person.Group, person.Surname, person.Name, person.Dadsname, person.Year,
             person.Gender, person.Physics, person.Math, person.Inf, person.Grant);
