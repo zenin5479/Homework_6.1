@@ -232,11 +232,6 @@ namespace Homework_6._1
             i++;
          }
 
-         for (  )
-         {
-
-         }
-
          stream.Close();
          reader.Close();
          return persons;
@@ -247,7 +242,9 @@ namespace Homework_6._1
          FileStream stream = new FileStream(filePath, FileMode.Create, FileAccess.Write);
          BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
          writer.Write(persons.Length);
-         for (int i = 0; i < persons.Length; i++)
+
+         int i = 0;
+         while (i < persons.Length)
          {
             Student person = persons[i];
             // Запись строки в UTF-8 с предварительной длиной
@@ -261,6 +258,7 @@ namespace Homework_6._1
             writer.Write(person.Math);
             writer.Write(person.Inf);
             writer.Write(person.Grant);
+            i++;
          }
 
          stream.Close();
