@@ -202,7 +202,8 @@ namespace Homework_6._1
          BinaryReader reader = new BinaryReader(stream, Encoding.UTF8);
          int length = reader.ReadInt32();
          Student[] persons = new Student[length];
-         for (int i = 0; i < length; i++)
+         int i = 0;
+         while (i < length)
          {
             string group = reader.ReadString();
             string surname = reader.ReadString();
@@ -227,6 +228,13 @@ namespace Homework_6._1
                Inf = inf,
                Grant = grant
             };
+
+            i++;
+         }
+
+         for (  )
+         {
+
          }
 
          stream.Close();
