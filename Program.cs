@@ -140,12 +140,12 @@ namespace Homework_6._1
                cadet.Gender, cadet.Physics, cadet.Math, cadet.Inf, cadet.Grant);
             j++;
          }
-
-         //QuickSort(readCadets, 0, readCadets.Length - 1);
-         Partition(readCadets, 0, readCadets.Length - 1);
-         foreach (Student point in readCadets)
+         
+         QuickSort(readCadets, 0, readCadets.Length - 1);
+         for (int index = 0; index < readCadets.Length; index++)
          {
-            Console.WriteLine($"({point.Math}, {point.Math})");
+            Student point = readCadets[index];
+            Console.WriteLine(point.Math);
          }
 
          Console.ReadKey();
@@ -156,6 +156,8 @@ namespace Homework_6._1
          if (left < right)
          {
             int pivotIndex = Partition(arr, left, right);
+            QuickSort(arr, left, pivotIndex - 1);
+            QuickSort(arr, pivotIndex + 1, right);
          }
       }
 
@@ -169,11 +171,11 @@ namespace Homework_6._1
             if (ComparePoints(arr[j], pivot) <= 0)
             {
                i++;
-               Swap(arr[i], arr[j]);
+               Swap(ref arr[i], ref arr[j]);
             }
          }
 
-         Swap(arr[i + 1], arr[right]);
+         Swap(ref arr[i + 1], ref arr[right]);
          return i + 1;
       }
 
@@ -183,7 +185,7 @@ namespace Homework_6._1
          return result != 0 ? result : a.Math.CompareTo(b.Math);
       }
 
-      static void Swap(Student a,  Student b)
+      static void Swap(ref Student a, ref Student b)
       {
          Student temp = a;
          a = b;
