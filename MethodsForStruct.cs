@@ -6,7 +6,7 @@ namespace Homework_6._1
 {
    public class MethodsForStruct
    {
-      public static Student[] ReadStructFile(string path, string nameFile)
+      public static Student[] ReadStructFileTxt(string path, string nameFile)
       {
          Student[] arrayStudent = { };
          // Чтение файла за одну операцию
