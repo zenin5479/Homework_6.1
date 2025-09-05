@@ -106,7 +106,7 @@ namespace Homework_6._1
             }
          };
          // Запись массива структур в текстовый файл
-         WriteStructFile(pathStruct, students);
+         WriteStructFileTxt(pathStruct, students);
          // Чтение массива структур из текстового файла
          Student[] readStudents = MethodsForStruct.ReadStructFileTxt(pathStruct, "spisok.txt");
          // Вывод прочитанных данных
@@ -178,9 +178,9 @@ namespace Homework_6._1
             }
          };
          // Запись массива структур в бинарный файл
-         WriteStructToFile(pathWrite, cadets);
+         WriteStructFileBin(pathWrite, cadets);
          // Чтение массива структур из бинарного файла
-         Student[] readCadets = ReadStructToFile(pathWrite);
+         Student[] readCadets = ReadStructFileBin(pathWrite);
          // Вывод прочитанных данных
          Console.WriteLine("Прочитанные данные:");
          int j = 0;
@@ -197,7 +197,7 @@ namespace Homework_6._1
       }
 
       // Метод чтения массива структур из бинарного файла
-      static Student[] ReadStructToFile(string path)
+      static Student[] ReadStructFileBin(string path)
       {
          FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read);
          BinaryReader reader = new BinaryReader(stream, Encoding.UTF8);
@@ -239,7 +239,7 @@ namespace Homework_6._1
       }
 
       // Метод записи массива структур в бинарный файл
-      static void WriteStructToFile(string path, Student[] students)
+      static void WriteStructFileBin(string path, Student[] students)
       {
          FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
          BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
@@ -267,7 +267,7 @@ namespace Homework_6._1
       }
 
       // Метод записи массива структур в текстовый файл
-      static void WriteStructFile(string path, Student[] students)
+      static void WriteStructFileTxt(string path, Student[] students)
       {
          FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Write);
          StreamWriter writer = new StreamWriter(stream, Encoding.UTF8);
