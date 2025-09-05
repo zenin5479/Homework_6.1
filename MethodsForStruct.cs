@@ -7,7 +7,7 @@ namespace Homework_6._1
    public class MethodsForStruct
    {
       // Метод записи массива структур в текстовый файл
-      static void WriteStructFileTxt(string path, Student[] students)
+      public static void WriteStructFileTxt(string path, Student[] students)
       {
          FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Write);
          StreamWriter writer = new StreamWriter(stream, Encoding.UTF8);
