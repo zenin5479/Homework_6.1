@@ -141,18 +141,17 @@ namespace Homework_6._1
             j++;
          }
          
-         QuickSort(points, 0, points.Length - 1);
-
-         foreach (var point in points)
+         QuickSort(readCadets, 0, readCadets.Length - 1);
+         foreach (Student point in readCadets)
          {
-            Console.WriteLine($"({point.X}, {point.Y})");
+            Console.WriteLine($"({point.Math}, {point.Math})");
          }
 
 
          Console.ReadKey();
       }
 
-      static void QuickSort(Point[] arr, int left, int right)
+      static void QuickSort(Student[] arr, int left, int right)
       {
          if (left < right)
          {
@@ -162,9 +161,9 @@ namespace Homework_6._1
          }
       }
 
-      static int Partition(Point[] arr, int left, int right)
+      static int Partition(Student[] arr, int left, int right)
       {
-         Point pivot = arr[right];
+         Student pivot = arr[right];
          int i = left - 1;
 
          for (int j = left; j < right; j++)
@@ -178,6 +177,19 @@ namespace Homework_6._1
 
          Swap(ref arr[i + 1], ref arr[right]);
          return i + 1;
+      }
+
+      static int ComparePoints(Student a, Student b)
+      {
+         int result = a.Math.CompareTo(b.Math);
+         return result != 0 ? result : a.Math.CompareTo(b.Math);
+      }
+
+      static void Swap(ref Student a, ref Student b)
+      {
+         Student temp = a;
+         a = b;
+         b = temp;
       }
    }
 }
