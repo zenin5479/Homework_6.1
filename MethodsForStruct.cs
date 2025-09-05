@@ -23,7 +23,7 @@ namespace Homework_6._1
 
          writer.Close();
       }
-      
+
       // Метод чтения массива структур из текстового файла
       public static Student[] ReadStructFileTxt(string path, string nameFile)
       {
@@ -184,7 +184,7 @@ namespace Homework_6._1
          stream.Close();
          writer.Close();
       }
-      
+
       // Метод чтения массива структур из бинарного файла
       public static Student[] ReadStructFileBin(string path)
       {

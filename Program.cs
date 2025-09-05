@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Drawing;
 using System.IO;
-using System.Reflection;
-using System.Text;
 
 // Обработка студенческой ведомости
 // Составить программу для обработки информации о студентах какого-то факультета
@@ -124,7 +121,7 @@ namespace Homework_6._1
          }
 
          Console.WriteLine();
-         
+
          // Запись массива структур в бинарный файл
          MethodsForStruct.WriteStructFileBin(pathWrite, readStudents);
          // Чтение массива структур из бинарного файла
@@ -140,7 +137,7 @@ namespace Homework_6._1
                cadet.Gender, cadet.Physics, cadet.Math, cadet.Inf, cadet.Grant);
             j++;
          }
-         
+
          QuickSort(readCadets, 0, readCadets.Length - 1);
          for (int index = 0; index < readCadets.Length; index++)
          {
