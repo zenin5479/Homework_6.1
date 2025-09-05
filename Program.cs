@@ -140,18 +140,12 @@ namespace Homework_6._1
             j++;
          }
 
-         int compare = Compare(readCadets);
 
          foreach (Student person in readCadets)
             Console.Write($"{person} ");
 
 
          Console.ReadKey();
-      }
-
-      static int Compare(Student[] a)
-      {
-         return a.Rank.CompareTo(a.Math);
       }
    }
 }
