@@ -148,7 +148,6 @@ namespace Homework_6._1
             Console.WriteLine($"({point.Math}, {point.Math})");
          }
 
-
          Console.ReadKey();
       }
 
