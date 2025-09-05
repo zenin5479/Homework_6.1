@@ -195,9 +195,5 @@ namespace Homework_6._1
 
          Console.ReadKey();
       }
-
-
-      //   writer.Close();
-      //}
    }
 }
