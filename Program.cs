@@ -196,6 +196,7 @@ namespace Homework_6._1
          Console.ReadKey();
       }
 
+      // Метод чтения массива структур из бинарного файла
       static Student[] ReadStructToFile(string path)
       {
          FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read);
@@ -237,6 +238,7 @@ namespace Homework_6._1
          return persons;
       }
 
+      // Метод записи массива структур в текстовый файл
       static void WriteStructToFile(string path, Student[] students)
       {
          FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
