@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
+using System.Reflection;
 using System.Text;
 
 // Обработка студенческой ведомости
@@ -139,13 +140,44 @@ namespace Homework_6._1
                cadet.Gender, cadet.Physics, cadet.Math, cadet.Inf, cadet.Grant);
             j++;
          }
+         
+         QuickSort(points, 0, points.Length - 1);
 
-
-         foreach (Student person in readCadets)
-            Console.Write($"{person} ");
+         foreach (var point in points)
+         {
+            Console.WriteLine($"({point.X}, {point.Y})");
+         }
 
 
          Console.ReadKey();
+      }
+
+      static void QuickSort(Point[] arr, int left, int right)
+      {
+         if (left < right)
+         {
+            int pivotIndex = Partition(arr, left, right);
+            QuickSort(arr, left, pivotIndex - 1);
+            QuickSort(arr, pivotIndex + 1, right);
+         }
+      }
+
+      static int Partition(Point[] arr, int left, int right)
+      {
+         Point pivot = arr[right];
+         int i = left - 1;
+
+         for (int j = left; j < right; j++)
+         {
+            if (ComparePoints(arr[j], pivot) <= 0)
+            {
+               i++;
+               Swap(ref arr[i], ref arr[j]);
+            }
+         }
+
+         Swap(ref arr[i + 1], ref arr[right]);
+         return i + 1;
       }
    }
 }
