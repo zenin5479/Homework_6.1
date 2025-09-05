@@ -180,7 +180,7 @@ namespace Homework_6._1
          // Запись массива структур в бинарный файл
          MethodsForStruct.WriteStructFileBin(pathWrite, cadets);
          // Чтение массива структур из бинарного файла
-         Student[] readCadets = ReadStructFileBin(pathWrite);
+         Student[] readCadets = MethodsForStruct.ReadStructFileBin(pathWrite);
          // Вывод прочитанных данных
          Console.WriteLine("Прочитанные данные:");
          int j = 0;

@@ -186,7 +186,7 @@ namespace Homework_6._1
       }
       
       // Метод чтения массива структур из бинарного файла
-      static Student[] ReadStructFileBin(string path)
+      public static Student[] ReadStructFileBin(string path)
       {
          FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read);
          BinaryReader reader = new BinaryReader(stream, Encoding.UTF8);
