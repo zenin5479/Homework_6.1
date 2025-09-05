@@ -139,7 +139,25 @@ namespace Homework_6._1
          return arrayStudent;
       }
 
+      // Метод записи массива структур в текстовый файл
+      static void WriteStructFileTxt(string path, Student[] students)
+      {
+         FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Write);
+         StreamWriter writer = new StreamWriter(stream, Encoding.UTF8);
+         int i = 0;
+         while (i < students.Length)
+         {
+            Student person = students[i];
+            writer.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
+               person.Group, person.Surname, person.Name, person.Dadsname, person.Year,
+               person.Gender, person.Physics, person.Math, person.Inf, person.Grant);
+            i++;
+         }
 
+         writer.Close();
+      }
+
+      
       // Метод чтения массива структур из бинарного файла
       static Student[] ReadStructFileBin(string path)
       {
@@ -210,22 +228,6 @@ namespace Homework_6._1
          writer.Close();
       }
 
-      // Метод записи массива структур в текстовый файл
-      static void WriteStructFileTxt(string path, Student[] students)
-      {
-         FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Write);
-         StreamWriter writer = new StreamWriter(stream, Encoding.UTF8);
-         int i = 0;
-         while (i < students.Length)
-         {
-            Student person = students[i];
-            writer.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
-               person.Group, person.Surname, person.Name, person.Dadsname, person.Year,
-               person.Gender, person.Physics, person.Math, person.Inf, person.Grant);
-            i++;
-         }
 
-         writer.Close();
-      }
    }
 }
