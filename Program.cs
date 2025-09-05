@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Text;
 
@@ -139,7 +140,20 @@ namespace Homework_6._1
             j++;
          }
 
+         Compare(Student[] readCadets);
+
+
+
+         foreach (Student person in readCadets)
+            Console.Write($"{person} ");
+
+
          Console.ReadKey();
+      }
+
+      public int Compare(Student a, Student b)
+      {
+         return a.Math.CompareTo(b.Math);
       }
    }
 }
