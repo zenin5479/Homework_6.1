@@ -238,7 +238,7 @@ namespace Homework_6._1
          return persons;
       }
 
-      // Метод записи массива структур в бинарного файл
+      // Метод записи массива структур в бинарный файл
       static void WriteStructToFile(string path, Student[] students)
       {
          FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
