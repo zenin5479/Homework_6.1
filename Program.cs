@@ -178,7 +178,7 @@ namespace Homework_6._1
             }
          };
          // Запись массива структур в бинарный файл
-         WriteStructFileBin(pathWrite, cadets);
+         MethodsForStruct.WriteStructFileBin(pathWrite, cadets);
          // Чтение массива структур из бинарного файла
          Student[] readCadets = ReadStructFileBin(pathWrite);
          // Вывод прочитанных данных

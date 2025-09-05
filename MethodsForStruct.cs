@@ -158,7 +158,7 @@ namespace Homework_6._1
       }
 
       // Метод записи массива структур в бинарный файл
-      static void WriteStructFileBin(string path, Student[] students)
+      public static void WriteStructFileBin(string path, Student[] students)
       {
          FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
          BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
