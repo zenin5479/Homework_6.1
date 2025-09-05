@@ -122,7 +122,6 @@ namespace Homework_6._1
          }
 
          Console.WriteLine();
-
          
          // Запись массива структур в бинарный файл
          MethodsForStruct.WriteStructFileBin(pathWrite, readStudents);
