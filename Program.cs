@@ -38,12 +38,6 @@ namespace Homework_6._1
       public double Grant;
    }
 
-   struct Person
-   {
-      public string Name;
-      public int Age;
-   }
-
    internal class Program
    {
       static void Main(string[] args)
