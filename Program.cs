@@ -121,7 +121,6 @@ namespace Homework_6._1
          }
 
          Console.WriteLine();
-
          // Запись массива структур в бинарный файл
          MethodsForStruct.WriteStructFileBin(pathWrite, readStudents);
          // Чтение массива структур из бинарного файла
@@ -139,19 +138,12 @@ namespace Homework_6._1
          }
 
          Console.WriteLine();
-
-         //Person[] people = 
-         //{
-         //   new Person { Name = "Alice", Age = 30 },
-         //   new Person { Name = "Bob", Age = 25 },
-         //   new Person { Name = "Charlie", Age = 35 }
-         //};
-
          BubbleSortByAge(readCadets);
 
          Console.WriteLine("Отсортированный массив по возрасту:");
-         foreach (var person in readCadets)
+         for (var index = 0; index < readCadets.Length; index++)
          {
+            var person = readCadets[index];
             Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
                person.Group, person.Surname, person.Name, person.Dadsname, person.Year,
                person.Gender, person.Physics, person.Math, person.Inf, person.Grant);
