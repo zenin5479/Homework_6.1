@@ -162,9 +162,8 @@ namespace Homework_6._1
          // Если нужно сортировать по другим критериям изменяем условие в сортировке:
          // используем string.Compare
          // if (string.Compare(arr[j].Name, arr[j + 1].Name) > 0)
-
+         
          int n = cadets.Length;
-
          int i = 0;
          while (i < n - 1)
          {
