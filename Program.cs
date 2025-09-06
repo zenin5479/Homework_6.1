@@ -144,10 +144,10 @@ namespace Homework_6._1
          Console.WriteLine();
          BubbleSortByAge(readCadets);
          Console.WriteLine("Отсортированный массив по возрасту:");
-         int index = 0; 
+         int index = 0;
          while (index < readCadets.Length)
          {
-             Student person = readCadets[index];
+            Student person = readCadets[index];
             Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
                person.Group, person.Surname, person.Name, person.Dadsname, person.Year,
                person.Gender, person.Physics, person.Math, person.Inf, person.Grant);
@@ -157,11 +157,12 @@ namespace Homework_6._1
          Console.ReadKey();
       }
 
-      // Если нужно сортировать по другим критериям изменяем условие в сортировке:
-      // используем string.Compare
-      // if (string.Compare(arr[j].Name, arr[j + 1].Name) > 0)
       static void BubbleSortByAge(Student[] cadets)
       {
+         // Если нужно сортировать по другим критериям изменяем условие в сортировке:
+         // используем string.Compare
+         // if (string.Compare(arr[j].Name, arr[j + 1].Name) > 0)
+
          int n = cadets.Length;
          for (int i = 0; i < n - 1; i++)
          {
