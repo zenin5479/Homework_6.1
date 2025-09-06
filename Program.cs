@@ -171,6 +171,10 @@ namespace Homework_6._1
             double bySubjects = ((students[i].Physics + students[i].Math + students[i].Inf) / 3.0f);
             allSubjects[i] = bySubjects;
             Console.WriteLine(bySubjects);
+            Console.Write("{0:f2} ", bySubjects);
+            Console.Write("{0:f} ", bySubjects);
+            Console.Write("{0} ", bySubjects);
+
             i++;
          }
 
