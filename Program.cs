@@ -155,27 +155,28 @@ namespace Homework_6._1
          //}
 
          double average = AverageScore(students);
-         Console.WriteLine(average);
+         Console.WriteLine("Средний балл всех студентов по всем предметам: {0:f}", average);
 
          Console.ReadKey();
       }
 
       static double AverageScore(Student[] students)
       {
-         double medium = 0;
-         double[] allSubjects = new double[students.Length];
+         double medium;
+         double allSubjects = 0;
          //int n = students.Length;
          int i = 0;
          while (i < students.Length)
          {
             double bySubjects = ((students[i].Physics + students[i].Math + students[i].Inf) / 3.0f);
-            allSubjects[i] = bySubjects;
+            allSubjects += bySubjects;
             //Console.WriteLine("{0:f2} ", bySubjects);
             Console.WriteLine("{0:f} ", bySubjects);
             //Console.WriteLine("{0} ", bySubjects);
 
             i++;
          }
+         medium = allSubjects / students.Length;
 
          return medium;
       }
