@@ -146,34 +146,37 @@ namespace Homework_6._1
 
          Console.WriteLine();
 
-         QuickSort(readCadets, 0, readCadets.Length - 1);
-         for (int index = 0; index < readCadets.Length; index++)
-         {
-            Student point = readCadets[index];
-            Console.WriteLine(point.Math);
-         }
+         //QuickSort(readCadets, 0, readCadets.Length - 1);
+         //for (int index = 0; index < readCadets.Length; index++)
+         //{
+         //   Student point = readCadets[index];
+         //   Console.WriteLine(point.Math);
+         //}
 
          Console.WriteLine();
 
-         Person[] people = 
-         {
-            new Person { Name = "Alice", Age = 30 },
-            new Person { Name = "Bob", Age = 25 },
-            new Person { Name = "Charlie", Age = 35 }
-         };
+         //Person[] people = 
+         //{
+         //   new Person { Name = "Alice", Age = 30 },
+         //   new Person { Name = "Bob", Age = 25 },
+         //   new Person { Name = "Charlie", Age = 35 }
+         //};
 
-         BubbleSortByAge(people);
+         BubbleSortByAge(readCadets);
 
-         Console.WriteLine("Sorted array by age:");
-         foreach (var person in people)
+         Console.WriteLine("Отсортированный массив по возрасту:");
+         foreach (var person in readCadets)
          {
-            Console.WriteLine($"{person.Name}: {person.Age}");
+            Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
+               person.Group, person.Surname, person.Name, person.Dadsname, person.Year,
+               person.Gender, person.Physics, person.Math, person.Inf, person.Grant);
+            i++;
          }
 
          Console.ReadKey();
       }
 
-      static void BubbleSortByAge(Person[] arr)
+      static void BubbleSortByAge(Student[] arr)
       {
          int n = arr.Length;
          for (int i = 0; i < n - 1; i++)
@@ -181,10 +184,10 @@ namespace Homework_6._1
             for (int j = 0; j < n - i - 1; j++)
             {
                // Сравниваем соседние элементы
-               if (arr[j].Age > arr[j + 1].Age)
+               if (arr[j].Year > arr[j + 1].Year)
                {
                   // Меняем местами структуры
-                  Person temp = arr[j];
+                  Student temp = arr[j];
                   arr[j] = arr[j + 1];
                   arr[j + 1] = temp;
                }
