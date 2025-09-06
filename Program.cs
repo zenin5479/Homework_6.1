@@ -162,13 +162,13 @@ namespace Homework_6._1
          // Если нужно сортировать по другим критериям изменяем условие в сортировке:
          // используем string.Compare
          // if (string.Compare(arr[j].Name, arr[j + 1].Name) > 0)
-         
+
          int n = cadets.Length;
          int i = 0;
          while (i < n - 1)
          {
-
-            for (int j = 0; j < n - i - 1; j++)
+            int j = 0;
+            while (j < n - i - 1)
             {
                // Сравниваем соседние элементы
                if (cadets[j].Year > cadets[j + 1].Year)
@@ -178,8 +178,11 @@ namespace Homework_6._1
                   cadets[j] = cadets[j + 1];
                   cadets[j + 1] = temp;
                }
+               
+               
+               
+               j++;
             }
-
 
             i++;
          }
