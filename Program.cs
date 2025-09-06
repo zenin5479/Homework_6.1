@@ -146,15 +146,6 @@ namespace Homework_6._1
 
          Console.WriteLine();
 
-         //QuickSort(readCadets, 0, readCadets.Length - 1);
-         //for (int index = 0; index < readCadets.Length; index++)
-         //{
-         //   Student point = readCadets[index];
-         //   Console.WriteLine(point.Math);
-         //}
-
-         Console.WriteLine();
-
          //Person[] people = 
          //{
          //   new Person { Name = "Alice", Age = 30 },
