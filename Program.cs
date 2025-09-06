@@ -166,7 +166,7 @@ namespace Homework_6._1
          // используем string.Compare
          // if (string.Compare(arr[j].Name, arr[j + 1].Name) > 0)
          double medium;
-         double[] allsubjects = new double[cadets.Length];
+         double[] allSubjects = new double[cadets.Length];
 
          int n = cadets.Length;
          int i = 0;
@@ -175,6 +175,7 @@ namespace Homework_6._1
             int j = 0;
             while (j < n - i - 1)
             {
+               double bySubjects;
                // Сравниваем соседние элементы
                if (cadets[j].Year > cadets[j + 1].Year)
                {
