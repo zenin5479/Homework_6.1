@@ -155,7 +155,7 @@ namespace Homework_6._1
 
          Console.WriteLine();
 
-         Person[] people = new Person[]
+         Person[] people = 
          {
             new Person { Name = "Alice", Age = 30 },
             new Person { Name = "Bob", Age = 25 },
