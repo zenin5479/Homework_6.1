@@ -176,20 +176,20 @@ namespace Homework_6._1
          Console.ReadKey();
       }
 
-      static void BubbleSortByAge(Student[] arr)
+      static void BubbleSortByAge(Student[] cadets)
       {
-         int n = arr.Length;
+         int n = cadets.Length;
          for (int i = 0; i < n - 1; i++)
          {
             for (int j = 0; j < n - i - 1; j++)
             {
                // Сравниваем соседние элементы
-               if (arr[j].Year > arr[j + 1].Year)
+               if (cadets[j].Year > cadets[j + 1].Year)
                {
                   // Меняем местами структуры
-                  Student temp = arr[j];
-                  arr[j] = arr[j + 1];
-                  arr[j + 1] = temp;
+                  Student temp = cadets[j];
+                  cadets[j] = cadets[j + 1];
+                  cadets[j + 1] = temp;
                }
             }
          }
