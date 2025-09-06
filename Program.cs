@@ -139,14 +139,15 @@ namespace Homework_6._1
 
          Console.WriteLine();
          BubbleSortByAge(readCadets);
-
          Console.WriteLine("Отсортированный массив по возрасту:");
-         for (int index = 0; index < readCadets.Length; index++)
+         int index = 0; 
+         while (index < readCadets.Length)
          {
-            Student person = readCadets[index];
+             Student person = readCadets[index];
             Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
                person.Group, person.Surname, person.Name, person.Dadsname, person.Year,
                person.Gender, person.Physics, person.Math, person.Inf, person.Grant);
+            index++;
          }
 
          Console.ReadKey();
