@@ -194,46 +194,5 @@ namespace Homework_6._1
             }
          }
       }
-
-      static void QuickSort(Student[] arr, int left, int right)
-      {
-         if (left < right)
-         {
-            int pivotIndex = Partition(arr, left, right);
-            QuickSort(arr, left, pivotIndex - 1);
-            QuickSort(arr, pivotIndex + 1, right);
-         }
-      }
-
-      static int Partition(Student[] arr, int left, int right)
-      {
-         Student pivot = arr[right];
-         int i = left - 1;
-
-         for (int j = left; j < right; j++)
-         {
-            if (ComparePoints(arr[j], pivot) <= 0)
-            {
-               i++;
-               Swap(ref arr[i], ref arr[j]);
-            }
-         }
-
-         Swap(ref arr[i + 1], ref arr[right]);
-         return i + 1;
-      }
-
-      static int ComparePoints(Student a, Student b)
-      {
-         int result = a.Math.CompareTo(b.Math);
-         return result != 0 ? result : a.Math.CompareTo(b.Math);
-      }
-
-      static void Swap(ref Student a, ref Student b)
-      {
-         Student temp = a;
-         a = b;
-         b = temp;
-      }
    }
 }
