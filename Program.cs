@@ -141,58 +141,40 @@ namespace Homework_6._1
             j++;
          }
 
-         Console.WriteLine();
-         BubbleSortByAge(readCadets);
-         Console.WriteLine("Отсортированный массив по возрасту:");
-         int index = 0;
-         while (index < readCadets.Length)
-         {
-            Student person = readCadets[index];
-            Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
-               person.Group, person.Surname, person.Name, person.Dadsname, person.Year,
-               person.Gender, person.Physics, person.Math, person.Inf, person.Grant);
-            index++;
-         }
+         //Console.WriteLine();
+         //BubbleSortByAge(readCadets);
+         //Console.WriteLine("Отсортированный массив по возрасту:");
+         //int index = 0;
+         //while (index < readCadets.Length)
+         //{
+         //   Student person = readCadets[index];
+         //   Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
+         //      person.Group, person.Surname, person.Name, person.Dadsname, person.Year,
+         //      person.Gender, person.Physics, person.Math, person.Inf, person.Grant);
+         //   index++;
+         //}
 
-         double average = AverageScore(readCadets);
+         double average = AverageScore(students);
          Console.WriteLine(average);
 
          Console.ReadKey();
       }
 
-      static double AverageScore(Student[] cadets)
+      static double AverageScore(Student[] students)
       {
-         // Если нужно сортировать по другим критериям изменяем условие в сортировке:
-         // используем string.Compare
-         // if (string.Compare(arr[j].Name, arr[j + 1].Name) > 0)
-         double medium;
-         double[] allSubjects = new double[cadets.Length];
-
-         int n = cadets.Length;
+         double medium = 0;
+         double[] allSubjects = new double[students.Length];
+         //int n = students.Length;
          int i = 0;
-         while (i < n - 1)
+         while (i < students.Length)
          {
-            int j = 0;
-            while (j < n - i - 1)
-            {
-               double bySubjects;
-               // Сравниваем соседние элементы
-               if (cadets[j].Year > cadets[j + 1].Year)
-               {
-                  // Меняем местами структуры
-                  Student temp = cadets[j];
-                  cadets[j] = cadets[j + 1];
-                  cadets[j + 1] = temp;
-               }
-
-               j++;
-            }
-
+            double bySubjects = ((students[i].Physics + students[i].Math + students[i].Inf) / 3.0f);
+            allSubjects[i] = bySubjects;
+            Console.WriteLine(bySubjects);
             i++;
          }
 
-
-         return 0;
+         return medium;
       }
 
       static void BubbleSortByAge(Student[] cadets)
