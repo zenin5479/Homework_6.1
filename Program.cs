@@ -144,6 +144,8 @@ namespace Homework_6._1
             j++;
          }
 
+         Console.WriteLine();
+
          QuickSort(readCadets, 0, readCadets.Length - 1);
          for (int index = 0; index < readCadets.Length; index++)
          {
@@ -151,8 +153,28 @@ namespace Homework_6._1
             Console.WriteLine(point.Math);
          }
 
+         Console.WriteLine();
+
+         Person[] people = new Person[]
+         {
+            new Person { Name = "Alice", Age = 30 },
+            new Person { Name = "Bob", Age = 25 },
+            new Person { Name = "Charlie", Age = 35 }
+         };
+
+         BubbleSortByAge(people);
+
+         Console.WriteLine("Sorted array by age:");
+         foreach (var person in people)
+         {
+            Console.WriteLine($"{person.Name}: {person.Age}");
+         }
+
          Console.ReadKey();
       }
+
+
+
 
       static void QuickSort(Student[] arr, int left, int right)
       {
