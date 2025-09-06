@@ -178,9 +178,7 @@ namespace Homework_6._1
                   cadets[j] = cadets[j + 1];
                   cadets[j + 1] = temp;
                }
-               
-               
-               
+
                j++;
             }
 
