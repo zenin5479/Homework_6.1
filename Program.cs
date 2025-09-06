@@ -153,6 +153,9 @@ namespace Homework_6._1
          Console.ReadKey();
       }
 
+      // Если нужно сортировать по другим критериям:
+      // Измен условие в сортировке(например, для сортировки по имени используйте string.Compare):
+      // if (string.Compare(arr[j].Name, arr[j + 1].Name) > 0)
       static void BubbleSortByAge(Student[] cadets)
       {
          int n = cadets.Length;
