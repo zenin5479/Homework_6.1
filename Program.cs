@@ -164,8 +164,11 @@ namespace Homework_6._1
          // if (string.Compare(arr[j].Name, arr[j + 1].Name) > 0)
 
          int n = cadets.Length;
-         for (int i = 0; i < n - 1; i++)
+
+         int i = 0;
+         while (i < n - 1)
          {
+
             for (int j = 0; j < n - i - 1; j++)
             {
                // Сравниваем соседние элементы
@@ -177,6 +180,9 @@ namespace Homework_6._1
                   cadets[j + 1] = temp;
                }
             }
+
+
+            i++;
          }
       }
    }
