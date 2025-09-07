@@ -172,11 +172,10 @@ namespace Homework_6._1
             //Console.WriteLine("{0:f2} ", bySubjects);
             Console.WriteLine("{0:f} ", bySubjects);
             //Console.WriteLine("{0} ", bySubjects);
-
             i++;
          }
-         medium = allSubjects / students.Length;
 
+         medium = allSubjects / students.Length;
          return medium;
       }
 
