@@ -156,11 +156,13 @@ namespace Homework_6._1
 
          double average = AverageScore(students);
          Console.WriteLine("Средний балл всех студентов по всем предметам: {0:f}", average);
+         Student[] readCad = AverageHigherScore(students, average);
+         //Console.WriteLine("Средний балл всех студентов по всем предметам: {0:f}", averag);
 
          Console.ReadKey();
       }
 
-      static double AverageHigherScore(Student[] students)
+      static Student[] AverageHigherScore(Student[] students, double average)
       {
          double medium;
          double allSubjects = 0;
@@ -176,7 +178,6 @@ namespace Homework_6._1
          }
 
          medium = allSubjects / students.Length;
-         return medium;
       }
 
       static double AverageScore(Student[] students)
