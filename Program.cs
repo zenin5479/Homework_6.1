@@ -160,6 +160,25 @@ namespace Homework_6._1
          Console.ReadKey();
       }
 
+      static double AverageHigherScore(Student[] students)
+      {
+         double medium;
+         double allSubjects = 0;
+         int i = 0;
+         while (i < students.Length)
+         {
+            double bySubjects = ((students[i].Physics + students[i].Math + students[i].Inf) / 3.0f);
+            allSubjects += bySubjects;
+            //Console.WriteLine("{0:f2} ", bySubjects);
+            Console.WriteLine("{0:f} ", bySubjects);
+            //Console.WriteLine("{0} ", bySubjects);
+            i++;
+         }
+
+         medium = allSubjects / students.Length;
+         return medium;
+      }
+
       static double AverageScore(Student[] students)
       {
          double medium;
