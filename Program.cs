@@ -157,7 +157,6 @@ namespace Homework_6._1
          double average = AverageScore(students);
          Console.WriteLine("Средний балл всех студентов по всем предметам: {0:f}", average);
          Student[] readCad = AverageHigherScore(students, average);
-         //Console.WriteLine("Средний балл всех студентов по всем предметам: {0:f}", averag);
 
          int futureDate = DateTime.Now.Year;
          DateTime specificDate = new DateTime(2007);
@@ -167,12 +166,8 @@ namespace Homework_6._1
          Console.WriteLine($"День года: {DateTime.Now.DayOfYear}");
          Console.WriteLine($"Форматированно: {DateTime.Now:dd.MM.yyyy HH:mm}");
 
-         DateTime date1 = new DateTime(2025); 
-         DateTime date2 = new DateTime(2007);
-         Console.WriteLine(date1.Subtract(date2));
-
-         DateTime birthDate = new DateTime(1990, 6, 15);
-         DateTime currentDate = DateTime.Now;
+         int birthDate = 2007;
+         int currentDate = DateTime.Now.Year;
 
          int age = CalculateAge(birthDate, currentDate);
          Console.WriteLine($"Возраст: {age}");
@@ -181,14 +176,9 @@ namespace Homework_6._1
          Console.ReadKey();
       }
 
-      public static int CalculateAge(DateTime birthDate, DateTime currentDate)
+      public static int CalculateAge(int birthDate, int currentDate)
       {
-         int age = currentDate.Year - birthDate.Year;
-         if (currentDate.Month < birthDate.Month ||
-             (currentDate.Month == birthDate.Month && currentDate.Day < birthDate.Day))
-         {
-            age--;
-         }
+         int age = currentDate - birthDate;
          return age;
       }
 
