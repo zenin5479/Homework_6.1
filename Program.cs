@@ -182,7 +182,6 @@ namespace Homework_6._1
          return age;
       }
 
-
       static Student[] AverageHigherScore(Student[] student, double medium)
       {
          Student[] averageHigher = new Student[student.Length];
