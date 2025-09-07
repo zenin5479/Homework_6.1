@@ -158,20 +158,20 @@ namespace Homework_6._1
          Console.WriteLine("Средний балл всех студентов по всем предметам: {0:f}", average);
          Student[] readCad = AverageHigherScore(students, average);
 
-         int futureDate = DateTime.Now.Year;
-         DateTime specificDate = new DateTime(2007);
+         Console.WriteLine();
 
          Console.WriteLine($"Сейчас: {DateTime.Now}");
          Console.WriteLine($"Год: {DateTime.Now.Year}");
          Console.WriteLine($"День года: {DateTime.Now.DayOfYear}");
          Console.WriteLine($"Форматированно: {DateTime.Now:dd.MM.yyyy HH:mm}");
 
+         Console.WriteLine();
+
          int birthDate = 2007;
          int currentDate = DateTime.Now.Year;
 
          int age = CalculateAge(birthDate, currentDate);
          Console.WriteLine($"Возраст: {age}");
-
 
          Console.ReadKey();
       }
