@@ -170,7 +170,7 @@ namespace Homework_6._1
          while (i < students.Length)
          {
             double bySubjects = ((students[i].Physics + students[i].Math + students[i].Inf) / 3.0f);
-            if (bySubjects < average)
+            if (bySubjects > average)
             {
                averageHigher[i] = students[i];
                Console.WriteLine("{0} {1}", students[i].Surname, students[i].Name);
