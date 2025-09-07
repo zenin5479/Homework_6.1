@@ -162,18 +162,18 @@ namespace Homework_6._1
          Console.ReadKey();
       }
 
-      static Student[] AverageHigherScore(Student[] students, double average)
+      static Student[] AverageHigherScore(Student[] student, double medium)
       {
-         Student[] averageHigher = new Student[students.Length];
+         Student[] averageHigher = new Student[student.Length];
          Console.WriteLine("Студенты, средний балл которых больше, чем общий средний балл:");
          int i = 0;
-         while (i < students.Length)
+         while (i < student.Length)
          {
-            double bySubjects = ((students[i].Physics + students[i].Math + students[i].Inf) / 3.0f);
-            if (bySubjects > average)
+            double bySubjects = ((student[i].Physics + student[i].Math + student[i].Inf) / 3.0f);
+            if (bySubjects > medium)
             {
-               averageHigher[i] = students[i];
-               Console.WriteLine("{0} {1}", students[i].Surname, students[i].Name);
+               averageHigher[i] = student[i];
+               Console.WriteLine("{0} {1}", student[i].Surname, student[i].Name);
             }
 
             i++;
