@@ -164,6 +164,7 @@ namespace Homework_6._1
 
       static Student[] AverageHigherScore(Student[] students, double average)
       {
+         Student[] averageHigher = new Student[students.Length];
          double medium;
          double allSubjects = 0;
          int i = 0;
@@ -178,6 +179,7 @@ namespace Homework_6._1
          }
 
          medium = allSubjects / students.Length;
+         return averageHigher;
       }
 
       static double AverageScore(Student[] students)
