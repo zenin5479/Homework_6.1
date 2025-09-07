@@ -165,7 +165,7 @@ namespace Homework_6._1
       static Student[] AverageHigherScore(Student[] students, double average)
       {
          Student[] averageHigher = new Student[students.Length];
-
+         Console.WriteLine("Студенты, средний балл которых больше, чем общий средний балл:");
          int i = 0;
          while (i < students.Length)
          {
