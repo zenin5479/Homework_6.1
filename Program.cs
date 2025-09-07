@@ -171,8 +171,27 @@ namespace Homework_6._1
          DateTime date2 = new DateTime(2007);
          Console.WriteLine(date1.Subtract(date2));
 
+         DateTime birthDate = new DateTime(1990, 6, 15);
+         DateTime currentDate = DateTime.Now;
+
+         int age = CalculateAge(birthDate, currentDate);
+         Console.WriteLine($"Возраст: {age}");
+
+
          Console.ReadKey();
       }
+
+      public static int CalculateAge(DateTime birthDate, DateTime currentDate)
+      {
+         int age = currentDate.Year - birthDate.Year;
+         if (currentDate.Month < birthDate.Month ||
+             (currentDate.Month == birthDate.Month && currentDate.Day < birthDate.Day))
+         {
+            age--;
+         }
+         return age;
+      }
+
 
       static Student[] AverageHigherScore(Student[] student, double medium)
       {
