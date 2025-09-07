@@ -167,9 +167,9 @@ namespace Homework_6._1
          Console.WriteLine($"День года: {DateTime.Now.DayOfYear}");
          Console.WriteLine($"Форматированно: {DateTime.Now:dd.MM.yyyy HH:mm}");
 
-         DateTime date1 = new DateTime(2015, 7, 20, 18, 30, 25); // 20.07.2015 18:30:25
-         DateTime date2 = new DateTime(2015, 7, 20, 15, 30, 25); // 20.07.2015 15:30:25
-         Console.WriteLine(date1.Subtract(date2)); // 03:00:00
+         DateTime date1 = new DateTime(2025); 
+         DateTime date2 = new DateTime(2007);
+         Console.WriteLine(date1.Subtract(date2));
 
          Console.ReadKey();
       }
