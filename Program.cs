@@ -165,12 +165,18 @@ namespace Homework_6._1
       static Student[] AverageHigherScore(Student[] students, double average)
       {
          Student[] averageHigher = new Student[students.Length];
-         double medium;
-         double allSubjects = 0;
+
          int i = 0;
          while (i < students.Length)
          {
             double bySubjects = ((students[i].Physics + students[i].Math + students[i].Inf) / 3.0f);
+            if (bySubjects < average)
+            {
+               averageHigher[i] = students[i];
+               Console.WriteLine("{0} {1}", students[i].Surname, students[i].Name);
+
+            }
+
             allSubjects += bySubjects;
             //Console.WriteLine("{0:f2} ", bySubjects);
             Console.WriteLine("{0:f} ", bySubjects);
