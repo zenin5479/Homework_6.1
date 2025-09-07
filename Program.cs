@@ -164,7 +164,6 @@ namespace Homework_6._1
       {
          double medium;
          double allSubjects = 0;
-         //int n = students.Length;
          int i = 0;
          while (i < students.Length)
          {
