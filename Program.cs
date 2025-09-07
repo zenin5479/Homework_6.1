@@ -159,11 +159,13 @@ namespace Homework_6._1
          Student[] readCad = AverageHigherScore(students, average);
          //Console.WriteLine("Средний балл всех студентов по всем предметам: {0:f}", averag);
 
-         DateTime futureDate = DateTime.Now.AddDays(7); // Через 7 дней
-         DateTime pastDate = DateTime.Now.AddYears(-1); // Год назад
+         int futureDate = DateTime.Now.Year;
+         DateTime specificDate = new DateTime(2007);
 
-         TimeSpan difference = futureDate - pastDate; // Разница между датами
-         int daysDifference = difference.Days;        // Разница в днях
+         Console.WriteLine($"Сейчас: {DateTime.Now}");
+         Console.WriteLine($"Год: {DateTime.Now.Year}");
+         Console.WriteLine($"День года: {DateTime.Now.DayOfYear}");
+         Console.WriteLine($"Форматированно: {DateTime.Now:dd.MM.yyyy HH:mm}");
 
          Console.ReadKey();
       }
