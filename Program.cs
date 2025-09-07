@@ -174,17 +174,11 @@ namespace Homework_6._1
             {
                averageHigher[i] = students[i];
                Console.WriteLine("{0} {1}", students[i].Surname, students[i].Name);
-
             }
 
-            allSubjects += bySubjects;
-            //Console.WriteLine("{0:f2} ", bySubjects);
-            Console.WriteLine("{0:f} ", bySubjects);
-            //Console.WriteLine("{0} ", bySubjects);
             i++;
          }
 
-         medium = allSubjects / students.Length;
          return averageHigher;
       }
 
