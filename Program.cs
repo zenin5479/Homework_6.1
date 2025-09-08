@@ -166,7 +166,7 @@ namespace Homework_6._1
       // Метод AverageHigherScore без двойного цикла  while.
       static void AverageHigherScore(string path, Student[] student, double medium)
       {
-         Console.WriteLine("Студенты, средний балл которых больше, чем общий средний балл:");
+         Console.WriteLine("Студенты, средний балл которых выше, чем общий средний балл:");
          int count = 0;
          int i = 0;
          while (i < student.Length)
