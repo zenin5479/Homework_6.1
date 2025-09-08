@@ -175,12 +175,6 @@ namespace Homework_6._1
          Console.ReadKey();
       }
 
-      public static int CalculateAge(int birthDate, int currentDate)
-      {
-
-         
-      }
-
       static Student[] AverageHigherScore(Student[] student, double medium)
       {
          Student[] averageHigher = new Student[student.Length];
