@@ -161,10 +161,13 @@ namespace Homework_6._1
          Console.WriteLine();
 
          Console.WriteLine("Сейчас: {0}", DateTime.Now);
-         Console.WriteLine("Сейчас: {0}", DateTime.Now.Year);
-         Console.WriteLine("Сейчас: {0}", DateTime.Now);
-         Console.WriteLine("Сейчас: {0}", DateTime.Now);
-         
+         Console.WriteLine("Год: {0}", DateTime.Now.Year);
+         Console.WriteLine("День года: {0}", DateTime.Now.DayOfYear);
+         Console.WriteLine("Форматированно: {0:dd.MM.yyyy HH: mm}", DateTime.Now);
+
+
+         Console.WriteLine($"Сейчас: {DateTime.Now}");
+         Console.WriteLine($"Год: {DateTime.Now.Year}");
          Console.WriteLine($"День года: {DateTime.Now.DayOfYear}");
          Console.WriteLine($"Форматированно: {DateTime.Now:dd.MM.yyyy HH:mm}");
 
