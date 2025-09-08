@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 
 // Обработка студенческой ведомости
 // Составить программу для обработки информации о студентах какого-то факультета
@@ -146,7 +147,7 @@ namespace Homework_6._1
          Console.WriteLine("Средний балл всех студентов по всем предметам: {0:f}", average);
 
          Console.WriteLine();
-         AverageHigherScore(students, average);
+         AverageHigherScore(pathRead, students, average);
 
          Console.WriteLine();
          int birthDate = 2008;
@@ -159,7 +160,7 @@ namespace Homework_6._1
 
       // Метод поиска студентов средний балл которых больше, чем общий средний балл +
       // Вывод фамилий и имён студентов -
-      static void AverageHigherScore(Student[] student, double medium)
+      static void AverageHigherScore(string path, Student[] student, double medium)
       {
          Student[] averageHigher = new Student[student.Length];
          Console.WriteLine("Студенты, средний балл которых больше, чем общий средний балл:");
@@ -175,6 +176,31 @@ namespace Homework_6._1
 
             i++;
          }
+
+         FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
+         BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
+         writer.Write(averageHigher.Length);
+         int j = 0;
+         while (j < students.Length)
+         {
+            Student person = students[j];
+            // Запись строки в UTF-8 с предварительной длиной
+            writer.Write(person.Group);
+            writer.Write(person.Surname);
+            writer.Write(person.Name);
+            writer.Write(person.Dadsname);
+            writer.Write(person.Year);
+            writer.Write(person.Gender);
+            writer.Write(person.Physics);
+            writer.Write(person.Math);
+            writer.Write(person.Inf);
+            writer.Write(person.Grant);
+            j++;
+         }
+
+         stream.Close();
+         writer.Close();
+
       }
 
       // Метод расчета среднего балла всех студентов по всем предметам
