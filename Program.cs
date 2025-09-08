@@ -165,7 +165,6 @@ namespace Homework_6._1
 
          Console.WriteLine();
 
-         //Console.WriteLine();
 
          int birthDate = 2007;
          int currentDate = DateTime.Now.Year;
