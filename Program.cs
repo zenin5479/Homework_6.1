@@ -141,8 +141,7 @@ namespace Homework_6._1
             j++;
          }
 
-         Console.WriteLine();
-         MethodsForStruct.BubbleSortByAge(readCadets);
+        
 
          Console.WriteLine();
          double average = AverageScore(students);
