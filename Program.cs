@@ -192,7 +192,6 @@ namespace Homework_6._1
 
          stream.Close();
          writer.Close();
-
       }
 
       // Метод расчета среднего балла всех студентов по всем предметам
