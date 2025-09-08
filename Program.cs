@@ -85,7 +85,7 @@ namespace Homework_6._1
             new Student
             {
                Group = "IP-22", Surname = "Васильева", Name = "Екатерина", Dadsname = "Николаевна",
-               Year = 2009, Gender = 'Ж', Physics = 3, Math = 3, Inf = 3, Grant = 3000
+               Year = 2008, Gender = 'Ж', Physics = 3, Math = 3, Inf = 3, Grant = 3000
             },
             new Student
             {
@@ -100,12 +100,12 @@ namespace Homework_6._1
             new Student
             {
                Group = "Fiz-22", Surname = "Николаев", Name = "Андрей", Dadsname = "Сергеевич",
-               Year = 2007, Gender = 'M', Physics = 3, Math = 2, Inf = 3, Grant = 2500
+               Year = 2008, Gender = 'M', Physics = 3, Math = 2, Inf = 3, Grant = 2500
             },
             new Student
             {
                Group = "IP-22", Surname = "Сергеева", Name = "Дарья", Dadsname = "Викторовна",
-               Year = 2007, Gender = 'Ж', Physics = 2, Math = 2, Inf = 2, Grant = 2000
+               Year = 2008, Gender = 'Ж', Physics = 2, Math = 2, Inf = 2, Grant = 2000
             }
          };
          // Запись массива структур в текстовый файл
