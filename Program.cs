@@ -162,36 +162,57 @@ namespace Homework_6._1
       // Вывод фамилий и имён студентов -
       static void AverageHigherScore(string path, Student[] student, double medium)
       {
-         Student[] averageHigher = new Student[student.Length];
          Console.WriteLine("Студенты, средний балл которых больше, чем общий средний балл:");
+         int count = 0;
          int i = 0;
          while (i < student.Length)
          {
             double bySubjects = ((student[i].Physics + student[i].Math + student[i].Inf) / 3.0f);
             if (bySubjects > medium)
             {
-               averageHigher[i] = student[i];
-               Console.WriteLine("{0} {1}", student[i].Surname, student[i].Name);
+               count++;
             }
 
             i++;
          }
 
-         FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
-         BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
-         writer.Write(averageHigher.Length);
+         Student[] averageHigher = new Student[count];
          int j = 0;
-         while (j < averageHigher.Length)
+         int k = 0;
+         while (j < student.Length)
          {
-            Student person = averageHigher[j];
-            // Запись строки в UTF-8 с предварительной длиной
-            writer.Write(person.Surname);
-            writer.Write(person.Name);
-            j++;
+            while (k < averageHigher.Length)
+            {
+               double bySubjects = ((student[j].Physics + student[j].Math + student[j].Inf) / 3.0f);
+               if (bySubjects > medium)
+               {
+                  averageHigher[j] = student[j];
+                  Console.WriteLine("{0} {1}", student[j].Surname, student[j].Name);
+               }
+
+               k++;
+               j++;
+            }
          }
 
-         stream.Close();
-         writer.Close();
+         Console.WriteLine(k);
+         Console.WriteLine(j);
+
+         //FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
+         //BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
+         //writer.Write(averageHigher.Length);
+         //int m = 0;
+         //while (m < averageHigher.Length)
+         //{
+         //   Student person = averageHigher[m];
+         //   // Запись строки в UTF-8 с предварительной длиной
+         //   writer.Write(person.Surname);
+         //   writer.Write(person.Name);
+         //   m++;
+         //}
+
+         //stream.Close();
+         //writer.Close();
       }
 
       // Метод расчета среднего балла всех студентов по всем предметам
