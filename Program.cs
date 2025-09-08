@@ -169,7 +169,6 @@ namespace Homework_6._1
 
          int birthDate = 2007;
          int currentDate = DateTime.Now.Year;
-
          int age = CalculateAge(birthDate, currentDate);
          Console.WriteLine("Возраст: {0}", age);
 
