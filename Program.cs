@@ -165,18 +165,14 @@ namespace Homework_6._1
          Console.WriteLine("День года: {0}", DateTime.Now.DayOfYear);
          Console.WriteLine("Форматированно: {0:dd.MM.yyyy HH: mm}", DateTime.Now);
 
-
-         Console.WriteLine($"Сейчас: {DateTime.Now}");
-         Console.WriteLine($"Год: {DateTime.Now.Year}");
-         Console.WriteLine($"День года: {DateTime.Now.DayOfYear}");
-         Console.WriteLine($"Форматированно: {DateTime.Now:dd.MM.yyyy HH:mm}");
-
          Console.WriteLine();
 
          int birthDate = 2007;
          int currentDate = DateTime.Now.Year;
 
          int age = CalculateAge(birthDate, currentDate);
+         Console.WriteLine("Возраст: {0}", age);
+
          Console.WriteLine($"Возраст: {age}");
 
          Console.ReadKey();
