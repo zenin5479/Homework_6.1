@@ -160,6 +160,8 @@ namespace Homework_6._1
 
          Console.WriteLine();
 
+         Console.WriteLine("Сейчас: {0}", DateTime.Now);
+
          Console.WriteLine($"Сейчас: {DateTime.Now}");
          Console.WriteLine($"Год: {DateTime.Now.Year}");
          Console.WriteLine($"День года: {DateTime.Now.DayOfYear}");
