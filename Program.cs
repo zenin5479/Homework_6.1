@@ -157,7 +157,7 @@ namespace Homework_6._1
          Console.WriteLine();
          double average = AverageScore(students);
          Console.WriteLine("Средний балл всех студентов по всем предметам: {0:f}", average);
-         
+
          Console.WriteLine();
          AverageHigherScore(students, average);
 
@@ -172,7 +172,7 @@ namespace Homework_6._1
 
       // Метод поиска студентов средний балл которых больше, чем общий средний балл
       // Вывод фамилий и имён студентов
-      static  void AverageHigherScore(Student[] student, double medium)
+      static void AverageHigherScore(Student[] student, double medium)
       {
          Student[] averageHigher = new Student[student.Length];
          Console.WriteLine("Студенты, средний балл которых больше, чем общий средний балл:");
@@ -189,7 +189,7 @@ namespace Homework_6._1
             i++;
          }
       }
-      
+
       // Метод расчета среднего балла всех студентов по всем предметам
       static double AverageScore(Student[] students)
       {
