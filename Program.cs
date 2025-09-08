@@ -152,7 +152,7 @@ namespace Homework_6._1
          AverageHigherScore(students, average);
 
          Console.WriteLine();
-         int birthDate = 2007;
+         int birthDate = 2008;
          int currentDate = DateTime.Now.Year;
          int age = currentDate - birthDate;
          Console.WriteLine("Возраст: {0}", age);
