@@ -228,7 +228,7 @@ namespace Homework_6._1
       }
 
       // Метод сортировки массива структур по возрасту
-      static void BubbleSortByAge(Student[] cadets)
+      public static void BubbleSortByAge(Student[] cadets)
       {
          Console.WriteLine("Отсортированный массив структур по возрасту:");
          // Если нужно сортировать по другим критериям изменяем условие в сортировке:
