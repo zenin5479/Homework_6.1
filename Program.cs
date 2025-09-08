@@ -159,8 +159,6 @@ namespace Homework_6._1
 
       // Метод поиска студентов средний балл которых больше, чем общий средний балл +
       // Вывод фамилий и имён студентов -
-      // Update 61.5 Обновлен метод. Проведен рефакторинг.
-      // Метод AverageHigherScore без двойного цикла  while.
       static void AverageHigherScore(string path, Student[] student, double medium)
       {
          Console.WriteLine("Студенты, средний балл которых больше, чем общий средний балл:");
@@ -182,19 +180,24 @@ namespace Homework_6._1
          int k = 0;
          while (j < student.Length)
          {
-            double bySubjects = ((student[j].Physics + student[j].Math + student[j].Inf) / 3.0f);
-            if (bySubjects > medium)
+            while (k < averageHigher.Length)
             {
-               averageHigher[k] = student[j];
-               Console.WriteLine("{0} {1}", student[j].Surname, student[j].Name);
-               k++;
+               double bySubjects = ((student[j].Physics + student[j].Math + student[j].Inf) / 3.0f);
+               if (bySubjects > medium)
+               {
+                  averageHigher[k] = student[j];
+                  Console.WriteLine("{0} {1}", student[j].Surname, student[j].Name);
+                  k++;
+               }
+
+               j++;
             }
 
             j++;
          }
 
-         //Console.WriteLine(k);
-         //Console.WriteLine(j);
+         Console.WriteLine(k);
+         Console.WriteLine(j);
 
          //FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
          //BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
