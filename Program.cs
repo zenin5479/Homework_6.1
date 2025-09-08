@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 
 // Обработка студенческой ведомости
 // Составить программу для обработки информации о студентах какого-то факультета
@@ -196,21 +197,21 @@ namespace Homework_6._1
          Console.WriteLine(k);
          Console.WriteLine(j);
 
-         //FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
-         //BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
-         //writer.Write(averageHigher.Length);
-         //int m = 0;
-         //while (m < averageHigher.Length)
-         //{
-         //   Student person = averageHigher[m];
-         //   // Запись строки в UTF-8 с предварительной длиной
-         //   writer.Write(person.Surname);
-         //   writer.Write(person.Name);
-         //   m++;
-         //}
+         FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
+         BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
+         writer.Write(averageHigher.Length);
+         int m = 0;
+         while (m < averageHigher.Length)
+         {
+            Student person = averageHigher[m];
+            // Запись строки в UTF-8 с предварительной длиной
+            writer.Write(person.Surname);
+            writer.Write(person.Name);
+            m++;
+         }
 
-         //stream.Close();
-         //writer.Close();
+         stream.Close();
+         writer.Close();
       }
 
       // Метод расчета среднего балла всех студентов по всем предметам
