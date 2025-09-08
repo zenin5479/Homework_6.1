@@ -170,6 +170,7 @@ namespace Homework_6._1
          Console.ReadKey();
       }
 
+      // Метод расчета среднего балла всех студентов по всем предметам
       static Student[] AverageHigherScore(Student[] student, double medium)
       {
          Student[] averageHigher = new Student[student.Length];
