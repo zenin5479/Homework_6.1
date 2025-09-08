@@ -159,11 +159,9 @@ namespace Homework_6._1
          Console.WriteLine("Средний балл всех студентов по всем предметам: {0:f}", average);
          
          Console.WriteLine();
-         Student[] readCad = AverageHigherScore(students, average);
+         AverageHigherScore(students, average);
 
          Console.WriteLine();
-
-
          int birthDate = 2007;
          int currentDate = DateTime.Now.Year;
          int age = currentDate - birthDate;
@@ -172,8 +170,9 @@ namespace Homework_6._1
          Console.ReadKey();
       }
 
-      // Метод расчета среднего балла всех студентов по всем предметам
-      static Student[] AverageHigherScore(Student[] student, double medium)
+      // Метод поиска студентов средний балл которых больше, чем общий средний балл
+      // Вывод фамилий и имён студентов
+      static  void AverageHigherScore(Student[] student, double medium)
       {
          Student[] averageHigher = new Student[student.Length];
          Console.WriteLine("Студенты, средний балл которых больше, чем общий средний балл:");
@@ -189,8 +188,6 @@ namespace Homework_6._1
 
             i++;
          }
-
-         return averageHigher;
       }
       
       // Метод расчета среднего балла всех студентов по всем предметам
