@@ -144,6 +144,8 @@ namespace Homework_6._1
 
          Console.WriteLine();
          double average = AverageScore(students);
+
+         Console.WriteLine();
          Console.WriteLine("Средний балл всех студентов по всем предметам: {0:f}", average);
 
          Console.WriteLine();
@@ -221,8 +223,13 @@ namespace Homework_6._1
          {
             double bySubjects = ((students[i].Physics + students[i].Math + students[i].Inf) / 3.0f);
             allSubjects += bySubjects;
-            //Console.WriteLine("{0:f2} ", bySubjects);
-            Console.WriteLine("{0:f} ", bySubjects);
+            //Console.WriteLine("Cредний балл: {0} {1} - {2:f2}",
+            //   students[i].Surname, students[i].Name, bySubjects);
+            Console.WriteLine("Cредний балл: {0} {1} - {2:f}",
+               students[i].Surname, students[i].Name, bySubjects);
+            //Console.WriteLine("Cредний балл: {0} {1} - {2}",
+            //   students[i].Surname, students[i].Name, bySubjects);
+
             //Console.WriteLine("{0} ", bySubjects);
             i++;
          }
