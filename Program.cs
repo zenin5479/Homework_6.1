@@ -191,8 +191,8 @@ namespace Homework_6._1
             j++;
          }
 
-         Console.WriteLine(k);
-         Console.WriteLine(j);
+         //Console.WriteLine(k);
+         //Console.WriteLine(j);
 
          //FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
          //BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
