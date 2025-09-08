@@ -180,16 +180,17 @@ namespace Homework_6._1
          int k = 0;
          while (j < student.Length)
          {
-            double bySubjects = ((student[j].Physics + student[j].Math + student[j].Inf) / 3.0f);
-            if (bySubjects > medium)
+            while (k < averageHigher.Length)
             {
-               while (k < averageHigher.Length)
+               double bySubjects = ((student[j].Physics + student[j].Math + student[j].Inf) / 3.0f);
+               if (bySubjects > medium)
                {
                   averageHigher[k] = student[j];
                   Console.WriteLine("{0} {1}", student[j].Surname, student[j].Name);
                   k++;
-                  j++;
                }
+
+               j++;
             }
 
             j++;
@@ -225,6 +226,9 @@ namespace Homework_6._1
          {
             double bySubjects = ((students[i].Physics + students[i].Math + students[i].Inf) / 3.0f);
             allSubjects += bySubjects;
+            //Console.WriteLine("{0:f2} ", bySubjects);
+            Console.WriteLine("{0:f} ", bySubjects);
+            //Console.WriteLine("{0} ", bySubjects);
             i++;
          }
 
