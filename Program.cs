@@ -155,12 +155,10 @@ namespace Homework_6._1
          //}
 
          Console.WriteLine();
-
          double average = AverageScore(students);
          Console.WriteLine("Средний балл всех студентов по всем предметам: {0:f}", average);
          
          Console.WriteLine();
-
          Student[] readCad = AverageHigherScore(students, average);
 
          Console.WriteLine();
