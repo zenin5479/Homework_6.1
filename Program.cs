@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Text;
 
 // Обработка студенческой ведомости
 // Составить программу для обработки информации о студентах какого-то факультета
@@ -181,18 +180,19 @@ namespace Homework_6._1
          int k = 0;
          while (j < student.Length)
          {
-            while (k < averageHigher.Length)
+            double bySubjects = ((student[j].Physics + student[j].Math + student[j].Inf) / 3.0f);
+            if (bySubjects > medium)
             {
-               double bySubjects = ((student[j].Physics + student[j].Math + student[j].Inf) / 3.0f);
-               if (bySubjects > medium)
+               while (k < averageHigher.Length)
                {
-                  averageHigher[j] = student[j];
+                  averageHigher[k] = student[j];
                   Console.WriteLine("{0} {1}", student[j].Surname, student[j].Name);
+                  k++;
+                  j++;
                }
-
-               k++;
-               j++;
             }
+
+            j++;
          }
 
          Console.WriteLine(k);
