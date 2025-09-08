@@ -170,7 +170,6 @@ namespace Homework_6._1
          int birthDate = 2007;
          int currentDate = DateTime.Now.Year;
          int age = currentDate - birthDate;
-         int age = CalculateAge(birthDate, currentDate);
          Console.WriteLine("Возраст: {0}", age);
 
          Console.ReadKey();
@@ -179,7 +178,7 @@ namespace Homework_6._1
       public static int CalculateAge(int birthDate, int currentDate)
       {
 
-         return age;
+         
       }
 
       static Student[] AverageHigherScore(Student[] student, double medium)
