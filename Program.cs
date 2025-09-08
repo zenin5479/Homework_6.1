@@ -181,20 +181,12 @@ namespace Homework_6._1
          BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
          writer.Write(averageHigher.Length);
          int j = 0;
-         while (j < students.Length)
+         while (j < averageHigher.Length)
          {
-            Student person = students[j];
+            Student person = averageHigher[j];
             // Запись строки в UTF-8 с предварительной длиной
-            writer.Write(person.Group);
             writer.Write(person.Surname);
             writer.Write(person.Name);
-            writer.Write(person.Dadsname);
-            writer.Write(person.Year);
-            writer.Write(person.Gender);
-            writer.Write(person.Physics);
-            writer.Write(person.Math);
-            writer.Write(person.Inf);
-            writer.Write(person.Grant);
             j++;
          }
 
