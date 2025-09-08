@@ -190,7 +190,8 @@ namespace Homework_6._1
 
          return averageHigher;
       }
-
+      
+      // Метод расчета среднего балла всех студентов по всем предметам
       static double AverageScore(Student[] students)
       {
          double medium;
@@ -200,9 +201,6 @@ namespace Homework_6._1
          {
             double bySubjects = ((students[i].Physics + students[i].Math + students[i].Inf) / 3.0f);
             allSubjects += bySubjects;
-            //Console.WriteLine("{0:f2} ", bySubjects);
-            Console.WriteLine("{0:f} ", bySubjects);
-            //Console.WriteLine("{0} ", bySubjects);
             i++;
          }
 
