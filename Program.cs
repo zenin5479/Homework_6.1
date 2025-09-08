@@ -197,6 +197,7 @@ namespace Homework_6._1
          return medium;
       }
 
+      // Метод сортировки массива структур по возрасту
       static void BubbleSortByAge(Student[] cadets)
       {
          Console.WriteLine("Отсортированный массив структур по возрасту:");
