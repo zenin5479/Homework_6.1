@@ -172,8 +172,6 @@ namespace Homework_6._1
          int age = CalculateAge(birthDate, currentDate);
          Console.WriteLine("Возраст: {0}", age);
 
-         
-
          Console.ReadKey();
       }
 
