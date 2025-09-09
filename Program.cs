@@ -181,7 +181,7 @@ namespace Homework_6._1
             i++;
          }
 
-         Student[] averageHigher = new Student[count];
+         Student[] studentWorst = new Student[count];
          int j = 0;
          int k = 0;
          while (j < student.Length)
@@ -189,8 +189,8 @@ namespace Homework_6._1
             int minorStudent = (student[j].Year - currentDate);
             if (minorStudent < underage)
             {
-               averageHigher[k] = student[j];
-               Console.WriteLine("{0} {1}", student[j].Surname, student[j].Name);
+               studentWorst[k] = student[j];
+               Console.WriteLine("{0} {1} {2} {3}", student[j].Group, student[j].Surname, student[j].Name, student[j].Dadsname);
                k++;
             }
 
