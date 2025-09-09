@@ -204,7 +204,7 @@ namespace Homework_6._1
             average[l] = bySubjects;
             l++;
          }
-         
+
          // Cчитаем, что минимум - это первый элемент массива
          double min = average[0];
          int z = 0;
@@ -223,22 +223,36 @@ namespace Homework_6._1
          //Console.WriteLine("Минимум равен: {0:f2}", min);
 
          int x = 0;
-         int y = 0;
-         while (x < average.Length)
+         int comparison = 0;
+         bool flag = false;
+         while (x < average.Length && flag == false)
          {
-            if (min == average[x])
+            // Сравниваем значения double используя метод CompareTo(Double) 
+            if (average[x].CompareTo(min) == 0)
             {
-               y = x;
+               comparison = x;
+               flag = true;
+            }
+
+            // Сравниваем значения double используя метод Equals(Double)
+            if (average[x].Equals(min))
+            {
+               comparison = x;
+               flag = true;
             }
 
             x++;
          }
 
-         //Console.WriteLine("Минимум равен: {0}", min);
-         Console.WriteLine("Индекс минимума равен: {0}", y);
-         //Console.WriteLine("Минимум равен: {0:f2}", min);
+         if (flag)
+         {
+            Console.WriteLine("Индекс минимума равен: {0}", comparison);
+         }
 
-Student worstAverage = new Student();
+         Student worstAverage = minor[comparison];
+         Console.WriteLine("{0} {1} {2} {3}",
+            worstAverage.Group, worstAverage.Surname, worstAverage.Name, worstAverage.Dadsname);
+
 
          //Console.WriteLine("Cредний балл: {0} {1} - {2:f2}",
          //   students[i].Surname, students[i].Name, bySubjects);
@@ -246,9 +260,6 @@ Student worstAverage = new Student();
          //   students[i].Surname, students[i].Name, bySubjects);
          //Console.WriteLine("Cредний балл: {0} {1} - {2}",
          //   students[i].Surname, students[i].Name, bySubjects);
-
-
-
 
 
          // Запись массива структур в бинарный файл
@@ -266,6 +277,46 @@ Student worstAverage = new Student();
 
          //stream.Close();
          //writer.Close();
+      }
+
+      public static bool FindZeroDouble(double[] inputArray, string nameArray)
+      {
+         double numbercomparison = 0;
+         bool flag = false;
+         int i = 0;
+         while (i < inputArray.Length && flag == false)
+         {
+            // Сравниваем значения double используя метод CompareTo(Double) 
+            if (inputArray[i].CompareTo(numbercomparison) == 0)
+            {
+               flag = true;
+            }
+
+            // Сравниваем значения double используя метод Equals(Double)
+            //if (inputArray[i].Equals(numbercomparison))
+            //{
+            //   flag = true;
+            //}
+
+            // Сравниваем значения double используя оператор равенства ==
+            //if (inputArray[i] == 0)
+            //{
+            //   flag = true;
+            //}
+
+            i++;
+         }
+
+         if (flag)
+         {
+            Console.WriteLine("В массиве {0} имеется элемент равный нулю", nameArray);
+         }
+         else
+         {
+            Console.WriteLine("В массиве {0} отсутствует элемент равный нулю", nameArray);
+         }
+
+         return flag;
       }
 
       // Поиск максимального и минимального элемента массива
