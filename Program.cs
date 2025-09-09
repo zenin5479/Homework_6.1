@@ -196,6 +196,8 @@ namespace Homework_6._1
          // Определяем количество студентов удовлетворяющих условию для расчета размера массива структур
          int counter = 0;
          int l = 0;
+         int [] average = new int [count];
+         //WorstAverage
          while (l < minor.Length)
          {
             double bySubjects = ((minor[l].Physics + minor[l].Math + minor[l].Inf) / 3.0f);
