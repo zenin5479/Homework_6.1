@@ -163,13 +163,18 @@ namespace Homework_6._1
       static void MinorStudentWorstAverage(string path, Student[] student)
       {
          Console.WriteLine("Несовершеннолетний студент с худшим средним баллом:");
+
+         int underage = 18;
+         int currentDate = DateTime.Now.Year;
+         
+
          // Определяем количество студентов удовлетворяющих условию для расчета размера массива структур
          int count = 0;
          int i = 0;
          while (i < student.Length)
          {
-            double bySubjects = ((student[i].Physics + student[i].Math + student[i].Inf) / 3.0f);
-            if (bySubjects > medium)
+            int minorStudent = (student[i].Year - currentDate);
+            if (minorStudent < underage)
             {
                count++;
             }
