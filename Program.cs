@@ -163,7 +163,6 @@ namespace Homework_6._1
       // Метод поиска студентов средний балл которых больше, чем общий средний балл +
       // Вывод фамилий и имён студентов +
       // Update 61.5 Обновлен метод. Проведен рефакторинг.
-      // Метод AverageHigherScore без двойного цикла  while.
       static void AverageHigherScore(string path, Student[] student, double medium)
       {
          Console.WriteLine("Студенты, средний балл которых выше, чем общий средний балл:");
