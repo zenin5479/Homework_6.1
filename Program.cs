@@ -207,27 +207,40 @@ namespace Homework_6._1
 
          Student worstAverage = new Student();
 
-
-
          // Cчитаем, что максимум - это первый элемент массива
-         //double max = 0;
+         double max = average[0];
          // Cчитаем, что минимум - это первый элемент массива
-         //double min = 0;
-         //// Cчитаем, что максимум - это первый элемент массива
-         //max = bySubjects;
-         //// Cчитаем, что минимум - это первый элемент массива
-         //min = bySubjects;
-         //if (max < bySubjects)
-         //{
-         //   max = bySubjects;
-         //}
+         double min = average[0];
+         int z = 0;
+         while (z < average.Length)
+         {
+            if (max < average[z])
+            {
+               max = average[z];
+            }
 
-         //if (min > bySubjects)
-         //{
-         //   min = bySubjects;
-         //}
+            if (min > average[z])
+            {
+               min = average[z];
+            }
+
+            z++;
+         }
+
+         //Console.WriteLine("Cредний балл: {0} {1} - {2:f2}",
+         //   students[i].Surname, students[i].Name, bySubjects);
+         //Console.WriteLine("Cредний балл: {0} {1} - {2:f}",
+         //   students[i].Surname, students[i].Name, bySubjects);
+         //Console.WriteLine("Cредний балл: {0} {1} - {2}",
+         //   students[i].Surname, students[i].Name, bySubjects);
+
          //Console.WriteLine("Максимум равен: {0}", max);
+         Console.WriteLine("Максимум равен: {0:f}", max);
+         //Console.WriteLine("Максимум равен: {0:f2}", max);
+
          //Console.WriteLine("Минимум равен: {0}", min);
+         Console.WriteLine("Минимум равен: {0:f}", min);
+         //Console.WriteLine("Минимум равен: {0:f2}", min);
 
 
          // Запись массива структур в бинарный файл
