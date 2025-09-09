@@ -204,6 +204,8 @@ namespace Homework_6._1
             // Запись строки в UTF-8 с предварительной длиной
             writer.Write(person.Surname);
             writer.Write(person.Name);
+            writer.Write(averageHigher[m].Surname);
+            writer.Write(averageHigher[m].Name);
             m++;
          }
 
