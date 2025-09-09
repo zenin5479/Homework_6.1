@@ -147,13 +147,11 @@ namespace Homework_6._1
 
          Console.WriteLine();
          //AverageHigherScore(pathRead, students, average);
-         MinorStudentWorstAverage(fileInput, students);
 
          Console.WriteLine();
-         int birthDate = 2008;
-         int currentDate = DateTime.Now.Year;
-         int age = currentDate - birthDate;
-         Console.WriteLine("Возраст: {0}", age);
+         MinorStudentWorstAverage(fileInput, students);
+
+
 
          Console.ReadKey();
       }
