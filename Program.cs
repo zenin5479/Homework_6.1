@@ -164,7 +164,7 @@ namespace Homework_6._1
       static void MinorStudentWorstAverage(string path, Student[] student)
       {
          Console.WriteLine("Несовершеннолетний студент с худшим средним баллом:");
-         // Возраст несовершеннолетнего студента
+         // Возраст совершеннолетнего студента
          int underage = 18;
          int currentDate = DateTime.Now.Year;
          // Определяем количество студентов удовлетворяющих условию для расчета размера массива структур
