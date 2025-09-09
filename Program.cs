@@ -145,13 +145,11 @@ namespace Homework_6._1
          Console.WriteLine();
          Console.WriteLine("Средний балл всех студентов по всем предметам: {0:f}", average);
 
-         Console.WriteLine();
+         //Console.WriteLine();
          //AverageHigherScore(pathRead, students, average);
 
          Console.WriteLine();
          MinorStudentWorstAverage(fileInput, students);
-
-
 
          Console.ReadKey();
       }
