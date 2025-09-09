@@ -198,12 +198,35 @@ namespace Homework_6._1
          int l = 0;
          double[] average = new double[count];
          // WorstAverage
+         double bySubjects;
+         // Cчитаем, что максимум - это первый элемент массива
+         double max = 0;
+         // Cчитаем, что минимум - это первый элемент массива
+         double min = 0;
          while (l < minor.Length)
          {
-            double bySubjects = ((minor[l].Physics + minor[l].Math + minor[l].Inf) / 3.0f);
-            average[l] = bySubjects;
+            bySubjects = ((minor[l].Physics + minor[l].Math + minor[l].Inf) / 3.0f);
+            // Cчитаем, что максимум - это первый элемент массива
+            max = bySubjects;
+            // Cчитаем, что минимум - это первый элемент массива
+            min = bySubjects;
+            if (max < bySubjects)
+            {
+               max = bySubjects;
+            }
+
+            if (min > bySubjects)
+            {
+               min = bySubjects;
+            }
+
+            //average[l] = bySubjects;
             l++;
          }
+
+         Console.WriteLine("Максимум равен: {0}", max);
+         Console.WriteLine("Минимум равен: {0}", min);
+
 
          // Запись массива структур в бинарный файл
          //FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
