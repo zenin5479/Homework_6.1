@@ -235,11 +235,11 @@ namespace Homework_6._1
             }
 
             // Сравниваем значения double используя метод Equals(Double)
-            if (average[x].Equals(min))
-            {
-               comparison = x;
-               flag = true;
-            }
+            //if (average[x].Equals(min))
+            //{
+            //   comparison = x;
+            //   flag = true;
+            //}
 
             x++;
          }
