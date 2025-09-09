@@ -165,6 +165,7 @@ namespace Homework_6._1
       static void AverageHigherScore(string path, Student[] student, double medium)
       {
          Console.WriteLine("Студенты, средний балл которых выше, чем общий средний балл:");
+         // Определяем количество студентов удовлетворяющих условию для определения размера массива структур
          int count = 0;
          int i = 0;
          while (i < student.Length)
