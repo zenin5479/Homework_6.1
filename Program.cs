@@ -176,7 +176,7 @@ namespace Homework_6._1
             i++;
          }
 
-         Student[] studentWorst = new Student[count];
+         Student[] minor = new Student[count];
          int j = 0;
          int k = 0;
          while (j < student.Length)
@@ -184,7 +184,7 @@ namespace Homework_6._1
             int minorStudent = (currentDate - student[j].Year);
             if (minorStudent < underage)
             {
-               studentWorst[k] = student[j];
+               minor[k] = student[j];
                Console.WriteLine("{0} {1} {2} {3}",
                   student[j].Group, student[j].Surname, student[j].Name, student[j].Dadsname);
                k++;
@@ -192,6 +192,23 @@ namespace Homework_6._1
 
             j++;
          }
+
+         // Определяем количество студентов удовлетворяющих условию для расчета размера массива структур
+         int counter = 0;
+         int l = 0;
+         while (l < minor.Length)
+         {
+            double bySubjects = ((minor[l].Physics + minor[l].Math + minor[l].Inf) / 3.0f);
+            int minorStudent = (currentDate - student[l].Year);
+            if (minorStudent < underage)
+            {
+               counter++;
+            }
+
+            l++;
+         }
+
+
 
          // Запись массива структур в бинарный файл
          //FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
