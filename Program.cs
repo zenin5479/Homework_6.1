@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.IO;
 using System.Text;
 
@@ -172,7 +171,7 @@ namespace Homework_6._1
          int i = 0;
          while (i < student.Length)
          {
-            int minorStudent = (student[i].Year - currentDate);
+            int minorStudent = (currentDate - student[i].Year);
             if (minorStudent < underage)
             {
                count++;
@@ -186,7 +185,7 @@ namespace Homework_6._1
          int k = 0;
          while (j < student.Length)
          {
-            int minorStudent = (student[j].Year - currentDate);
+            int minorStudent = (currentDate - student[j].Year);
             if (minorStudent < underage)
             {
                studentWorst[k] = student[j];
