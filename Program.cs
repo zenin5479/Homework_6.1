@@ -193,24 +193,17 @@ namespace Homework_6._1
             j++;
          }
 
-         // Определяем количество студентов удовлетворяющих условию для расчета размера массива структур
+         // Рассчитываем средний балл несовершеннолетних студентов для добавления в массив и расчета худшего среднего балла
          int counter = 0;
          int l = 0;
-         int [] average = new int [count];
-         //WorstAverage
+         double[] average = new double[count];
+         // WorstAverage
          while (l < minor.Length)
          {
             double bySubjects = ((minor[l].Physics + minor[l].Math + minor[l].Inf) / 3.0f);
-            int minorStudent = (currentDate - student[l].Year);
-            if (minorStudent < underage)
-            {
-               counter++;
-            }
-
+            average[l] = bySubjects;
             l++;
          }
-
-
 
          // Запись массива структур в бинарный файл
          //FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
