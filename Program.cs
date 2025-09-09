@@ -206,7 +206,7 @@ namespace Homework_6._1
          }
 
          // Запись массива структур в бинарный файл
-         //FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
+         FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
          //BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
          //writer.Write(averageHigher.Length);
          //int m = 0;
