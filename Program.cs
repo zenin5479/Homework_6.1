@@ -222,9 +222,9 @@ namespace Homework_6._1
          //writer.Close();
       }
 
+      // Поиск максимального и минимального элемента массива
       public static void FindMaxMinArrayInt(int[] inputArray, out int max, out int min)
       {
-         // Поиск максимального и минимального элемента массива
          // Cчитаем, что максимум - это первый элемент массива
          max = inputArray[0];
          // Cчитаем, что минимум - это первый элемент массива
@@ -247,8 +247,6 @@ namespace Homework_6._1
          //Console.WriteLine("Максимум равен: {0}", max);
          //Console.WriteLine("Минимум равен: {0}", min);
       }
-
-
 
       // Метод поиска студентов средний балл которых выше, чем общий средний балл
       static void AverageHigherScore(string path, Student[] student, double medium)
