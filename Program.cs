@@ -227,8 +227,6 @@ namespace Homework_6._1
                students[i].Surname, students[i].Name, bySubjects);
             //Console.WriteLine("Cредний балл: {0} {1} - {2}",
             //   students[i].Surname, students[i].Name, bySubjects);
-
-            //Console.WriteLine("{0} ", bySubjects);
             i++;
          }
 
