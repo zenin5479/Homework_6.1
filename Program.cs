@@ -197,7 +197,6 @@ namespace Homework_6._1
          //int counter = 0;
          int l = 0;
          double[] average = new double[count];
-         // WorstAverage
          double bySubjects;
          while (l < minor.Length)
          {
@@ -205,6 +204,10 @@ namespace Homework_6._1
             average[l] = bySubjects;
             l++;
          }
+
+         Student worstAverage = new Student();
+
+
 
          // Cчитаем, что максимум - это первый элемент массива
          //double max = 0;
