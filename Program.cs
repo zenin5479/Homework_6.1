@@ -185,7 +185,8 @@ namespace Homework_6._1
             if (minorStudent < underage)
             {
                studentWorst[k] = student[j];
-               Console.WriteLine("{0} {1} {2} {3}", student[j].Group, student[j].Surname, student[j].Name, student[j].Dadsname);
+               Console.WriteLine("{0} {1} {2} {3}",
+                  student[j].Group, student[j].Surname, student[j].Name, student[j].Dadsname);
                k++;
             }
 
