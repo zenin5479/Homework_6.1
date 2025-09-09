@@ -148,6 +148,7 @@ namespace Homework_6._1
 
          Console.WriteLine();
          AverageHigherScore(pathRead, students, average);
+         MinorStudentWorstAverage(fileInput, students);
 
          Console.WriteLine();
          int birthDate = 2008;
@@ -163,11 +164,9 @@ namespace Homework_6._1
       static void MinorStudentWorstAverage(string path, Student[] student)
       {
          Console.WriteLine("Несовершеннолетний студент с худшим средним баллом:");
-
+         // Возраст несовершеннолетнего студента
          int underage = 18;
          int currentDate = DateTime.Now.Year;
-         
-
          // Определяем количество студентов удовлетворяющих условию для расчета размера массива структур
          int count = 0;
          int i = 0;
@@ -187,8 +186,8 @@ namespace Homework_6._1
          int k = 0;
          while (j < student.Length)
          {
-            double bySubjects = ((student[j].Physics + student[j].Math + student[j].Inf) / 3.0f);
-            if (bySubjects > medium)
+            int minorStudent = (student[j].Year - currentDate);
+            if (minorStudent < underage)
             {
                averageHigher[k] = student[j];
                Console.WriteLine("{0} {1}", student[j].Surname, student[j].Name);
