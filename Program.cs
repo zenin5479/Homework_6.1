@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Text;
 
@@ -156,6 +157,59 @@ namespace Homework_6._1
 
          Console.ReadKey();
       }
+
+      // Метод поиска несовершеннолетнего студента с худшим средним баллом -
+      // Вывод: группы, фамилии, имени и отчества студента -
+      static void MinorStudentWorstAverage(string path, Student[] student)
+      {
+         Console.WriteLine("Несовершеннолетний студент с худшим средним баллом:");
+         // Определяем количество студентов удовлетворяющих условию для расчета размера массива структур
+         int count = 0;
+         int i = 0;
+         while (i < student.Length)
+         {
+            double bySubjects = ((student[i].Physics + student[i].Math + student[i].Inf) / 3.0f);
+            if (bySubjects > medium)
+            {
+               count++;
+            }
+
+            i++;
+         }
+
+         Student[] averageHigher = new Student[count];
+         int j = 0;
+         int k = 0;
+         while (j < student.Length)
+         {
+            double bySubjects = ((student[j].Physics + student[j].Math + student[j].Inf) / 3.0f);
+            if (bySubjects > medium)
+            {
+               averageHigher[k] = student[j];
+               Console.WriteLine("{0} {1}", student[j].Surname, student[j].Name);
+               k++;
+            }
+
+            j++;
+         }
+
+         // Запись массива структур в бинарный файл
+         //FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
+         //BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
+         //writer.Write(averageHigher.Length);
+         //int m = 0;
+         //while (m < averageHigher.Length)
+         //{
+         //   // Запись строки в UTF-8 с предварительной длиной
+         //   writer.Write(averageHigher[m].Surname);
+         //   writer.Write(averageHigher[m].Name);
+         //   m++;
+         //}
+
+         //stream.Close();
+         //writer.Close();
+      }
+
 
       // Метод поиска студентов средний балл которых выше, чем общий средний балл
       static void AverageHigherScore(string path, Student[] student, double medium)
