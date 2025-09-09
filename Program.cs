@@ -253,15 +253,6 @@ namespace Homework_6._1
          Console.WriteLine("{0} {1} {2} {3}",
             worstAverage.Group, worstAverage.Surname, worstAverage.Name, worstAverage.Dadsname);
 
-
-         //Console.WriteLine("Cредний балл: {0} {1} - {2:f2}",
-         //   students[i].Surname, students[i].Name, bySubjects);
-         //Console.WriteLine("Cредний балл: {0} {1} - {2:f}",
-         //   students[i].Surname, students[i].Name, bySubjects);
-         //Console.WriteLine("Cредний балл: {0} {1} - {2}",
-         //   students[i].Surname, students[i].Name, bySubjects);
-
-
          // Запись массива структур в бинарный файл
          //FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
          //BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
