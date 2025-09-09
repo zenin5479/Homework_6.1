@@ -205,8 +205,6 @@ namespace Homework_6._1
             l++;
          }
          
-         // Cчитаем, что максимум - это первый элемент массива
-         double max = average[0];
          // Cчитаем, что минимум - это первый элемент массива
          double min = average[0];
          int z = 0;
