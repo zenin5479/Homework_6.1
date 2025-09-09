@@ -221,6 +221,10 @@ namespace Homework_6._1
 
             z++;
          }
+         
+         //Console.WriteLine("Минимум равен: {0}", min);
+         Console.WriteLine("Минимум равен: {0:f}", min);
+         //Console.WriteLine("Минимум равен: {0:f2}", min);
 
          //Console.WriteLine("Cредний балл: {0} {1} - {2:f2}",
          //   students[i].Surname, students[i].Name, bySubjects);
@@ -229,13 +233,8 @@ namespace Homework_6._1
          //Console.WriteLine("Cредний балл: {0} {1} - {2}",
          //   students[i].Surname, students[i].Name, bySubjects);
 
-         //Console.WriteLine("Максимум равен: {0}", max);
-         Console.WriteLine("Максимум равен: {0:f}", max);
-         //Console.WriteLine("Максимум равен: {0:f2}", max);
 
-         //Console.WriteLine("Минимум равен: {0}", min);
-         Console.WriteLine("Минимум равен: {0:f}", min);
-         //Console.WriteLine("Минимум равен: {0:f2}", min);
+         
 
 
          // Запись массива структур в бинарный файл
