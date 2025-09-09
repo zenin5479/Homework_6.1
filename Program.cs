@@ -214,11 +214,6 @@ namespace Homework_6._1
          int z = 0;
          while (z < average.Length)
          {
-            if (max < average[z])
-            {
-               max = average[z];
-            }
-
             if (min > average[z])
             {
                min = average[z];
