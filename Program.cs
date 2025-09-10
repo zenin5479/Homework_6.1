@@ -217,7 +217,6 @@ namespace Homework_6._1
             z++;
          }
 
-         //Console.WriteLine("Минимум равен: {0}", min);
          Console.WriteLine("Минимум равен: {0:f}", min);
          //Console.WriteLine("Минимум равен: {0:f2}", min);
 
