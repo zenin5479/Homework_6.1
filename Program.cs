@@ -13,7 +13,7 @@ using System.Text;
 // При решении можно использовать стандартные классы
 // Вычислить средний балл всех студентов по всем предметам
 // Вывести фамилии и имена студентов, средний балл которых больше, чем общий средний балл
-// Найти несовершеннолетнего студента с худшим средним баллом 6.1 
+// Найти несовершеннолетнего студента с худшим средним баллом
 
 namespace Homework_6._1
 {
@@ -137,8 +137,8 @@ namespace Homework_6._1
          Console.WriteLine();
          Console.WriteLine("Средний балл всех студентов по всем предметам: {0:f}", average);
 
-         //Console.WriteLine();
-         //AverageHigherScore(pathRead, students, average);
+         Console.WriteLine();
+         AverageHigherScore(pathRead, students, average);
 
          Console.WriteLine();
          MinorStudentWorstAverage(fileInput, students);
