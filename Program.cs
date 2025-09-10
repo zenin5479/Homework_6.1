@@ -206,15 +206,15 @@ namespace Homework_6._1
 
          // Cчитаем, что минимум - это первый элемент массива
          double min = average[0];
-         int z = 0;
-         while (z < average.Length)
+         int m = 0;
+         while (m < average.Length)
          {
-            if (min > average[z])
+            if (min > average[m])
             {
-               min = average[z];
+               min = average[m];
             }
 
-            z++;
+            m++;
          }
 
          Console.WriteLine("Минимум равен: {0:f}", min);
