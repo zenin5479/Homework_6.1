@@ -146,8 +146,7 @@ namespace Homework_6._1
          Console.ReadKey();
       }
 
-      // Метод поиска несовершеннолетнего студента с худшим средним баллом -
-      // Вывод: группы, фамилии, имени и отчества студента -
+      // Метод поиска несовершеннолетнего студента с худшим средним баллом
       static void MinorStudentWorstAverage(string path, Student[] student)
       {
          Console.WriteLine("Несовершеннолетние студенты:");
@@ -212,6 +211,7 @@ namespace Homework_6._1
          Console.WriteLine("Минимум равен: {0:f}", min);
          //Console.WriteLine("Минимум равен: {0:f2}", min);
 
+         // Поиск индекса минимума массива
          int n = 0;
          int counter = 0;
          bool flag = false;
