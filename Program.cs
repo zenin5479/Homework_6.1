@@ -103,7 +103,7 @@ namespace Homework_6._1
          // Чтение массива структур из текстового файла
          Student[] readStudents = MethodsForStruct.ReadStructFileTxt(pathStruct, "spisok.txt");
          // Вывод прочитанных данных
-         Console.WriteLine("Прочитанные данные:");
+         Console.WriteLine("Прочитанные данные из текстового файла:");
          int i = 0;
          while (i < readStudents.Length)
          {
@@ -120,7 +120,7 @@ namespace Homework_6._1
          // Чтение массива структур из бинарного файла
          Student[] readCadets = MethodsForStruct.ReadStructFileBin(pathWrite);
          // Вывод прочитанных данных
-         Console.WriteLine("Прочитанные данные:");
+         Console.WriteLine("Прочитанные данные из бинарного файла:");
          int j = 0;
          while (j < readCadets.Length)
          {
