@@ -221,6 +221,8 @@ namespace Homework_6._1
          Console.WriteLine("Минимум равен: {0:f}", min);
          //Console.WriteLine("Минимум равен: {0:f2}", min);
 
+         //int counter = 0;
+
          int x = 0;
          int comparison = 0;
          bool flag = false;
