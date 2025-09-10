@@ -220,26 +220,26 @@ namespace Homework_6._1
          Console.WriteLine("Минимум равен: {0:f}", min);
          //Console.WriteLine("Минимум равен: {0:f2}", min);
 
-         int x = 0;
+         int n = 0;
          int counter = 0;
          bool flag = false;
-         while (x < average.Length && flag == false)
+         while (n < average.Length && flag == false)
          {
             // Сравниваем значения double используя метод CompareTo(Double) 
-            if (average[x].CompareTo(min) == 0)
+            if (average[n].CompareTo(min) == 0)
             {
-               counter = x;
+               counter = n;
                flag = true;
             }
 
             // Сравниваем значения double используя метод Equals(Double)
-            //if (average[x].Equals(min))
+            //if (average[n].Equals(min))
             //{
-            //   counter = x;
+            //   counter = n;
             //   flag = true;
             //}
 
-            x++;
+            n++;
          }
 
          if (flag)
