@@ -265,7 +265,8 @@ namespace Homework_6._1
 
          FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Write);
          StreamWriter writer = new StreamWriter(stream, Encoding.UTF8);
-         writer.WriteLine("{0} {1} {2} {3}", worstAverage.Group, worstAverage.Surname, worstAverage.Name, worstAverage.Dadsname);
+         writer.WriteLine("{0} {1} {2} {3}", 
+            worstAverage.Group, worstAverage.Surname, worstAverage.Name, worstAverage.Dadsname);
 
          writer.Close();
       }
