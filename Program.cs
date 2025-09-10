@@ -251,7 +251,7 @@ namespace Homework_6._1
          Console.WriteLine("{0} {1} {2} {3}",
             worstAverage.Group, worstAverage.Surname, worstAverage.Name, worstAverage.Dadsname);
          
-         // Метод записи массива структур в текстовый файл
+         // Метод записи структуры в текстовый файл
          FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Write);
          StreamWriter writer = new StreamWriter(stream, Encoding.UTF8);
          writer.WriteLine("{0} {1} {2} {3}", 
