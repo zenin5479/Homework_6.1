@@ -314,12 +314,10 @@ namespace Homework_6._1
             //   students[i].Surname, students[i].Name, bySubjects);
             Console.WriteLine("Cредний балл: {0} {1} - {2:f}",
                students[i].Surname, students[i].Name, bySubjects);
-            //Console.WriteLine("Cредний балл: {0} {1} - {2}",
-            //   students[i].Surname, students[i].Name, bySubjects);
             i++;
          }
 
-         medium = allSubjects / students.Length;         
+         medium = allSubjects / students.Length;
          Console.WriteLine("Средний балл всех студентов по всем предметам: {0:f}", medium);
          return medium;
       }
