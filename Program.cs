@@ -250,19 +250,8 @@ namespace Homework_6._1
          Student worstAverage = minor[counter];
          Console.WriteLine("{0} {1} {2} {3}",
             worstAverage.Group, worstAverage.Surname, worstAverage.Name, worstAverage.Dadsname);
-
-         // Запись массива структур в бинарный файл
-         //FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
-         //BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
-         //// Запись строки в UTF-8 с предварительной длиной
-         //writer.Write(worstAverage.Group);
-         //writer.Write(worstAverage.Surname);
-         //writer.Write(worstAverage.Name);
-         //writer.Write(worstAverage.Dadsname);
-
-         //stream.Close();
-         //writer.Close();
-
+         
+         // Метод записи массива структур в текстовый файл
          FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Write);
          StreamWriter writer = new StreamWriter(stream, Encoding.UTF8);
          writer.WriteLine("{0} {1} {2} {3}", 
