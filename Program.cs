@@ -158,7 +158,7 @@ namespace Homework_6._1
       // Вывод: группы, фамилии, имени и отчества студента -
       static void MinorStudentWorstAverage(string path, Student[] student)
       {
-         Console.WriteLine("Несовершеннолетний студент с худшим средним баллом:");
+         Console.WriteLine("Несовершеннолетние студенты");
          // Возраст совершеннолетнего студента
          int underage = 18;
          int currentDate = DateTime.Now.Year;
@@ -226,18 +226,18 @@ namespace Homework_6._1
          while (n < average.Length && flag == false)
          {
             // Сравниваем значения double используя метод CompareTo(Double) 
-            if (average[n].CompareTo(min) == 0)
-            {
-               counter = n;
-               flag = true;
-            }
-
-            // Сравниваем значения double используя метод Equals(Double)
-            //if (average[n].Equals(min))
+            //if (average[n].CompareTo(min) == 0)
             //{
             //   counter = n;
             //   flag = true;
             //}
+
+            // Сравниваем значения double используя метод Equals(Double)
+            if (average[n].Equals(min))
+            {
+               counter = n;
+               flag = true;
+            }
 
             n++;
          }
@@ -247,6 +247,7 @@ namespace Homework_6._1
             Console.WriteLine("Индекс минимума равен: {0}", counter);
          }
 
+         Console.WriteLine("Несовершеннолетний студент с худшим средним баллом:");
          Student worstAverage = minor[counter];
          Console.WriteLine("{0} {1} {2} {3}",
             worstAverage.Group, worstAverage.Surname, worstAverage.Name, worstAverage.Dadsname);
