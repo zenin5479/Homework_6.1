@@ -134,8 +134,6 @@ namespace Homework_6._1
          Console.WriteLine();
          double average = AverageScore(students);
 
-         Console.WriteLine();
-         Console.WriteLine("Средний балл всех студентов по всем предметам: {0:f}", average);
 
          Console.WriteLine();
          AverageHigherScore(pathRead, students, average);
