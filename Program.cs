@@ -194,7 +194,6 @@ namespace Homework_6._1
          }
 
          // Рассчитываем средний балл несовершеннолетних студентов для добавления в массив структур и расчета худшего среднего балла
-         //int counter = 0;
          int l = 0;
          double[] average = new double[count];
          double bySubjects;
