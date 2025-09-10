@@ -252,30 +252,22 @@ namespace Homework_6._1
             worstAverage.Group, worstAverage.Surname, worstAverage.Name, worstAverage.Dadsname);
 
          // Запись массива структур в бинарный файл
-         FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
-         BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
-         // Запись строки в UTF-8 с предварительной длиной
-         writer.Write(worstAverage.Group);
-         writer.Write(worstAverage.Surname);
-         writer.Write(worstAverage.Name);
-         writer.Write(worstAverage.Dadsname);
+         //FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
+         //BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
+         //// Запись строки в UTF-8 с предварительной длиной
+         //writer.Write(worstAverage.Group);
+         //writer.Write(worstAverage.Surname);
+         //writer.Write(worstAverage.Name);
+         //writer.Write(worstAverage.Dadsname);
 
-         stream.Close();
-         writer.Close();
-
-         //FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Write);
-         //StreamWriter writer = new StreamWriter(stream, Encoding.UTF8);
-         //int i = 0;
-         //while (i < students.Length)
-         //{
-         //   Student person = students[i];
-         //   writer.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
-         //      person.Group, person.Surname, person.Name, person.Dadsname, person.Year,
-         //      person.Gender, person.Physics, person.Math, person.Inf, person.Grant);
-         //   i++;
-         //}
-
+         //stream.Close();
          //writer.Close();
+
+         FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Write);
+         StreamWriter writer = new StreamWriter(stream, Encoding.UTF8);
+         writer.WriteLine("{0} {1} {2} {3}", worstAverage.Group, worstAverage.Surname, worstAverage.Name, worstAverage.Dadsname);
+
+         writer.Close();
       }
 
       public static bool FindZeroDouble(double[] inputArray, string nameArray)
