@@ -19,7 +19,7 @@ using System.Text;
 // 2. Прочитать структуру из текстового файла +
 // 3. Записать структуру в бинарный файл +
 // 4. Прочитать структуру из бинарного файла +
-// 5. Провести расчеты -
+// 5. Провести расчеты +
 // 6. Записать в структуру в текстовый файл +
 // 7. Записать в структуру в в бинарный файл +
 
@@ -251,16 +251,16 @@ namespace Homework_6._1
          Student worstAverage = minor[counter];
          Console.WriteLine("{0} {1} {2} {3}",
             worstAverage.Group, worstAverage.Surname, worstAverage.Name, worstAverage.Dadsname);
-         
+
          // Метод записи структуры в текстовый файл
          FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Write);
          StreamWriter writer = new StreamWriter(stream, Encoding.UTF8);
-         writer.WriteLine("{0} {1} {2} {3}", 
+         writer.WriteLine("{0} {1} {2} {3}",
             worstAverage.Group, worstAverage.Surname, worstAverage.Name, worstAverage.Dadsname);
 
          writer.Close();
       }
-      
+
       // Метод поиска студентов средний балл которых выше, чем общий средний балл
       static void AverageHigherScore(string path, Student[] student, double medium)
       {
