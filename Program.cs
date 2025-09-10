@@ -158,7 +158,7 @@ namespace Homework_6._1
       // Вывод: группы, фамилии, имени и отчества студента -
       static void MinorStudentWorstAverage(string path, Student[] student)
       {
-         Console.WriteLine("Несовершеннолетние студенты");
+         Console.WriteLine("Несовершеннолетние студенты:");
          // Возраст совершеннолетнего студента
          int underage = 18;
          int currentDate = DateTime.Now.Year;
