@@ -259,8 +259,6 @@ namespace Homework_6._1
 
          writer.Close();
       }
-
-      
       
       // Метод поиска студентов средний балл которых выше, чем общий средний балл
       static void AverageHigherScore(string path, Student[] student, double medium)
