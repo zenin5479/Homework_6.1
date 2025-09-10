@@ -132,7 +132,7 @@ namespace Homework_6._1
          }
 
          Console.WriteLine();
-         double average = AverageScore(students);
+         AverageScore(students);
 
          Console.WriteLine();
          Console.WriteLine("Средний балл всех студентов по всем предметам: {0:f}", average);
@@ -304,7 +304,7 @@ namespace Homework_6._1
       }
 
       // Метод расчета среднего балла всех студентов по всем предметам
-      static double AverageScore(Student[] students)
+      static void AverageScore(Student[] students)
       {
          double medium;
          double allSubjects = 0;
@@ -323,7 +323,7 @@ namespace Homework_6._1
          }
 
          medium = allSubjects / students.Length;
-         return medium;
+         Console.WriteLine("Средний балл всех студентов по всем предметам: {0:f}", medium);
       }
    }
 }
