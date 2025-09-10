@@ -220,8 +220,6 @@ namespace Homework_6._1
          Console.WriteLine("Минимум равен: {0:f}", min);
          //Console.WriteLine("Минимум равен: {0:f2}", min);
 
-         //int counter = 0;
-
          int x = 0;
          int counter = 0;
          bool flag = false;
@@ -235,11 +233,11 @@ namespace Homework_6._1
             }
 
             // Сравниваем значения double используя метод Equals(Double)
-            if (average[x].Equals(min))
-            {
-               counter = x;
-               flag = true;
-            }
+            //if (average[x].Equals(min))
+            //{
+            //   counter = x;
+            //   flag = true;
+            //}
 
             x++;
          }
