@@ -223,33 +223,33 @@ namespace Homework_6._1
          //int counter = 0;
 
          int x = 0;
-         int comparison = 0;
+         int counter = 0;
          bool flag = false;
          while (x < average.Length && flag == false)
          {
             // Сравниваем значения double используя метод CompareTo(Double) 
             if (average[x].CompareTo(min) == 0)
             {
-               comparison = x;
+               counter = x;
                flag = true;
             }
 
             // Сравниваем значения double используя метод Equals(Double)
-            //if (average[x].Equals(min))
-            //{
-            //   comparison = x;
-            //   flag = true;
-            //}
+            if (average[x].Equals(min))
+            {
+               counter = x;
+               flag = true;
+            }
 
             x++;
          }
 
          if (flag)
          {
-            Console.WriteLine("Индекс минимума равен: {0}", comparison);
+            Console.WriteLine("Индекс минимума равен: {0}", counter);
          }
 
-         Student worstAverage = minor[comparison];
+         Student worstAverage = minor[counter];
          Console.WriteLine("{0} {1} {2} {3}",
             worstAverage.Group, worstAverage.Surname, worstAverage.Name, worstAverage.Dadsname);
 
