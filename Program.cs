@@ -226,18 +226,18 @@ namespace Homework_6._1
          while (n < average.Length && flag == false)
          {
             // Сравниваем значения double используя метод CompareTo(Double) 
-            //if (average[n].CompareTo(min) == 0)
-            //{
-            //   counter = n;
-            //   flag = true;
-            //}
-
-            // Сравниваем значения double используя метод Equals(Double)
-            if (average[n].Equals(min))
+            if (average[n].CompareTo(min) == 0)
             {
                counter = n;
                flag = true;
             }
+
+            // Сравниваем значения double используя метод Equals(Double)
+            //if (average[n].Equals(min))
+            //{
+            //   counter = n;
+            //   flag = true;
+            //}
 
             n++;
          }
