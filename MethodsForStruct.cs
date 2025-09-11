@@ -6,6 +6,11 @@ namespace Homework_6._1
 {
    public class MethodsForStruct
    {
+      
+      
+      
+      
+      
       // Метод записи массива структур в текстовый файл
       public static void WriteStructFileTxt(string path, Student[] students)
       {
