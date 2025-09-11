@@ -362,8 +362,8 @@ namespace Homework_6._1
             m++;
          }
 
-         Console.WriteLine("Минимум равен: {0:f}", min);
-         //Console.WriteLine("Минимум равен: {0:f2}", min);
+         Console.WriteLine("Худший средний балл: {0:f}", min);
+         //Console.WriteLine("Худший средний балл: {0:f2}", min);
 
          // Поиск индекса минимума массива
          int n = 0;
@@ -390,7 +390,7 @@ namespace Homework_6._1
 
          if (flag)
          {
-            Console.WriteLine("Индекс минимума равен: {0}", counter);
+            Console.WriteLine("Индекс худшего среднего балла: {0}", counter);
          }
 
          Console.WriteLine("Несовершеннолетний студент с худшим средним баллом:");
@@ -405,10 +405,6 @@ namespace Homework_6._1
             worstAverage.Group, worstAverage.Surname, worstAverage.Name, worstAverage.Dadsname);
          writer.Close();
       }
-
-      
-
-     
 
       // Метод сортировки массива структур по возрасту
       public static void BubbleSortByAge(Student[] students)
