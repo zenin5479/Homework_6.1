@@ -227,6 +227,79 @@ namespace Homework_6._1
          return persons;
       }
 
+       // Метод расчета среднего балла всех студентов по всем предметам
+      public static double AverageScore(Student[] students)
+      {
+         double medium;
+         double allSubjects = 0;
+         int i = 0;
+         while (i < students.Length)
+         {
+            double bySubjects = ((students[i].Physics + students[i].Math + students[i].Inf) / 3.0f);
+            allSubjects += bySubjects;
+            //Console.WriteLine("Cредний балл: {0} {1} - {2:f2}",
+            //   students[i].Surname, students[i].Name, bySubjects);
+            Console.WriteLine("Cредний балл: {0} {1} - {2:f}",
+               students[i].Surname, students[i].Name, bySubjects);
+            i++;
+         }
+
+         medium = allSubjects / students.Length;
+         Console.WriteLine("Средний балл всех студентов по всем предметам: {0:f}", medium);
+         return medium;
+      }
+      
+      // Метод поиска студентов средний балл которых выше, чем общий средний балл
+      public static void AverageHigherScore(string path, Student[] student, double medium)
+      {
+         Console.WriteLine("Студенты, средний балл которых выше, чем общий средний балл:");
+         // Определяем количество студентов удовлетворяющих условию для расчета размера массива структур
+         int count = 0;
+         int i = 0;
+         while (i < student.Length)
+         {
+            double bySubjects = ((student[i].Physics + student[i].Math + student[i].Inf) / 3.0f);
+            if (bySubjects > medium)
+            {
+               count++;
+            }
+
+            i++;
+         }
+
+         Student[] averageHigher = new Student[count];
+         int j = 0;
+         int k = 0;
+         while (j < student.Length)
+         {
+            double bySubjects = ((student[j].Physics + student[j].Math + student[j].Inf) / 3.0f);
+            if (bySubjects > medium)
+            {
+               averageHigher[k] = student[j];
+               Console.WriteLine("{0} {1}", student[j].Surname, student[j].Name);
+               k++;
+            }
+
+            j++;
+         }
+
+         // Запись массива структур в бинарный файл
+         FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
+         BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
+         writer.Write(averageHigher.Length);
+         int m = 0;
+         while (m < averageHigher.Length)
+         {
+            // Запись строки в UTF-8 с предварительной длиной
+            writer.Write(averageHigher[m].Surname);
+            writer.Write(averageHigher[m].Name);
+            m++;
+         }
+
+         stream.Close();
+         writer.Close();
+      }
+      
       // Метод поиска несовершеннолетнего студента с худшим средним баллом
       public static void MinorStudentWorstAverage(string path, Student[] student)
       {
@@ -333,78 +406,9 @@ namespace Homework_6._1
          writer.Close();
       }
 
-      // Метод поиска студентов средний балл которых выше, чем общий средний балл
-      public static void AverageHigherScore(string path, Student[] student, double medium)
-      {
-         Console.WriteLine("Студенты, средний балл которых выше, чем общий средний балл:");
-         // Определяем количество студентов удовлетворяющих условию для расчета размера массива структур
-         int count = 0;
-         int i = 0;
-         while (i < student.Length)
-         {
-            double bySubjects = ((student[i].Physics + student[i].Math + student[i].Inf) / 3.0f);
-            if (bySubjects > medium)
-            {
-               count++;
-            }
+      
 
-            i++;
-         }
-
-         Student[] averageHigher = new Student[count];
-         int j = 0;
-         int k = 0;
-         while (j < student.Length)
-         {
-            double bySubjects = ((student[j].Physics + student[j].Math + student[j].Inf) / 3.0f);
-            if (bySubjects > medium)
-            {
-               averageHigher[k] = student[j];
-               Console.WriteLine("{0} {1}", student[j].Surname, student[j].Name);
-               k++;
-            }
-
-            j++;
-         }
-
-         // Запись массива структур в бинарный файл
-         FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
-         BinaryWriter writer = new BinaryWriter(stream, Encoding.UTF8);
-         writer.Write(averageHigher.Length);
-         int m = 0;
-         while (m < averageHigher.Length)
-         {
-            // Запись строки в UTF-8 с предварительной длиной
-            writer.Write(averageHigher[m].Surname);
-            writer.Write(averageHigher[m].Name);
-            m++;
-         }
-
-         stream.Close();
-         writer.Close();
-      }
-
-      // Метод расчета среднего балла всех студентов по всем предметам
-      public static double AverageScore(Student[] students)
-      {
-         double medium;
-         double allSubjects = 0;
-         int i = 0;
-         while (i < students.Length)
-         {
-            double bySubjects = ((students[i].Physics + students[i].Math + students[i].Inf) / 3.0f);
-            allSubjects += bySubjects;
-            //Console.WriteLine("Cредний балл: {0} {1} - {2:f2}",
-            //   students[i].Surname, students[i].Name, bySubjects);
-            Console.WriteLine("Cредний балл: {0} {1} - {2:f}",
-               students[i].Surname, students[i].Name, bySubjects);
-            i++;
-         }
-
-         medium = allSubjects / students.Length;
-         Console.WriteLine("Средний балл всех студентов по всем предметам: {0:f}", medium);
-         return medium;
-      }
+     
 
       // Метод сортировки массива структур по возрасту
       public static void BubbleSortByAge(Student[] students)
