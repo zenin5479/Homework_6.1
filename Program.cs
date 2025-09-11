@@ -135,7 +135,7 @@ namespace Homework_6._1
          double average = MethodsForStruct.AverageScore(students);
 
          Console.WriteLine();
-         AverageHigherScore(pathRead, students, average);
+         MethodsForStruct.AverageHigherScore(pathRead, students, average);
 
          Console.WriteLine();
          MinorStudentWorstAverage(fileInput, students);

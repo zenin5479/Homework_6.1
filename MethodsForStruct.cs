@@ -374,7 +374,7 @@ namespace Homework_6._1
       }
 
       // Метод поиска студентов средний балл которых выше, чем общий средний балл
-      static void AverageHigherScore(string path, Student[] student, double medium)
+      public static void AverageHigherScore(string path, Student[] student, double medium)
       {
          Console.WriteLine("Студенты, средний балл которых выше, чем общий средний балл:");
          // Определяем количество студентов удовлетворяющих условию для расчета размера массива структур
