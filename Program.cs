@@ -138,7 +138,7 @@ namespace Homework_6._1
          MethodsForStruct.AverageHigherScore(pathRead, students, average);
 
          Console.WriteLine();
-         MinorStudentWorstAverage(fileInput, students);
+         MethodsForStruct.MinorStudentWorstAverage(fileInput, students);
 
          Console.ReadKey();
       }

@@ -268,7 +268,7 @@ namespace Homework_6._1
       }
 
       // Метод поиска несовершеннолетнего студента с худшим средним баллом
-      static void MinorStudentWorstAverage(string path, Student[] student)
+      public static void MinorStudentWorstAverage(string path, Student[] student)
       {
          Console.WriteLine("Несовершеннолетние студенты:");
          // Возраст совершеннолетнего студента
