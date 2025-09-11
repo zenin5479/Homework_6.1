@@ -129,13 +129,13 @@ namespace Homework_6._1
                cadet.Gender, cadet.Physics, cadet.Math, cadet.Inf, cadet.Grant);
             j++;
          }
-
+         // Метод расчета среднего балла всех студентов по всем предметам
          Console.WriteLine();
          double average = MethodsForStruct.AverageScore(students);
-
+         // Метод поиска студентов средний балл которых выше, чем общий средний балл
          Console.WriteLine();
          MethodsForStruct.AverageHigherScore(pathRead, students, average);
-
+         // Метод поиска несовершеннолетнего студента с худшим средним баллом
          Console.WriteLine();
          MethodsForStruct.MinorStudentWorstAverage(fileInput, students);
 
