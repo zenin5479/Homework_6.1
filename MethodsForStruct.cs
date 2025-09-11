@@ -227,7 +227,7 @@ namespace Homework_6._1
          return persons;
       }
 
-       // Метод расчета среднего балла всех студентов по всем предметам
+      // Метод расчета среднего балла всех студентов по всем предметам
       public static double AverageScore(Student[] students)
       {
          double medium;
@@ -248,7 +248,7 @@ namespace Homework_6._1
          Console.WriteLine("Средний балл всех студентов по всем предметам: {0:f}", medium);
          return medium;
       }
-      
+
       // Метод поиска студентов средний балл которых выше, чем общий средний балл
       public static void AverageHigherScore(string path, Student[] student, double medium)
       {
@@ -299,7 +299,7 @@ namespace Homework_6._1
          stream.Close();
          writer.Close();
       }
-      
+
       // Метод поиска несовершеннолетнего студента с худшим средним баллом
       public static void MinorStudentWorstAverage(string path, Student[] student)
       {
