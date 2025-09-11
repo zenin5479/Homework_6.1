@@ -425,7 +425,7 @@ namespace Homework_6._1
       }
 
       // Метод расчета среднего балла всех студентов по всем предметам
-      static double AverageScore(Student[] students)
+      public static double AverageScore(Student[] students)
       {
          double medium;
          double allSubjects = 0;
