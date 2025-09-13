@@ -17,8 +17,7 @@ using LibraryForStruct;
 
 namespace Homework_6._1
 {
-   //// Определяем структуру
-   //public struct Student
+   
 
    internal class Program
    {
