@@ -1,6 +1,6 @@
-﻿using System;
+﻿using LibraryForStruct;
+using System;
 using System.IO;
-using LibraryForStruct;
 
 // Обработка студенческой ведомости
 // Составить программу для обработки информации о студентах какого-то факультета
@@ -17,7 +17,6 @@ using LibraryForStruct;
 
 namespace Homework_6._1
 {
-
    internal class Program
    {
       static void Main(string[] args)
@@ -121,7 +120,7 @@ namespace Homework_6._1
          double average = VariousMethods.AverageScore(students);
          // Поиск студентов средний балл которых выше, чем общий средний балл
          Console.WriteLine();
-            VariousMethods.AverageHigherScore(pathRead, students, average);
+         VariousMethods.AverageHigherScore(pathRead, students, average);
          // Поиск несовершеннолетнего студента с худшим средним баллом
          Console.WriteLine();
          VariousMethods.MinorStudentWorstAverage(fileInput, students);
