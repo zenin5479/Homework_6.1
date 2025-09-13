@@ -17,7 +17,6 @@ using LibraryForStruct;
 
 namespace Homework_6._1
 {
-   
 
    internal class Program
    {
