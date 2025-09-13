@@ -23,9 +23,6 @@ namespace Homework_6._1
    //   public string Group;
    //   public string Surname;
    //   public string Name;
-   //   public string Dadsname;
-   //   public int Year;
-   //   public char Gender;
    //   public int Physics;
    //   public int Math;
    //   public int Inf;
