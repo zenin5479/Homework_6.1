@@ -20,8 +20,6 @@ namespace Homework_6._1
    //// Определяем структуру
    //public struct Student
    //{
-   //   public string Group;
-   //   public string Surname;
 
    internal class Program
    {
