@@ -25,8 +25,6 @@ namespace Homework_6._1
    //   public string Name;
    //   public int Physics;
    //   public int Math;
-   //   public int Inf;
-   //   public double Grant;
    //}
 
    internal class Program
