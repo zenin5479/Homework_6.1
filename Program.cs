@@ -22,8 +22,6 @@ namespace Homework_6._1
    //{
    //   public string Group;
    //   public string Surname;
-   //   public string Name;
-   //   public int Physics;
 
    internal class Program
    {
