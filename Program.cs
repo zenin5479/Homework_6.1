@@ -19,7 +19,7 @@ namespace Homework_6._1
 {
    internal class Program
    {
-      static void Main(string[] args)
+      static void Main()
       {
          string fileEnter = "spisok.txt";
          string pathStruct = Path.GetFullPath(fileEnter);
