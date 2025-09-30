@@ -2,9 +2,9 @@
 using System.IO;
 using System.Text;
 
-namespace LibraryForStruct
+namespace Homework_6._1
 {
-   public class VariousMethodsForStructStudent
+   public class MethodsForStruct
    {
       // Определяем структуру
       public struct Student
